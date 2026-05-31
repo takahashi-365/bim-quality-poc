@@ -48,3 +48,21 @@ docs/application_message_templates.md
 
 # Interview private notes
 docs/interview_qa_templates.md
+
+# Private / draft / archive notes
+00_docs/
+docs/archive/
+docs/interview_pitch_*.md
+docs/resume_project_description.md
+docs/may_deliverables_*.md
+docs/next_steps_*.md
+docs/july_mvp_summary_*.md
+
+# Generated prompt drafts
+06_ai_demo/generated_prompts/
+
+# Legacy prototype scripts
+08_python/
+
+# Old app versions
+app/streamlit_app_v001.py
