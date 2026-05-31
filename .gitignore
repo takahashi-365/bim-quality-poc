@@ -42,3 +42,6 @@ Thumbs.db
 # Portfolio PDF drafts
 07_portfolio/bim_quality_poc_portfolio_v001.pdf
 07_portfolio/bim_quality_poc_portfolio_v001_with_header.pdf
+
+# Job application private notes
+docs/application_message_templates.md
