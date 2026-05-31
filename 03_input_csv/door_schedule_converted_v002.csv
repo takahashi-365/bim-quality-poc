@@ -1,0 +1,26 @@
+﻿Category,ElementId,FamilyName,TypeName,Level,BIM_ClassificationCode,BIM_ModelRole,BIM_Zone,SourceFile,ModelName
+Doors,101.0,SD,管理用出入口,,,,,door_schedule_SD_export_test_v001.txt,BIM_Quality_Check_Sample_Model_R2024_v001
+Doors,102.0,SD,外部階段 1F,,,,,door_schedule_SD_export_test_v001.txt,BIM_Quality_Check_Sample_Model_R2024_v001
+Doors,103.0,SD,ごみ置き場,,,,,door_schedule_SD_export_test_v001.txt,BIM_Quality_Check_Sample_Model_R2024_v001
+Doors,104.0,SD,PS,,,,,door_schedule_SD_export_test_v001.txt,BIM_Quality_Check_Sample_Model_R2024_v001
+Doors,105.0,SD,ポンプ室,,,,,door_schedule_SD_export_test_v001.txt,BIM_Quality_Check_Sample_Model_R2024_v001
+Doors,106.0,SD,EPS 1F,,,,,door_schedule_SD_export_test_v001.txt,BIM_Quality_Check_Sample_Model_R2024_v001
+Doors,107.0,SD,駐車場,,,,,door_schedule_SD_export_test_v001.txt,BIM_Quality_Check_Sample_Model_R2024_v001
+Doors,108.0,SD,電気室 1F,,,,,door_schedule_SD_export_test_v001.txt,BIM_Quality_Check_Sample_Model_R2024_v001
+Doors,109.0,SD,管理人室 清掃管理人室 倉庫,,,,,door_schedule_SD_export_test_v001.txt,BIM_Quality_Check_Sample_Model_R2024_v001
+Doors,110.0,SD,管理用出入口附室,,,,,door_schedule_SD_export_test_v001.txt,BIM_Quality_Check_Sample_Model_R2024_v001
+Doors,111.0,SD,店舗裏口,,,,,door_schedule_SD_export_test_v001.txt,BIM_Quality_Check_Sample_Model_R2024_v001
+Doors,201.0,SD,事務室,,,,,door_schedule_SD_export_test_v001.txt,BIM_Quality_Check_Sample_Model_R2024_v001
+Doors,202.0,SD,外部階段,,,,,door_schedule_SD_export_test_v001.txt,BIM_Quality_Check_Sample_Model_R2024_v001
+Doors,203.0,SD,設備バルコニー,,,,,door_schedule_SD_export_test_v001.txt,BIM_Quality_Check_Sample_Model_R2024_v001
+Doors,204.0,SD,階段室,,,,,door_schedule_SD_export_test_v001.txt,BIM_Quality_Check_Sample_Model_R2024_v001
+Doors,205.0,SD,EPS,,,,,door_schedule_SD_export_test_v001.txt,BIM_Quality_Check_Sample_Model_R2024_v001
+Doors,206.0,SD,EPS,,,,,door_schedule_SD_export_test_v001.txt,BIM_Quality_Check_Sample_Model_R2024_v001
+Doors,207.0,SD,PS,,,,,door_schedule_SD_export_test_v001.txt,BIM_Quality_Check_Sample_Model_R2024_v001
+Doors,208.0,SD,PS,,,,,door_schedule_SD_export_test_v001.txt,BIM_Quality_Check_Sample_Model_R2024_v001
+Doors,209.0,SD,PS,,,,,door_schedule_SD_export_test_v001.txt,BIM_Quality_Check_Sample_Model_R2024_v001
+Doors,210.0,SD,PS,,,,,door_schedule_SD_export_test_v001.txt,BIM_Quality_Check_Sample_Model_R2024_v001
+Doors,211.0,SD,DS,,,,,door_schedule_SD_export_test_v001.txt,BIM_Quality_Check_Sample_Model_R2024_v001
+Doors,301.0,SD,はと小屋,,,,,door_schedule_SD_export_test_v001.txt,BIM_Quality_Check_Sample_Model_R2024_v001
+Doors,401.0,SD,門扉南,,,,,door_schedule_SD_export_test_v001.txt,BIM_Quality_Check_Sample_Model_R2024_v001
+Doors,402.0,SD,門扉西,,,,,door_schedule_SD_export_test_v001.txt,BIM_Quality_Check_Sample_Model_R2024_v001

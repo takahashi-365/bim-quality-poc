@@ -1,0 +1,44 @@
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+.pytest_cache/
+
+# Virtual environment
+.venv/
+venv/
+env/
+
+# OS / editor
+.DS_Store
+Thumbs.db
+.vscode/
+
+# Logs
+*.log
+
+# Temporary files
+*.tmp
+*.bak
+*.old
+
+# Jupyter
+.ipynb_checkpoints/
+
+# Large / local Revit files
+*.rvt
+*.rfa
+*.rte
+*.ifc
+
+# Power BI local files
+*.pbix
+
+# Personal / private files
+*_private.*
+*_local.*
+
+# Portfolio PDF drafts
+07_portfolio/bim_quality_poc_portfolio_v001.pdf
+07_portfolio/bim_quality_poc_portfolio_v001_with_header.pdf

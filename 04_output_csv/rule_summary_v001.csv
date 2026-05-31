@@ -1,0 +1,4 @@
+﻿RuleId,RuleName,Severity,ViolationCount
+R-001,必須パラメータ未入力,High,50
+R-002,分類コード未入力,High,25
+R-003,ファミリ命名規則違反,Medium,25

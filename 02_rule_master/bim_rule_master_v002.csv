@@ -1,0 +1,4 @@
+RuleId,RuleName,Category,Severity,TargetField,CheckLogic,BusinessImpact,AIUseImpact,FixGuide,Reference
+R-001,必須パラメータ未入力,Parameter,High,BIM_ModelRole;BIM_Zone,BIM_ModelRole または BIM_Zone が空欄の場合に違反,モデル用途、ゾーン、集計条件が不明確になり、BIM品質管理や後工程の確認に影響する,AIやBIでモデル用途・ゾーン別に分類できず、検索・集計・改善提案の精度が下がる,該当要素に必要な BIM_ModelRole または BIM_Zone を入力する,検証用BIM品質ルール
+R-002,分類コード未入力,Classification,High,BIM_ClassificationCode,BIM_ClassificationCode が空欄の場合に違反,分類別集計、IFC連携、数量確認、標準化ルール確認に影響する,AIやBIで要素を分類できず、カテゴリ別分析やルール検索の精度が下がる,分類コード表に従い、BIM_ClassificationCode を入力する,検証用BIM品質ルール
+R-003,ファミリ命名規則違反,Naming,Medium,FamilyName,FamilyName が検証用命名規則に一致しない場合に違反,ファミリ検索、標準化、部品管理、テンプレート運用に影響する,AI検索やルール照合時に、同種要素の判別精度が下がる,命名規則に従い、カテゴリ・用途・識別情報が分かるファミリ名へ修正する,検証用BIM品質ルール

@@ -1,0 +1,11 @@
+﻿MetricName,MetricValue,Description
+TotalIssues,100.0,品質チェックで検出された総違反件数
+TotalElementsWithIssues,25.0,違反が検出された要素数
+AverageViolationsPerElement,4.0,要素あたり平均違反件数
+AverageQualityScore,65.0,要素単位の平均品質スコア
+HighSeverityCount,75.0,High重大度の違反件数
+MediumSeverityCount,25.0,Medium重大度の違反件数
+LowSeverityCount,0.0,Low重大度の違反件数
+R001Count,50.0,R-001 必須パラメータ未入力の違反件数
+R002Count,25.0,R-002 分類コード未入力の違反件数
+R003Count,25.0,R-003 ファミリ命名規則違反の違反件数
