@@ -181,16 +181,16 @@ Autodesk日本仕様 意匠サンプルモデル Revit 2024を検証用データ
 - pandas 2.3.3
 - pytest 9.0.3
 - Streamlit 1.52.1
+- scikit-learn 1.8.0
 - CSV / TXT
+- JSON / Markdown Context Generation
 - Revit Schedule Export
 - Power BI Desktop
 - Markdown
 - RuleId-based Quality Check
 
-今後追加予定の技術は以下です。
+今後追加・連携検討予定の技術は以下です。
 
-- scikit-learn
-- JSON / Markdown Context Generation
 - RAG
 - Azure AI
 - pyRevit
@@ -240,6 +240,7 @@ bim_quality_poc/requirements.txt
 pandas>=2.2,<3
 pytest==9.0.3
 streamlit==1.52.1
+scikit-learn==1.8.0
 ```
 
 目的は、Python品質チェックツール、テスト、Streamlit簡易画面の実行に必要な外部ライブラリを明示し、別環境でも再現しやすくすることです。
@@ -926,8 +927,8 @@ collected 5 items
 - `check_results_revit_v002.csv` の100件の違反は、正確な品質評価ではなく、処理フロー確認のための結果です。
 - `QualityScore` はPoC用の簡易指標であり、実務上の正式な品質評価基準ではありません。
 - `FixPriority` は実務の正解ラベルではなく、QualityScoreとHigh違反件数をもとにした仮ラベルです。
-- 機械学習プロトタイプは未実装です。
-- 生成AI向け構造化コンテキスト生成は未実装です。
+- 修正優先度分類プロトタイプは初期実装済みですが、現時点の `FixPriority` は `High` のみであり、本格的な分類精度評価は未実施です。
+- 生成AI向け構造化コンテキスト生成は初期実装済みですが、生成AI APIの呼び出しは未実装です。
 - Revit APIやpyRevitとの直接連携は未実装です。
 - RevitモデルやBIMデータの自動修正は対象外です。
 - 設計判断、施工判断、モデル修正の最終判断は人間が行う前提です。
@@ -945,6 +946,18 @@ docs/data_dictionary.md
 ## Future Work
 
 今後は、7月応募可能MVPをもとに、機械学習プロトタイプと生成AI向け構造化コンテキスト生成へ拡張します。
+
+### Revit API / pyRevit連携検討
+
+現時点では、Revit API / pyRevit連携は未実装です。
+
+現在のPoCでは、Revitから書き出した集計表TXTを入力データとして使用しています。今後の拡張候補として、Revit APIまたはpyRevitを用いて、Revitモデル内の要素情報・パラメータ情報を直接取得し、既存のPython品質チェック処理へ接続する構成を検討しています。
+
+初期段階では、Revitモデルの自動修正ではなく、要素情報とパラメータ情報を取得し、RuleIdベース品質チェック、品質メトリクス作成、生成AI向け構造化コンテキスト生成へ接続することを想定しています。
+
+詳細は以下に整理しています。
+
+- `docs/revit_api_pyrevit_integration_plan.md`
 
 ### Machine Learning Prototype
 
