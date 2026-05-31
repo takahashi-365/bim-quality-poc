@@ -66,3 +66,17 @@ docs/july_mvp_summary_*.md
 
 # Old app versions
 app/streamlit_app_v001.py
+
+# Old sample / draft files
+02_rule_master/bim_rule_master_v001.csv
+03_input_csv/door_schedule_converted_v001.csv
+03_input_csv/sample_bim_data_v001.csv
+04_output_csv/check_results_v001.csv
+04_output_csv/check_results_revit_v001.csv
+
+# Portfolio draft markdown
+07_portfolio/bim_quality_poc_portfolio_v001.md
+07_portfolio/portfolio_outline_v001.md
+
+# Legacy AI demo scripts
+06_ai_demo/
