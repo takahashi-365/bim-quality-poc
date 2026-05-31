@@ -96,3 +96,11 @@ app/streamlit_app_v001.py
 # Detailed internal design docs
 docs/business_requirements_mapping.md
 docs/streamlit_app_design.md
+
+# Portfolio screenshots included in PDF
+07_portfolio/screenshots/bim_features.png
+07_portfolio/screenshots/check_results.png
+07_portfolio/screenshots/element_quality_score.png
+07_portfolio/screenshots/quality_metrics.png
+07_portfolio/screenshots/rule_summary.png
+07_portfolio/screenshots/streamlit_overview.png
