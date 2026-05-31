@@ -85,3 +85,14 @@ app/streamlit_app_v001.py
 07_portfolio/screenshots/generated_prompt_txt_v001.png
 07_portfolio/screenshots/prompt_generator_demo_v001.png
 07_portfolio/screenshots/ruleid_lookup_demo_v001.png
+
+# Extra input samples not used in public MVP
+03_input_csv/material_schedule_export_test_v001.txt
+03_input_csv/room_finish_schedule_export_test_v001.txt
+
+# Redundant screenshot
+07_portfolio/screenshots/check_results_csv_v001.png
+
+# Detailed internal design docs
+docs/business_requirements_mapping.md
+docs/streamlit_app_design.md
