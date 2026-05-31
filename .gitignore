@@ -80,3 +80,8 @@ app/streamlit_app_v001.py
 
 # Legacy AI demo scripts
 06_ai_demo/
+
+# Legacy AI demo screenshots
+07_portfolio/screenshots/generated_prompt_txt_v001.png
+07_portfolio/screenshots/prompt_generator_demo_v001.png
+07_portfolio/screenshots/ruleid_lookup_demo_v001.png
