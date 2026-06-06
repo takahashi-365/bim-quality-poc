@@ -1,0 +1,2036 @@
+{
+  "project": {
+    "name": "BIM Data Quality & AI Readiness Assessment PoC",
+    "previous_name": "BIM Data Quality Engineering & AI Analysis PoC",
+    "purpose": "Prepare BIM quality check results and AI readiness scores as structured context for future generative AI or RAG usage.",
+    "note": "This context is generated for PoC purposes. It is not a production AI system."
+  },
+  "input_files": {
+    "check_results_csv": "04_output_csv/check_results_revit_v002.csv",
+    "features_csv": "04_output_csv/bim_features_v001.csv",
+    "ai_readiness_csv": "04_output_csv/ai_readiness_scores_v001.csv"
+  },
+  "summary": {
+    "total_violations": 100,
+    "total_elements": 25,
+    "rule_summary": [
+      {
+        "RuleId": "R-001",
+        "RuleName": "必須パラメータ未入力",
+        "Severity": "High",
+        "ViolationCount": 50
+      },
+      {
+        "RuleId": "R-002",
+        "RuleName": "分類コード未入力",
+        "Severity": "High",
+        "ViolationCount": 25
+      },
+      {
+        "RuleId": "R-003",
+        "RuleName": "ファミリ命名規則違反",
+        "Severity": "Medium",
+        "ViolationCount": 25
+      }
+    ],
+    "fix_priority_summary": [
+      {
+        "FixPriority": "High",
+        "Count": 25
+      }
+    ],
+    "ai_readiness_level_summary": [
+      {
+        "AIReadinessLevel": "Low",
+        "Count": 25
+      }
+    ],
+    "average_ai_readiness_score": 40.0,
+    "human_review_required_count": 25
+  },
+  "limitations": [
+    "QualityScore is a simple PoC metric, not an official business quality standard.",
+    "AIReadinessScore is a simple PoC metric, not an official AI readiness standard.",
+    "FixPriority is a provisional label, not a verified business ground truth.",
+    "The generated context is intended to support human review, not automate BIM model correction.",
+    "Generative AI API integration is not implemented in this stage.",
+    "Revit API and pyRevit integration are not implemented in this stage."
+  ],
+  "elements": [
+    {
+      "element": {
+        "element_id": "101",
+        "category": "Doors",
+        "family_name": "SD",
+        "type_name": "管理用出入口",
+        "level": "",
+        "source_file": "door_schedule_SD_export_test_v001.txt",
+        "model_name": "BIM_Quality_Check_Sample_Model_R2024_v001"
+      },
+      "quality_summary": {
+        "rule_violation_count": 4,
+        "missing_field_count": 3,
+        "high_violation_count": 3,
+        "medium_violation_count": 1,
+        "low_violation_count": 0,
+        "severity_score": 35,
+        "quality_score": 65,
+        "fix_priority": "High"
+      },
+      "ai_readiness": {
+        "ai_readiness_penalty_total": 60,
+        "ai_readiness_score": 40,
+        "ai_readiness_level": "Low",
+        "blocking_rule_ids": [
+          "R-001",
+          "R-002",
+          "R-003"
+        ],
+        "high_impact_rule_count": 3,
+        "medium_impact_rule_count": 1,
+        "human_review_required": true
+      },
+      "violations": [
+        {
+          "rule_id": "R-001",
+          "rule_name": "必須パラメータ未入力",
+          "severity": "High",
+          "parameter_name": "BIM_ModelRole",
+          "current_value": "",
+          "fix_guide": "該当要素に必要な BIM_ModelRole または BIM_Zone を入力する"
+        },
+        {
+          "rule_id": "R-001",
+          "rule_name": "必須パラメータ未入力",
+          "severity": "High",
+          "parameter_name": "BIM_Zone",
+          "current_value": "",
+          "fix_guide": "該当要素に必要な BIM_ModelRole または BIM_Zone を入力する"
+        },
+        {
+          "rule_id": "R-002",
+          "rule_name": "分類コード未入力",
+          "severity": "High",
+          "parameter_name": "BIM_ClassificationCode",
+          "current_value": "",
+          "fix_guide": "分類コード表に従い、BIM_ClassificationCode を入力する"
+        },
+        {
+          "rule_id": "R-003",
+          "rule_name": "ファミリ命名規則違反",
+          "severity": "Medium",
+          "parameter_name": "FamilyName",
+          "current_value": "SD",
+          "fix_guide": "命名規則に従い、カテゴリ・用途・識別情報が分かるファミリ名へ修正する"
+        }
+      ],
+      "ai_instruction": {
+        "role": "BIM data quality and AI readiness assistant",
+        "task": "Explain detected BIM data quality issues, AI readiness risks, and human-review-oriented fix actions.",
+        "constraints": [
+          "Do not assume information that is not included in the context.",
+          "Do not claim that the model can be automatically fixed.",
+          "Use RuleId, Severity, FixGuide, QualityScore, FixPriority, and AIReadinessScore as the primary reference information.",
+          "Explain that final design or model correction decisions should be made by a human reviewer.",
+          "Treat Low AIReadinessLevel and HumanReviewRequired=True as indicators that the BIM data should be reviewed before AI or BI usage."
+        ]
+      }
+    },
+    {
+      "element": {
+        "element_id": "102",
+        "category": "Doors",
+        "family_name": "SD",
+        "type_name": "外部階段 1F",
+        "level": "",
+        "source_file": "door_schedule_SD_export_test_v001.txt",
+        "model_name": "BIM_Quality_Check_Sample_Model_R2024_v001"
+      },
+      "quality_summary": {
+        "rule_violation_count": 4,
+        "missing_field_count": 3,
+        "high_violation_count": 3,
+        "medium_violation_count": 1,
+        "low_violation_count": 0,
+        "severity_score": 35,
+        "quality_score": 65,
+        "fix_priority": "High"
+      },
+      "ai_readiness": {
+        "ai_readiness_penalty_total": 60,
+        "ai_readiness_score": 40,
+        "ai_readiness_level": "Low",
+        "blocking_rule_ids": [
+          "R-001",
+          "R-002",
+          "R-003"
+        ],
+        "high_impact_rule_count": 3,
+        "medium_impact_rule_count": 1,
+        "human_review_required": true
+      },
+      "violations": [
+        {
+          "rule_id": "R-001",
+          "rule_name": "必須パラメータ未入力",
+          "severity": "High",
+          "parameter_name": "BIM_ModelRole",
+          "current_value": "",
+          "fix_guide": "該当要素に必要な BIM_ModelRole または BIM_Zone を入力する"
+        },
+        {
+          "rule_id": "R-001",
+          "rule_name": "必須パラメータ未入力",
+          "severity": "High",
+          "parameter_name": "BIM_Zone",
+          "current_value": "",
+          "fix_guide": "該当要素に必要な BIM_ModelRole または BIM_Zone を入力する"
+        },
+        {
+          "rule_id": "R-002",
+          "rule_name": "分類コード未入力",
+          "severity": "High",
+          "parameter_name": "BIM_ClassificationCode",
+          "current_value": "",
+          "fix_guide": "分類コード表に従い、BIM_ClassificationCode を入力する"
+        },
+        {
+          "rule_id": "R-003",
+          "rule_name": "ファミリ命名規則違反",
+          "severity": "Medium",
+          "parameter_name": "FamilyName",
+          "current_value": "SD",
+          "fix_guide": "命名規則に従い、カテゴリ・用途・識別情報が分かるファミリ名へ修正する"
+        }
+      ],
+      "ai_instruction": {
+        "role": "BIM data quality and AI readiness assistant",
+        "task": "Explain detected BIM data quality issues, AI readiness risks, and human-review-oriented fix actions.",
+        "constraints": [
+          "Do not assume information that is not included in the context.",
+          "Do not claim that the model can be automatically fixed.",
+          "Use RuleId, Severity, FixGuide, QualityScore, FixPriority, and AIReadinessScore as the primary reference information.",
+          "Explain that final design or model correction decisions should be made by a human reviewer.",
+          "Treat Low AIReadinessLevel and HumanReviewRequired=True as indicators that the BIM data should be reviewed before AI or BI usage."
+        ]
+      }
+    },
+    {
+      "element": {
+        "element_id": "103",
+        "category": "Doors",
+        "family_name": "SD",
+        "type_name": "ごみ置き場",
+        "level": "",
+        "source_file": "door_schedule_SD_export_test_v001.txt",
+        "model_name": "BIM_Quality_Check_Sample_Model_R2024_v001"
+      },
+      "quality_summary": {
+        "rule_violation_count": 4,
+        "missing_field_count": 3,
+        "high_violation_count": 3,
+        "medium_violation_count": 1,
+        "low_violation_count": 0,
+        "severity_score": 35,
+        "quality_score": 65,
+        "fix_priority": "High"
+      },
+      "ai_readiness": {
+        "ai_readiness_penalty_total": 60,
+        "ai_readiness_score": 40,
+        "ai_readiness_level": "Low",
+        "blocking_rule_ids": [
+          "R-001",
+          "R-002",
+          "R-003"
+        ],
+        "high_impact_rule_count": 3,
+        "medium_impact_rule_count": 1,
+        "human_review_required": true
+      },
+      "violations": [
+        {
+          "rule_id": "R-001",
+          "rule_name": "必須パラメータ未入力",
+          "severity": "High",
+          "parameter_name": "BIM_ModelRole",
+          "current_value": "",
+          "fix_guide": "該当要素に必要な BIM_ModelRole または BIM_Zone を入力する"
+        },
+        {
+          "rule_id": "R-001",
+          "rule_name": "必須パラメータ未入力",
+          "severity": "High",
+          "parameter_name": "BIM_Zone",
+          "current_value": "",
+          "fix_guide": "該当要素に必要な BIM_ModelRole または BIM_Zone を入力する"
+        },
+        {
+          "rule_id": "R-002",
+          "rule_name": "分類コード未入力",
+          "severity": "High",
+          "parameter_name": "BIM_ClassificationCode",
+          "current_value": "",
+          "fix_guide": "分類コード表に従い、BIM_ClassificationCode を入力する"
+        },
+        {
+          "rule_id": "R-003",
+          "rule_name": "ファミリ命名規則違反",
+          "severity": "Medium",
+          "parameter_name": "FamilyName",
+          "current_value": "SD",
+          "fix_guide": "命名規則に従い、カテゴリ・用途・識別情報が分かるファミリ名へ修正する"
+        }
+      ],
+      "ai_instruction": {
+        "role": "BIM data quality and AI readiness assistant",
+        "task": "Explain detected BIM data quality issues, AI readiness risks, and human-review-oriented fix actions.",
+        "constraints": [
+          "Do not assume information that is not included in the context.",
+          "Do not claim that the model can be automatically fixed.",
+          "Use RuleId, Severity, FixGuide, QualityScore, FixPriority, and AIReadinessScore as the primary reference information.",
+          "Explain that final design or model correction decisions should be made by a human reviewer.",
+          "Treat Low AIReadinessLevel and HumanReviewRequired=True as indicators that the BIM data should be reviewed before AI or BI usage."
+        ]
+      }
+    },
+    {
+      "element": {
+        "element_id": "104",
+        "category": "Doors",
+        "family_name": "SD",
+        "type_name": "PS",
+        "level": "",
+        "source_file": "door_schedule_SD_export_test_v001.txt",
+        "model_name": "BIM_Quality_Check_Sample_Model_R2024_v001"
+      },
+      "quality_summary": {
+        "rule_violation_count": 4,
+        "missing_field_count": 3,
+        "high_violation_count": 3,
+        "medium_violation_count": 1,
+        "low_violation_count": 0,
+        "severity_score": 35,
+        "quality_score": 65,
+        "fix_priority": "High"
+      },
+      "ai_readiness": {
+        "ai_readiness_penalty_total": 60,
+        "ai_readiness_score": 40,
+        "ai_readiness_level": "Low",
+        "blocking_rule_ids": [
+          "R-001",
+          "R-002",
+          "R-003"
+        ],
+        "high_impact_rule_count": 3,
+        "medium_impact_rule_count": 1,
+        "human_review_required": true
+      },
+      "violations": [
+        {
+          "rule_id": "R-001",
+          "rule_name": "必須パラメータ未入力",
+          "severity": "High",
+          "parameter_name": "BIM_ModelRole",
+          "current_value": "",
+          "fix_guide": "該当要素に必要な BIM_ModelRole または BIM_Zone を入力する"
+        },
+        {
+          "rule_id": "R-001",
+          "rule_name": "必須パラメータ未入力",
+          "severity": "High",
+          "parameter_name": "BIM_Zone",
+          "current_value": "",
+          "fix_guide": "該当要素に必要な BIM_ModelRole または BIM_Zone を入力する"
+        },
+        {
+          "rule_id": "R-002",
+          "rule_name": "分類コード未入力",
+          "severity": "High",
+          "parameter_name": "BIM_ClassificationCode",
+          "current_value": "",
+          "fix_guide": "分類コード表に従い、BIM_ClassificationCode を入力する"
+        },
+        {
+          "rule_id": "R-003",
+          "rule_name": "ファミリ命名規則違反",
+          "severity": "Medium",
+          "parameter_name": "FamilyName",
+          "current_value": "SD",
+          "fix_guide": "命名規則に従い、カテゴリ・用途・識別情報が分かるファミリ名へ修正する"
+        }
+      ],
+      "ai_instruction": {
+        "role": "BIM data quality and AI readiness assistant",
+        "task": "Explain detected BIM data quality issues, AI readiness risks, and human-review-oriented fix actions.",
+        "constraints": [
+          "Do not assume information that is not included in the context.",
+          "Do not claim that the model can be automatically fixed.",
+          "Use RuleId, Severity, FixGuide, QualityScore, FixPriority, and AIReadinessScore as the primary reference information.",
+          "Explain that final design or model correction decisions should be made by a human reviewer.",
+          "Treat Low AIReadinessLevel and HumanReviewRequired=True as indicators that the BIM data should be reviewed before AI or BI usage."
+        ]
+      }
+    },
+    {
+      "element": {
+        "element_id": "105",
+        "category": "Doors",
+        "family_name": "SD",
+        "type_name": "ポンプ室",
+        "level": "",
+        "source_file": "door_schedule_SD_export_test_v001.txt",
+        "model_name": "BIM_Quality_Check_Sample_Model_R2024_v001"
+      },
+      "quality_summary": {
+        "rule_violation_count": 4,
+        "missing_field_count": 3,
+        "high_violation_count": 3,
+        "medium_violation_count": 1,
+        "low_violation_count": 0,
+        "severity_score": 35,
+        "quality_score": 65,
+        "fix_priority": "High"
+      },
+      "ai_readiness": {
+        "ai_readiness_penalty_total": 60,
+        "ai_readiness_score": 40,
+        "ai_readiness_level": "Low",
+        "blocking_rule_ids": [
+          "R-001",
+          "R-002",
+          "R-003"
+        ],
+        "high_impact_rule_count": 3,
+        "medium_impact_rule_count": 1,
+        "human_review_required": true
+      },
+      "violations": [
+        {
+          "rule_id": "R-001",
+          "rule_name": "必須パラメータ未入力",
+          "severity": "High",
+          "parameter_name": "BIM_ModelRole",
+          "current_value": "",
+          "fix_guide": "該当要素に必要な BIM_ModelRole または BIM_Zone を入力する"
+        },
+        {
+          "rule_id": "R-001",
+          "rule_name": "必須パラメータ未入力",
+          "severity": "High",
+          "parameter_name": "BIM_Zone",
+          "current_value": "",
+          "fix_guide": "該当要素に必要な BIM_ModelRole または BIM_Zone を入力する"
+        },
+        {
+          "rule_id": "R-002",
+          "rule_name": "分類コード未入力",
+          "severity": "High",
+          "parameter_name": "BIM_ClassificationCode",
+          "current_value": "",
+          "fix_guide": "分類コード表に従い、BIM_ClassificationCode を入力する"
+        },
+        {
+          "rule_id": "R-003",
+          "rule_name": "ファミリ命名規則違反",
+          "severity": "Medium",
+          "parameter_name": "FamilyName",
+          "current_value": "SD",
+          "fix_guide": "命名規則に従い、カテゴリ・用途・識別情報が分かるファミリ名へ修正する"
+        }
+      ],
+      "ai_instruction": {
+        "role": "BIM data quality and AI readiness assistant",
+        "task": "Explain detected BIM data quality issues, AI readiness risks, and human-review-oriented fix actions.",
+        "constraints": [
+          "Do not assume information that is not included in the context.",
+          "Do not claim that the model can be automatically fixed.",
+          "Use RuleId, Severity, FixGuide, QualityScore, FixPriority, and AIReadinessScore as the primary reference information.",
+          "Explain that final design or model correction decisions should be made by a human reviewer.",
+          "Treat Low AIReadinessLevel and HumanReviewRequired=True as indicators that the BIM data should be reviewed before AI or BI usage."
+        ]
+      }
+    },
+    {
+      "element": {
+        "element_id": "106",
+        "category": "Doors",
+        "family_name": "SD",
+        "type_name": "EPS 1F",
+        "level": "",
+        "source_file": "door_schedule_SD_export_test_v001.txt",
+        "model_name": "BIM_Quality_Check_Sample_Model_R2024_v001"
+      },
+      "quality_summary": {
+        "rule_violation_count": 4,
+        "missing_field_count": 3,
+        "high_violation_count": 3,
+        "medium_violation_count": 1,
+        "low_violation_count": 0,
+        "severity_score": 35,
+        "quality_score": 65,
+        "fix_priority": "High"
+      },
+      "ai_readiness": {
+        "ai_readiness_penalty_total": 60,
+        "ai_readiness_score": 40,
+        "ai_readiness_level": "Low",
+        "blocking_rule_ids": [
+          "R-001",
+          "R-002",
+          "R-003"
+        ],
+        "high_impact_rule_count": 3,
+        "medium_impact_rule_count": 1,
+        "human_review_required": true
+      },
+      "violations": [
+        {
+          "rule_id": "R-001",
+          "rule_name": "必須パラメータ未入力",
+          "severity": "High",
+          "parameter_name": "BIM_ModelRole",
+          "current_value": "",
+          "fix_guide": "該当要素に必要な BIM_ModelRole または BIM_Zone を入力する"
+        },
+        {
+          "rule_id": "R-001",
+          "rule_name": "必須パラメータ未入力",
+          "severity": "High",
+          "parameter_name": "BIM_Zone",
+          "current_value": "",
+          "fix_guide": "該当要素に必要な BIM_ModelRole または BIM_Zone を入力する"
+        },
+        {
+          "rule_id": "R-002",
+          "rule_name": "分類コード未入力",
+          "severity": "High",
+          "parameter_name": "BIM_ClassificationCode",
+          "current_value": "",
+          "fix_guide": "分類コード表に従い、BIM_ClassificationCode を入力する"
+        },
+        {
+          "rule_id": "R-003",
+          "rule_name": "ファミリ命名規則違反",
+          "severity": "Medium",
+          "parameter_name": "FamilyName",
+          "current_value": "SD",
+          "fix_guide": "命名規則に従い、カテゴリ・用途・識別情報が分かるファミリ名へ修正する"
+        }
+      ],
+      "ai_instruction": {
+        "role": "BIM data quality and AI readiness assistant",
+        "task": "Explain detected BIM data quality issues, AI readiness risks, and human-review-oriented fix actions.",
+        "constraints": [
+          "Do not assume information that is not included in the context.",
+          "Do not claim that the model can be automatically fixed.",
+          "Use RuleId, Severity, FixGuide, QualityScore, FixPriority, and AIReadinessScore as the primary reference information.",
+          "Explain that final design or model correction decisions should be made by a human reviewer.",
+          "Treat Low AIReadinessLevel and HumanReviewRequired=True as indicators that the BIM data should be reviewed before AI or BI usage."
+        ]
+      }
+    },
+    {
+      "element": {
+        "element_id": "107",
+        "category": "Doors",
+        "family_name": "SD",
+        "type_name": "駐車場",
+        "level": "",
+        "source_file": "door_schedule_SD_export_test_v001.txt",
+        "model_name": "BIM_Quality_Check_Sample_Model_R2024_v001"
+      },
+      "quality_summary": {
+        "rule_violation_count": 4,
+        "missing_field_count": 3,
+        "high_violation_count": 3,
+        "medium_violation_count": 1,
+        "low_violation_count": 0,
+        "severity_score": 35,
+        "quality_score": 65,
+        "fix_priority": "High"
+      },
+      "ai_readiness": {
+        "ai_readiness_penalty_total": 60,
+        "ai_readiness_score": 40,
+        "ai_readiness_level": "Low",
+        "blocking_rule_ids": [
+          "R-001",
+          "R-002",
+          "R-003"
+        ],
+        "high_impact_rule_count": 3,
+        "medium_impact_rule_count": 1,
+        "human_review_required": true
+      },
+      "violations": [
+        {
+          "rule_id": "R-001",
+          "rule_name": "必須パラメータ未入力",
+          "severity": "High",
+          "parameter_name": "BIM_ModelRole",
+          "current_value": "",
+          "fix_guide": "該当要素に必要な BIM_ModelRole または BIM_Zone を入力する"
+        },
+        {
+          "rule_id": "R-001",
+          "rule_name": "必須パラメータ未入力",
+          "severity": "High",
+          "parameter_name": "BIM_Zone",
+          "current_value": "",
+          "fix_guide": "該当要素に必要な BIM_ModelRole または BIM_Zone を入力する"
+        },
+        {
+          "rule_id": "R-002",
+          "rule_name": "分類コード未入力",
+          "severity": "High",
+          "parameter_name": "BIM_ClassificationCode",
+          "current_value": "",
+          "fix_guide": "分類コード表に従い、BIM_ClassificationCode を入力する"
+        },
+        {
+          "rule_id": "R-003",
+          "rule_name": "ファミリ命名規則違反",
+          "severity": "Medium",
+          "parameter_name": "FamilyName",
+          "current_value": "SD",
+          "fix_guide": "命名規則に従い、カテゴリ・用途・識別情報が分かるファミリ名へ修正する"
+        }
+      ],
+      "ai_instruction": {
+        "role": "BIM data quality and AI readiness assistant",
+        "task": "Explain detected BIM data quality issues, AI readiness risks, and human-review-oriented fix actions.",
+        "constraints": [
+          "Do not assume information that is not included in the context.",
+          "Do not claim that the model can be automatically fixed.",
+          "Use RuleId, Severity, FixGuide, QualityScore, FixPriority, and AIReadinessScore as the primary reference information.",
+          "Explain that final design or model correction decisions should be made by a human reviewer.",
+          "Treat Low AIReadinessLevel and HumanReviewRequired=True as indicators that the BIM data should be reviewed before AI or BI usage."
+        ]
+      }
+    },
+    {
+      "element": {
+        "element_id": "108",
+        "category": "Doors",
+        "family_name": "SD",
+        "type_name": "電気室 1F",
+        "level": "",
+        "source_file": "door_schedule_SD_export_test_v001.txt",
+        "model_name": "BIM_Quality_Check_Sample_Model_R2024_v001"
+      },
+      "quality_summary": {
+        "rule_violation_count": 4,
+        "missing_field_count": 3,
+        "high_violation_count": 3,
+        "medium_violation_count": 1,
+        "low_violation_count": 0,
+        "severity_score": 35,
+        "quality_score": 65,
+        "fix_priority": "High"
+      },
+      "ai_readiness": {
+        "ai_readiness_penalty_total": 60,
+        "ai_readiness_score": 40,
+        "ai_readiness_level": "Low",
+        "blocking_rule_ids": [
+          "R-001",
+          "R-002",
+          "R-003"
+        ],
+        "high_impact_rule_count": 3,
+        "medium_impact_rule_count": 1,
+        "human_review_required": true
+      },
+      "violations": [
+        {
+          "rule_id": "R-001",
+          "rule_name": "必須パラメータ未入力",
+          "severity": "High",
+          "parameter_name": "BIM_ModelRole",
+          "current_value": "",
+          "fix_guide": "該当要素に必要な BIM_ModelRole または BIM_Zone を入力する"
+        },
+        {
+          "rule_id": "R-001",
+          "rule_name": "必須パラメータ未入力",
+          "severity": "High",
+          "parameter_name": "BIM_Zone",
+          "current_value": "",
+          "fix_guide": "該当要素に必要な BIM_ModelRole または BIM_Zone を入力する"
+        },
+        {
+          "rule_id": "R-002",
+          "rule_name": "分類コード未入力",
+          "severity": "High",
+          "parameter_name": "BIM_ClassificationCode",
+          "current_value": "",
+          "fix_guide": "分類コード表に従い、BIM_ClassificationCode を入力する"
+        },
+        {
+          "rule_id": "R-003",
+          "rule_name": "ファミリ命名規則違反",
+          "severity": "Medium",
+          "parameter_name": "FamilyName",
+          "current_value": "SD",
+          "fix_guide": "命名規則に従い、カテゴリ・用途・識別情報が分かるファミリ名へ修正する"
+        }
+      ],
+      "ai_instruction": {
+        "role": "BIM data quality and AI readiness assistant",
+        "task": "Explain detected BIM data quality issues, AI readiness risks, and human-review-oriented fix actions.",
+        "constraints": [
+          "Do not assume information that is not included in the context.",
+          "Do not claim that the model can be automatically fixed.",
+          "Use RuleId, Severity, FixGuide, QualityScore, FixPriority, and AIReadinessScore as the primary reference information.",
+          "Explain that final design or model correction decisions should be made by a human reviewer.",
+          "Treat Low AIReadinessLevel and HumanReviewRequired=True as indicators that the BIM data should be reviewed before AI or BI usage."
+        ]
+      }
+    },
+    {
+      "element": {
+        "element_id": "109",
+        "category": "Doors",
+        "family_name": "SD",
+        "type_name": "管理人室 清掃管理人室 倉庫",
+        "level": "",
+        "source_file": "door_schedule_SD_export_test_v001.txt",
+        "model_name": "BIM_Quality_Check_Sample_Model_R2024_v001"
+      },
+      "quality_summary": {
+        "rule_violation_count": 4,
+        "missing_field_count": 3,
+        "high_violation_count": 3,
+        "medium_violation_count": 1,
+        "low_violation_count": 0,
+        "severity_score": 35,
+        "quality_score": 65,
+        "fix_priority": "High"
+      },
+      "ai_readiness": {
+        "ai_readiness_penalty_total": 60,
+        "ai_readiness_score": 40,
+        "ai_readiness_level": "Low",
+        "blocking_rule_ids": [
+          "R-001",
+          "R-002",
+          "R-003"
+        ],
+        "high_impact_rule_count": 3,
+        "medium_impact_rule_count": 1,
+        "human_review_required": true
+      },
+      "violations": [
+        {
+          "rule_id": "R-001",
+          "rule_name": "必須パラメータ未入力",
+          "severity": "High",
+          "parameter_name": "BIM_ModelRole",
+          "current_value": "",
+          "fix_guide": "該当要素に必要な BIM_ModelRole または BIM_Zone を入力する"
+        },
+        {
+          "rule_id": "R-001",
+          "rule_name": "必須パラメータ未入力",
+          "severity": "High",
+          "parameter_name": "BIM_Zone",
+          "current_value": "",
+          "fix_guide": "該当要素に必要な BIM_ModelRole または BIM_Zone を入力する"
+        },
+        {
+          "rule_id": "R-002",
+          "rule_name": "分類コード未入力",
+          "severity": "High",
+          "parameter_name": "BIM_ClassificationCode",
+          "current_value": "",
+          "fix_guide": "分類コード表に従い、BIM_ClassificationCode を入力する"
+        },
+        {
+          "rule_id": "R-003",
+          "rule_name": "ファミリ命名規則違反",
+          "severity": "Medium",
+          "parameter_name": "FamilyName",
+          "current_value": "SD",
+          "fix_guide": "命名規則に従い、カテゴリ・用途・識別情報が分かるファミリ名へ修正する"
+        }
+      ],
+      "ai_instruction": {
+        "role": "BIM data quality and AI readiness assistant",
+        "task": "Explain detected BIM data quality issues, AI readiness risks, and human-review-oriented fix actions.",
+        "constraints": [
+          "Do not assume information that is not included in the context.",
+          "Do not claim that the model can be automatically fixed.",
+          "Use RuleId, Severity, FixGuide, QualityScore, FixPriority, and AIReadinessScore as the primary reference information.",
+          "Explain that final design or model correction decisions should be made by a human reviewer.",
+          "Treat Low AIReadinessLevel and HumanReviewRequired=True as indicators that the BIM data should be reviewed before AI or BI usage."
+        ]
+      }
+    },
+    {
+      "element": {
+        "element_id": "110",
+        "category": "Doors",
+        "family_name": "SD",
+        "type_name": "管理用出入口附室",
+        "level": "",
+        "source_file": "door_schedule_SD_export_test_v001.txt",
+        "model_name": "BIM_Quality_Check_Sample_Model_R2024_v001"
+      },
+      "quality_summary": {
+        "rule_violation_count": 4,
+        "missing_field_count": 3,
+        "high_violation_count": 3,
+        "medium_violation_count": 1,
+        "low_violation_count": 0,
+        "severity_score": 35,
+        "quality_score": 65,
+        "fix_priority": "High"
+      },
+      "ai_readiness": {
+        "ai_readiness_penalty_total": 60,
+        "ai_readiness_score": 40,
+        "ai_readiness_level": "Low",
+        "blocking_rule_ids": [
+          "R-001",
+          "R-002",
+          "R-003"
+        ],
+        "high_impact_rule_count": 3,
+        "medium_impact_rule_count": 1,
+        "human_review_required": true
+      },
+      "violations": [
+        {
+          "rule_id": "R-001",
+          "rule_name": "必須パラメータ未入力",
+          "severity": "High",
+          "parameter_name": "BIM_ModelRole",
+          "current_value": "",
+          "fix_guide": "該当要素に必要な BIM_ModelRole または BIM_Zone を入力する"
+        },
+        {
+          "rule_id": "R-001",
+          "rule_name": "必須パラメータ未入力",
+          "severity": "High",
+          "parameter_name": "BIM_Zone",
+          "current_value": "",
+          "fix_guide": "該当要素に必要な BIM_ModelRole または BIM_Zone を入力する"
+        },
+        {
+          "rule_id": "R-002",
+          "rule_name": "分類コード未入力",
+          "severity": "High",
+          "parameter_name": "BIM_ClassificationCode",
+          "current_value": "",
+          "fix_guide": "分類コード表に従い、BIM_ClassificationCode を入力する"
+        },
+        {
+          "rule_id": "R-003",
+          "rule_name": "ファミリ命名規則違反",
+          "severity": "Medium",
+          "parameter_name": "FamilyName",
+          "current_value": "SD",
+          "fix_guide": "命名規則に従い、カテゴリ・用途・識別情報が分かるファミリ名へ修正する"
+        }
+      ],
+      "ai_instruction": {
+        "role": "BIM data quality and AI readiness assistant",
+        "task": "Explain detected BIM data quality issues, AI readiness risks, and human-review-oriented fix actions.",
+        "constraints": [
+          "Do not assume information that is not included in the context.",
+          "Do not claim that the model can be automatically fixed.",
+          "Use RuleId, Severity, FixGuide, QualityScore, FixPriority, and AIReadinessScore as the primary reference information.",
+          "Explain that final design or model correction decisions should be made by a human reviewer.",
+          "Treat Low AIReadinessLevel and HumanReviewRequired=True as indicators that the BIM data should be reviewed before AI or BI usage."
+        ]
+      }
+    },
+    {
+      "element": {
+        "element_id": "111",
+        "category": "Doors",
+        "family_name": "SD",
+        "type_name": "店舗裏口",
+        "level": "",
+        "source_file": "door_schedule_SD_export_test_v001.txt",
+        "model_name": "BIM_Quality_Check_Sample_Model_R2024_v001"
+      },
+      "quality_summary": {
+        "rule_violation_count": 4,
+        "missing_field_count": 3,
+        "high_violation_count": 3,
+        "medium_violation_count": 1,
+        "low_violation_count": 0,
+        "severity_score": 35,
+        "quality_score": 65,
+        "fix_priority": "High"
+      },
+      "ai_readiness": {
+        "ai_readiness_penalty_total": 60,
+        "ai_readiness_score": 40,
+        "ai_readiness_level": "Low",
+        "blocking_rule_ids": [
+          "R-001",
+          "R-002",
+          "R-003"
+        ],
+        "high_impact_rule_count": 3,
+        "medium_impact_rule_count": 1,
+        "human_review_required": true
+      },
+      "violations": [
+        {
+          "rule_id": "R-001",
+          "rule_name": "必須パラメータ未入力",
+          "severity": "High",
+          "parameter_name": "BIM_ModelRole",
+          "current_value": "",
+          "fix_guide": "該当要素に必要な BIM_ModelRole または BIM_Zone を入力する"
+        },
+        {
+          "rule_id": "R-001",
+          "rule_name": "必須パラメータ未入力",
+          "severity": "High",
+          "parameter_name": "BIM_Zone",
+          "current_value": "",
+          "fix_guide": "該当要素に必要な BIM_ModelRole または BIM_Zone を入力する"
+        },
+        {
+          "rule_id": "R-002",
+          "rule_name": "分類コード未入力",
+          "severity": "High",
+          "parameter_name": "BIM_ClassificationCode",
+          "current_value": "",
+          "fix_guide": "分類コード表に従い、BIM_ClassificationCode を入力する"
+        },
+        {
+          "rule_id": "R-003",
+          "rule_name": "ファミリ命名規則違反",
+          "severity": "Medium",
+          "parameter_name": "FamilyName",
+          "current_value": "SD",
+          "fix_guide": "命名規則に従い、カテゴリ・用途・識別情報が分かるファミリ名へ修正する"
+        }
+      ],
+      "ai_instruction": {
+        "role": "BIM data quality and AI readiness assistant",
+        "task": "Explain detected BIM data quality issues, AI readiness risks, and human-review-oriented fix actions.",
+        "constraints": [
+          "Do not assume information that is not included in the context.",
+          "Do not claim that the model can be automatically fixed.",
+          "Use RuleId, Severity, FixGuide, QualityScore, FixPriority, and AIReadinessScore as the primary reference information.",
+          "Explain that final design or model correction decisions should be made by a human reviewer.",
+          "Treat Low AIReadinessLevel and HumanReviewRequired=True as indicators that the BIM data should be reviewed before AI or BI usage."
+        ]
+      }
+    },
+    {
+      "element": {
+        "element_id": "201",
+        "category": "Doors",
+        "family_name": "SD",
+        "type_name": "事務室",
+        "level": "",
+        "source_file": "door_schedule_SD_export_test_v001.txt",
+        "model_name": "BIM_Quality_Check_Sample_Model_R2024_v001"
+      },
+      "quality_summary": {
+        "rule_violation_count": 4,
+        "missing_field_count": 3,
+        "high_violation_count": 3,
+        "medium_violation_count": 1,
+        "low_violation_count": 0,
+        "severity_score": 35,
+        "quality_score": 65,
+        "fix_priority": "High"
+      },
+      "ai_readiness": {
+        "ai_readiness_penalty_total": 60,
+        "ai_readiness_score": 40,
+        "ai_readiness_level": "Low",
+        "blocking_rule_ids": [
+          "R-001",
+          "R-002",
+          "R-003"
+        ],
+        "high_impact_rule_count": 3,
+        "medium_impact_rule_count": 1,
+        "human_review_required": true
+      },
+      "violations": [
+        {
+          "rule_id": "R-001",
+          "rule_name": "必須パラメータ未入力",
+          "severity": "High",
+          "parameter_name": "BIM_ModelRole",
+          "current_value": "",
+          "fix_guide": "該当要素に必要な BIM_ModelRole または BIM_Zone を入力する"
+        },
+        {
+          "rule_id": "R-001",
+          "rule_name": "必須パラメータ未入力",
+          "severity": "High",
+          "parameter_name": "BIM_Zone",
+          "current_value": "",
+          "fix_guide": "該当要素に必要な BIM_ModelRole または BIM_Zone を入力する"
+        },
+        {
+          "rule_id": "R-002",
+          "rule_name": "分類コード未入力",
+          "severity": "High",
+          "parameter_name": "BIM_ClassificationCode",
+          "current_value": "",
+          "fix_guide": "分類コード表に従い、BIM_ClassificationCode を入力する"
+        },
+        {
+          "rule_id": "R-003",
+          "rule_name": "ファミリ命名規則違反",
+          "severity": "Medium",
+          "parameter_name": "FamilyName",
+          "current_value": "SD",
+          "fix_guide": "命名規則に従い、カテゴリ・用途・識別情報が分かるファミリ名へ修正する"
+        }
+      ],
+      "ai_instruction": {
+        "role": "BIM data quality and AI readiness assistant",
+        "task": "Explain detected BIM data quality issues, AI readiness risks, and human-review-oriented fix actions.",
+        "constraints": [
+          "Do not assume information that is not included in the context.",
+          "Do not claim that the model can be automatically fixed.",
+          "Use RuleId, Severity, FixGuide, QualityScore, FixPriority, and AIReadinessScore as the primary reference information.",
+          "Explain that final design or model correction decisions should be made by a human reviewer.",
+          "Treat Low AIReadinessLevel and HumanReviewRequired=True as indicators that the BIM data should be reviewed before AI or BI usage."
+        ]
+      }
+    },
+    {
+      "element": {
+        "element_id": "202",
+        "category": "Doors",
+        "family_name": "SD",
+        "type_name": "外部階段",
+        "level": "",
+        "source_file": "door_schedule_SD_export_test_v001.txt",
+        "model_name": "BIM_Quality_Check_Sample_Model_R2024_v001"
+      },
+      "quality_summary": {
+        "rule_violation_count": 4,
+        "missing_field_count": 3,
+        "high_violation_count": 3,
+        "medium_violation_count": 1,
+        "low_violation_count": 0,
+        "severity_score": 35,
+        "quality_score": 65,
+        "fix_priority": "High"
+      },
+      "ai_readiness": {
+        "ai_readiness_penalty_total": 60,
+        "ai_readiness_score": 40,
+        "ai_readiness_level": "Low",
+        "blocking_rule_ids": [
+          "R-001",
+          "R-002",
+          "R-003"
+        ],
+        "high_impact_rule_count": 3,
+        "medium_impact_rule_count": 1,
+        "human_review_required": true
+      },
+      "violations": [
+        {
+          "rule_id": "R-001",
+          "rule_name": "必須パラメータ未入力",
+          "severity": "High",
+          "parameter_name": "BIM_ModelRole",
+          "current_value": "",
+          "fix_guide": "該当要素に必要な BIM_ModelRole または BIM_Zone を入力する"
+        },
+        {
+          "rule_id": "R-001",
+          "rule_name": "必須パラメータ未入力",
+          "severity": "High",
+          "parameter_name": "BIM_Zone",
+          "current_value": "",
+          "fix_guide": "該当要素に必要な BIM_ModelRole または BIM_Zone を入力する"
+        },
+        {
+          "rule_id": "R-002",
+          "rule_name": "分類コード未入力",
+          "severity": "High",
+          "parameter_name": "BIM_ClassificationCode",
+          "current_value": "",
+          "fix_guide": "分類コード表に従い、BIM_ClassificationCode を入力する"
+        },
+        {
+          "rule_id": "R-003",
+          "rule_name": "ファミリ命名規則違反",
+          "severity": "Medium",
+          "parameter_name": "FamilyName",
+          "current_value": "SD",
+          "fix_guide": "命名規則に従い、カテゴリ・用途・識別情報が分かるファミリ名へ修正する"
+        }
+      ],
+      "ai_instruction": {
+        "role": "BIM data quality and AI readiness assistant",
+        "task": "Explain detected BIM data quality issues, AI readiness risks, and human-review-oriented fix actions.",
+        "constraints": [
+          "Do not assume information that is not included in the context.",
+          "Do not claim that the model can be automatically fixed.",
+          "Use RuleId, Severity, FixGuide, QualityScore, FixPriority, and AIReadinessScore as the primary reference information.",
+          "Explain that final design or model correction decisions should be made by a human reviewer.",
+          "Treat Low AIReadinessLevel and HumanReviewRequired=True as indicators that the BIM data should be reviewed before AI or BI usage."
+        ]
+      }
+    },
+    {
+      "element": {
+        "element_id": "203",
+        "category": "Doors",
+        "family_name": "SD",
+        "type_name": "設備バルコニー",
+        "level": "",
+        "source_file": "door_schedule_SD_export_test_v001.txt",
+        "model_name": "BIM_Quality_Check_Sample_Model_R2024_v001"
+      },
+      "quality_summary": {
+        "rule_violation_count": 4,
+        "missing_field_count": 3,
+        "high_violation_count": 3,
+        "medium_violation_count": 1,
+        "low_violation_count": 0,
+        "severity_score": 35,
+        "quality_score": 65,
+        "fix_priority": "High"
+      },
+      "ai_readiness": {
+        "ai_readiness_penalty_total": 60,
+        "ai_readiness_score": 40,
+        "ai_readiness_level": "Low",
+        "blocking_rule_ids": [
+          "R-001",
+          "R-002",
+          "R-003"
+        ],
+        "high_impact_rule_count": 3,
+        "medium_impact_rule_count": 1,
+        "human_review_required": true
+      },
+      "violations": [
+        {
+          "rule_id": "R-001",
+          "rule_name": "必須パラメータ未入力",
+          "severity": "High",
+          "parameter_name": "BIM_ModelRole",
+          "current_value": "",
+          "fix_guide": "該当要素に必要な BIM_ModelRole または BIM_Zone を入力する"
+        },
+        {
+          "rule_id": "R-001",
+          "rule_name": "必須パラメータ未入力",
+          "severity": "High",
+          "parameter_name": "BIM_Zone",
+          "current_value": "",
+          "fix_guide": "該当要素に必要な BIM_ModelRole または BIM_Zone を入力する"
+        },
+        {
+          "rule_id": "R-002",
+          "rule_name": "分類コード未入力",
+          "severity": "High",
+          "parameter_name": "BIM_ClassificationCode",
+          "current_value": "",
+          "fix_guide": "分類コード表に従い、BIM_ClassificationCode を入力する"
+        },
+        {
+          "rule_id": "R-003",
+          "rule_name": "ファミリ命名規則違反",
+          "severity": "Medium",
+          "parameter_name": "FamilyName",
+          "current_value": "SD",
+          "fix_guide": "命名規則に従い、カテゴリ・用途・識別情報が分かるファミリ名へ修正する"
+        }
+      ],
+      "ai_instruction": {
+        "role": "BIM data quality and AI readiness assistant",
+        "task": "Explain detected BIM data quality issues, AI readiness risks, and human-review-oriented fix actions.",
+        "constraints": [
+          "Do not assume information that is not included in the context.",
+          "Do not claim that the model can be automatically fixed.",
+          "Use RuleId, Severity, FixGuide, QualityScore, FixPriority, and AIReadinessScore as the primary reference information.",
+          "Explain that final design or model correction decisions should be made by a human reviewer.",
+          "Treat Low AIReadinessLevel and HumanReviewRequired=True as indicators that the BIM data should be reviewed before AI or BI usage."
+        ]
+      }
+    },
+    {
+      "element": {
+        "element_id": "204",
+        "category": "Doors",
+        "family_name": "SD",
+        "type_name": "階段室",
+        "level": "",
+        "source_file": "door_schedule_SD_export_test_v001.txt",
+        "model_name": "BIM_Quality_Check_Sample_Model_R2024_v001"
+      },
+      "quality_summary": {
+        "rule_violation_count": 4,
+        "missing_field_count": 3,
+        "high_violation_count": 3,
+        "medium_violation_count": 1,
+        "low_violation_count": 0,
+        "severity_score": 35,
+        "quality_score": 65,
+        "fix_priority": "High"
+      },
+      "ai_readiness": {
+        "ai_readiness_penalty_total": 60,
+        "ai_readiness_score": 40,
+        "ai_readiness_level": "Low",
+        "blocking_rule_ids": [
+          "R-001",
+          "R-002",
+          "R-003"
+        ],
+        "high_impact_rule_count": 3,
+        "medium_impact_rule_count": 1,
+        "human_review_required": true
+      },
+      "violations": [
+        {
+          "rule_id": "R-001",
+          "rule_name": "必須パラメータ未入力",
+          "severity": "High",
+          "parameter_name": "BIM_ModelRole",
+          "current_value": "",
+          "fix_guide": "該当要素に必要な BIM_ModelRole または BIM_Zone を入力する"
+        },
+        {
+          "rule_id": "R-001",
+          "rule_name": "必須パラメータ未入力",
+          "severity": "High",
+          "parameter_name": "BIM_Zone",
+          "current_value": "",
+          "fix_guide": "該当要素に必要な BIM_ModelRole または BIM_Zone を入力する"
+        },
+        {
+          "rule_id": "R-002",
+          "rule_name": "分類コード未入力",
+          "severity": "High",
+          "parameter_name": "BIM_ClassificationCode",
+          "current_value": "",
+          "fix_guide": "分類コード表に従い、BIM_ClassificationCode を入力する"
+        },
+        {
+          "rule_id": "R-003",
+          "rule_name": "ファミリ命名規則違反",
+          "severity": "Medium",
+          "parameter_name": "FamilyName",
+          "current_value": "SD",
+          "fix_guide": "命名規則に従い、カテゴリ・用途・識別情報が分かるファミリ名へ修正する"
+        }
+      ],
+      "ai_instruction": {
+        "role": "BIM data quality and AI readiness assistant",
+        "task": "Explain detected BIM data quality issues, AI readiness risks, and human-review-oriented fix actions.",
+        "constraints": [
+          "Do not assume information that is not included in the context.",
+          "Do not claim that the model can be automatically fixed.",
+          "Use RuleId, Severity, FixGuide, QualityScore, FixPriority, and AIReadinessScore as the primary reference information.",
+          "Explain that final design or model correction decisions should be made by a human reviewer.",
+          "Treat Low AIReadinessLevel and HumanReviewRequired=True as indicators that the BIM data should be reviewed before AI or BI usage."
+        ]
+      }
+    },
+    {
+      "element": {
+        "element_id": "205",
+        "category": "Doors",
+        "family_name": "SD",
+        "type_name": "EPS",
+        "level": "",
+        "source_file": "door_schedule_SD_export_test_v001.txt",
+        "model_name": "BIM_Quality_Check_Sample_Model_R2024_v001"
+      },
+      "quality_summary": {
+        "rule_violation_count": 4,
+        "missing_field_count": 3,
+        "high_violation_count": 3,
+        "medium_violation_count": 1,
+        "low_violation_count": 0,
+        "severity_score": 35,
+        "quality_score": 65,
+        "fix_priority": "High"
+      },
+      "ai_readiness": {
+        "ai_readiness_penalty_total": 60,
+        "ai_readiness_score": 40,
+        "ai_readiness_level": "Low",
+        "blocking_rule_ids": [
+          "R-001",
+          "R-002",
+          "R-003"
+        ],
+        "high_impact_rule_count": 3,
+        "medium_impact_rule_count": 1,
+        "human_review_required": true
+      },
+      "violations": [
+        {
+          "rule_id": "R-001",
+          "rule_name": "必須パラメータ未入力",
+          "severity": "High",
+          "parameter_name": "BIM_ModelRole",
+          "current_value": "",
+          "fix_guide": "該当要素に必要な BIM_ModelRole または BIM_Zone を入力する"
+        },
+        {
+          "rule_id": "R-001",
+          "rule_name": "必須パラメータ未入力",
+          "severity": "High",
+          "parameter_name": "BIM_Zone",
+          "current_value": "",
+          "fix_guide": "該当要素に必要な BIM_ModelRole または BIM_Zone を入力する"
+        },
+        {
+          "rule_id": "R-002",
+          "rule_name": "分類コード未入力",
+          "severity": "High",
+          "parameter_name": "BIM_ClassificationCode",
+          "current_value": "",
+          "fix_guide": "分類コード表に従い、BIM_ClassificationCode を入力する"
+        },
+        {
+          "rule_id": "R-003",
+          "rule_name": "ファミリ命名規則違反",
+          "severity": "Medium",
+          "parameter_name": "FamilyName",
+          "current_value": "SD",
+          "fix_guide": "命名規則に従い、カテゴリ・用途・識別情報が分かるファミリ名へ修正する"
+        }
+      ],
+      "ai_instruction": {
+        "role": "BIM data quality and AI readiness assistant",
+        "task": "Explain detected BIM data quality issues, AI readiness risks, and human-review-oriented fix actions.",
+        "constraints": [
+          "Do not assume information that is not included in the context.",
+          "Do not claim that the model can be automatically fixed.",
+          "Use RuleId, Severity, FixGuide, QualityScore, FixPriority, and AIReadinessScore as the primary reference information.",
+          "Explain that final design or model correction decisions should be made by a human reviewer.",
+          "Treat Low AIReadinessLevel and HumanReviewRequired=True as indicators that the BIM data should be reviewed before AI or BI usage."
+        ]
+      }
+    },
+    {
+      "element": {
+        "element_id": "206",
+        "category": "Doors",
+        "family_name": "SD",
+        "type_name": "EPS",
+        "level": "",
+        "source_file": "door_schedule_SD_export_test_v001.txt",
+        "model_name": "BIM_Quality_Check_Sample_Model_R2024_v001"
+      },
+      "quality_summary": {
+        "rule_violation_count": 4,
+        "missing_field_count": 3,
+        "high_violation_count": 3,
+        "medium_violation_count": 1,
+        "low_violation_count": 0,
+        "severity_score": 35,
+        "quality_score": 65,
+        "fix_priority": "High"
+      },
+      "ai_readiness": {
+        "ai_readiness_penalty_total": 60,
+        "ai_readiness_score": 40,
+        "ai_readiness_level": "Low",
+        "blocking_rule_ids": [
+          "R-001",
+          "R-002",
+          "R-003"
+        ],
+        "high_impact_rule_count": 3,
+        "medium_impact_rule_count": 1,
+        "human_review_required": true
+      },
+      "violations": [
+        {
+          "rule_id": "R-001",
+          "rule_name": "必須パラメータ未入力",
+          "severity": "High",
+          "parameter_name": "BIM_ModelRole",
+          "current_value": "",
+          "fix_guide": "該当要素に必要な BIM_ModelRole または BIM_Zone を入力する"
+        },
+        {
+          "rule_id": "R-001",
+          "rule_name": "必須パラメータ未入力",
+          "severity": "High",
+          "parameter_name": "BIM_Zone",
+          "current_value": "",
+          "fix_guide": "該当要素に必要な BIM_ModelRole または BIM_Zone を入力する"
+        },
+        {
+          "rule_id": "R-002",
+          "rule_name": "分類コード未入力",
+          "severity": "High",
+          "parameter_name": "BIM_ClassificationCode",
+          "current_value": "",
+          "fix_guide": "分類コード表に従い、BIM_ClassificationCode を入力する"
+        },
+        {
+          "rule_id": "R-003",
+          "rule_name": "ファミリ命名規則違反",
+          "severity": "Medium",
+          "parameter_name": "FamilyName",
+          "current_value": "SD",
+          "fix_guide": "命名規則に従い、カテゴリ・用途・識別情報が分かるファミリ名へ修正する"
+        }
+      ],
+      "ai_instruction": {
+        "role": "BIM data quality and AI readiness assistant",
+        "task": "Explain detected BIM data quality issues, AI readiness risks, and human-review-oriented fix actions.",
+        "constraints": [
+          "Do not assume information that is not included in the context.",
+          "Do not claim that the model can be automatically fixed.",
+          "Use RuleId, Severity, FixGuide, QualityScore, FixPriority, and AIReadinessScore as the primary reference information.",
+          "Explain that final design or model correction decisions should be made by a human reviewer.",
+          "Treat Low AIReadinessLevel and HumanReviewRequired=True as indicators that the BIM data should be reviewed before AI or BI usage."
+        ]
+      }
+    },
+    {
+      "element": {
+        "element_id": "207",
+        "category": "Doors",
+        "family_name": "SD",
+        "type_name": "PS",
+        "level": "",
+        "source_file": "door_schedule_SD_export_test_v001.txt",
+        "model_name": "BIM_Quality_Check_Sample_Model_R2024_v001"
+      },
+      "quality_summary": {
+        "rule_violation_count": 4,
+        "missing_field_count": 3,
+        "high_violation_count": 3,
+        "medium_violation_count": 1,
+        "low_violation_count": 0,
+        "severity_score": 35,
+        "quality_score": 65,
+        "fix_priority": "High"
+      },
+      "ai_readiness": {
+        "ai_readiness_penalty_total": 60,
+        "ai_readiness_score": 40,
+        "ai_readiness_level": "Low",
+        "blocking_rule_ids": [
+          "R-001",
+          "R-002",
+          "R-003"
+        ],
+        "high_impact_rule_count": 3,
+        "medium_impact_rule_count": 1,
+        "human_review_required": true
+      },
+      "violations": [
+        {
+          "rule_id": "R-001",
+          "rule_name": "必須パラメータ未入力",
+          "severity": "High",
+          "parameter_name": "BIM_ModelRole",
+          "current_value": "",
+          "fix_guide": "該当要素に必要な BIM_ModelRole または BIM_Zone を入力する"
+        },
+        {
+          "rule_id": "R-001",
+          "rule_name": "必須パラメータ未入力",
+          "severity": "High",
+          "parameter_name": "BIM_Zone",
+          "current_value": "",
+          "fix_guide": "該当要素に必要な BIM_ModelRole または BIM_Zone を入力する"
+        },
+        {
+          "rule_id": "R-002",
+          "rule_name": "分類コード未入力",
+          "severity": "High",
+          "parameter_name": "BIM_ClassificationCode",
+          "current_value": "",
+          "fix_guide": "分類コード表に従い、BIM_ClassificationCode を入力する"
+        },
+        {
+          "rule_id": "R-003",
+          "rule_name": "ファミリ命名規則違反",
+          "severity": "Medium",
+          "parameter_name": "FamilyName",
+          "current_value": "SD",
+          "fix_guide": "命名規則に従い、カテゴリ・用途・識別情報が分かるファミリ名へ修正する"
+        }
+      ],
+      "ai_instruction": {
+        "role": "BIM data quality and AI readiness assistant",
+        "task": "Explain detected BIM data quality issues, AI readiness risks, and human-review-oriented fix actions.",
+        "constraints": [
+          "Do not assume information that is not included in the context.",
+          "Do not claim that the model can be automatically fixed.",
+          "Use RuleId, Severity, FixGuide, QualityScore, FixPriority, and AIReadinessScore as the primary reference information.",
+          "Explain that final design or model correction decisions should be made by a human reviewer.",
+          "Treat Low AIReadinessLevel and HumanReviewRequired=True as indicators that the BIM data should be reviewed before AI or BI usage."
+        ]
+      }
+    },
+    {
+      "element": {
+        "element_id": "208",
+        "category": "Doors",
+        "family_name": "SD",
+        "type_name": "PS",
+        "level": "",
+        "source_file": "door_schedule_SD_export_test_v001.txt",
+        "model_name": "BIM_Quality_Check_Sample_Model_R2024_v001"
+      },
+      "quality_summary": {
+        "rule_violation_count": 4,
+        "missing_field_count": 3,
+        "high_violation_count": 3,
+        "medium_violation_count": 1,
+        "low_violation_count": 0,
+        "severity_score": 35,
+        "quality_score": 65,
+        "fix_priority": "High"
+      },
+      "ai_readiness": {
+        "ai_readiness_penalty_total": 60,
+        "ai_readiness_score": 40,
+        "ai_readiness_level": "Low",
+        "blocking_rule_ids": [
+          "R-001",
+          "R-002",
+          "R-003"
+        ],
+        "high_impact_rule_count": 3,
+        "medium_impact_rule_count": 1,
+        "human_review_required": true
+      },
+      "violations": [
+        {
+          "rule_id": "R-001",
+          "rule_name": "必須パラメータ未入力",
+          "severity": "High",
+          "parameter_name": "BIM_ModelRole",
+          "current_value": "",
+          "fix_guide": "該当要素に必要な BIM_ModelRole または BIM_Zone を入力する"
+        },
+        {
+          "rule_id": "R-001",
+          "rule_name": "必須パラメータ未入力",
+          "severity": "High",
+          "parameter_name": "BIM_Zone",
+          "current_value": "",
+          "fix_guide": "該当要素に必要な BIM_ModelRole または BIM_Zone を入力する"
+        },
+        {
+          "rule_id": "R-002",
+          "rule_name": "分類コード未入力",
+          "severity": "High",
+          "parameter_name": "BIM_ClassificationCode",
+          "current_value": "",
+          "fix_guide": "分類コード表に従い、BIM_ClassificationCode を入力する"
+        },
+        {
+          "rule_id": "R-003",
+          "rule_name": "ファミリ命名規則違反",
+          "severity": "Medium",
+          "parameter_name": "FamilyName",
+          "current_value": "SD",
+          "fix_guide": "命名規則に従い、カテゴリ・用途・識別情報が分かるファミリ名へ修正する"
+        }
+      ],
+      "ai_instruction": {
+        "role": "BIM data quality and AI readiness assistant",
+        "task": "Explain detected BIM data quality issues, AI readiness risks, and human-review-oriented fix actions.",
+        "constraints": [
+          "Do not assume information that is not included in the context.",
+          "Do not claim that the model can be automatically fixed.",
+          "Use RuleId, Severity, FixGuide, QualityScore, FixPriority, and AIReadinessScore as the primary reference information.",
+          "Explain that final design or model correction decisions should be made by a human reviewer.",
+          "Treat Low AIReadinessLevel and HumanReviewRequired=True as indicators that the BIM data should be reviewed before AI or BI usage."
+        ]
+      }
+    },
+    {
+      "element": {
+        "element_id": "209",
+        "category": "Doors",
+        "family_name": "SD",
+        "type_name": "PS",
+        "level": "",
+        "source_file": "door_schedule_SD_export_test_v001.txt",
+        "model_name": "BIM_Quality_Check_Sample_Model_R2024_v001"
+      },
+      "quality_summary": {
+        "rule_violation_count": 4,
+        "missing_field_count": 3,
+        "high_violation_count": 3,
+        "medium_violation_count": 1,
+        "low_violation_count": 0,
+        "severity_score": 35,
+        "quality_score": 65,
+        "fix_priority": "High"
+      },
+      "ai_readiness": {
+        "ai_readiness_penalty_total": 60,
+        "ai_readiness_score": 40,
+        "ai_readiness_level": "Low",
+        "blocking_rule_ids": [
+          "R-001",
+          "R-002",
+          "R-003"
+        ],
+        "high_impact_rule_count": 3,
+        "medium_impact_rule_count": 1,
+        "human_review_required": true
+      },
+      "violations": [
+        {
+          "rule_id": "R-001",
+          "rule_name": "必須パラメータ未入力",
+          "severity": "High",
+          "parameter_name": "BIM_ModelRole",
+          "current_value": "",
+          "fix_guide": "該当要素に必要な BIM_ModelRole または BIM_Zone を入力する"
+        },
+        {
+          "rule_id": "R-001",
+          "rule_name": "必須パラメータ未入力",
+          "severity": "High",
+          "parameter_name": "BIM_Zone",
+          "current_value": "",
+          "fix_guide": "該当要素に必要な BIM_ModelRole または BIM_Zone を入力する"
+        },
+        {
+          "rule_id": "R-002",
+          "rule_name": "分類コード未入力",
+          "severity": "High",
+          "parameter_name": "BIM_ClassificationCode",
+          "current_value": "",
+          "fix_guide": "分類コード表に従い、BIM_ClassificationCode を入力する"
+        },
+        {
+          "rule_id": "R-003",
+          "rule_name": "ファミリ命名規則違反",
+          "severity": "Medium",
+          "parameter_name": "FamilyName",
+          "current_value": "SD",
+          "fix_guide": "命名規則に従い、カテゴリ・用途・識別情報が分かるファミリ名へ修正する"
+        }
+      ],
+      "ai_instruction": {
+        "role": "BIM data quality and AI readiness assistant",
+        "task": "Explain detected BIM data quality issues, AI readiness risks, and human-review-oriented fix actions.",
+        "constraints": [
+          "Do not assume information that is not included in the context.",
+          "Do not claim that the model can be automatically fixed.",
+          "Use RuleId, Severity, FixGuide, QualityScore, FixPriority, and AIReadinessScore as the primary reference information.",
+          "Explain that final design or model correction decisions should be made by a human reviewer.",
+          "Treat Low AIReadinessLevel and HumanReviewRequired=True as indicators that the BIM data should be reviewed before AI or BI usage."
+        ]
+      }
+    },
+    {
+      "element": {
+        "element_id": "210",
+        "category": "Doors",
+        "family_name": "SD",
+        "type_name": "PS",
+        "level": "",
+        "source_file": "door_schedule_SD_export_test_v001.txt",
+        "model_name": "BIM_Quality_Check_Sample_Model_R2024_v001"
+      },
+      "quality_summary": {
+        "rule_violation_count": 4,
+        "missing_field_count": 3,
+        "high_violation_count": 3,
+        "medium_violation_count": 1,
+        "low_violation_count": 0,
+        "severity_score": 35,
+        "quality_score": 65,
+        "fix_priority": "High"
+      },
+      "ai_readiness": {
+        "ai_readiness_penalty_total": 60,
+        "ai_readiness_score": 40,
+        "ai_readiness_level": "Low",
+        "blocking_rule_ids": [
+          "R-001",
+          "R-002",
+          "R-003"
+        ],
+        "high_impact_rule_count": 3,
+        "medium_impact_rule_count": 1,
+        "human_review_required": true
+      },
+      "violations": [
+        {
+          "rule_id": "R-001",
+          "rule_name": "必須パラメータ未入力",
+          "severity": "High",
+          "parameter_name": "BIM_ModelRole",
+          "current_value": "",
+          "fix_guide": "該当要素に必要な BIM_ModelRole または BIM_Zone を入力する"
+        },
+        {
+          "rule_id": "R-001",
+          "rule_name": "必須パラメータ未入力",
+          "severity": "High",
+          "parameter_name": "BIM_Zone",
+          "current_value": "",
+          "fix_guide": "該当要素に必要な BIM_ModelRole または BIM_Zone を入力する"
+        },
+        {
+          "rule_id": "R-002",
+          "rule_name": "分類コード未入力",
+          "severity": "High",
+          "parameter_name": "BIM_ClassificationCode",
+          "current_value": "",
+          "fix_guide": "分類コード表に従い、BIM_ClassificationCode を入力する"
+        },
+        {
+          "rule_id": "R-003",
+          "rule_name": "ファミリ命名規則違反",
+          "severity": "Medium",
+          "parameter_name": "FamilyName",
+          "current_value": "SD",
+          "fix_guide": "命名規則に従い、カテゴリ・用途・識別情報が分かるファミリ名へ修正する"
+        }
+      ],
+      "ai_instruction": {
+        "role": "BIM data quality and AI readiness assistant",
+        "task": "Explain detected BIM data quality issues, AI readiness risks, and human-review-oriented fix actions.",
+        "constraints": [
+          "Do not assume information that is not included in the context.",
+          "Do not claim that the model can be automatically fixed.",
+          "Use RuleId, Severity, FixGuide, QualityScore, FixPriority, and AIReadinessScore as the primary reference information.",
+          "Explain that final design or model correction decisions should be made by a human reviewer.",
+          "Treat Low AIReadinessLevel and HumanReviewRequired=True as indicators that the BIM data should be reviewed before AI or BI usage."
+        ]
+      }
+    },
+    {
+      "element": {
+        "element_id": "211",
+        "category": "Doors",
+        "family_name": "SD",
+        "type_name": "DS",
+        "level": "",
+        "source_file": "door_schedule_SD_export_test_v001.txt",
+        "model_name": "BIM_Quality_Check_Sample_Model_R2024_v001"
+      },
+      "quality_summary": {
+        "rule_violation_count": 4,
+        "missing_field_count": 3,
+        "high_violation_count": 3,
+        "medium_violation_count": 1,
+        "low_violation_count": 0,
+        "severity_score": 35,
+        "quality_score": 65,
+        "fix_priority": "High"
+      },
+      "ai_readiness": {
+        "ai_readiness_penalty_total": 60,
+        "ai_readiness_score": 40,
+        "ai_readiness_level": "Low",
+        "blocking_rule_ids": [
+          "R-001",
+          "R-002",
+          "R-003"
+        ],
+        "high_impact_rule_count": 3,
+        "medium_impact_rule_count": 1,
+        "human_review_required": true
+      },
+      "violations": [
+        {
+          "rule_id": "R-001",
+          "rule_name": "必須パラメータ未入力",
+          "severity": "High",
+          "parameter_name": "BIM_ModelRole",
+          "current_value": "",
+          "fix_guide": "該当要素に必要な BIM_ModelRole または BIM_Zone を入力する"
+        },
+        {
+          "rule_id": "R-001",
+          "rule_name": "必須パラメータ未入力",
+          "severity": "High",
+          "parameter_name": "BIM_Zone",
+          "current_value": "",
+          "fix_guide": "該当要素に必要な BIM_ModelRole または BIM_Zone を入力する"
+        },
+        {
+          "rule_id": "R-002",
+          "rule_name": "分類コード未入力",
+          "severity": "High",
+          "parameter_name": "BIM_ClassificationCode",
+          "current_value": "",
+          "fix_guide": "分類コード表に従い、BIM_ClassificationCode を入力する"
+        },
+        {
+          "rule_id": "R-003",
+          "rule_name": "ファミリ命名規則違反",
+          "severity": "Medium",
+          "parameter_name": "FamilyName",
+          "current_value": "SD",
+          "fix_guide": "命名規則に従い、カテゴリ・用途・識別情報が分かるファミリ名へ修正する"
+        }
+      ],
+      "ai_instruction": {
+        "role": "BIM data quality and AI readiness assistant",
+        "task": "Explain detected BIM data quality issues, AI readiness risks, and human-review-oriented fix actions.",
+        "constraints": [
+          "Do not assume information that is not included in the context.",
+          "Do not claim that the model can be automatically fixed.",
+          "Use RuleId, Severity, FixGuide, QualityScore, FixPriority, and AIReadinessScore as the primary reference information.",
+          "Explain that final design or model correction decisions should be made by a human reviewer.",
+          "Treat Low AIReadinessLevel and HumanReviewRequired=True as indicators that the BIM data should be reviewed before AI or BI usage."
+        ]
+      }
+    },
+    {
+      "element": {
+        "element_id": "301",
+        "category": "Doors",
+        "family_name": "SD",
+        "type_name": "はと小屋",
+        "level": "",
+        "source_file": "door_schedule_SD_export_test_v001.txt",
+        "model_name": "BIM_Quality_Check_Sample_Model_R2024_v001"
+      },
+      "quality_summary": {
+        "rule_violation_count": 4,
+        "missing_field_count": 3,
+        "high_violation_count": 3,
+        "medium_violation_count": 1,
+        "low_violation_count": 0,
+        "severity_score": 35,
+        "quality_score": 65,
+        "fix_priority": "High"
+      },
+      "ai_readiness": {
+        "ai_readiness_penalty_total": 60,
+        "ai_readiness_score": 40,
+        "ai_readiness_level": "Low",
+        "blocking_rule_ids": [
+          "R-001",
+          "R-002",
+          "R-003"
+        ],
+        "high_impact_rule_count": 3,
+        "medium_impact_rule_count": 1,
+        "human_review_required": true
+      },
+      "violations": [
+        {
+          "rule_id": "R-001",
+          "rule_name": "必須パラメータ未入力",
+          "severity": "High",
+          "parameter_name": "BIM_ModelRole",
+          "current_value": "",
+          "fix_guide": "該当要素に必要な BIM_ModelRole または BIM_Zone を入力する"
+        },
+        {
+          "rule_id": "R-001",
+          "rule_name": "必須パラメータ未入力",
+          "severity": "High",
+          "parameter_name": "BIM_Zone",
+          "current_value": "",
+          "fix_guide": "該当要素に必要な BIM_ModelRole または BIM_Zone を入力する"
+        },
+        {
+          "rule_id": "R-002",
+          "rule_name": "分類コード未入力",
+          "severity": "High",
+          "parameter_name": "BIM_ClassificationCode",
+          "current_value": "",
+          "fix_guide": "分類コード表に従い、BIM_ClassificationCode を入力する"
+        },
+        {
+          "rule_id": "R-003",
+          "rule_name": "ファミリ命名規則違反",
+          "severity": "Medium",
+          "parameter_name": "FamilyName",
+          "current_value": "SD",
+          "fix_guide": "命名規則に従い、カテゴリ・用途・識別情報が分かるファミリ名へ修正する"
+        }
+      ],
+      "ai_instruction": {
+        "role": "BIM data quality and AI readiness assistant",
+        "task": "Explain detected BIM data quality issues, AI readiness risks, and human-review-oriented fix actions.",
+        "constraints": [
+          "Do not assume information that is not included in the context.",
+          "Do not claim that the model can be automatically fixed.",
+          "Use RuleId, Severity, FixGuide, QualityScore, FixPriority, and AIReadinessScore as the primary reference information.",
+          "Explain that final design or model correction decisions should be made by a human reviewer.",
+          "Treat Low AIReadinessLevel and HumanReviewRequired=True as indicators that the BIM data should be reviewed before AI or BI usage."
+        ]
+      }
+    },
+    {
+      "element": {
+        "element_id": "401",
+        "category": "Doors",
+        "family_name": "SD",
+        "type_name": "門扉南",
+        "level": "",
+        "source_file": "door_schedule_SD_export_test_v001.txt",
+        "model_name": "BIM_Quality_Check_Sample_Model_R2024_v001"
+      },
+      "quality_summary": {
+        "rule_violation_count": 4,
+        "missing_field_count": 3,
+        "high_violation_count": 3,
+        "medium_violation_count": 1,
+        "low_violation_count": 0,
+        "severity_score": 35,
+        "quality_score": 65,
+        "fix_priority": "High"
+      },
+      "ai_readiness": {
+        "ai_readiness_penalty_total": 60,
+        "ai_readiness_score": 40,
+        "ai_readiness_level": "Low",
+        "blocking_rule_ids": [
+          "R-001",
+          "R-002",
+          "R-003"
+        ],
+        "high_impact_rule_count": 3,
+        "medium_impact_rule_count": 1,
+        "human_review_required": true
+      },
+      "violations": [
+        {
+          "rule_id": "R-001",
+          "rule_name": "必須パラメータ未入力",
+          "severity": "High",
+          "parameter_name": "BIM_ModelRole",
+          "current_value": "",
+          "fix_guide": "該当要素に必要な BIM_ModelRole または BIM_Zone を入力する"
+        },
+        {
+          "rule_id": "R-001",
+          "rule_name": "必須パラメータ未入力",
+          "severity": "High",
+          "parameter_name": "BIM_Zone",
+          "current_value": "",
+          "fix_guide": "該当要素に必要な BIM_ModelRole または BIM_Zone を入力する"
+        },
+        {
+          "rule_id": "R-002",
+          "rule_name": "分類コード未入力",
+          "severity": "High",
+          "parameter_name": "BIM_ClassificationCode",
+          "current_value": "",
+          "fix_guide": "分類コード表に従い、BIM_ClassificationCode を入力する"
+        },
+        {
+          "rule_id": "R-003",
+          "rule_name": "ファミリ命名規則違反",
+          "severity": "Medium",
+          "parameter_name": "FamilyName",
+          "current_value": "SD",
+          "fix_guide": "命名規則に従い、カテゴリ・用途・識別情報が分かるファミリ名へ修正する"
+        }
+      ],
+      "ai_instruction": {
+        "role": "BIM data quality and AI readiness assistant",
+        "task": "Explain detected BIM data quality issues, AI readiness risks, and human-review-oriented fix actions.",
+        "constraints": [
+          "Do not assume information that is not included in the context.",
+          "Do not claim that the model can be automatically fixed.",
+          "Use RuleId, Severity, FixGuide, QualityScore, FixPriority, and AIReadinessScore as the primary reference information.",
+          "Explain that final design or model correction decisions should be made by a human reviewer.",
+          "Treat Low AIReadinessLevel and HumanReviewRequired=True as indicators that the BIM data should be reviewed before AI or BI usage."
+        ]
+      }
+    },
+    {
+      "element": {
+        "element_id": "402",
+        "category": "Doors",
+        "family_name": "SD",
+        "type_name": "門扉西",
+        "level": "",
+        "source_file": "door_schedule_SD_export_test_v001.txt",
+        "model_name": "BIM_Quality_Check_Sample_Model_R2024_v001"
+      },
+      "quality_summary": {
+        "rule_violation_count": 4,
+        "missing_field_count": 3,
+        "high_violation_count": 3,
+        "medium_violation_count": 1,
+        "low_violation_count": 0,
+        "severity_score": 35,
+        "quality_score": 65,
+        "fix_priority": "High"
+      },
+      "ai_readiness": {
+        "ai_readiness_penalty_total": 60,
+        "ai_readiness_score": 40,
+        "ai_readiness_level": "Low",
+        "blocking_rule_ids": [
+          "R-001",
+          "R-002",
+          "R-003"
+        ],
+        "high_impact_rule_count": 3,
+        "medium_impact_rule_count": 1,
+        "human_review_required": true
+      },
+      "violations": [
+        {
+          "rule_id": "R-001",
+          "rule_name": "必須パラメータ未入力",
+          "severity": "High",
+          "parameter_name": "BIM_ModelRole",
+          "current_value": "",
+          "fix_guide": "該当要素に必要な BIM_ModelRole または BIM_Zone を入力する"
+        },
+        {
+          "rule_id": "R-001",
+          "rule_name": "必須パラメータ未入力",
+          "severity": "High",
+          "parameter_name": "BIM_Zone",
+          "current_value": "",
+          "fix_guide": "該当要素に必要な BIM_ModelRole または BIM_Zone を入力する"
+        },
+        {
+          "rule_id": "R-002",
+          "rule_name": "分類コード未入力",
+          "severity": "High",
+          "parameter_name": "BIM_ClassificationCode",
+          "current_value": "",
+          "fix_guide": "分類コード表に従い、BIM_ClassificationCode を入力する"
+        },
+        {
+          "rule_id": "R-003",
+          "rule_name": "ファミリ命名規則違反",
+          "severity": "Medium",
+          "parameter_name": "FamilyName",
+          "current_value": "SD",
+          "fix_guide": "命名規則に従い、カテゴリ・用途・識別情報が分かるファミリ名へ修正する"
+        }
+      ],
+      "ai_instruction": {
+        "role": "BIM data quality and AI readiness assistant",
+        "task": "Explain detected BIM data quality issues, AI readiness risks, and human-review-oriented fix actions.",
+        "constraints": [
+          "Do not assume information that is not included in the context.",
+          "Do not claim that the model can be automatically fixed.",
+          "Use RuleId, Severity, FixGuide, QualityScore, FixPriority, and AIReadinessScore as the primary reference information.",
+          "Explain that final design or model correction decisions should be made by a human reviewer.",
+          "Treat Low AIReadinessLevel and HumanReviewRequired=True as indicators that the BIM data should be reviewed before AI or BI usage."
+        ]
+      }
+    }
+  ]
+}

@@ -1,0 +1,4 @@
+RuleId,RuleName,Category,Severity,TargetField,CheckLogic,BusinessImpact,AIUseImpact,FixGuide,Reference,AIReadinessImpact,AIReadinessPenalty
+R-001,必須パラメータ未入力,Parameter Completeness,High,RequiredFields,必須項目が空欄の場合に違反とする,必須情報が不足し集計や確認作業に支障が出る,AIに渡す属性情報が不足し回答や分類の信頼性が下がる,対象要素の必須パラメータを確認し不足項目を入力する,PoC Rule,High,15
+R-002,分類コード未入力,Classification,High,BIM_ClassificationCode,分類コードが空欄の場合に違反とする,分類別の集計や検索ができずデータ活用しにくくなる,分類検索やRAGでの検索精度が低下しAI活用の前提が弱くなる,社内BIM標準または分類体系に基づき分類コードを入力する,PoC Rule,High,20
+R-003,ファミリ命名規則違反,Naming Rule,Medium,FamilyName,ファミリ名が命名規則に合わない場合に違反とする,命名のばらつきにより管理や検索が難しくなる,名称ベースの分類や検索の信頼性が下がる,命名規則に従ってファミリ名または管理名称を修正する,PoC Rule,Medium,10

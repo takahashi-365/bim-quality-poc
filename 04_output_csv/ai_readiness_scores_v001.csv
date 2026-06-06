@@ -1,0 +1,26 @@
+﻿ElementId,Category,RuleViolationCount,AIReadinessPenaltyTotal,AIReadinessScore,AIReadinessLevel,BlockingRuleIds,HighImpactRuleCount,MediumImpactRuleCount,HumanReviewRequired
+101,Doors,4,60,40,Low,"R-001, R-002, R-003",3,1,True
+102,Doors,4,60,40,Low,"R-001, R-002, R-003",3,1,True
+103,Doors,4,60,40,Low,"R-001, R-002, R-003",3,1,True
+104,Doors,4,60,40,Low,"R-001, R-002, R-003",3,1,True
+105,Doors,4,60,40,Low,"R-001, R-002, R-003",3,1,True
+106,Doors,4,60,40,Low,"R-001, R-002, R-003",3,1,True
+107,Doors,4,60,40,Low,"R-001, R-002, R-003",3,1,True
+108,Doors,4,60,40,Low,"R-001, R-002, R-003",3,1,True
+109,Doors,4,60,40,Low,"R-001, R-002, R-003",3,1,True
+110,Doors,4,60,40,Low,"R-001, R-002, R-003",3,1,True
+111,Doors,4,60,40,Low,"R-001, R-002, R-003",3,1,True
+201,Doors,4,60,40,Low,"R-001, R-002, R-003",3,1,True
+202,Doors,4,60,40,Low,"R-001, R-002, R-003",3,1,True
+203,Doors,4,60,40,Low,"R-001, R-002, R-003",3,1,True
+204,Doors,4,60,40,Low,"R-001, R-002, R-003",3,1,True
+205,Doors,4,60,40,Low,"R-001, R-002, R-003",3,1,True
+206,Doors,4,60,40,Low,"R-001, R-002, R-003",3,1,True
+207,Doors,4,60,40,Low,"R-001, R-002, R-003",3,1,True
+208,Doors,4,60,40,Low,"R-001, R-002, R-003",3,1,True
+209,Doors,4,60,40,Low,"R-001, R-002, R-003",3,1,True
+210,Doors,4,60,40,Low,"R-001, R-002, R-003",3,1,True
+211,Doors,4,60,40,Low,"R-001, R-002, R-003",3,1,True
+301,Doors,4,60,40,Low,"R-001, R-002, R-003",3,1,True
+401,Doors,4,60,40,Low,"R-001, R-002, R-003",3,1,True
+402,Doors,4,60,40,Low,"R-001, R-002, R-003",3,1,True
