@@ -327,8 +327,6 @@ bim_quality_poc/
 │   ├── door_schedule_SD_export_test_v001.txt
 │   └── door_schedule_converted_v002.csv
 ├── 04_output_csv/
-│   ├── ai_context_v001.json
-│   ├── ai_context_v001.md
 │   ├── ai_context_v002.json
 │   ├── ai_context_v002.md
 │   ├── ai_readiness_scores_v001.csv
@@ -1083,8 +1081,6 @@ tests/test_quality_rules.py：5件 passed
 04_output_csv/fix_priority_confusion_matrix_v001.csv
 04_output_csv/fix_priority_predictions_v001.csv
 04_output_csv/ai_readiness_scores_v001.csv
-04_output_csv/ai_context_v001.json
-04_output_csv/ai_context_v001.md
 04_output_csv/ai_context_v002.json
 04_output_csv/ai_context_v002.md
 04_output_csv/fix_guides_v001.md
