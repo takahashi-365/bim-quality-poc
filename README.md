@@ -345,7 +345,7 @@ bim_quality_poc/
 ├── 05_powerbi/
 │   └── README.md
 ├── 07_portfolio/
-│   ├── bim_quality_poc_portfolio_v002.pdf
+│   ├── bim_quality_poc_portfolio_v003.pdf
 │   └── screenshots/
 │       ├── powerbi_dashboard_v001.png
 │       ├── revit_sample_model_3d_view.png
@@ -1088,7 +1088,7 @@ tests/test_quality_rules.py：5件 passed
 04_output_csv/ai_context_v002.json
 04_output_csv/ai_context_v002.md
 04_output_csv/fix_guides_v001.md
-07_portfolio/bim_quality_poc_portfolio_v002.pdf
+07_portfolio/bim_quality_poc_portfolio_v003.pdf
 07_portfolio/screenshots/powerbi_dashboard_v001.png
 07_portfolio/screenshots/revit_sample_model_3d_view.png
 07_portfolio/screenshots/revit_door_schedule_view.png
