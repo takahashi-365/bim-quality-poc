@@ -109,3 +109,14 @@ docs/streamlit_app_design.md
 07_portfolio/bim_quality_poc_portfolio_v003.md
 07_portfolio/bim_quality_poc_portfolio_v003_draft.md
 07_portfolio/screenshots/streamlit_element_detail_v001.png
+
+# Local LLM / model files / local cache
+.env
+.cache/
+models/
+ollama/
+lmstudio/
+*.gguf
+*.bin
+*.safetensors
+*.onnx
