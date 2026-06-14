@@ -1,0 +1,368 @@
+{
+"name": "bim-quality-rag-index-sample-v001",
+"description": "Conceptual sample index schema for BIM Data Quality & AI Readiness Assessment PoC Phase 3D. This schema is for design documentation only and is not intended for direct deployment to Azure AI Search.",
+"version": "v001",
+"phase": "Phase 3D",
+"status": "conceptual_sample",
+"notes": [
+"This file is a design sample only.",
+"Azure AI Search is not implemented in Phase 3D.",
+"Embedding generation and vector search are out of scope in Phase 3D.",
+"No real project data, customer names, personal information, or confidential model data should be included.",
+"Field attributes are simplified for architecture discussion."
+],
+"fields": [
+{
+"name": "id",
+"type": "Edm.String",
+"description": "Unique identifier for each RAG document or chunk.",
+"key": true,
+"searchable": false,
+"filterable": true,
+"sortable": false,
+"facetable": false,
+"retrievable": true,
+"example": "element-door-12345-d002"
+},
+{
+"name": "content",
+"type": "Edm.String",
+"description": "Main searchable text used as LLM prompt context.",
+"key": false,
+"searchable": true,
+"filterable": false,
+"sortable": false,
+"facetable": false,
+"retrievable": true,
+"example": "ElementId 12345 has a Door quality issue related to RuleId D-002. Human review is required before using this data for AI or RAG."
+},
+{
+"name": "document_type",
+"type": "Edm.String",
+"description": "Source document or data type.",
+"key": false,
+"searchable": false,
+"filterable": true,
+"sortable": false,
+"facetable": true,
+"retrievable": true,
+"allowed_values": [
+"AIContext",
+"FixGuide",
+"RuleMaster",
+"CheckResult",
+"AIReadinessScore",
+"pyRevitMetadata",
+"Docs",
+"Sample"
+],
+"example": "AIContext"
+},
+{
+"name": "chunk_type",
+"type": "Edm.String",
+"description": "Logical chunk unit for RAG retrieval.",
+"key": false,
+"searchable": false,
+"filterable": true,
+"sortable": false,
+"facetable": true,
+"retrievable": true,
+"allowed_values": [
+"Element",
+"RuleId",
+"Category",
+"FixGuide",
+"Policy",
+"Docs",
+"Summary"
+],
+"example": "Element"
+},
+{
+"name": "category",
+"type": "Edm.String",
+"description": "Normalized BIM category.",
+"key": false,
+"searchable": false,
+"filterable": true,
+"sortable": false,
+"facetable": true,
+"retrievable": true,
+"allowed_values": [
+"Door",
+"Room",
+"Other"
+],
+"example": "Door"
+},
+{
+"name": "element_id",
+"type": "Edm.String",
+"description": "Element reference ID. In future implementation, poc_element_id and revit_element_id may be separated.",
+"key": false,
+"searchable": true,
+"filterable": true,
+"sortable": false,
+"facetable": false,
+"retrievable": true,
+"example": "12345"
+},
+{
+"name": "unique_id",
+"type": "Edm.String",
+"description": "Revit UniqueId or anonymized UniqueId sample. Used as a stable Revit-side reference candidate.",
+"key": false,
+"searchable": true,
+"filterable": true,
+"sortable": false,
+"facetable": false,
+"retrievable": true,
+"example": "00000000-0000-0000-0000-000000000001-00000001"
+},
+{
+"name": "rule_id",
+"type": "Edm.String",
+"description": "RuleId used to connect Element chunks, Rule Master chunks, and Fix Guide chunks.",
+"key": false,
+"searchable": true,
+"filterable": true,
+"sortable": false,
+"facetable": true,
+"retrievable": true,
+"example": "D-002"
+},
+{
+"name": "rule_name",
+"type": "Edm.String",
+"description": "Human-readable rule name.",
+"key": false,
+"searchable": true,
+"filterable": true,
+"sortable": false,
+"facetable": false,
+"retrievable": true,
+"example": "Missing classification code"
+},
+{
+"name": "severity",
+"type": "Edm.String",
+"description": "Severity of the quality issue in the PoC quality-check context.",
+"key": false,
+"searchable": false,
+"filterable": true,
+"sortable": false,
+"facetable": true,
+"retrievable": true,
+"allowed_values": [
+"High",
+"Medium",
+"Low",
+"None",
+"Unknown"
+],
+"example": "High"
+},
+{
+"name": "quality_score",
+"type": "Edm.Double",
+"description": "PoC quality score. This is a data quality indicator, not a design or construction quality judgment.",
+"key": false,
+"searchable": false,
+"filterable": true,
+"sortable": true,
+"facetable": false,
+"retrievable": true,
+"example": 85.0
+},
+{
+"name": "ai_readiness_score",
+"type": "Edm.Double",
+"description": "AI readiness score for BI, analytics, generative AI, or RAG use.",
+"key": false,
+"searchable": false,
+"filterable": true,
+"sortable": true,
+"facetable": false,
+"retrievable": true,
+"example": 72.5
+},
+{
+"name": "ai_readiness_level",
+"type": "Edm.String",
+"description": "AI readiness level label.",
+"key": false,
+"searchable": false,
+"filterable": true,
+"sortable": false,
+"facetable": true,
+"retrievable": true,
+"allowed_values": [
+"High",
+"Medium",
+"Low",
+"Unknown"
+],
+"example": "Medium"
+},
+{
+"name": "human_review_required",
+"type": "Edm.Boolean",
+"description": "Whether human review is required before relying on the information.",
+"key": false,
+"searchable": false,
+"filterable": true,
+"sortable": false,
+"facetable": true,
+"retrievable": true,
+"example": true
+},
+{
+"name": "fix_priority",
+"type": "Edm.String",
+"description": "Temporary fix priority label. Detailed training data design is handled in Phase 3E.",
+"key": false,
+"searchable": false,
+"filterable": true,
+"sortable": false,
+"facetable": true,
+"retrievable": true,
+"allowed_values": [
+"High",
+"Medium",
+"Low",
+"Unknown"
+],
+"example": "High"
+},
+{
+"name": "family_name",
+"type": "Edm.String",
+"description": "Anonymized or sample Revit family name. Do not include confidential project-specific family names in public samples.",
+"key": false,
+"searchable": true,
+"filterable": true,
+"sortable": false,
+"facetable": false,
+"retrievable": true,
+"example": "Sample Door Family"
+},
+{
+"name": "type_name",
+"type": "Edm.String",
+"description": "Anonymized or sample Revit type name. Do not include confidential project-specific type names in public samples.",
+"key": false,
+"searchable": true,
+"filterable": true,
+"sortable": false,
+"facetable": false,
+"retrievable": true,
+"example": "Sample Door Type 900x2100"
+},
+{
+"name": "level_name",
+"type": "Edm.String",
+"description": "Level or floor name associated with the element when available.",
+"key": false,
+"searchable": true,
+"filterable": true,
+"sortable": false,
+"facetable": true,
+"retrievable": true,
+"example": "1FL"
+},
+{
+"name": "room_name",
+"type": "Edm.String",
+"description": "Room name when the chunk is related to a Room element. For Door elements, this may be blank in the initial MVP.",
+"key": false,
+"searchable": true,
+"filterable": true,
+"sortable": false,
+"facetable": false,
+"retrievable": true,
+"example": "Sample Meeting Room"
+},
+{
+"name": "room_number",
+"type": "Edm.String",
+"description": "Room number when available. For Door elements, this may be blank in the initial MVP.",
+"key": false,
+"searchable": true,
+"filterable": true,
+"sortable": false,
+"facetable": false,
+"retrievable": true,
+"example": "R-001"
+},
+{
+"name": "source_file",
+"type": "Edm.String",
+"description": "Original source file path used to create the chunk.",
+"key": false,
+"searchable": true,
+"filterable": true,
+"sortable": false,
+"facetable": false,
+"retrievable": true,
+"example": "04_output_csv/ai_context_v002.md"
+},
+{
+"name": "generated_date",
+"type": "Edm.DateTimeOffset",
+"description": "Generation date of the chunk or sample document.",
+"key": false,
+"searchable": false,
+"filterable": true,
+"sortable": true,
+"facetable": false,
+"retrievable": true,
+"example": "2026-06-14T00:00:00Z"
+}
+],
+"initial_mvp_fields": [
+"id",
+"content",
+"document_type",
+"chunk_type",
+"category",
+"element_id",
+"unique_id",
+"rule_id",
+"severity",
+"ai_readiness_score",
+"human_review_required",
+"source_file"
+],
+"out_of_scope_for_phase3d": [
+"Actual Azure AI Search deployment",
+"Azure OpenAI or OpenAI API connection",
+"Embedding generation",
+"Vector search implementation",
+"Authentication and permission implementation",
+"Cloud environment setup",
+"Bulk data ingestion",
+"Search accuracy evaluation",
+"RAG chat UI development",
+"Revit model auto-modification",
+"Automated design or construction judgment"
+],
+"security_policy": {
+"allowed_for_github": [
+"Public sample data",
+"Anonymized PoC data",
+"Self-created sample JSONL",
+"Conceptual schema",
+"Design notes"
+],
+"not_allowed_for_github": [
+"Real project data",
+"Customer names",
+"Project names",
+"Personal information",
+"Confidential model data",
+"Company-specific confidential classification codes",
+"Sensitive specification information"
+]
+}
+}
