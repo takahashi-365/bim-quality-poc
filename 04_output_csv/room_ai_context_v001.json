@@ -1,0 +1,4191 @@
+[
+  {
+    "ElementId": "ピット-消火水槽-0001",
+    "Category": "Room",
+    "Room": {
+      "Level": "ピット",
+      "RoomName": "消火水槽",
+      "RoomNumber": "",
+      "RoomAlias": "",
+      "RoomGroupName": "(なし)",
+      "RoomGroupNumber": "",
+      "AreaRaw": "16.3281 m²",
+      "Area": "16.3281",
+      "CH": "",
+      "FloorFinish": "",
+      "WallFinish": "",
+      "CeilingFinish": "",
+      "Notes": ""
+    },
+    "QualityCheck": {
+      "RuleViolationCount": "1",
+      "BlockingRuleIds": "R-102",
+      "RuleResults": [
+        {
+          "RuleId": "R-102",
+          "RuleName": "RoomNumberMissing",
+          "Severity": "High",
+          "TargetField": "RoomNumber",
+          "CheckResult": "NG",
+          "BusinessImpact": "部屋の参照・検索・集計が不安定になる",
+          "AIUseImpact": "部屋単位の検索やRAGで参照対象を特定しにくくなる",
+          "FixGuide": "RoomNumberを確認し、必要に応じて部屋番号を入力する"
+        }
+      ]
+    },
+    "AIReadiness": {
+      "AIReadinessScore": "85",
+      "AIReadinessLevel": "High",
+      "AIReadinessPenaltyTotal": "15",
+      "HumanReviewRequired": "True"
+    },
+    "NotesForAIUse": [
+      "This context is generated from Revit Room Schedule data for PoC purposes.",
+      "Room ElementId is a temporary PoC identifier, not Revit internal ElementId or UniqueId.",
+      "The output does not make design or construction decisions.",
+      "Final judgment must be made by BIM personnel."
+    ]
+  },
+  {
+    "ElementId": "ピット-ピット-0002",
+    "Category": "Room",
+    "Room": {
+      "Level": "ピット",
+      "RoomName": "ピット",
+      "RoomNumber": "",
+      "RoomAlias": "",
+      "RoomGroupName": "(なし)",
+      "RoomGroupNumber": "",
+      "AreaRaw": "410.8844 m²",
+      "Area": "410.8844",
+      "CH": "",
+      "FloorFinish": "",
+      "WallFinish": "",
+      "CeilingFinish": "",
+      "Notes": ""
+    },
+    "QualityCheck": {
+      "RuleViolationCount": "1",
+      "BlockingRuleIds": "R-102",
+      "RuleResults": [
+        {
+          "RuleId": "R-102",
+          "RuleName": "RoomNumberMissing",
+          "Severity": "High",
+          "TargetField": "RoomNumber",
+          "CheckResult": "NG",
+          "BusinessImpact": "部屋の参照・検索・集計が不安定になる",
+          "AIUseImpact": "部屋単位の検索やRAGで参照対象を特定しにくくなる",
+          "FixGuide": "RoomNumberを確認し、必要に応じて部屋番号を入力する"
+        }
+      ]
+    },
+    "AIReadiness": {
+      "AIReadinessScore": "85",
+      "AIReadinessLevel": "High",
+      "AIReadinessPenaltyTotal": "15",
+      "HumanReviewRequired": "True"
+    },
+    "NotesForAIUse": [
+      "This context is generated from Revit Room Schedule data for PoC purposes.",
+      "Room ElementId is a temporary PoC identifier, not Revit internal ElementId or UniqueId.",
+      "The output does not make design or construction decisions.",
+      "Final judgment must be made by BIM personnel."
+    ]
+  },
+  {
+    "ElementId": "ピット-ELV ピット-0003",
+    "Category": "Room",
+    "Room": {
+      "Level": "ピット",
+      "RoomName": "ELV ピット",
+      "RoomNumber": "",
+      "RoomAlias": "",
+      "RoomGroupName": "(なし)",
+      "RoomGroupNumber": "",
+      "AreaRaw": "13.1075 m²",
+      "Area": "13.1075",
+      "CH": "",
+      "FloorFinish": "",
+      "WallFinish": "",
+      "CeilingFinish": "",
+      "Notes": ""
+    },
+    "QualityCheck": {
+      "RuleViolationCount": "1",
+      "BlockingRuleIds": "R-102",
+      "RuleResults": [
+        {
+          "RuleId": "R-102",
+          "RuleName": "RoomNumberMissing",
+          "Severity": "High",
+          "TargetField": "RoomNumber",
+          "CheckResult": "NG",
+          "BusinessImpact": "部屋の参照・検索・集計が不安定になる",
+          "AIUseImpact": "部屋単位の検索やRAGで参照対象を特定しにくくなる",
+          "FixGuide": "RoomNumberを確認し、必要に応じて部屋番号を入力する"
+        }
+      ]
+    },
+    "AIReadiness": {
+      "AIReadinessScore": "85",
+      "AIReadinessLevel": "High",
+      "AIReadinessPenaltyTotal": "15",
+      "HumanReviewRequired": "True"
+    },
+    "NotesForAIUse": [
+      "This context is generated from Revit Room Schedule data for PoC purposes.",
+      "Room ElementId is a temporary PoC identifier, not Revit internal ElementId or UniqueId.",
+      "The output does not make design or construction decisions.",
+      "Final judgment must be made by BIM personnel."
+    ]
+  },
+  {
+    "ElementId": "1FL-ピロティ-0004",
+    "Category": "Room",
+    "Room": {
+      "Level": "1FL",
+      "RoomName": "ピロティ",
+      "RoomNumber": "",
+      "RoomAlias": "",
+      "RoomGroupName": "(なし)",
+      "RoomGroupNumber": "",
+      "AreaRaw": "173.3000 m²",
+      "Area": "173.3",
+      "CH": "3000",
+      "FloorFinish": "",
+      "WallFinish": "",
+      "CeilingFinish": "",
+      "Notes": ""
+    },
+    "QualityCheck": {
+      "RuleViolationCount": "1",
+      "BlockingRuleIds": "R-102",
+      "RuleResults": [
+        {
+          "RuleId": "R-102",
+          "RuleName": "RoomNumberMissing",
+          "Severity": "High",
+          "TargetField": "RoomNumber",
+          "CheckResult": "NG",
+          "BusinessImpact": "部屋の参照・検索・集計が不安定になる",
+          "AIUseImpact": "部屋単位の検索やRAGで参照対象を特定しにくくなる",
+          "FixGuide": "RoomNumberを確認し、必要に応じて部屋番号を入力する"
+        }
+      ]
+    },
+    "AIReadiness": {
+      "AIReadinessScore": "85",
+      "AIReadinessLevel": "High",
+      "AIReadinessPenaltyTotal": "15",
+      "HumanReviewRequired": "True"
+    },
+    "NotesForAIUse": [
+      "This context is generated from Revit Room Schedule data for PoC purposes.",
+      "Room ElementId is a temporary PoC identifier, not Revit internal ElementId or UniqueId.",
+      "The output does not make design or construction decisions.",
+      "Final judgment must be made by BIM personnel."
+    ]
+  },
+  {
+    "ElementId": "1FL-ELV-0005",
+    "Category": "Room",
+    "Room": {
+      "Level": "1FL",
+      "RoomName": "ELV",
+      "RoomNumber": "",
+      "RoomAlias": "",
+      "RoomGroupName": "(なし)",
+      "RoomGroupNumber": "",
+      "AreaRaw": "17.2875 m²",
+      "Area": "17.2875",
+      "CH": "",
+      "FloorFinish": "",
+      "WallFinish": "",
+      "CeilingFinish": "",
+      "Notes": ""
+    },
+    "QualityCheck": {
+      "RuleViolationCount": "1",
+      "BlockingRuleIds": "R-102",
+      "RuleResults": [
+        {
+          "RuleId": "R-102",
+          "RuleName": "RoomNumberMissing",
+          "Severity": "High",
+          "TargetField": "RoomNumber",
+          "CheckResult": "NG",
+          "BusinessImpact": "部屋の参照・検索・集計が不安定になる",
+          "AIUseImpact": "部屋単位の検索やRAGで参照対象を特定しにくくなる",
+          "FixGuide": "RoomNumberを確認し、必要に応じて部屋番号を入力する"
+        }
+      ]
+    },
+    "AIReadiness": {
+      "AIReadinessScore": "85",
+      "AIReadinessLevel": "High",
+      "AIReadinessPenaltyTotal": "15",
+      "HumanReviewRequired": "True"
+    },
+    "NotesForAIUse": [
+      "This context is generated from Revit Room Schedule data for PoC purposes.",
+      "Room ElementId is a temporary PoC identifier, not Revit internal ElementId or UniqueId.",
+      "The output does not make design or construction decisions.",
+      "Final judgment must be made by BIM personnel."
+    ]
+  },
+  {
+    "ElementId": "2FL-設備バルコニー-0006",
+    "Category": "Room",
+    "Room": {
+      "Level": "2FL",
+      "RoomName": "設備バルコニー",
+      "RoomNumber": "",
+      "RoomAlias": "設備バルコニー",
+      "RoomGroupName": "(なし)",
+      "RoomGroupNumber": "",
+      "AreaRaw": "22.7760 m²",
+      "Area": "22.776",
+      "CH": "",
+      "FloorFinish": "",
+      "WallFinish": "",
+      "CeilingFinish": "",
+      "Notes": ""
+    },
+    "QualityCheck": {
+      "RuleViolationCount": "1",
+      "BlockingRuleIds": "R-102",
+      "RuleResults": [
+        {
+          "RuleId": "R-102",
+          "RuleName": "RoomNumberMissing",
+          "Severity": "High",
+          "TargetField": "RoomNumber",
+          "CheckResult": "NG",
+          "BusinessImpact": "部屋の参照・検索・集計が不安定になる",
+          "AIUseImpact": "部屋単位の検索やRAGで参照対象を特定しにくくなる",
+          "FixGuide": "RoomNumberを確認し、必要に応じて部屋番号を入力する"
+        }
+      ]
+    },
+    "AIReadiness": {
+      "AIReadinessScore": "85",
+      "AIReadinessLevel": "High",
+      "AIReadinessPenaltyTotal": "15",
+      "HumanReviewRequired": "True"
+    },
+    "NotesForAIUse": [
+      "This context is generated from Revit Room Schedule data for PoC purposes.",
+      "Room ElementId is a temporary PoC identifier, not Revit internal ElementId or UniqueId.",
+      "The output does not make design or construction decisions.",
+      "Final judgment must be made by BIM personnel."
+    ]
+  },
+  {
+    "ElementId": "3FL-設備バルコニー-0007",
+    "Category": "Room",
+    "Room": {
+      "Level": "3FL",
+      "RoomName": "設備バルコニー",
+      "RoomNumber": "",
+      "RoomAlias": "設備バルコニー",
+      "RoomGroupName": "(なし)",
+      "RoomGroupNumber": "",
+      "AreaRaw": "22.7760 m²",
+      "Area": "22.776",
+      "CH": "",
+      "FloorFinish": "",
+      "WallFinish": "",
+      "CeilingFinish": "",
+      "Notes": ""
+    },
+    "QualityCheck": {
+      "RuleViolationCount": "1",
+      "BlockingRuleIds": "R-102",
+      "RuleResults": [
+        {
+          "RuleId": "R-102",
+          "RuleName": "RoomNumberMissing",
+          "Severity": "High",
+          "TargetField": "RoomNumber",
+          "CheckResult": "NG",
+          "BusinessImpact": "部屋の参照・検索・集計が不安定になる",
+          "AIUseImpact": "部屋単位の検索やRAGで参照対象を特定しにくくなる",
+          "FixGuide": "RoomNumberを確認し、必要に応じて部屋番号を入力する"
+        }
+      ]
+    },
+    "AIReadiness": {
+      "AIReadinessScore": "85",
+      "AIReadinessLevel": "High",
+      "AIReadinessPenaltyTotal": "15",
+      "HumanReviewRequired": "True"
+    },
+    "NotesForAIUse": [
+      "This context is generated from Revit Room Schedule data for PoC purposes.",
+      "Room ElementId is a temporary PoC identifier, not Revit internal ElementId or UniqueId.",
+      "The output does not make design or construction decisions.",
+      "Final judgment must be made by BIM personnel."
+    ]
+  },
+  {
+    "ElementId": "4FL-設備バルコニー-0008",
+    "Category": "Room",
+    "Room": {
+      "Level": "4FL",
+      "RoomName": "設備バルコニー",
+      "RoomNumber": "",
+      "RoomAlias": "設備バルコニー",
+      "RoomGroupName": "(なし)",
+      "RoomGroupNumber": "",
+      "AreaRaw": "22.7760 m²",
+      "Area": "22.776",
+      "CH": "",
+      "FloorFinish": "",
+      "WallFinish": "",
+      "CeilingFinish": "",
+      "Notes": ""
+    },
+    "QualityCheck": {
+      "RuleViolationCount": "1",
+      "BlockingRuleIds": "R-102",
+      "RuleResults": [
+        {
+          "RuleId": "R-102",
+          "RuleName": "RoomNumberMissing",
+          "Severity": "High",
+          "TargetField": "RoomNumber",
+          "CheckResult": "NG",
+          "BusinessImpact": "部屋の参照・検索・集計が不安定になる",
+          "AIUseImpact": "部屋単位の検索やRAGで参照対象を特定しにくくなる",
+          "FixGuide": "RoomNumberを確認し、必要に応じて部屋番号を入力する"
+        }
+      ]
+    },
+    "AIReadiness": {
+      "AIReadinessScore": "85",
+      "AIReadinessLevel": "High",
+      "AIReadinessPenaltyTotal": "15",
+      "HumanReviewRequired": "True"
+    },
+    "NotesForAIUse": [
+      "This context is generated from Revit Room Schedule data for PoC purposes.",
+      "Room ElementId is a temporary PoC identifier, not Revit internal ElementId or UniqueId.",
+      "The output does not make design or construction decisions.",
+      "Final judgment must be made by BIM personnel."
+    ]
+  },
+  {
+    "ElementId": "5FL-設備バルコニー-0009",
+    "Category": "Room",
+    "Room": {
+      "Level": "5FL",
+      "RoomName": "設備バルコニー",
+      "RoomNumber": "",
+      "RoomAlias": "設備バルコニー",
+      "RoomGroupName": "(なし)",
+      "RoomGroupNumber": "",
+      "AreaRaw": "22.7760 m²",
+      "Area": "22.776",
+      "CH": "",
+      "FloorFinish": "",
+      "WallFinish": "",
+      "CeilingFinish": "",
+      "Notes": ""
+    },
+    "QualityCheck": {
+      "RuleViolationCount": "1",
+      "BlockingRuleIds": "R-102",
+      "RuleResults": [
+        {
+          "RuleId": "R-102",
+          "RuleName": "RoomNumberMissing",
+          "Severity": "High",
+          "TargetField": "RoomNumber",
+          "CheckResult": "NG",
+          "BusinessImpact": "部屋の参照・検索・集計が不安定になる",
+          "AIUseImpact": "部屋単位の検索やRAGで参照対象を特定しにくくなる",
+          "FixGuide": "RoomNumberを確認し、必要に応じて部屋番号を入力する"
+        }
+      ]
+    },
+    "AIReadiness": {
+      "AIReadinessScore": "85",
+      "AIReadinessLevel": "High",
+      "AIReadinessPenaltyTotal": "15",
+      "HumanReviewRequired": "True"
+    },
+    "NotesForAIUse": [
+      "This context is generated from Revit Room Schedule data for PoC purposes.",
+      "Room ElementId is a temporary PoC identifier, not Revit internal ElementId or UniqueId.",
+      "The output does not make design or construction decisions.",
+      "Final judgment must be made by BIM personnel."
+    ]
+  },
+  {
+    "ElementId": "6FL-設備バルコニー-0010",
+    "Category": "Room",
+    "Room": {
+      "Level": "6FL",
+      "RoomName": "設備バルコニー",
+      "RoomNumber": "",
+      "RoomAlias": "設備バルコニー",
+      "RoomGroupName": "(なし)",
+      "RoomGroupNumber": "",
+      "AreaRaw": "22.7760 m²",
+      "Area": "22.776",
+      "CH": "",
+      "FloorFinish": "",
+      "WallFinish": "",
+      "CeilingFinish": "",
+      "Notes": ""
+    },
+    "QualityCheck": {
+      "RuleViolationCount": "1",
+      "BlockingRuleIds": "R-102",
+      "RuleResults": [
+        {
+          "RuleId": "R-102",
+          "RuleName": "RoomNumberMissing",
+          "Severity": "High",
+          "TargetField": "RoomNumber",
+          "CheckResult": "NG",
+          "BusinessImpact": "部屋の参照・検索・集計が不安定になる",
+          "AIUseImpact": "部屋単位の検索やRAGで参照対象を特定しにくくなる",
+          "FixGuide": "RoomNumberを確認し、必要に応じて部屋番号を入力する"
+        }
+      ]
+    },
+    "AIReadiness": {
+      "AIReadinessScore": "85",
+      "AIReadinessLevel": "High",
+      "AIReadinessPenaltyTotal": "15",
+      "HumanReviewRequired": "True"
+    },
+    "NotesForAIUse": [
+      "This context is generated from Revit Room Schedule data for PoC purposes.",
+      "Room ElementId is a temporary PoC identifier, not Revit internal ElementId or UniqueId.",
+      "The output does not make design or construction decisions.",
+      "Final judgment must be made by BIM personnel."
+    ]
+  },
+  {
+    "ElementId": "7FL-設備バルコニー-0011",
+    "Category": "Room",
+    "Room": {
+      "Level": "7FL",
+      "RoomName": "設備バルコニー",
+      "RoomNumber": "",
+      "RoomAlias": "設備バルコニー",
+      "RoomGroupName": "(なし)",
+      "RoomGroupNumber": "",
+      "AreaRaw": "22.7760 m²",
+      "Area": "22.776",
+      "CH": "",
+      "FloorFinish": "",
+      "WallFinish": "",
+      "CeilingFinish": "",
+      "Notes": ""
+    },
+    "QualityCheck": {
+      "RuleViolationCount": "1",
+      "BlockingRuleIds": "R-102",
+      "RuleResults": [
+        {
+          "RuleId": "R-102",
+          "RuleName": "RoomNumberMissing",
+          "Severity": "High",
+          "TargetField": "RoomNumber",
+          "CheckResult": "NG",
+          "BusinessImpact": "部屋の参照・検索・集計が不安定になる",
+          "AIUseImpact": "部屋単位の検索やRAGで参照対象を特定しにくくなる",
+          "FixGuide": "RoomNumberを確認し、必要に応じて部屋番号を入力する"
+        }
+      ]
+    },
+    "AIReadiness": {
+      "AIReadinessScore": "85",
+      "AIReadinessLevel": "High",
+      "AIReadinessPenaltyTotal": "15",
+      "HumanReviewRequired": "True"
+    },
+    "NotesForAIUse": [
+      "This context is generated from Revit Room Schedule data for PoC purposes.",
+      "Room ElementId is a temporary PoC identifier, not Revit internal ElementId or UniqueId.",
+      "The output does not make design or construction decisions.",
+      "Final judgment must be made by BIM personnel."
+    ]
+  },
+  {
+    "ElementId": "1FL-100-0012",
+    "Category": "Room",
+    "Room": {
+      "Level": "1FL",
+      "RoomName": "風除室",
+      "RoomNumber": "100",
+      "RoomAlias": "風除室",
+      "RoomGroupName": "1階",
+      "RoomGroupNumber": "1",
+      "AreaRaw": "19.6720 m²",
+      "Area": "19.672",
+      "CH": "3000",
+      "FloorFinish": "花こう岩(A)",
+      "WallFinish": "花こう岩(A)",
+      "CeilingFinish": "岩綿吸音板(A)",
+      "Notes": ""
+    },
+    "QualityCheck": {
+      "RuleViolationCount": "0",
+      "BlockingRuleIds": "",
+      "RuleResults": []
+    },
+    "AIReadiness": {
+      "AIReadinessScore": "100",
+      "AIReadinessLevel": "High",
+      "AIReadinessPenaltyTotal": "0",
+      "HumanReviewRequired": "False"
+    },
+    "NotesForAIUse": [
+      "This context is generated from Revit Room Schedule data for PoC purposes.",
+      "Room ElementId is a temporary PoC identifier, not Revit internal ElementId or UniqueId.",
+      "The output does not make design or construction decisions.",
+      "Final judgment must be made by BIM personnel."
+    ]
+  },
+  {
+    "ElementId": "1FL-101-0013",
+    "Category": "Room",
+    "Room": {
+      "Level": "1FL",
+      "RoomName": "エントランス ホール",
+      "RoomNumber": "101",
+      "RoomAlias": "エントランスホール",
+      "RoomGroupName": "1階",
+      "RoomGroupNumber": "1",
+      "AreaRaw": "40.0946 m²",
+      "Area": "40.0946",
+      "CH": "3000",
+      "FloorFinish": "花こう岩(A)",
+      "WallFinish": "花こう岩(A)",
+      "CeilingFinish": "岩綿吸音板(A)",
+      "Notes": ""
+    },
+    "QualityCheck": {
+      "RuleViolationCount": "0",
+      "BlockingRuleIds": "",
+      "RuleResults": []
+    },
+    "AIReadiness": {
+      "AIReadinessScore": "100",
+      "AIReadinessLevel": "High",
+      "AIReadinessPenaltyTotal": "0",
+      "HumanReviewRequired": "False"
+    },
+    "NotesForAIUse": [
+      "This context is generated from Revit Room Schedule data for PoC purposes.",
+      "Room ElementId is a temporary PoC identifier, not Revit internal ElementId or UniqueId.",
+      "The output does not make design or construction decisions.",
+      "Final judgment must be made by BIM personnel."
+    ]
+  },
+  {
+    "ElementId": "1FL-102-0014",
+    "Category": "Room",
+    "Room": {
+      "Level": "1FL",
+      "RoomName": "ELVホール",
+      "RoomNumber": "102",
+      "RoomAlias": "ELVホール",
+      "RoomGroupName": "1階",
+      "RoomGroupNumber": "1",
+      "AreaRaw": "19.4052 m²",
+      "Area": "19.4052",
+      "CH": "3000",
+      "FloorFinish": "花こう岩(A)",
+      "WallFinish": "花こう岩(A)",
+      "CeilingFinish": "岩綿吸音板(A)",
+      "Notes": ""
+    },
+    "QualityCheck": {
+      "RuleViolationCount": "0",
+      "BlockingRuleIds": "",
+      "RuleResults": []
+    },
+    "AIReadiness": {
+      "AIReadinessScore": "100",
+      "AIReadinessLevel": "High",
+      "AIReadinessPenaltyTotal": "0",
+      "HumanReviewRequired": "False"
+    },
+    "NotesForAIUse": [
+      "This context is generated from Revit Room Schedule data for PoC purposes.",
+      "Room ElementId is a temporary PoC identifier, not Revit internal ElementId or UniqueId.",
+      "The output does not make design or construction decisions.",
+      "Final judgment must be made by BIM personnel."
+    ]
+  },
+  {
+    "ElementId": "1FL-103-0015",
+    "Category": "Room",
+    "Room": {
+      "Level": "1FL",
+      "RoomName": "廊下2",
+      "RoomNumber": "103",
+      "RoomAlias": "廊下",
+      "RoomGroupName": "1階",
+      "RoomGroupNumber": "1",
+      "AreaRaw": "21.4982 m²",
+      "Area": "21.4982",
+      "CH": "2500",
+      "FloorFinish": "タイルカーペット(A)",
+      "WallFinish": "EP-2",
+      "CeilingFinish": "岩綿吸音板(A)",
+      "Notes": ""
+    },
+    "QualityCheck": {
+      "RuleViolationCount": "0",
+      "BlockingRuleIds": "",
+      "RuleResults": []
+    },
+    "AIReadiness": {
+      "AIReadinessScore": "100",
+      "AIReadinessLevel": "High",
+      "AIReadinessPenaltyTotal": "0",
+      "HumanReviewRequired": "False"
+    },
+    "NotesForAIUse": [
+      "This context is generated from Revit Room Schedule data for PoC purposes.",
+      "Room ElementId is a temporary PoC identifier, not Revit internal ElementId or UniqueId.",
+      "The output does not make design or construction decisions.",
+      "Final judgment must be made by BIM personnel."
+    ]
+  },
+  {
+    "ElementId": "1FL-103-0016",
+    "Category": "Room",
+    "Room": {
+      "Level": "1FL",
+      "RoomName": "廊下1",
+      "RoomNumber": "103",
+      "RoomAlias": "廊下",
+      "RoomGroupName": "1階",
+      "RoomGroupNumber": "1",
+      "AreaRaw": "6.3038 m²",
+      "Area": "6.3038",
+      "CH": "2500",
+      "FloorFinish": "タイルカーペット(A)",
+      "WallFinish": "EP-2",
+      "CeilingFinish": "岩綿吸音板(A)",
+      "Notes": ""
+    },
+    "QualityCheck": {
+      "RuleViolationCount": "0",
+      "BlockingRuleIds": "",
+      "RuleResults": []
+    },
+    "AIReadiness": {
+      "AIReadinessScore": "100",
+      "AIReadinessLevel": "High",
+      "AIReadinessPenaltyTotal": "0",
+      "HumanReviewRequired": "False"
+    },
+    "NotesForAIUse": [
+      "This context is generated from Revit Room Schedule data for PoC purposes.",
+      "Room ElementId is a temporary PoC identifier, not Revit internal ElementId or UniqueId.",
+      "The output does not make design or construction decisions.",
+      "Final judgment must be made by BIM personnel."
+    ]
+  },
+  {
+    "ElementId": "1FL-106-0017",
+    "Category": "Room",
+    "Room": {
+      "Level": "1FL",
+      "RoomName": "店舗",
+      "RoomNumber": "106",
+      "RoomAlias": "店舗",
+      "RoomGroupName": "1階",
+      "RoomGroupNumber": "1",
+      "AreaRaw": "163.8309 m²",
+      "Area": "163.8309",
+      "CH": "3000",
+      "FloorFinish": "素地",
+      "WallFinish": "素地",
+      "CeilingFinish": "素地",
+      "Notes": ""
+    },
+    "QualityCheck": {
+      "RuleViolationCount": "0",
+      "BlockingRuleIds": "",
+      "RuleResults": []
+    },
+    "AIReadiness": {
+      "AIReadinessScore": "100",
+      "AIReadinessLevel": "High",
+      "AIReadinessPenaltyTotal": "0",
+      "HumanReviewRequired": "False"
+    },
+    "NotesForAIUse": [
+      "This context is generated from Revit Room Schedule data for PoC purposes.",
+      "Room ElementId is a temporary PoC identifier, not Revit internal ElementId or UniqueId.",
+      "The output does not make design or construction decisions.",
+      "Final judgment must be made by BIM personnel."
+    ]
+  },
+  {
+    "ElementId": "1FL-107-0018",
+    "Category": "Room",
+    "Room": {
+      "Level": "1FL",
+      "RoomName": "管理人室",
+      "RoomNumber": "107",
+      "RoomAlias": "管理人室",
+      "RoomGroupName": "1階",
+      "RoomGroupNumber": "1",
+      "AreaRaw": "9.7664 m²",
+      "Area": "9.7664",
+      "CH": "2400",
+      "FloorFinish": "ビニル床シート(A)",
+      "WallFinish": "EP-2",
+      "CeilingFinish": "岩綿吸音板(A)",
+      "Notes": ""
+    },
+    "QualityCheck": {
+      "RuleViolationCount": "0",
+      "BlockingRuleIds": "",
+      "RuleResults": []
+    },
+    "AIReadiness": {
+      "AIReadinessScore": "100",
+      "AIReadinessLevel": "High",
+      "AIReadinessPenaltyTotal": "0",
+      "HumanReviewRequired": "False"
+    },
+    "NotesForAIUse": [
+      "This context is generated from Revit Room Schedule data for PoC purposes.",
+      "Room ElementId is a temporary PoC identifier, not Revit internal ElementId or UniqueId.",
+      "The output does not make design or construction decisions.",
+      "Final judgment must be made by BIM personnel."
+    ]
+  },
+  {
+    "ElementId": "1FL-108-0019",
+    "Category": "Room",
+    "Room": {
+      "Level": "1FL",
+      "RoomName": "清掃 管理人 控室",
+      "RoomNumber": "108",
+      "RoomAlias": "清掃管理人控室",
+      "RoomGroupName": "1階",
+      "RoomGroupNumber": "1",
+      "AreaRaw": "8.0437 m²",
+      "Area": "8.0437",
+      "CH": "2400",
+      "FloorFinish": "ビニル床シート(A)",
+      "WallFinish": "EP-2",
+      "CeilingFinish": "岩綿吸音板(A)",
+      "Notes": ""
+    },
+    "QualityCheck": {
+      "RuleViolationCount": "0",
+      "BlockingRuleIds": "",
+      "RuleResults": []
+    },
+    "AIReadiness": {
+      "AIReadinessScore": "100",
+      "AIReadinessLevel": "High",
+      "AIReadinessPenaltyTotal": "0",
+      "HumanReviewRequired": "False"
+    },
+    "NotesForAIUse": [
+      "This context is generated from Revit Room Schedule data for PoC purposes.",
+      "Room ElementId is a temporary PoC identifier, not Revit internal ElementId or UniqueId.",
+      "The output does not make design or construction decisions.",
+      "Final judgment must be made by BIM personnel."
+    ]
+  },
+  {
+    "ElementId": "1FL-109-0020",
+    "Category": "Room",
+    "Room": {
+      "Level": "1FL",
+      "RoomName": "HWC",
+      "RoomNumber": "109",
+      "RoomAlias": "HWC",
+      "RoomGroupName": "1階",
+      "RoomGroupNumber": "1",
+      "AreaRaw": "5.1188 m²",
+      "Area": "5.1188",
+      "CH": "2400",
+      "FloorFinish": "ビニル床シート(B)",
+      "WallFinish": "化粧塩ビシート(A)",
+      "CeilingFinish": "化粧GB(A)",
+      "Notes": ""
+    },
+    "QualityCheck": {
+      "RuleViolationCount": "0",
+      "BlockingRuleIds": "",
+      "RuleResults": []
+    },
+    "AIReadiness": {
+      "AIReadinessScore": "100",
+      "AIReadinessLevel": "High",
+      "AIReadinessPenaltyTotal": "0",
+      "HumanReviewRequired": "False"
+    },
+    "NotesForAIUse": [
+      "This context is generated from Revit Room Schedule data for PoC purposes.",
+      "Room ElementId is a temporary PoC identifier, not Revit internal ElementId or UniqueId.",
+      "The output does not make design or construction decisions.",
+      "Final judgment must be made by BIM personnel."
+    ]
+  },
+  {
+    "ElementId": "1FL-110-0021",
+    "Category": "Room",
+    "Room": {
+      "Level": "1FL",
+      "RoomName": "倉庫",
+      "RoomNumber": "110",
+      "RoomAlias": "倉庫",
+      "RoomGroupName": "1階",
+      "RoomGroupNumber": "1",
+      "AreaRaw": "23.7411 m²",
+      "Area": "23.7411",
+      "CH": "直天",
+      "FloorFinish": "防塵塗装(A)",
+      "WallFinish": "素地",
+      "CeilingFinish": "素地",
+      "Notes": ""
+    },
+    "QualityCheck": {
+      "RuleViolationCount": "0",
+      "BlockingRuleIds": "",
+      "RuleResults": []
+    },
+    "AIReadiness": {
+      "AIReadinessScore": "100",
+      "AIReadinessLevel": "High",
+      "AIReadinessPenaltyTotal": "0",
+      "HumanReviewRequired": "False"
+    },
+    "NotesForAIUse": [
+      "This context is generated from Revit Room Schedule data for PoC purposes.",
+      "Room ElementId is a temporary PoC identifier, not Revit internal ElementId or UniqueId.",
+      "The output does not make design or construction decisions.",
+      "Final judgment must be made by BIM personnel."
+    ]
+  },
+  {
+    "ElementId": "1FL-111-0022",
+    "Category": "Room",
+    "Room": {
+      "Level": "1FL",
+      "RoomName": "ポンプ室",
+      "RoomNumber": "111",
+      "RoomAlias": "ポンプ室",
+      "RoomGroupName": "1階",
+      "RoomGroupNumber": "1",
+      "AreaRaw": "17.4472 m²",
+      "Area": "17.4472",
+      "CH": "直天",
+      "FloorFinish": "防塵塗装(A)",
+      "WallFinish": "素地",
+      "CeilingFinish": "素地",
+      "Notes": ""
+    },
+    "QualityCheck": {
+      "RuleViolationCount": "0",
+      "BlockingRuleIds": "",
+      "RuleResults": []
+    },
+    "AIReadiness": {
+      "AIReadinessScore": "100",
+      "AIReadinessLevel": "High",
+      "AIReadinessPenaltyTotal": "0",
+      "HumanReviewRequired": "False"
+    },
+    "NotesForAIUse": [
+      "This context is generated from Revit Room Schedule data for PoC purposes.",
+      "Room ElementId is a temporary PoC identifier, not Revit internal ElementId or UniqueId.",
+      "The output does not make design or construction decisions.",
+      "Final judgment must be made by BIM personnel."
+    ]
+  },
+  {
+    "ElementId": "1FL-112-0023",
+    "Category": "Room",
+    "Room": {
+      "Level": "1FL",
+      "RoomName": "電気室",
+      "RoomNumber": "112",
+      "RoomAlias": "電気室",
+      "RoomGroupName": "1階",
+      "RoomGroupNumber": "1",
+      "AreaRaw": "17.4573 m²",
+      "Area": "17.4573",
+      "CH": "直天",
+      "FloorFinish": "防塵塗装(A)",
+      "WallFinish": "素地",
+      "CeilingFinish": "素地",
+      "Notes": ""
+    },
+    "QualityCheck": {
+      "RuleViolationCount": "0",
+      "BlockingRuleIds": "",
+      "RuleResults": []
+    },
+    "AIReadiness": {
+      "AIReadinessScore": "100",
+      "AIReadinessLevel": "High",
+      "AIReadinessPenaltyTotal": "0",
+      "HumanReviewRequired": "False"
+    },
+    "NotesForAIUse": [
+      "This context is generated from Revit Room Schedule data for PoC purposes.",
+      "Room ElementId is a temporary PoC identifier, not Revit internal ElementId or UniqueId.",
+      "The output does not make design or construction decisions.",
+      "Final judgment must be made by BIM personnel."
+    ]
+  },
+  {
+    "ElementId": "1FL-113-0024",
+    "Category": "Room",
+    "Room": {
+      "Level": "1FL",
+      "RoomName": "ゴミ置場",
+      "RoomNumber": "113",
+      "RoomAlias": "ゴミ置場",
+      "RoomGroupName": "1階",
+      "RoomGroupNumber": "1",
+      "AreaRaw": "15.1905 m²",
+      "Area": "15.1905",
+      "CH": "直天",
+      "FloorFinish": "防塵塗装(A)",
+      "WallFinish": "素地",
+      "CeilingFinish": "素地",
+      "Notes": ""
+    },
+    "QualityCheck": {
+      "RuleViolationCount": "0",
+      "BlockingRuleIds": "",
+      "RuleResults": []
+    },
+    "AIReadiness": {
+      "AIReadinessScore": "100",
+      "AIReadinessLevel": "High",
+      "AIReadinessPenaltyTotal": "0",
+      "HumanReviewRequired": "False"
+    },
+    "NotesForAIUse": [
+      "This context is generated from Revit Room Schedule data for PoC purposes.",
+      "Room ElementId is a temporary PoC identifier, not Revit internal ElementId or UniqueId.",
+      "The output does not make design or construction decisions.",
+      "Final judgment must be made by BIM personnel."
+    ]
+  },
+  {
+    "ElementId": "1FL-114-0025",
+    "Category": "Room",
+    "Room": {
+      "Level": "1FL",
+      "RoomName": "駐車場",
+      "RoomNumber": "114",
+      "RoomAlias": "駐車場",
+      "RoomGroupName": "1階",
+      "RoomGroupNumber": "1",
+      "AreaRaw": "207.7991 m²",
+      "Area": "207.7991",
+      "CH": "3300",
+      "FloorFinish": "防塵塗装(B)",
+      "WallFinish": "素地",
+      "CeilingFinish": "FK-D(A)",
+      "Notes": ""
+    },
+    "QualityCheck": {
+      "RuleViolationCount": "0",
+      "BlockingRuleIds": "",
+      "RuleResults": []
+    },
+    "AIReadiness": {
+      "AIReadinessScore": "100",
+      "AIReadinessLevel": "High",
+      "AIReadinessPenaltyTotal": "0",
+      "HumanReviewRequired": "False"
+    },
+    "NotesForAIUse": [
+      "This context is generated from Revit Room Schedule data for PoC purposes.",
+      "Room ElementId is a temporary PoC identifier, not Revit internal ElementId or UniqueId.",
+      "The output does not make design or construction decisions.",
+      "Final judgment must be made by BIM personnel."
+    ]
+  },
+  {
+    "ElementId": "2FL-200-0026",
+    "Category": "Room",
+    "Room": {
+      "Level": "2FL",
+      "RoomName": "ELVホール",
+      "RoomNumber": "200",
+      "RoomAlias": "ELVホール",
+      "RoomGroupName": "基準階",
+      "RoomGroupNumber": "2",
+      "AreaRaw": "17.4935 m²",
+      "Area": "17.4935",
+      "CH": "2500",
+      "FloorFinish": "タイルカーペット(A)",
+      "WallFinish": "EP-2",
+      "CeilingFinish": "岩綿吸音板(A)",
+      "Notes": ""
+    },
+    "QualityCheck": {
+      "RuleViolationCount": "0",
+      "BlockingRuleIds": "",
+      "RuleResults": []
+    },
+    "AIReadiness": {
+      "AIReadinessScore": "100",
+      "AIReadinessLevel": "High",
+      "AIReadinessPenaltyTotal": "0",
+      "HumanReviewRequired": "False"
+    },
+    "NotesForAIUse": [
+      "This context is generated from Revit Room Schedule data for PoC purposes.",
+      "Room ElementId is a temporary PoC identifier, not Revit internal ElementId or UniqueId.",
+      "The output does not make design or construction decisions.",
+      "Final judgment must be made by BIM personnel."
+    ]
+  },
+  {
+    "ElementId": "4FL-200-0027",
+    "Category": "Room",
+    "Room": {
+      "Level": "4FL",
+      "RoomName": "ELVホール",
+      "RoomNumber": "200",
+      "RoomAlias": "ELVホール",
+      "RoomGroupName": "基準階",
+      "RoomGroupNumber": "2",
+      "AreaRaw": "17.4935 m²",
+      "Area": "17.4935",
+      "CH": "2500",
+      "FloorFinish": "タイルカーペット(A)",
+      "WallFinish": "EP-2",
+      "CeilingFinish": "岩綿吸音板(A)",
+      "Notes": ""
+    },
+    "QualityCheck": {
+      "RuleViolationCount": "0",
+      "BlockingRuleIds": "",
+      "RuleResults": []
+    },
+    "AIReadiness": {
+      "AIReadinessScore": "100",
+      "AIReadinessLevel": "High",
+      "AIReadinessPenaltyTotal": "0",
+      "HumanReviewRequired": "False"
+    },
+    "NotesForAIUse": [
+      "This context is generated from Revit Room Schedule data for PoC purposes.",
+      "Room ElementId is a temporary PoC identifier, not Revit internal ElementId or UniqueId.",
+      "The output does not make design or construction decisions.",
+      "Final judgment must be made by BIM personnel."
+    ]
+  },
+  {
+    "ElementId": "5FL-200-0028",
+    "Category": "Room",
+    "Room": {
+      "Level": "5FL",
+      "RoomName": "ELVホール",
+      "RoomNumber": "200",
+      "RoomAlias": "ELVホール",
+      "RoomGroupName": "基準階",
+      "RoomGroupNumber": "2",
+      "AreaRaw": "17.4935 m²",
+      "Area": "17.4935",
+      "CH": "2500",
+      "FloorFinish": "タイルカーペット(A)",
+      "WallFinish": "EP-2",
+      "CeilingFinish": "岩綿吸音板(A)",
+      "Notes": ""
+    },
+    "QualityCheck": {
+      "RuleViolationCount": "0",
+      "BlockingRuleIds": "",
+      "RuleResults": []
+    },
+    "AIReadiness": {
+      "AIReadinessScore": "100",
+      "AIReadinessLevel": "High",
+      "AIReadinessPenaltyTotal": "0",
+      "HumanReviewRequired": "False"
+    },
+    "NotesForAIUse": [
+      "This context is generated from Revit Room Schedule data for PoC purposes.",
+      "Room ElementId is a temporary PoC identifier, not Revit internal ElementId or UniqueId.",
+      "The output does not make design or construction decisions.",
+      "Final judgment must be made by BIM personnel."
+    ]
+  },
+  {
+    "ElementId": "6FL-200-0029",
+    "Category": "Room",
+    "Room": {
+      "Level": "6FL",
+      "RoomName": "ELVホール",
+      "RoomNumber": "200",
+      "RoomAlias": "ELVホール",
+      "RoomGroupName": "基準階",
+      "RoomGroupNumber": "2",
+      "AreaRaw": "17.4935 m²",
+      "Area": "17.4935",
+      "CH": "2500",
+      "FloorFinish": "タイルカーペット(A)",
+      "WallFinish": "EP-2",
+      "CeilingFinish": "岩綿吸音板(A)",
+      "Notes": ""
+    },
+    "QualityCheck": {
+      "RuleViolationCount": "0",
+      "BlockingRuleIds": "",
+      "RuleResults": []
+    },
+    "AIReadiness": {
+      "AIReadinessScore": "100",
+      "AIReadinessLevel": "High",
+      "AIReadinessPenaltyTotal": "0",
+      "HumanReviewRequired": "False"
+    },
+    "NotesForAIUse": [
+      "This context is generated from Revit Room Schedule data for PoC purposes.",
+      "Room ElementId is a temporary PoC identifier, not Revit internal ElementId or UniqueId.",
+      "The output does not make design or construction decisions.",
+      "Final judgment must be made by BIM personnel."
+    ]
+  },
+  {
+    "ElementId": "7FL-200-0030",
+    "Category": "Room",
+    "Room": {
+      "Level": "7FL",
+      "RoomName": "ELVホール",
+      "RoomNumber": "200",
+      "RoomAlias": "ELVホール",
+      "RoomGroupName": "基準階",
+      "RoomGroupNumber": "2",
+      "AreaRaw": "17.4935 m²",
+      "Area": "17.4935",
+      "CH": "2500",
+      "FloorFinish": "タイルカーペット(A)",
+      "WallFinish": "EP-2",
+      "CeilingFinish": "岩綿吸音板(A)",
+      "Notes": ""
+    },
+    "QualityCheck": {
+      "RuleViolationCount": "0",
+      "BlockingRuleIds": "",
+      "RuleResults": []
+    },
+    "AIReadiness": {
+      "AIReadinessScore": "100",
+      "AIReadinessLevel": "High",
+      "AIReadinessPenaltyTotal": "0",
+      "HumanReviewRequired": "False"
+    },
+    "NotesForAIUse": [
+      "This context is generated from Revit Room Schedule data for PoC purposes.",
+      "Room ElementId is a temporary PoC identifier, not Revit internal ElementId or UniqueId.",
+      "The output does not make design or construction decisions.",
+      "Final judgment must be made by BIM personnel."
+    ]
+  },
+  {
+    "ElementId": "3FL-200-0031",
+    "Category": "Room",
+    "Room": {
+      "Level": "3FL",
+      "RoomName": "ELVホール",
+      "RoomNumber": "200",
+      "RoomAlias": "ELVホール",
+      "RoomGroupName": "基準階",
+      "RoomGroupNumber": "2",
+      "AreaRaw": "17.4935 m²",
+      "Area": "17.4935",
+      "CH": "2500",
+      "FloorFinish": "タイルカーペット(A)",
+      "WallFinish": "EP-2",
+      "CeilingFinish": "岩綿吸音板(A)",
+      "Notes": ""
+    },
+    "QualityCheck": {
+      "RuleViolationCount": "0",
+      "BlockingRuleIds": "",
+      "RuleResults": []
+    },
+    "AIReadiness": {
+      "AIReadinessScore": "100",
+      "AIReadinessLevel": "High",
+      "AIReadinessPenaltyTotal": "0",
+      "HumanReviewRequired": "False"
+    },
+    "NotesForAIUse": [
+      "This context is generated from Revit Room Schedule data for PoC purposes.",
+      "Room ElementId is a temporary PoC identifier, not Revit internal ElementId or UniqueId.",
+      "The output does not make design or construction decisions.",
+      "Final judgment must be made by BIM personnel."
+    ]
+  },
+  {
+    "ElementId": "2FL-201-0032",
+    "Category": "Room",
+    "Room": {
+      "Level": "2FL",
+      "RoomName": "廊下",
+      "RoomNumber": "201",
+      "RoomAlias": "廊下",
+      "RoomGroupName": "基準階",
+      "RoomGroupNumber": "2",
+      "AreaRaw": "35.6774 m²",
+      "Area": "35.6774",
+      "CH": "2500",
+      "FloorFinish": "タイルカーペット(A)",
+      "WallFinish": "EP-2",
+      "CeilingFinish": "岩綿吸音板(A)",
+      "Notes": ""
+    },
+    "QualityCheck": {
+      "RuleViolationCount": "0",
+      "BlockingRuleIds": "",
+      "RuleResults": []
+    },
+    "AIReadiness": {
+      "AIReadinessScore": "100",
+      "AIReadinessLevel": "High",
+      "AIReadinessPenaltyTotal": "0",
+      "HumanReviewRequired": "False"
+    },
+    "NotesForAIUse": [
+      "This context is generated from Revit Room Schedule data for PoC purposes.",
+      "Room ElementId is a temporary PoC identifier, not Revit internal ElementId or UniqueId.",
+      "The output does not make design or construction decisions.",
+      "Final judgment must be made by BIM personnel."
+    ]
+  },
+  {
+    "ElementId": "3FL-201-0033",
+    "Category": "Room",
+    "Room": {
+      "Level": "3FL",
+      "RoomName": "廊下",
+      "RoomNumber": "201",
+      "RoomAlias": "廊下",
+      "RoomGroupName": "基準階",
+      "RoomGroupNumber": "2",
+      "AreaRaw": "35.6774 m²",
+      "Area": "35.6774",
+      "CH": "2500",
+      "FloorFinish": "タイルカーペット(A)",
+      "WallFinish": "EP-2",
+      "CeilingFinish": "岩綿吸音板(A)",
+      "Notes": ""
+    },
+    "QualityCheck": {
+      "RuleViolationCount": "0",
+      "BlockingRuleIds": "",
+      "RuleResults": []
+    },
+    "AIReadiness": {
+      "AIReadinessScore": "100",
+      "AIReadinessLevel": "High",
+      "AIReadinessPenaltyTotal": "0",
+      "HumanReviewRequired": "False"
+    },
+    "NotesForAIUse": [
+      "This context is generated from Revit Room Schedule data for PoC purposes.",
+      "Room ElementId is a temporary PoC identifier, not Revit internal ElementId or UniqueId.",
+      "The output does not make design or construction decisions.",
+      "Final judgment must be made by BIM personnel."
+    ]
+  },
+  {
+    "ElementId": "4FL-201-0034",
+    "Category": "Room",
+    "Room": {
+      "Level": "4FL",
+      "RoomName": "廊下",
+      "RoomNumber": "201",
+      "RoomAlias": "廊下",
+      "RoomGroupName": "基準階",
+      "RoomGroupNumber": "2",
+      "AreaRaw": "35.6774 m²",
+      "Area": "35.6774",
+      "CH": "2500",
+      "FloorFinish": "タイルカーペット(A)",
+      "WallFinish": "EP-2",
+      "CeilingFinish": "岩綿吸音板(A)",
+      "Notes": ""
+    },
+    "QualityCheck": {
+      "RuleViolationCount": "0",
+      "BlockingRuleIds": "",
+      "RuleResults": []
+    },
+    "AIReadiness": {
+      "AIReadinessScore": "100",
+      "AIReadinessLevel": "High",
+      "AIReadinessPenaltyTotal": "0",
+      "HumanReviewRequired": "False"
+    },
+    "NotesForAIUse": [
+      "This context is generated from Revit Room Schedule data for PoC purposes.",
+      "Room ElementId is a temporary PoC identifier, not Revit internal ElementId or UniqueId.",
+      "The output does not make design or construction decisions.",
+      "Final judgment must be made by BIM personnel."
+    ]
+  },
+  {
+    "ElementId": "5FL-201-0035",
+    "Category": "Room",
+    "Room": {
+      "Level": "5FL",
+      "RoomName": "廊下",
+      "RoomNumber": "201",
+      "RoomAlias": "廊下",
+      "RoomGroupName": "基準階",
+      "RoomGroupNumber": "2",
+      "AreaRaw": "35.6774 m²",
+      "Area": "35.6774",
+      "CH": "2500",
+      "FloorFinish": "タイルカーペット(A)",
+      "WallFinish": "EP-2",
+      "CeilingFinish": "岩綿吸音板(A)",
+      "Notes": ""
+    },
+    "QualityCheck": {
+      "RuleViolationCount": "0",
+      "BlockingRuleIds": "",
+      "RuleResults": []
+    },
+    "AIReadiness": {
+      "AIReadinessScore": "100",
+      "AIReadinessLevel": "High",
+      "AIReadinessPenaltyTotal": "0",
+      "HumanReviewRequired": "False"
+    },
+    "NotesForAIUse": [
+      "This context is generated from Revit Room Schedule data for PoC purposes.",
+      "Room ElementId is a temporary PoC identifier, not Revit internal ElementId or UniqueId.",
+      "The output does not make design or construction decisions.",
+      "Final judgment must be made by BIM personnel."
+    ]
+  },
+  {
+    "ElementId": "6FL-201-0036",
+    "Category": "Room",
+    "Room": {
+      "Level": "6FL",
+      "RoomName": "廊下",
+      "RoomNumber": "201",
+      "RoomAlias": "廊下",
+      "RoomGroupName": "基準階",
+      "RoomGroupNumber": "2",
+      "AreaRaw": "35.6774 m²",
+      "Area": "35.6774",
+      "CH": "2500",
+      "FloorFinish": "タイルカーペット(A)",
+      "WallFinish": "EP-2",
+      "CeilingFinish": "岩綿吸音板(A)",
+      "Notes": ""
+    },
+    "QualityCheck": {
+      "RuleViolationCount": "0",
+      "BlockingRuleIds": "",
+      "RuleResults": []
+    },
+    "AIReadiness": {
+      "AIReadinessScore": "100",
+      "AIReadinessLevel": "High",
+      "AIReadinessPenaltyTotal": "0",
+      "HumanReviewRequired": "False"
+    },
+    "NotesForAIUse": [
+      "This context is generated from Revit Room Schedule data for PoC purposes.",
+      "Room ElementId is a temporary PoC identifier, not Revit internal ElementId or UniqueId.",
+      "The output does not make design or construction decisions.",
+      "Final judgment must be made by BIM personnel."
+    ]
+  },
+  {
+    "ElementId": "7FL-201-0037",
+    "Category": "Room",
+    "Room": {
+      "Level": "7FL",
+      "RoomName": "廊下",
+      "RoomNumber": "201",
+      "RoomAlias": "廊下",
+      "RoomGroupName": "基準階",
+      "RoomGroupNumber": "2",
+      "AreaRaw": "35.6774 m²",
+      "Area": "35.6774",
+      "CH": "2500",
+      "FloorFinish": "タイルカーペット(A)",
+      "WallFinish": "EP-2",
+      "CeilingFinish": "岩綿吸音板(A)",
+      "Notes": ""
+    },
+    "QualityCheck": {
+      "RuleViolationCount": "0",
+      "BlockingRuleIds": "",
+      "RuleResults": []
+    },
+    "AIReadiness": {
+      "AIReadinessScore": "100",
+      "AIReadinessLevel": "High",
+      "AIReadinessPenaltyTotal": "0",
+      "HumanReviewRequired": "False"
+    },
+    "NotesForAIUse": [
+      "This context is generated from Revit Room Schedule data for PoC purposes.",
+      "Room ElementId is a temporary PoC identifier, not Revit internal ElementId or UniqueId.",
+      "The output does not make design or construction decisions.",
+      "Final judgment must be made by BIM personnel."
+    ]
+  },
+  {
+    "ElementId": "2FL-202-0038",
+    "Category": "Room",
+    "Room": {
+      "Level": "2FL",
+      "RoomName": "事務室",
+      "RoomNumber": "202",
+      "RoomAlias": "事務室",
+      "RoomGroupName": "基準階",
+      "RoomGroupNumber": "2",
+      "AreaRaw": "640.6170 m²",
+      "Area": "640.617",
+      "CH": "2800",
+      "FloorFinish": "タイルカーペット(A)",
+      "WallFinish": "EP-2",
+      "CeilingFinish": "システム天井(A)",
+      "Notes": ""
+    },
+    "QualityCheck": {
+      "RuleViolationCount": "0",
+      "BlockingRuleIds": "",
+      "RuleResults": []
+    },
+    "AIReadiness": {
+      "AIReadinessScore": "100",
+      "AIReadinessLevel": "High",
+      "AIReadinessPenaltyTotal": "0",
+      "HumanReviewRequired": "False"
+    },
+    "NotesForAIUse": [
+      "This context is generated from Revit Room Schedule data for PoC purposes.",
+      "Room ElementId is a temporary PoC identifier, not Revit internal ElementId or UniqueId.",
+      "The output does not make design or construction decisions.",
+      "Final judgment must be made by BIM personnel."
+    ]
+  },
+  {
+    "ElementId": "3FL-202-0039",
+    "Category": "Room",
+    "Room": {
+      "Level": "3FL",
+      "RoomName": "事務室",
+      "RoomNumber": "202",
+      "RoomAlias": "事務室",
+      "RoomGroupName": "基準階",
+      "RoomGroupNumber": "2",
+      "AreaRaw": "640.8071 m²",
+      "Area": "640.8071",
+      "CH": "2800",
+      "FloorFinish": "タイルカーペット(A)",
+      "WallFinish": "EP-2",
+      "CeilingFinish": "システム天井(A)",
+      "Notes": ""
+    },
+    "QualityCheck": {
+      "RuleViolationCount": "0",
+      "BlockingRuleIds": "",
+      "RuleResults": []
+    },
+    "AIReadiness": {
+      "AIReadinessScore": "100",
+      "AIReadinessLevel": "High",
+      "AIReadinessPenaltyTotal": "0",
+      "HumanReviewRequired": "False"
+    },
+    "NotesForAIUse": [
+      "This context is generated from Revit Room Schedule data for PoC purposes.",
+      "Room ElementId is a temporary PoC identifier, not Revit internal ElementId or UniqueId.",
+      "The output does not make design or construction decisions.",
+      "Final judgment must be made by BIM personnel."
+    ]
+  },
+  {
+    "ElementId": "4FL-202-0040",
+    "Category": "Room",
+    "Room": {
+      "Level": "4FL",
+      "RoomName": "事務室",
+      "RoomNumber": "202",
+      "RoomAlias": "事務室",
+      "RoomGroupName": "基準階",
+      "RoomGroupNumber": "2",
+      "AreaRaw": "640.8071 m²",
+      "Area": "640.8071",
+      "CH": "2800",
+      "FloorFinish": "タイルカーペット(A)",
+      "WallFinish": "EP-2",
+      "CeilingFinish": "システム天井(A)",
+      "Notes": ""
+    },
+    "QualityCheck": {
+      "RuleViolationCount": "0",
+      "BlockingRuleIds": "",
+      "RuleResults": []
+    },
+    "AIReadiness": {
+      "AIReadinessScore": "100",
+      "AIReadinessLevel": "High",
+      "AIReadinessPenaltyTotal": "0",
+      "HumanReviewRequired": "False"
+    },
+    "NotesForAIUse": [
+      "This context is generated from Revit Room Schedule data for PoC purposes.",
+      "Room ElementId is a temporary PoC identifier, not Revit internal ElementId or UniqueId.",
+      "The output does not make design or construction decisions.",
+      "Final judgment must be made by BIM personnel."
+    ]
+  },
+  {
+    "ElementId": "5FL-202-0041",
+    "Category": "Room",
+    "Room": {
+      "Level": "5FL",
+      "RoomName": "事務室",
+      "RoomNumber": "202",
+      "RoomAlias": "事務室",
+      "RoomGroupName": "基準階",
+      "RoomGroupNumber": "2",
+      "AreaRaw": "640.8071 m²",
+      "Area": "640.8071",
+      "CH": "2800",
+      "FloorFinish": "タイルカーペット(A)",
+      "WallFinish": "EP-2",
+      "CeilingFinish": "システム天井(A)",
+      "Notes": ""
+    },
+    "QualityCheck": {
+      "RuleViolationCount": "0",
+      "BlockingRuleIds": "",
+      "RuleResults": []
+    },
+    "AIReadiness": {
+      "AIReadinessScore": "100",
+      "AIReadinessLevel": "High",
+      "AIReadinessPenaltyTotal": "0",
+      "HumanReviewRequired": "False"
+    },
+    "NotesForAIUse": [
+      "This context is generated from Revit Room Schedule data for PoC purposes.",
+      "Room ElementId is a temporary PoC identifier, not Revit internal ElementId or UniqueId.",
+      "The output does not make design or construction decisions.",
+      "Final judgment must be made by BIM personnel."
+    ]
+  },
+  {
+    "ElementId": "6FL-202-0042",
+    "Category": "Room",
+    "Room": {
+      "Level": "6FL",
+      "RoomName": "事務室",
+      "RoomNumber": "202",
+      "RoomAlias": "事務室",
+      "RoomGroupName": "基準階",
+      "RoomGroupNumber": "2",
+      "AreaRaw": "640.8071 m²",
+      "Area": "640.8071",
+      "CH": "2800",
+      "FloorFinish": "タイルカーペット(A)",
+      "WallFinish": "EP-2",
+      "CeilingFinish": "システム天井(A)",
+      "Notes": ""
+    },
+    "QualityCheck": {
+      "RuleViolationCount": "0",
+      "BlockingRuleIds": "",
+      "RuleResults": []
+    },
+    "AIReadiness": {
+      "AIReadinessScore": "100",
+      "AIReadinessLevel": "High",
+      "AIReadinessPenaltyTotal": "0",
+      "HumanReviewRequired": "False"
+    },
+    "NotesForAIUse": [
+      "This context is generated from Revit Room Schedule data for PoC purposes.",
+      "Room ElementId is a temporary PoC identifier, not Revit internal ElementId or UniqueId.",
+      "The output does not make design or construction decisions.",
+      "Final judgment must be made by BIM personnel."
+    ]
+  },
+  {
+    "ElementId": "7FL-202-0043",
+    "Category": "Room",
+    "Room": {
+      "Level": "7FL",
+      "RoomName": "事務室",
+      "RoomNumber": "202",
+      "RoomAlias": "事務室",
+      "RoomGroupName": "基準階",
+      "RoomGroupNumber": "2",
+      "AreaRaw": "640.6176 m²",
+      "Area": "640.6176",
+      "CH": "2800",
+      "FloorFinish": "タイルカーペット(A)",
+      "WallFinish": "EP-2",
+      "CeilingFinish": "システム天井(A)",
+      "Notes": ""
+    },
+    "QualityCheck": {
+      "RuleViolationCount": "0",
+      "BlockingRuleIds": "",
+      "RuleResults": []
+    },
+    "AIReadiness": {
+      "AIReadinessScore": "100",
+      "AIReadinessLevel": "High",
+      "AIReadinessPenaltyTotal": "0",
+      "HumanReviewRequired": "False"
+    },
+    "NotesForAIUse": [
+      "This context is generated from Revit Room Schedule data for PoC purposes.",
+      "Room ElementId is a temporary PoC identifier, not Revit internal ElementId or UniqueId.",
+      "The output does not make design or construction decisions.",
+      "Final judgment must be made by BIM personnel."
+    ]
+  },
+  {
+    "ElementId": "2FL-203-0044",
+    "Category": "Room",
+    "Room": {
+      "Level": "2FL",
+      "RoomName": "給湯室",
+      "RoomNumber": "203",
+      "RoomAlias": "給湯室",
+      "RoomGroupName": "基準階",
+      "RoomGroupNumber": "2",
+      "AreaRaw": "7.4075 m²",
+      "Area": "7.4075",
+      "CH": "2400",
+      "FloorFinish": "ビニル床シート(A)",
+      "WallFinish": "EP-2",
+      "CeilingFinish": "化粧GB(A)",
+      "Notes": ""
+    },
+    "QualityCheck": {
+      "RuleViolationCount": "0",
+      "BlockingRuleIds": "",
+      "RuleResults": []
+    },
+    "AIReadiness": {
+      "AIReadinessScore": "100",
+      "AIReadinessLevel": "High",
+      "AIReadinessPenaltyTotal": "0",
+      "HumanReviewRequired": "False"
+    },
+    "NotesForAIUse": [
+      "This context is generated from Revit Room Schedule data for PoC purposes.",
+      "Room ElementId is a temporary PoC identifier, not Revit internal ElementId or UniqueId.",
+      "The output does not make design or construction decisions.",
+      "Final judgment must be made by BIM personnel."
+    ]
+  },
+  {
+    "ElementId": "3FL-203-0045",
+    "Category": "Room",
+    "Room": {
+      "Level": "3FL",
+      "RoomName": "給湯室",
+      "RoomNumber": "203",
+      "RoomAlias": "給湯室",
+      "RoomGroupName": "基準階",
+      "RoomGroupNumber": "2",
+      "AreaRaw": "7.4075 m²",
+      "Area": "7.4075",
+      "CH": "2400",
+      "FloorFinish": "ビニル床シート(A)",
+      "WallFinish": "EP-2",
+      "CeilingFinish": "化粧GB(A)",
+      "Notes": ""
+    },
+    "QualityCheck": {
+      "RuleViolationCount": "0",
+      "BlockingRuleIds": "",
+      "RuleResults": []
+    },
+    "AIReadiness": {
+      "AIReadinessScore": "100",
+      "AIReadinessLevel": "High",
+      "AIReadinessPenaltyTotal": "0",
+      "HumanReviewRequired": "False"
+    },
+    "NotesForAIUse": [
+      "This context is generated from Revit Room Schedule data for PoC purposes.",
+      "Room ElementId is a temporary PoC identifier, not Revit internal ElementId or UniqueId.",
+      "The output does not make design or construction decisions.",
+      "Final judgment must be made by BIM personnel."
+    ]
+  },
+  {
+    "ElementId": "4FL-203-0046",
+    "Category": "Room",
+    "Room": {
+      "Level": "4FL",
+      "RoomName": "給湯室",
+      "RoomNumber": "203",
+      "RoomAlias": "給湯室",
+      "RoomGroupName": "基準階",
+      "RoomGroupNumber": "2",
+      "AreaRaw": "7.4075 m²",
+      "Area": "7.4075",
+      "CH": "2400",
+      "FloorFinish": "ビニル床シート(A)",
+      "WallFinish": "EP-2",
+      "CeilingFinish": "化粧GB(A)",
+      "Notes": ""
+    },
+    "QualityCheck": {
+      "RuleViolationCount": "0",
+      "BlockingRuleIds": "",
+      "RuleResults": []
+    },
+    "AIReadiness": {
+      "AIReadinessScore": "100",
+      "AIReadinessLevel": "High",
+      "AIReadinessPenaltyTotal": "0",
+      "HumanReviewRequired": "False"
+    },
+    "NotesForAIUse": [
+      "This context is generated from Revit Room Schedule data for PoC purposes.",
+      "Room ElementId is a temporary PoC identifier, not Revit internal ElementId or UniqueId.",
+      "The output does not make design or construction decisions.",
+      "Final judgment must be made by BIM personnel."
+    ]
+  },
+  {
+    "ElementId": "5FL-203-0047",
+    "Category": "Room",
+    "Room": {
+      "Level": "5FL",
+      "RoomName": "給湯室",
+      "RoomNumber": "203",
+      "RoomAlias": "給湯室",
+      "RoomGroupName": "基準階",
+      "RoomGroupNumber": "2",
+      "AreaRaw": "7.4075 m²",
+      "Area": "7.4075",
+      "CH": "2400",
+      "FloorFinish": "ビニル床シート(A)",
+      "WallFinish": "EP-2",
+      "CeilingFinish": "化粧GB(A)",
+      "Notes": ""
+    },
+    "QualityCheck": {
+      "RuleViolationCount": "0",
+      "BlockingRuleIds": "",
+      "RuleResults": []
+    },
+    "AIReadiness": {
+      "AIReadinessScore": "100",
+      "AIReadinessLevel": "High",
+      "AIReadinessPenaltyTotal": "0",
+      "HumanReviewRequired": "False"
+    },
+    "NotesForAIUse": [
+      "This context is generated from Revit Room Schedule data for PoC purposes.",
+      "Room ElementId is a temporary PoC identifier, not Revit internal ElementId or UniqueId.",
+      "The output does not make design or construction decisions.",
+      "Final judgment must be made by BIM personnel."
+    ]
+  },
+  {
+    "ElementId": "6FL-203-0048",
+    "Category": "Room",
+    "Room": {
+      "Level": "6FL",
+      "RoomName": "給湯室",
+      "RoomNumber": "203",
+      "RoomAlias": "給湯室",
+      "RoomGroupName": "基準階",
+      "RoomGroupNumber": "2",
+      "AreaRaw": "7.4075 m²",
+      "Area": "7.4075",
+      "CH": "2400",
+      "FloorFinish": "ビニル床シート(A)",
+      "WallFinish": "EP-2",
+      "CeilingFinish": "化粧GB(A)",
+      "Notes": ""
+    },
+    "QualityCheck": {
+      "RuleViolationCount": "0",
+      "BlockingRuleIds": "",
+      "RuleResults": []
+    },
+    "AIReadiness": {
+      "AIReadinessScore": "100",
+      "AIReadinessLevel": "High",
+      "AIReadinessPenaltyTotal": "0",
+      "HumanReviewRequired": "False"
+    },
+    "NotesForAIUse": [
+      "This context is generated from Revit Room Schedule data for PoC purposes.",
+      "Room ElementId is a temporary PoC identifier, not Revit internal ElementId or UniqueId.",
+      "The output does not make design or construction decisions.",
+      "Final judgment must be made by BIM personnel."
+    ]
+  },
+  {
+    "ElementId": "7FL-203-0049",
+    "Category": "Room",
+    "Room": {
+      "Level": "7FL",
+      "RoomName": "給湯室",
+      "RoomNumber": "203",
+      "RoomAlias": "給湯室",
+      "RoomGroupName": "基準階",
+      "RoomGroupNumber": "2",
+      "AreaRaw": "7.4075 m²",
+      "Area": "7.4075",
+      "CH": "2400",
+      "FloorFinish": "ビニル床シート(A)",
+      "WallFinish": "EP-2",
+      "CeilingFinish": "化粧GB(A)",
+      "Notes": ""
+    },
+    "QualityCheck": {
+      "RuleViolationCount": "0",
+      "BlockingRuleIds": "",
+      "RuleResults": []
+    },
+    "AIReadiness": {
+      "AIReadinessScore": "100",
+      "AIReadinessLevel": "High",
+      "AIReadinessPenaltyTotal": "0",
+      "HumanReviewRequired": "False"
+    },
+    "NotesForAIUse": [
+      "This context is generated from Revit Room Schedule data for PoC purposes.",
+      "Room ElementId is a temporary PoC identifier, not Revit internal ElementId or UniqueId.",
+      "The output does not make design or construction decisions.",
+      "Final judgment must be made by BIM personnel."
+    ]
+  },
+  {
+    "ElementId": "2FL-204-0050",
+    "Category": "Room",
+    "Room": {
+      "Level": "2FL",
+      "RoomName": "WC男",
+      "RoomNumber": "204",
+      "RoomAlias": "WC男",
+      "RoomGroupName": "基準階",
+      "RoomGroupNumber": "2",
+      "AreaRaw": "15.2325 m²",
+      "Area": "15.2325",
+      "CH": "2400",
+      "FloorFinish": "ビニル床シート(A)",
+      "WallFinish": "化粧塩ビシート(A)",
+      "CeilingFinish": "化粧GB(A)",
+      "Notes": ""
+    },
+    "QualityCheck": {
+      "RuleViolationCount": "0",
+      "BlockingRuleIds": "",
+      "RuleResults": []
+    },
+    "AIReadiness": {
+      "AIReadinessScore": "100",
+      "AIReadinessLevel": "High",
+      "AIReadinessPenaltyTotal": "0",
+      "HumanReviewRequired": "False"
+    },
+    "NotesForAIUse": [
+      "This context is generated from Revit Room Schedule data for PoC purposes.",
+      "Room ElementId is a temporary PoC identifier, not Revit internal ElementId or UniqueId.",
+      "The output does not make design or construction decisions.",
+      "Final judgment must be made by BIM personnel."
+    ]
+  },
+  {
+    "ElementId": "3FL-204-0051",
+    "Category": "Room",
+    "Room": {
+      "Level": "3FL",
+      "RoomName": "WC男",
+      "RoomNumber": "204",
+      "RoomAlias": "WC男",
+      "RoomGroupName": "基準階",
+      "RoomGroupNumber": "2",
+      "AreaRaw": "15.2325 m²",
+      "Area": "15.2325",
+      "CH": "2400",
+      "FloorFinish": "ビニル床シート(A)",
+      "WallFinish": "化粧塩ビシート(A)",
+      "CeilingFinish": "化粧GB(A)",
+      "Notes": ""
+    },
+    "QualityCheck": {
+      "RuleViolationCount": "0",
+      "BlockingRuleIds": "",
+      "RuleResults": []
+    },
+    "AIReadiness": {
+      "AIReadinessScore": "100",
+      "AIReadinessLevel": "High",
+      "AIReadinessPenaltyTotal": "0",
+      "HumanReviewRequired": "False"
+    },
+    "NotesForAIUse": [
+      "This context is generated from Revit Room Schedule data for PoC purposes.",
+      "Room ElementId is a temporary PoC identifier, not Revit internal ElementId or UniqueId.",
+      "The output does not make design or construction decisions.",
+      "Final judgment must be made by BIM personnel."
+    ]
+  },
+  {
+    "ElementId": "4FL-204-0052",
+    "Category": "Room",
+    "Room": {
+      "Level": "4FL",
+      "RoomName": "WC男",
+      "RoomNumber": "204",
+      "RoomAlias": "WC男",
+      "RoomGroupName": "基準階",
+      "RoomGroupNumber": "2",
+      "AreaRaw": "15.2325 m²",
+      "Area": "15.2325",
+      "CH": "2400",
+      "FloorFinish": "ビニル床シート(A)",
+      "WallFinish": "化粧塩ビシート(A)",
+      "CeilingFinish": "化粧GB(A)",
+      "Notes": ""
+    },
+    "QualityCheck": {
+      "RuleViolationCount": "0",
+      "BlockingRuleIds": "",
+      "RuleResults": []
+    },
+    "AIReadiness": {
+      "AIReadinessScore": "100",
+      "AIReadinessLevel": "High",
+      "AIReadinessPenaltyTotal": "0",
+      "HumanReviewRequired": "False"
+    },
+    "NotesForAIUse": [
+      "This context is generated from Revit Room Schedule data for PoC purposes.",
+      "Room ElementId is a temporary PoC identifier, not Revit internal ElementId or UniqueId.",
+      "The output does not make design or construction decisions.",
+      "Final judgment must be made by BIM personnel."
+    ]
+  },
+  {
+    "ElementId": "5FL-204-0053",
+    "Category": "Room",
+    "Room": {
+      "Level": "5FL",
+      "RoomName": "WC男",
+      "RoomNumber": "204",
+      "RoomAlias": "WC男",
+      "RoomGroupName": "基準階",
+      "RoomGroupNumber": "2",
+      "AreaRaw": "15.2325 m²",
+      "Area": "15.2325",
+      "CH": "2400",
+      "FloorFinish": "ビニル床シート(A)",
+      "WallFinish": "化粧塩ビシート(A)",
+      "CeilingFinish": "化粧GB(A)",
+      "Notes": ""
+    },
+    "QualityCheck": {
+      "RuleViolationCount": "0",
+      "BlockingRuleIds": "",
+      "RuleResults": []
+    },
+    "AIReadiness": {
+      "AIReadinessScore": "100",
+      "AIReadinessLevel": "High",
+      "AIReadinessPenaltyTotal": "0",
+      "HumanReviewRequired": "False"
+    },
+    "NotesForAIUse": [
+      "This context is generated from Revit Room Schedule data for PoC purposes.",
+      "Room ElementId is a temporary PoC identifier, not Revit internal ElementId or UniqueId.",
+      "The output does not make design or construction decisions.",
+      "Final judgment must be made by BIM personnel."
+    ]
+  },
+  {
+    "ElementId": "6FL-204-0054",
+    "Category": "Room",
+    "Room": {
+      "Level": "6FL",
+      "RoomName": "WC男",
+      "RoomNumber": "204",
+      "RoomAlias": "WC男",
+      "RoomGroupName": "基準階",
+      "RoomGroupNumber": "2",
+      "AreaRaw": "15.2325 m²",
+      "Area": "15.2325",
+      "CH": "2400",
+      "FloorFinish": "ビニル床シート(A)",
+      "WallFinish": "化粧塩ビシート(A)",
+      "CeilingFinish": "化粧GB(A)",
+      "Notes": ""
+    },
+    "QualityCheck": {
+      "RuleViolationCount": "0",
+      "BlockingRuleIds": "",
+      "RuleResults": []
+    },
+    "AIReadiness": {
+      "AIReadinessScore": "100",
+      "AIReadinessLevel": "High",
+      "AIReadinessPenaltyTotal": "0",
+      "HumanReviewRequired": "False"
+    },
+    "NotesForAIUse": [
+      "This context is generated from Revit Room Schedule data for PoC purposes.",
+      "Room ElementId is a temporary PoC identifier, not Revit internal ElementId or UniqueId.",
+      "The output does not make design or construction decisions.",
+      "Final judgment must be made by BIM personnel."
+    ]
+  },
+  {
+    "ElementId": "7FL-204-0055",
+    "Category": "Room",
+    "Room": {
+      "Level": "7FL",
+      "RoomName": "WC男",
+      "RoomNumber": "204",
+      "RoomAlias": "WC男",
+      "RoomGroupName": "基準階",
+      "RoomGroupNumber": "2",
+      "AreaRaw": "15.2325 m²",
+      "Area": "15.2325",
+      "CH": "2400",
+      "FloorFinish": "ビニル床シート(A)",
+      "WallFinish": "化粧塩ビシート(A)",
+      "CeilingFinish": "化粧GB(A)",
+      "Notes": ""
+    },
+    "QualityCheck": {
+      "RuleViolationCount": "0",
+      "BlockingRuleIds": "",
+      "RuleResults": []
+    },
+    "AIReadiness": {
+      "AIReadinessScore": "100",
+      "AIReadinessLevel": "High",
+      "AIReadinessPenaltyTotal": "0",
+      "HumanReviewRequired": "False"
+    },
+    "NotesForAIUse": [
+      "This context is generated from Revit Room Schedule data for PoC purposes.",
+      "Room ElementId is a temporary PoC identifier, not Revit internal ElementId or UniqueId.",
+      "The output does not make design or construction decisions.",
+      "Final judgment must be made by BIM personnel."
+    ]
+  },
+  {
+    "ElementId": "2FL-205-0056",
+    "Category": "Room",
+    "Room": {
+      "Level": "2FL",
+      "RoomName": "WC女",
+      "RoomNumber": "205",
+      "RoomAlias": "WC女",
+      "RoomGroupName": "基準階",
+      "RoomGroupNumber": "2",
+      "AreaRaw": "17.5494 m²",
+      "Area": "17.5494",
+      "CH": "2400",
+      "FloorFinish": "ビニル床シート(A)",
+      "WallFinish": "化粧塩ビシート(A)",
+      "CeilingFinish": "化粧GB(A)",
+      "Notes": ""
+    },
+    "QualityCheck": {
+      "RuleViolationCount": "0",
+      "BlockingRuleIds": "",
+      "RuleResults": []
+    },
+    "AIReadiness": {
+      "AIReadinessScore": "100",
+      "AIReadinessLevel": "High",
+      "AIReadinessPenaltyTotal": "0",
+      "HumanReviewRequired": "False"
+    },
+    "NotesForAIUse": [
+      "This context is generated from Revit Room Schedule data for PoC purposes.",
+      "Room ElementId is a temporary PoC identifier, not Revit internal ElementId or UniqueId.",
+      "The output does not make design or construction decisions.",
+      "Final judgment must be made by BIM personnel."
+    ]
+  },
+  {
+    "ElementId": "3FL-205-0057",
+    "Category": "Room",
+    "Room": {
+      "Level": "3FL",
+      "RoomName": "WC女",
+      "RoomNumber": "205",
+      "RoomAlias": "WC女",
+      "RoomGroupName": "基準階",
+      "RoomGroupNumber": "2",
+      "AreaRaw": "17.5494 m²",
+      "Area": "17.5494",
+      "CH": "2400",
+      "FloorFinish": "ビニル床シート(A)",
+      "WallFinish": "化粧塩ビシート(A)",
+      "CeilingFinish": "化粧GB(A)",
+      "Notes": ""
+    },
+    "QualityCheck": {
+      "RuleViolationCount": "0",
+      "BlockingRuleIds": "",
+      "RuleResults": []
+    },
+    "AIReadiness": {
+      "AIReadinessScore": "100",
+      "AIReadinessLevel": "High",
+      "AIReadinessPenaltyTotal": "0",
+      "HumanReviewRequired": "False"
+    },
+    "NotesForAIUse": [
+      "This context is generated from Revit Room Schedule data for PoC purposes.",
+      "Room ElementId is a temporary PoC identifier, not Revit internal ElementId or UniqueId.",
+      "The output does not make design or construction decisions.",
+      "Final judgment must be made by BIM personnel."
+    ]
+  },
+  {
+    "ElementId": "4FL-205-0058",
+    "Category": "Room",
+    "Room": {
+      "Level": "4FL",
+      "RoomName": "WC女",
+      "RoomNumber": "205",
+      "RoomAlias": "WC女",
+      "RoomGroupName": "基準階",
+      "RoomGroupNumber": "2",
+      "AreaRaw": "17.5494 m²",
+      "Area": "17.5494",
+      "CH": "2400",
+      "FloorFinish": "ビニル床シート(A)",
+      "WallFinish": "化粧塩ビシート(A)",
+      "CeilingFinish": "化粧GB(A)",
+      "Notes": ""
+    },
+    "QualityCheck": {
+      "RuleViolationCount": "0",
+      "BlockingRuleIds": "",
+      "RuleResults": []
+    },
+    "AIReadiness": {
+      "AIReadinessScore": "100",
+      "AIReadinessLevel": "High",
+      "AIReadinessPenaltyTotal": "0",
+      "HumanReviewRequired": "False"
+    },
+    "NotesForAIUse": [
+      "This context is generated from Revit Room Schedule data for PoC purposes.",
+      "Room ElementId is a temporary PoC identifier, not Revit internal ElementId or UniqueId.",
+      "The output does not make design or construction decisions.",
+      "Final judgment must be made by BIM personnel."
+    ]
+  },
+  {
+    "ElementId": "5FL-205-0059",
+    "Category": "Room",
+    "Room": {
+      "Level": "5FL",
+      "RoomName": "WC女",
+      "RoomNumber": "205",
+      "RoomAlias": "WC女",
+      "RoomGroupName": "基準階",
+      "RoomGroupNumber": "2",
+      "AreaRaw": "17.5494 m²",
+      "Area": "17.5494",
+      "CH": "2400",
+      "FloorFinish": "ビニル床シート(A)",
+      "WallFinish": "化粧塩ビシート(A)",
+      "CeilingFinish": "化粧GB(A)",
+      "Notes": ""
+    },
+    "QualityCheck": {
+      "RuleViolationCount": "0",
+      "BlockingRuleIds": "",
+      "RuleResults": []
+    },
+    "AIReadiness": {
+      "AIReadinessScore": "100",
+      "AIReadinessLevel": "High",
+      "AIReadinessPenaltyTotal": "0",
+      "HumanReviewRequired": "False"
+    },
+    "NotesForAIUse": [
+      "This context is generated from Revit Room Schedule data for PoC purposes.",
+      "Room ElementId is a temporary PoC identifier, not Revit internal ElementId or UniqueId.",
+      "The output does not make design or construction decisions.",
+      "Final judgment must be made by BIM personnel."
+    ]
+  },
+  {
+    "ElementId": "6FL-205-0060",
+    "Category": "Room",
+    "Room": {
+      "Level": "6FL",
+      "RoomName": "WC女",
+      "RoomNumber": "205",
+      "RoomAlias": "WC女",
+      "RoomGroupName": "基準階",
+      "RoomGroupNumber": "2",
+      "AreaRaw": "17.5494 m²",
+      "Area": "17.5494",
+      "CH": "2400",
+      "FloorFinish": "ビニル床シート(A)",
+      "WallFinish": "化粧塩ビシート(A)",
+      "CeilingFinish": "化粧GB(A)",
+      "Notes": ""
+    },
+    "QualityCheck": {
+      "RuleViolationCount": "0",
+      "BlockingRuleIds": "",
+      "RuleResults": []
+    },
+    "AIReadiness": {
+      "AIReadinessScore": "100",
+      "AIReadinessLevel": "High",
+      "AIReadinessPenaltyTotal": "0",
+      "HumanReviewRequired": "False"
+    },
+    "NotesForAIUse": [
+      "This context is generated from Revit Room Schedule data for PoC purposes.",
+      "Room ElementId is a temporary PoC identifier, not Revit internal ElementId or UniqueId.",
+      "The output does not make design or construction decisions.",
+      "Final judgment must be made by BIM personnel."
+    ]
+  },
+  {
+    "ElementId": "7FL-205-0061",
+    "Category": "Room",
+    "Room": {
+      "Level": "7FL",
+      "RoomName": "WC女",
+      "RoomNumber": "205",
+      "RoomAlias": "WC女",
+      "RoomGroupName": "基準階",
+      "RoomGroupNumber": "2",
+      "AreaRaw": "17.5494 m²",
+      "Area": "17.5494",
+      "CH": "2400",
+      "FloorFinish": "ビニル床シート(A)",
+      "WallFinish": "化粧塩ビシート(A)",
+      "CeilingFinish": "化粧GB(A)",
+      "Notes": ""
+    },
+    "QualityCheck": {
+      "RuleViolationCount": "0",
+      "BlockingRuleIds": "",
+      "RuleResults": []
+    },
+    "AIReadiness": {
+      "AIReadinessScore": "100",
+      "AIReadinessLevel": "High",
+      "AIReadinessPenaltyTotal": "0",
+      "HumanReviewRequired": "False"
+    },
+    "NotesForAIUse": [
+      "This context is generated from Revit Room Schedule data for PoC purposes.",
+      "Room ElementId is a temporary PoC identifier, not Revit internal ElementId or UniqueId.",
+      "The output does not make design or construction decisions.",
+      "Final judgment must be made by BIM personnel."
+    ]
+  },
+  {
+    "ElementId": "2FL-300-0062",
+    "Category": "Room",
+    "Room": {
+      "Level": "2FL",
+      "RoomName": "階段室",
+      "RoomNumber": "300",
+      "RoomAlias": "階段室",
+      "RoomGroupName": "共通",
+      "RoomGroupNumber": "4",
+      "AreaRaw": "14.1075 m²",
+      "Area": "14.1075",
+      "CH": "2500(7階)",
+      "FloorFinish": "ビニル床シート(A)",
+      "WallFinish": "EP-2",
+      "CeilingFinish": "岩綿吸音板(A)",
+      "Notes": ""
+    },
+    "QualityCheck": {
+      "RuleViolationCount": "0",
+      "BlockingRuleIds": "",
+      "RuleResults": []
+    },
+    "AIReadiness": {
+      "AIReadinessScore": "100",
+      "AIReadinessLevel": "High",
+      "AIReadinessPenaltyTotal": "0",
+      "HumanReviewRequired": "False"
+    },
+    "NotesForAIUse": [
+      "This context is generated from Revit Room Schedule data for PoC purposes.",
+      "Room ElementId is a temporary PoC identifier, not Revit internal ElementId or UniqueId.",
+      "The output does not make design or construction decisions.",
+      "Final judgment must be made by BIM personnel."
+    ]
+  },
+  {
+    "ElementId": "1FL-300-0063",
+    "Category": "Room",
+    "Room": {
+      "Level": "1FL",
+      "RoomName": "階段室",
+      "RoomNumber": "300",
+      "RoomAlias": "階段室",
+      "RoomGroupName": "共通",
+      "RoomGroupNumber": "4",
+      "AreaRaw": "14.3063 m²",
+      "Area": "14.3063",
+      "CH": "2500(7階)",
+      "FloorFinish": "ビニル床シート(A)",
+      "WallFinish": "EP-2",
+      "CeilingFinish": "岩綿吸音板(A)",
+      "Notes": ""
+    },
+    "QualityCheck": {
+      "RuleViolationCount": "0",
+      "BlockingRuleIds": "",
+      "RuleResults": []
+    },
+    "AIReadiness": {
+      "AIReadinessScore": "100",
+      "AIReadinessLevel": "High",
+      "AIReadinessPenaltyTotal": "0",
+      "HumanReviewRequired": "False"
+    },
+    "NotesForAIUse": [
+      "This context is generated from Revit Room Schedule data for PoC purposes.",
+      "Room ElementId is a temporary PoC identifier, not Revit internal ElementId or UniqueId.",
+      "The output does not make design or construction decisions.",
+      "Final judgment must be made by BIM personnel."
+    ]
+  },
+  {
+    "ElementId": "3FL-300-0064",
+    "Category": "Room",
+    "Room": {
+      "Level": "3FL",
+      "RoomName": "階段室",
+      "RoomNumber": "300",
+      "RoomAlias": "階段室",
+      "RoomGroupName": "共通",
+      "RoomGroupNumber": "4",
+      "AreaRaw": "14.1075 m²",
+      "Area": "14.1075",
+      "CH": "2500(7階)",
+      "FloorFinish": "ビニル床シート(A)",
+      "WallFinish": "EP-2",
+      "CeilingFinish": "岩綿吸音板(A)",
+      "Notes": ""
+    },
+    "QualityCheck": {
+      "RuleViolationCount": "0",
+      "BlockingRuleIds": "",
+      "RuleResults": []
+    },
+    "AIReadiness": {
+      "AIReadinessScore": "100",
+      "AIReadinessLevel": "High",
+      "AIReadinessPenaltyTotal": "0",
+      "HumanReviewRequired": "False"
+    },
+    "NotesForAIUse": [
+      "This context is generated from Revit Room Schedule data for PoC purposes.",
+      "Room ElementId is a temporary PoC identifier, not Revit internal ElementId or UniqueId.",
+      "The output does not make design or construction decisions.",
+      "Final judgment must be made by BIM personnel."
+    ]
+  },
+  {
+    "ElementId": "4FL-300-0065",
+    "Category": "Room",
+    "Room": {
+      "Level": "4FL",
+      "RoomName": "階段室",
+      "RoomNumber": "300",
+      "RoomAlias": "階段室",
+      "RoomGroupName": "共通",
+      "RoomGroupNumber": "4",
+      "AreaRaw": "14.1075 m²",
+      "Area": "14.1075",
+      "CH": "2500(7階)",
+      "FloorFinish": "ビニル床シート(A)",
+      "WallFinish": "EP-2",
+      "CeilingFinish": "岩綿吸音板(A)",
+      "Notes": ""
+    },
+    "QualityCheck": {
+      "RuleViolationCount": "0",
+      "BlockingRuleIds": "",
+      "RuleResults": []
+    },
+    "AIReadiness": {
+      "AIReadinessScore": "100",
+      "AIReadinessLevel": "High",
+      "AIReadinessPenaltyTotal": "0",
+      "HumanReviewRequired": "False"
+    },
+    "NotesForAIUse": [
+      "This context is generated from Revit Room Schedule data for PoC purposes.",
+      "Room ElementId is a temporary PoC identifier, not Revit internal ElementId or UniqueId.",
+      "The output does not make design or construction decisions.",
+      "Final judgment must be made by BIM personnel."
+    ]
+  },
+  {
+    "ElementId": "5FL-300-0066",
+    "Category": "Room",
+    "Room": {
+      "Level": "5FL",
+      "RoomName": "階段室",
+      "RoomNumber": "300",
+      "RoomAlias": "階段室",
+      "RoomGroupName": "共通",
+      "RoomGroupNumber": "4",
+      "AreaRaw": "14.1075 m²",
+      "Area": "14.1075",
+      "CH": "2500(7階)",
+      "FloorFinish": "ビニル床シート(A)",
+      "WallFinish": "EP-2",
+      "CeilingFinish": "岩綿吸音板(A)",
+      "Notes": ""
+    },
+    "QualityCheck": {
+      "RuleViolationCount": "0",
+      "BlockingRuleIds": "",
+      "RuleResults": []
+    },
+    "AIReadiness": {
+      "AIReadinessScore": "100",
+      "AIReadinessLevel": "High",
+      "AIReadinessPenaltyTotal": "0",
+      "HumanReviewRequired": "False"
+    },
+    "NotesForAIUse": [
+      "This context is generated from Revit Room Schedule data for PoC purposes.",
+      "Room ElementId is a temporary PoC identifier, not Revit internal ElementId or UniqueId.",
+      "The output does not make design or construction decisions.",
+      "Final judgment must be made by BIM personnel."
+    ]
+  },
+  {
+    "ElementId": "6FL-300-0067",
+    "Category": "Room",
+    "Room": {
+      "Level": "6FL",
+      "RoomName": "階段室",
+      "RoomNumber": "300",
+      "RoomAlias": "階段室",
+      "RoomGroupName": "共通",
+      "RoomGroupNumber": "4",
+      "AreaRaw": "14.1075 m²",
+      "Area": "14.1075",
+      "CH": "2500(7階)",
+      "FloorFinish": "ビニル床シート(A)",
+      "WallFinish": "EP-2",
+      "CeilingFinish": "岩綿吸音板(A)",
+      "Notes": ""
+    },
+    "QualityCheck": {
+      "RuleViolationCount": "0",
+      "BlockingRuleIds": "",
+      "RuleResults": []
+    },
+    "AIReadiness": {
+      "AIReadinessScore": "100",
+      "AIReadinessLevel": "High",
+      "AIReadinessPenaltyTotal": "0",
+      "HumanReviewRequired": "False"
+    },
+    "NotesForAIUse": [
+      "This context is generated from Revit Room Schedule data for PoC purposes.",
+      "Room ElementId is a temporary PoC identifier, not Revit internal ElementId or UniqueId.",
+      "The output does not make design or construction decisions.",
+      "Final judgment must be made by BIM personnel."
+    ]
+  },
+  {
+    "ElementId": "7FL-300-0068",
+    "Category": "Room",
+    "Room": {
+      "Level": "7FL",
+      "RoomName": "階段室",
+      "RoomNumber": "300",
+      "RoomAlias": "階段室",
+      "RoomGroupName": "共通",
+      "RoomGroupNumber": "4",
+      "AreaRaw": "14.1075 m²",
+      "Area": "14.1075",
+      "CH": "2500(7階)",
+      "FloorFinish": "ビニル床シート(A)",
+      "WallFinish": "EP-2",
+      "CeilingFinish": "岩綿吸音板(A)",
+      "Notes": ""
+    },
+    "QualityCheck": {
+      "RuleViolationCount": "0",
+      "BlockingRuleIds": "",
+      "RuleResults": []
+    },
+    "AIReadiness": {
+      "AIReadinessScore": "100",
+      "AIReadinessLevel": "High",
+      "AIReadinessPenaltyTotal": "0",
+      "HumanReviewRequired": "False"
+    },
+    "NotesForAIUse": [
+      "This context is generated from Revit Room Schedule data for PoC purposes.",
+      "Room ElementId is a temporary PoC identifier, not Revit internal ElementId or UniqueId.",
+      "The output does not make design or construction decisions.",
+      "Final judgment must be made by BIM personnel."
+    ]
+  },
+  {
+    "ElementId": "2FL-301-0069",
+    "Category": "Room",
+    "Room": {
+      "Level": "2FL",
+      "RoomName": "PS",
+      "RoomNumber": "301",
+      "RoomAlias": "PS",
+      "RoomGroupName": "共通",
+      "RoomGroupNumber": "4",
+      "AreaRaw": "3.0500 m²",
+      "Area": "3.05",
+      "CH": "直天",
+      "FloorFinish": "防塵塗装(A)",
+      "WallFinish": "素地",
+      "CeilingFinish": "素地",
+      "Notes": ""
+    },
+    "QualityCheck": {
+      "RuleViolationCount": "0",
+      "BlockingRuleIds": "",
+      "RuleResults": []
+    },
+    "AIReadiness": {
+      "AIReadinessScore": "100",
+      "AIReadinessLevel": "High",
+      "AIReadinessPenaltyTotal": "0",
+      "HumanReviewRequired": "False"
+    },
+    "NotesForAIUse": [
+      "This context is generated from Revit Room Schedule data for PoC purposes.",
+      "Room ElementId is a temporary PoC identifier, not Revit internal ElementId or UniqueId.",
+      "The output does not make design or construction decisions.",
+      "Final judgment must be made by BIM personnel."
+    ]
+  },
+  {
+    "ElementId": "3FL-301-0070",
+    "Category": "Room",
+    "Room": {
+      "Level": "3FL",
+      "RoomName": "PS",
+      "RoomNumber": "301",
+      "RoomAlias": "PS",
+      "RoomGroupName": "共通",
+      "RoomGroupNumber": "4",
+      "AreaRaw": "1.1600 m²",
+      "Area": "1.16",
+      "CH": "直天",
+      "FloorFinish": "防塵塗装(A)",
+      "WallFinish": "素地",
+      "CeilingFinish": "素地",
+      "Notes": ""
+    },
+    "QualityCheck": {
+      "RuleViolationCount": "0",
+      "BlockingRuleIds": "",
+      "RuleResults": []
+    },
+    "AIReadiness": {
+      "AIReadinessScore": "100",
+      "AIReadinessLevel": "High",
+      "AIReadinessPenaltyTotal": "0",
+      "HumanReviewRequired": "False"
+    },
+    "NotesForAIUse": [
+      "This context is generated from Revit Room Schedule data for PoC purposes.",
+      "Room ElementId is a temporary PoC identifier, not Revit internal ElementId or UniqueId.",
+      "The output does not make design or construction decisions.",
+      "Final judgment must be made by BIM personnel."
+    ]
+  },
+  {
+    "ElementId": "3FL-301-0071",
+    "Category": "Room",
+    "Room": {
+      "Level": "3FL",
+      "RoomName": "PS",
+      "RoomNumber": "301",
+      "RoomAlias": "PS",
+      "RoomGroupName": "共通",
+      "RoomGroupNumber": "4",
+      "AreaRaw": "2.1090 m²",
+      "Area": "2.109",
+      "CH": "直天",
+      "FloorFinish": "防塵塗装(A)",
+      "WallFinish": "素地",
+      "CeilingFinish": "素地",
+      "Notes": ""
+    },
+    "QualityCheck": {
+      "RuleViolationCount": "0",
+      "BlockingRuleIds": "",
+      "RuleResults": []
+    },
+    "AIReadiness": {
+      "AIReadinessScore": "100",
+      "AIReadinessLevel": "High",
+      "AIReadinessPenaltyTotal": "0",
+      "HumanReviewRequired": "False"
+    },
+    "NotesForAIUse": [
+      "This context is generated from Revit Room Schedule data for PoC purposes.",
+      "Room ElementId is a temporary PoC identifier, not Revit internal ElementId or UniqueId.",
+      "The output does not make design or construction decisions.",
+      "Final judgment must be made by BIM personnel."
+    ]
+  },
+  {
+    "ElementId": "4FL-301-0072",
+    "Category": "Room",
+    "Room": {
+      "Level": "4FL",
+      "RoomName": "PS",
+      "RoomNumber": "301",
+      "RoomAlias": "PS",
+      "RoomGroupName": "共通",
+      "RoomGroupNumber": "4",
+      "AreaRaw": "3.0500 m²",
+      "Area": "3.05",
+      "CH": "直天",
+      "FloorFinish": "防塵塗装(A)",
+      "WallFinish": "素地",
+      "CeilingFinish": "素地",
+      "Notes": ""
+    },
+    "QualityCheck": {
+      "RuleViolationCount": "0",
+      "BlockingRuleIds": "",
+      "RuleResults": []
+    },
+    "AIReadiness": {
+      "AIReadinessScore": "100",
+      "AIReadinessLevel": "High",
+      "AIReadinessPenaltyTotal": "0",
+      "HumanReviewRequired": "False"
+    },
+    "NotesForAIUse": [
+      "This context is generated from Revit Room Schedule data for PoC purposes.",
+      "Room ElementId is a temporary PoC identifier, not Revit internal ElementId or UniqueId.",
+      "The output does not make design or construction decisions.",
+      "Final judgment must be made by BIM personnel."
+    ]
+  },
+  {
+    "ElementId": "5FL-301-0073",
+    "Category": "Room",
+    "Room": {
+      "Level": "5FL",
+      "RoomName": "PS",
+      "RoomNumber": "301",
+      "RoomAlias": "PS",
+      "RoomGroupName": "共通",
+      "RoomGroupNumber": "4",
+      "AreaRaw": "3.0500 m²",
+      "Area": "3.05",
+      "CH": "直天",
+      "FloorFinish": "防塵塗装(A)",
+      "WallFinish": "素地",
+      "CeilingFinish": "素地",
+      "Notes": ""
+    },
+    "QualityCheck": {
+      "RuleViolationCount": "0",
+      "BlockingRuleIds": "",
+      "RuleResults": []
+    },
+    "AIReadiness": {
+      "AIReadinessScore": "100",
+      "AIReadinessLevel": "High",
+      "AIReadinessPenaltyTotal": "0",
+      "HumanReviewRequired": "False"
+    },
+    "NotesForAIUse": [
+      "This context is generated from Revit Room Schedule data for PoC purposes.",
+      "Room ElementId is a temporary PoC identifier, not Revit internal ElementId or UniqueId.",
+      "The output does not make design or construction decisions.",
+      "Final judgment must be made by BIM personnel."
+    ]
+  },
+  {
+    "ElementId": "6FL-301-0074",
+    "Category": "Room",
+    "Room": {
+      "Level": "6FL",
+      "RoomName": "PS",
+      "RoomNumber": "301",
+      "RoomAlias": "PS",
+      "RoomGroupName": "共通",
+      "RoomGroupNumber": "4",
+      "AreaRaw": "3.0500 m²",
+      "Area": "3.05",
+      "CH": "直天",
+      "FloorFinish": "防塵塗装(A)",
+      "WallFinish": "素地",
+      "CeilingFinish": "素地",
+      "Notes": ""
+    },
+    "QualityCheck": {
+      "RuleViolationCount": "0",
+      "BlockingRuleIds": "",
+      "RuleResults": []
+    },
+    "AIReadiness": {
+      "AIReadinessScore": "100",
+      "AIReadinessLevel": "High",
+      "AIReadinessPenaltyTotal": "0",
+      "HumanReviewRequired": "False"
+    },
+    "NotesForAIUse": [
+      "This context is generated from Revit Room Schedule data for PoC purposes.",
+      "Room ElementId is a temporary PoC identifier, not Revit internal ElementId or UniqueId.",
+      "The output does not make design or construction decisions.",
+      "Final judgment must be made by BIM personnel."
+    ]
+  },
+  {
+    "ElementId": "7FL-301-0075",
+    "Category": "Room",
+    "Room": {
+      "Level": "7FL",
+      "RoomName": "PS",
+      "RoomNumber": "301",
+      "RoomAlias": "PS",
+      "RoomGroupName": "共通",
+      "RoomGroupNumber": "4",
+      "AreaRaw": "3.0500 m²",
+      "Area": "3.05",
+      "CH": "直天",
+      "FloorFinish": "防塵塗装(A)",
+      "WallFinish": "素地",
+      "CeilingFinish": "素地",
+      "Notes": ""
+    },
+    "QualityCheck": {
+      "RuleViolationCount": "0",
+      "BlockingRuleIds": "",
+      "RuleResults": []
+    },
+    "AIReadiness": {
+      "AIReadinessScore": "100",
+      "AIReadinessLevel": "High",
+      "AIReadinessPenaltyTotal": "0",
+      "HumanReviewRequired": "False"
+    },
+    "NotesForAIUse": [
+      "This context is generated from Revit Room Schedule data for PoC purposes.",
+      "Room ElementId is a temporary PoC identifier, not Revit internal ElementId or UniqueId.",
+      "The output does not make design or construction decisions.",
+      "Final judgment must be made by BIM personnel."
+    ]
+  },
+  {
+    "ElementId": "2FL-301-0076",
+    "Category": "Room",
+    "Room": {
+      "Level": "2FL",
+      "RoomName": "PS",
+      "RoomNumber": "301",
+      "RoomAlias": "PS",
+      "RoomGroupName": "共通",
+      "RoomGroupNumber": "4",
+      "AreaRaw": "3.1164 m²",
+      "Area": "3.1164",
+      "CH": "直天",
+      "FloorFinish": "防塵塗装(A)",
+      "WallFinish": "素地",
+      "CeilingFinish": "素地",
+      "Notes": ""
+    },
+    "QualityCheck": {
+      "RuleViolationCount": "0",
+      "BlockingRuleIds": "",
+      "RuleResults": []
+    },
+    "AIReadiness": {
+      "AIReadinessScore": "100",
+      "AIReadinessLevel": "High",
+      "AIReadinessPenaltyTotal": "0",
+      "HumanReviewRequired": "False"
+    },
+    "NotesForAIUse": [
+      "This context is generated from Revit Room Schedule data for PoC purposes.",
+      "Room ElementId is a temporary PoC identifier, not Revit internal ElementId or UniqueId.",
+      "The output does not make design or construction decisions.",
+      "Final judgment must be made by BIM personnel."
+    ]
+  },
+  {
+    "ElementId": "2FL-301-0077",
+    "Category": "Room",
+    "Room": {
+      "Level": "2FL",
+      "RoomName": "PS",
+      "RoomNumber": "301",
+      "RoomAlias": "PS",
+      "RoomGroupName": "共通",
+      "RoomGroupNumber": "4",
+      "AreaRaw": "2.1090 m²",
+      "Area": "2.109",
+      "CH": "直天",
+      "FloorFinish": "防塵塗装(A)",
+      "WallFinish": "素地",
+      "CeilingFinish": "素地",
+      "Notes": ""
+    },
+    "QualityCheck": {
+      "RuleViolationCount": "0",
+      "BlockingRuleIds": "",
+      "RuleResults": []
+    },
+    "AIReadiness": {
+      "AIReadinessScore": "100",
+      "AIReadinessLevel": "High",
+      "AIReadinessPenaltyTotal": "0",
+      "HumanReviewRequired": "False"
+    },
+    "NotesForAIUse": [
+      "This context is generated from Revit Room Schedule data for PoC purposes.",
+      "Room ElementId is a temporary PoC identifier, not Revit internal ElementId or UniqueId.",
+      "The output does not make design or construction decisions.",
+      "Final judgment must be made by BIM personnel."
+    ]
+  },
+  {
+    "ElementId": "2FL-301-0078",
+    "Category": "Room",
+    "Room": {
+      "Level": "2FL",
+      "RoomName": "PS",
+      "RoomNumber": "301",
+      "RoomAlias": "PS",
+      "RoomGroupName": "共通",
+      "RoomGroupNumber": "4",
+      "AreaRaw": "1.1600 m²",
+      "Area": "1.16",
+      "CH": "直天",
+      "FloorFinish": "防塵塗装(A)",
+      "WallFinish": "素地",
+      "CeilingFinish": "素地",
+      "Notes": ""
+    },
+    "QualityCheck": {
+      "RuleViolationCount": "0",
+      "BlockingRuleIds": "",
+      "RuleResults": []
+    },
+    "AIReadiness": {
+      "AIReadinessScore": "100",
+      "AIReadinessLevel": "High",
+      "AIReadinessPenaltyTotal": "0",
+      "HumanReviewRequired": "False"
+    },
+    "NotesForAIUse": [
+      "This context is generated from Revit Room Schedule data for PoC purposes.",
+      "Room ElementId is a temporary PoC identifier, not Revit internal ElementId or UniqueId.",
+      "The output does not make design or construction decisions.",
+      "Final judgment must be made by BIM personnel."
+    ]
+  },
+  {
+    "ElementId": "3FL-301-0079",
+    "Category": "Room",
+    "Room": {
+      "Level": "3FL",
+      "RoomName": "PS",
+      "RoomNumber": "301",
+      "RoomAlias": "PS",
+      "RoomGroupName": "共通",
+      "RoomGroupNumber": "4",
+      "AreaRaw": "3.0500 m²",
+      "Area": "3.05",
+      "CH": "直天",
+      "FloorFinish": "防塵塗装(A)",
+      "WallFinish": "素地",
+      "CeilingFinish": "素地",
+      "Notes": ""
+    },
+    "QualityCheck": {
+      "RuleViolationCount": "0",
+      "BlockingRuleIds": "",
+      "RuleResults": []
+    },
+    "AIReadiness": {
+      "AIReadinessScore": "100",
+      "AIReadinessLevel": "High",
+      "AIReadinessPenaltyTotal": "0",
+      "HumanReviewRequired": "False"
+    },
+    "NotesForAIUse": [
+      "This context is generated from Revit Room Schedule data for PoC purposes.",
+      "Room ElementId is a temporary PoC identifier, not Revit internal ElementId or UniqueId.",
+      "The output does not make design or construction decisions.",
+      "Final judgment must be made by BIM personnel."
+    ]
+  },
+  {
+    "ElementId": "3FL-301-0080",
+    "Category": "Room",
+    "Room": {
+      "Level": "3FL",
+      "RoomName": "PS",
+      "RoomNumber": "301",
+      "RoomAlias": "PS",
+      "RoomGroupName": "共通",
+      "RoomGroupNumber": "4",
+      "AreaRaw": "3.1164 m²",
+      "Area": "3.1164",
+      "CH": "直天",
+      "FloorFinish": "防塵塗装(A)",
+      "WallFinish": "素地",
+      "CeilingFinish": "素地",
+      "Notes": ""
+    },
+    "QualityCheck": {
+      "RuleViolationCount": "0",
+      "BlockingRuleIds": "",
+      "RuleResults": []
+    },
+    "AIReadiness": {
+      "AIReadinessScore": "100",
+      "AIReadinessLevel": "High",
+      "AIReadinessPenaltyTotal": "0",
+      "HumanReviewRequired": "False"
+    },
+    "NotesForAIUse": [
+      "This context is generated from Revit Room Schedule data for PoC purposes.",
+      "Room ElementId is a temporary PoC identifier, not Revit internal ElementId or UniqueId.",
+      "The output does not make design or construction decisions.",
+      "Final judgment must be made by BIM personnel."
+    ]
+  },
+  {
+    "ElementId": "4FL-301-0081",
+    "Category": "Room",
+    "Room": {
+      "Level": "4FL",
+      "RoomName": "PS",
+      "RoomNumber": "301",
+      "RoomAlias": "PS",
+      "RoomGroupName": "共通",
+      "RoomGroupNumber": "4",
+      "AreaRaw": "3.1164 m²",
+      "Area": "3.1164",
+      "CH": "直天",
+      "FloorFinish": "防塵塗装(A)",
+      "WallFinish": "素地",
+      "CeilingFinish": "素地",
+      "Notes": ""
+    },
+    "QualityCheck": {
+      "RuleViolationCount": "0",
+      "BlockingRuleIds": "",
+      "RuleResults": []
+    },
+    "AIReadiness": {
+      "AIReadinessScore": "100",
+      "AIReadinessLevel": "High",
+      "AIReadinessPenaltyTotal": "0",
+      "HumanReviewRequired": "False"
+    },
+    "NotesForAIUse": [
+      "This context is generated from Revit Room Schedule data for PoC purposes.",
+      "Room ElementId is a temporary PoC identifier, not Revit internal ElementId or UniqueId.",
+      "The output does not make design or construction decisions.",
+      "Final judgment must be made by BIM personnel."
+    ]
+  },
+  {
+    "ElementId": "4FL-301-0082",
+    "Category": "Room",
+    "Room": {
+      "Level": "4FL",
+      "RoomName": "PS",
+      "RoomNumber": "301",
+      "RoomAlias": "PS",
+      "RoomGroupName": "共通",
+      "RoomGroupNumber": "4",
+      "AreaRaw": "2.1090 m²",
+      "Area": "2.109",
+      "CH": "直天",
+      "FloorFinish": "防塵塗装(A)",
+      "WallFinish": "素地",
+      "CeilingFinish": "素地",
+      "Notes": ""
+    },
+    "QualityCheck": {
+      "RuleViolationCount": "0",
+      "BlockingRuleIds": "",
+      "RuleResults": []
+    },
+    "AIReadiness": {
+      "AIReadinessScore": "100",
+      "AIReadinessLevel": "High",
+      "AIReadinessPenaltyTotal": "0",
+      "HumanReviewRequired": "False"
+    },
+    "NotesForAIUse": [
+      "This context is generated from Revit Room Schedule data for PoC purposes.",
+      "Room ElementId is a temporary PoC identifier, not Revit internal ElementId or UniqueId.",
+      "The output does not make design or construction decisions.",
+      "Final judgment must be made by BIM personnel."
+    ]
+  },
+  {
+    "ElementId": "4FL-301-0083",
+    "Category": "Room",
+    "Room": {
+      "Level": "4FL",
+      "RoomName": "PS",
+      "RoomNumber": "301",
+      "RoomAlias": "PS",
+      "RoomGroupName": "共通",
+      "RoomGroupNumber": "4",
+      "AreaRaw": "1.1600 m²",
+      "Area": "1.16",
+      "CH": "直天",
+      "FloorFinish": "防塵塗装(A)",
+      "WallFinish": "素地",
+      "CeilingFinish": "素地",
+      "Notes": ""
+    },
+    "QualityCheck": {
+      "RuleViolationCount": "0",
+      "BlockingRuleIds": "",
+      "RuleResults": []
+    },
+    "AIReadiness": {
+      "AIReadinessScore": "100",
+      "AIReadinessLevel": "High",
+      "AIReadinessPenaltyTotal": "0",
+      "HumanReviewRequired": "False"
+    },
+    "NotesForAIUse": [
+      "This context is generated from Revit Room Schedule data for PoC purposes.",
+      "Room ElementId is a temporary PoC identifier, not Revit internal ElementId or UniqueId.",
+      "The output does not make design or construction decisions.",
+      "Final judgment must be made by BIM personnel."
+    ]
+  },
+  {
+    "ElementId": "5FL-301-0084",
+    "Category": "Room",
+    "Room": {
+      "Level": "5FL",
+      "RoomName": "PS",
+      "RoomNumber": "301",
+      "RoomAlias": "PS",
+      "RoomGroupName": "共通",
+      "RoomGroupNumber": "4",
+      "AreaRaw": "3.1164 m²",
+      "Area": "3.1164",
+      "CH": "直天",
+      "FloorFinish": "防塵塗装(A)",
+      "WallFinish": "素地",
+      "CeilingFinish": "素地",
+      "Notes": ""
+    },
+    "QualityCheck": {
+      "RuleViolationCount": "0",
+      "BlockingRuleIds": "",
+      "RuleResults": []
+    },
+    "AIReadiness": {
+      "AIReadinessScore": "100",
+      "AIReadinessLevel": "High",
+      "AIReadinessPenaltyTotal": "0",
+      "HumanReviewRequired": "False"
+    },
+    "NotesForAIUse": [
+      "This context is generated from Revit Room Schedule data for PoC purposes.",
+      "Room ElementId is a temporary PoC identifier, not Revit internal ElementId or UniqueId.",
+      "The output does not make design or construction decisions.",
+      "Final judgment must be made by BIM personnel."
+    ]
+  },
+  {
+    "ElementId": "5FL-301-0085",
+    "Category": "Room",
+    "Room": {
+      "Level": "5FL",
+      "RoomName": "PS",
+      "RoomNumber": "301",
+      "RoomAlias": "PS",
+      "RoomGroupName": "共通",
+      "RoomGroupNumber": "4",
+      "AreaRaw": "2.1090 m²",
+      "Area": "2.109",
+      "CH": "直天",
+      "FloorFinish": "防塵塗装(A)",
+      "WallFinish": "素地",
+      "CeilingFinish": "素地",
+      "Notes": ""
+    },
+    "QualityCheck": {
+      "RuleViolationCount": "0",
+      "BlockingRuleIds": "",
+      "RuleResults": []
+    },
+    "AIReadiness": {
+      "AIReadinessScore": "100",
+      "AIReadinessLevel": "High",
+      "AIReadinessPenaltyTotal": "0",
+      "HumanReviewRequired": "False"
+    },
+    "NotesForAIUse": [
+      "This context is generated from Revit Room Schedule data for PoC purposes.",
+      "Room ElementId is a temporary PoC identifier, not Revit internal ElementId or UniqueId.",
+      "The output does not make design or construction decisions.",
+      "Final judgment must be made by BIM personnel."
+    ]
+  },
+  {
+    "ElementId": "5FL-301-0086",
+    "Category": "Room",
+    "Room": {
+      "Level": "5FL",
+      "RoomName": "PS",
+      "RoomNumber": "301",
+      "RoomAlias": "PS",
+      "RoomGroupName": "共通",
+      "RoomGroupNumber": "4",
+      "AreaRaw": "1.1600 m²",
+      "Area": "1.16",
+      "CH": "直天",
+      "FloorFinish": "防塵塗装(A)",
+      "WallFinish": "素地",
+      "CeilingFinish": "素地",
+      "Notes": ""
+    },
+    "QualityCheck": {
+      "RuleViolationCount": "0",
+      "BlockingRuleIds": "",
+      "RuleResults": []
+    },
+    "AIReadiness": {
+      "AIReadinessScore": "100",
+      "AIReadinessLevel": "High",
+      "AIReadinessPenaltyTotal": "0",
+      "HumanReviewRequired": "False"
+    },
+    "NotesForAIUse": [
+      "This context is generated from Revit Room Schedule data for PoC purposes.",
+      "Room ElementId is a temporary PoC identifier, not Revit internal ElementId or UniqueId.",
+      "The output does not make design or construction decisions.",
+      "Final judgment must be made by BIM personnel."
+    ]
+  },
+  {
+    "ElementId": "6FL-301-0087",
+    "Category": "Room",
+    "Room": {
+      "Level": "6FL",
+      "RoomName": "PS",
+      "RoomNumber": "301",
+      "RoomAlias": "PS",
+      "RoomGroupName": "共通",
+      "RoomGroupNumber": "4",
+      "AreaRaw": "3.1164 m²",
+      "Area": "3.1164",
+      "CH": "直天",
+      "FloorFinish": "防塵塗装(A)",
+      "WallFinish": "素地",
+      "CeilingFinish": "素地",
+      "Notes": ""
+    },
+    "QualityCheck": {
+      "RuleViolationCount": "0",
+      "BlockingRuleIds": "",
+      "RuleResults": []
+    },
+    "AIReadiness": {
+      "AIReadinessScore": "100",
+      "AIReadinessLevel": "High",
+      "AIReadinessPenaltyTotal": "0",
+      "HumanReviewRequired": "False"
+    },
+    "NotesForAIUse": [
+      "This context is generated from Revit Room Schedule data for PoC purposes.",
+      "Room ElementId is a temporary PoC identifier, not Revit internal ElementId or UniqueId.",
+      "The output does not make design or construction decisions.",
+      "Final judgment must be made by BIM personnel."
+    ]
+  },
+  {
+    "ElementId": "6FL-301-0088",
+    "Category": "Room",
+    "Room": {
+      "Level": "6FL",
+      "RoomName": "PS",
+      "RoomNumber": "301",
+      "RoomAlias": "PS",
+      "RoomGroupName": "共通",
+      "RoomGroupNumber": "4",
+      "AreaRaw": "2.1090 m²",
+      "Area": "2.109",
+      "CH": "直天",
+      "FloorFinish": "防塵塗装(A)",
+      "WallFinish": "素地",
+      "CeilingFinish": "素地",
+      "Notes": ""
+    },
+    "QualityCheck": {
+      "RuleViolationCount": "0",
+      "BlockingRuleIds": "",
+      "RuleResults": []
+    },
+    "AIReadiness": {
+      "AIReadinessScore": "100",
+      "AIReadinessLevel": "High",
+      "AIReadinessPenaltyTotal": "0",
+      "HumanReviewRequired": "False"
+    },
+    "NotesForAIUse": [
+      "This context is generated from Revit Room Schedule data for PoC purposes.",
+      "Room ElementId is a temporary PoC identifier, not Revit internal ElementId or UniqueId.",
+      "The output does not make design or construction decisions.",
+      "Final judgment must be made by BIM personnel."
+    ]
+  },
+  {
+    "ElementId": "6FL-301-0089",
+    "Category": "Room",
+    "Room": {
+      "Level": "6FL",
+      "RoomName": "PS",
+      "RoomNumber": "301",
+      "RoomAlias": "PS",
+      "RoomGroupName": "共通",
+      "RoomGroupNumber": "4",
+      "AreaRaw": "1.1600 m²",
+      "Area": "1.16",
+      "CH": "直天",
+      "FloorFinish": "防塵塗装(A)",
+      "WallFinish": "素地",
+      "CeilingFinish": "素地",
+      "Notes": ""
+    },
+    "QualityCheck": {
+      "RuleViolationCount": "0",
+      "BlockingRuleIds": "",
+      "RuleResults": []
+    },
+    "AIReadiness": {
+      "AIReadinessScore": "100",
+      "AIReadinessLevel": "High",
+      "AIReadinessPenaltyTotal": "0",
+      "HumanReviewRequired": "False"
+    },
+    "NotesForAIUse": [
+      "This context is generated from Revit Room Schedule data for PoC purposes.",
+      "Room ElementId is a temporary PoC identifier, not Revit internal ElementId or UniqueId.",
+      "The output does not make design or construction decisions.",
+      "Final judgment must be made by BIM personnel."
+    ]
+  },
+  {
+    "ElementId": "7FL-301-0090",
+    "Category": "Room",
+    "Room": {
+      "Level": "7FL",
+      "RoomName": "PS",
+      "RoomNumber": "301",
+      "RoomAlias": "PS",
+      "RoomGroupName": "共通",
+      "RoomGroupNumber": "4",
+      "AreaRaw": "3.1164 m²",
+      "Area": "3.1164",
+      "CH": "直天",
+      "FloorFinish": "防塵塗装(A)",
+      "WallFinish": "素地",
+      "CeilingFinish": "素地",
+      "Notes": ""
+    },
+    "QualityCheck": {
+      "RuleViolationCount": "0",
+      "BlockingRuleIds": "",
+      "RuleResults": []
+    },
+    "AIReadiness": {
+      "AIReadinessScore": "100",
+      "AIReadinessLevel": "High",
+      "AIReadinessPenaltyTotal": "0",
+      "HumanReviewRequired": "False"
+    },
+    "NotesForAIUse": [
+      "This context is generated from Revit Room Schedule data for PoC purposes.",
+      "Room ElementId is a temporary PoC identifier, not Revit internal ElementId or UniqueId.",
+      "The output does not make design or construction decisions.",
+      "Final judgment must be made by BIM personnel."
+    ]
+  },
+  {
+    "ElementId": "7FL-301-0091",
+    "Category": "Room",
+    "Room": {
+      "Level": "7FL",
+      "RoomName": "PS",
+      "RoomNumber": "301",
+      "RoomAlias": "PS",
+      "RoomGroupName": "共通",
+      "RoomGroupNumber": "4",
+      "AreaRaw": "2.1090 m²",
+      "Area": "2.109",
+      "CH": "直天",
+      "FloorFinish": "防塵塗装(A)",
+      "WallFinish": "素地",
+      "CeilingFinish": "素地",
+      "Notes": ""
+    },
+    "QualityCheck": {
+      "RuleViolationCount": "0",
+      "BlockingRuleIds": "",
+      "RuleResults": []
+    },
+    "AIReadiness": {
+      "AIReadinessScore": "100",
+      "AIReadinessLevel": "High",
+      "AIReadinessPenaltyTotal": "0",
+      "HumanReviewRequired": "False"
+    },
+    "NotesForAIUse": [
+      "This context is generated from Revit Room Schedule data for PoC purposes.",
+      "Room ElementId is a temporary PoC identifier, not Revit internal ElementId or UniqueId.",
+      "The output does not make design or construction decisions.",
+      "Final judgment must be made by BIM personnel."
+    ]
+  },
+  {
+    "ElementId": "7FL-301-0092",
+    "Category": "Room",
+    "Room": {
+      "Level": "7FL",
+      "RoomName": "PS",
+      "RoomNumber": "301",
+      "RoomAlias": "PS",
+      "RoomGroupName": "共通",
+      "RoomGroupNumber": "4",
+      "AreaRaw": "1.1600 m²",
+      "Area": "1.16",
+      "CH": "直天",
+      "FloorFinish": "防塵塗装(A)",
+      "WallFinish": "素地",
+      "CeilingFinish": "素地",
+      "Notes": ""
+    },
+    "QualityCheck": {
+      "RuleViolationCount": "0",
+      "BlockingRuleIds": "",
+      "RuleResults": []
+    },
+    "AIReadiness": {
+      "AIReadinessScore": "100",
+      "AIReadinessLevel": "High",
+      "AIReadinessPenaltyTotal": "0",
+      "HumanReviewRequired": "False"
+    },
+    "NotesForAIUse": [
+      "This context is generated from Revit Room Schedule data for PoC purposes.",
+      "Room ElementId is a temporary PoC identifier, not Revit internal ElementId or UniqueId.",
+      "The output does not make design or construction decisions.",
+      "Final judgment must be made by BIM personnel."
+    ]
+  },
+  {
+    "ElementId": "1FL-301-0093",
+    "Category": "Room",
+    "Room": {
+      "Level": "1FL",
+      "RoomName": "PS",
+      "RoomNumber": "301",
+      "RoomAlias": "PS",
+      "RoomGroupName": "共通",
+      "RoomGroupNumber": "4",
+      "AreaRaw": "4.7142 m²",
+      "Area": "4.7142",
+      "CH": "直天",
+      "FloorFinish": "防塵塗装(A)",
+      "WallFinish": "素地",
+      "CeilingFinish": "素地",
+      "Notes": ""
+    },
+    "QualityCheck": {
+      "RuleViolationCount": "0",
+      "BlockingRuleIds": "",
+      "RuleResults": []
+    },
+    "AIReadiness": {
+      "AIReadinessScore": "100",
+      "AIReadinessLevel": "High",
+      "AIReadinessPenaltyTotal": "0",
+      "HumanReviewRequired": "False"
+    },
+    "NotesForAIUse": [
+      "This context is generated from Revit Room Schedule data for PoC purposes.",
+      "Room ElementId is a temporary PoC identifier, not Revit internal ElementId or UniqueId.",
+      "The output does not make design or construction decisions.",
+      "Final judgment must be made by BIM personnel."
+    ]
+  },
+  {
+    "ElementId": "1FL-301-0094",
+    "Category": "Room",
+    "Room": {
+      "Level": "1FL",
+      "RoomName": "PS",
+      "RoomNumber": "301",
+      "RoomAlias": "PS",
+      "RoomGroupName": "共通",
+      "RoomGroupNumber": "4",
+      "AreaRaw": "1.0888 m²",
+      "Area": "1.0888",
+      "CH": "直天",
+      "FloorFinish": "防塵塗装(A)",
+      "WallFinish": "素地",
+      "CeilingFinish": "素地",
+      "Notes": ""
+    },
+    "QualityCheck": {
+      "RuleViolationCount": "0",
+      "BlockingRuleIds": "",
+      "RuleResults": []
+    },
+    "AIReadiness": {
+      "AIReadinessScore": "100",
+      "AIReadinessLevel": "High",
+      "AIReadinessPenaltyTotal": "0",
+      "HumanReviewRequired": "False"
+    },
+    "NotesForAIUse": [
+      "This context is generated from Revit Room Schedule data for PoC purposes.",
+      "Room ElementId is a temporary PoC identifier, not Revit internal ElementId or UniqueId.",
+      "The output does not make design or construction decisions.",
+      "Final judgment must be made by BIM personnel."
+    ]
+  },
+  {
+    "ElementId": "2FL-302-0095",
+    "Category": "Room",
+    "Room": {
+      "Level": "2FL",
+      "RoomName": "EPS",
+      "RoomNumber": "302",
+      "RoomAlias": "EPS",
+      "RoomGroupName": "共通",
+      "RoomGroupNumber": "4",
+      "AreaRaw": "9.1500 m²",
+      "Area": "9.15",
+      "CH": "直天",
+      "FloorFinish": "防塵塗装(A)",
+      "WallFinish": "素地",
+      "CeilingFinish": "素地",
+      "Notes": ""
+    },
+    "QualityCheck": {
+      "RuleViolationCount": "0",
+      "BlockingRuleIds": "",
+      "RuleResults": []
+    },
+    "AIReadiness": {
+      "AIReadinessScore": "100",
+      "AIReadinessLevel": "High",
+      "AIReadinessPenaltyTotal": "0",
+      "HumanReviewRequired": "False"
+    },
+    "NotesForAIUse": [
+      "This context is generated from Revit Room Schedule data for PoC purposes.",
+      "Room ElementId is a temporary PoC identifier, not Revit internal ElementId or UniqueId.",
+      "The output does not make design or construction decisions.",
+      "Final judgment must be made by BIM personnel."
+    ]
+  },
+  {
+    "ElementId": "2FL-302-0096",
+    "Category": "Room",
+    "Room": {
+      "Level": "2FL",
+      "RoomName": "EPS",
+      "RoomNumber": "302",
+      "RoomAlias": "EPS",
+      "RoomGroupName": "共通",
+      "RoomGroupNumber": "4",
+      "AreaRaw": "5.6100 m²",
+      "Area": "5.61",
+      "CH": "直天",
+      "FloorFinish": "防塵塗装(A)",
+      "WallFinish": "素地",
+      "CeilingFinish": "素地",
+      "Notes": ""
+    },
+    "QualityCheck": {
+      "RuleViolationCount": "0",
+      "BlockingRuleIds": "",
+      "RuleResults": []
+    },
+    "AIReadiness": {
+      "AIReadinessScore": "100",
+      "AIReadinessLevel": "High",
+      "AIReadinessPenaltyTotal": "0",
+      "HumanReviewRequired": "False"
+    },
+    "NotesForAIUse": [
+      "This context is generated from Revit Room Schedule data for PoC purposes.",
+      "Room ElementId is a temporary PoC identifier, not Revit internal ElementId or UniqueId.",
+      "The output does not make design or construction decisions.",
+      "Final judgment must be made by BIM personnel."
+    ]
+  },
+  {
+    "ElementId": "2FL-302-0097",
+    "Category": "Room",
+    "Room": {
+      "Level": "2FL",
+      "RoomName": "EPS",
+      "RoomNumber": "302",
+      "RoomAlias": "EPS",
+      "RoomGroupName": "共通",
+      "RoomGroupNumber": "4",
+      "AreaRaw": "2.2000 m²",
+      "Area": "2.2",
+      "CH": "直天",
+      "FloorFinish": "防塵塗装(A)",
+      "WallFinish": "素地",
+      "CeilingFinish": "素地",
+      "Notes": ""
+    },
+    "QualityCheck": {
+      "RuleViolationCount": "0",
+      "BlockingRuleIds": "",
+      "RuleResults": []
+    },
+    "AIReadiness": {
+      "AIReadinessScore": "100",
+      "AIReadinessLevel": "High",
+      "AIReadinessPenaltyTotal": "0",
+      "HumanReviewRequired": "False"
+    },
+    "NotesForAIUse": [
+      "This context is generated from Revit Room Schedule data for PoC purposes.",
+      "Room ElementId is a temporary PoC identifier, not Revit internal ElementId or UniqueId.",
+      "The output does not make design or construction decisions.",
+      "Final judgment must be made by BIM personnel."
+    ]
+  },
+  {
+    "ElementId": "1FL-302-0098",
+    "Category": "Room",
+    "Room": {
+      "Level": "1FL",
+      "RoomName": "EPS",
+      "RoomNumber": "302",
+      "RoomAlias": "EPS",
+      "RoomGroupName": "共通",
+      "RoomGroupNumber": "4",
+      "AreaRaw": "5.1854 m²",
+      "Area": "5.1854",
+      "CH": "直天",
+      "FloorFinish": "防塵塗装(A)",
+      "WallFinish": "素地",
+      "CeilingFinish": "素地",
+      "Notes": ""
+    },
+    "QualityCheck": {
+      "RuleViolationCount": "0",
+      "BlockingRuleIds": "",
+      "RuleResults": []
+    },
+    "AIReadiness": {
+      "AIReadinessScore": "100",
+      "AIReadinessLevel": "High",
+      "AIReadinessPenaltyTotal": "0",
+      "HumanReviewRequired": "False"
+    },
+    "NotesForAIUse": [
+      "This context is generated from Revit Room Schedule data for PoC purposes.",
+      "Room ElementId is a temporary PoC identifier, not Revit internal ElementId or UniqueId.",
+      "The output does not make design or construction decisions.",
+      "Final judgment must be made by BIM personnel."
+    ]
+  },
+  {
+    "ElementId": "3FL-302-0099",
+    "Category": "Room",
+    "Room": {
+      "Level": "3FL",
+      "RoomName": "EPS",
+      "RoomNumber": "302",
+      "RoomAlias": "EPS",
+      "RoomGroupName": "共通",
+      "RoomGroupNumber": "4",
+      "AreaRaw": "9.1500 m²",
+      "Area": "9.15",
+      "CH": "直天",
+      "FloorFinish": "防塵塗装(A)",
+      "WallFinish": "素地",
+      "CeilingFinish": "素地",
+      "Notes": ""
+    },
+    "QualityCheck": {
+      "RuleViolationCount": "0",
+      "BlockingRuleIds": "",
+      "RuleResults": []
+    },
+    "AIReadiness": {
+      "AIReadinessScore": "100",
+      "AIReadinessLevel": "High",
+      "AIReadinessPenaltyTotal": "0",
+      "HumanReviewRequired": "False"
+    },
+    "NotesForAIUse": [
+      "This context is generated from Revit Room Schedule data for PoC purposes.",
+      "Room ElementId is a temporary PoC identifier, not Revit internal ElementId or UniqueId.",
+      "The output does not make design or construction decisions.",
+      "Final judgment must be made by BIM personnel."
+    ]
+  },
+  {
+    "ElementId": "3FL-302-0100",
+    "Category": "Room",
+    "Room": {
+      "Level": "3FL",
+      "RoomName": "EPS",
+      "RoomNumber": "302",
+      "RoomAlias": "EPS",
+      "RoomGroupName": "共通",
+      "RoomGroupNumber": "4",
+      "AreaRaw": "2.2000 m²",
+      "Area": "2.2",
+      "CH": "直天",
+      "FloorFinish": "防塵塗装(A)",
+      "WallFinish": "素地",
+      "CeilingFinish": "素地",
+      "Notes": ""
+    },
+    "QualityCheck": {
+      "RuleViolationCount": "0",
+      "BlockingRuleIds": "",
+      "RuleResults": []
+    },
+    "AIReadiness": {
+      "AIReadinessScore": "100",
+      "AIReadinessLevel": "High",
+      "AIReadinessPenaltyTotal": "0",
+      "HumanReviewRequired": "False"
+    },
+    "NotesForAIUse": [
+      "This context is generated from Revit Room Schedule data for PoC purposes.",
+      "Room ElementId is a temporary PoC identifier, not Revit internal ElementId or UniqueId.",
+      "The output does not make design or construction decisions.",
+      "Final judgment must be made by BIM personnel."
+    ]
+  },
+  {
+    "ElementId": "3FL-302-0101",
+    "Category": "Room",
+    "Room": {
+      "Level": "3FL",
+      "RoomName": "EPS",
+      "RoomNumber": "302",
+      "RoomAlias": "EPS",
+      "RoomGroupName": "共通",
+      "RoomGroupNumber": "4",
+      "AreaRaw": "5.6100 m²",
+      "Area": "5.61",
+      "CH": "直天",
+      "FloorFinish": "防塵塗装(A)",
+      "WallFinish": "素地",
+      "CeilingFinish": "素地",
+      "Notes": ""
+    },
+    "QualityCheck": {
+      "RuleViolationCount": "0",
+      "BlockingRuleIds": "",
+      "RuleResults": []
+    },
+    "AIReadiness": {
+      "AIReadinessScore": "100",
+      "AIReadinessLevel": "High",
+      "AIReadinessPenaltyTotal": "0",
+      "HumanReviewRequired": "False"
+    },
+    "NotesForAIUse": [
+      "This context is generated from Revit Room Schedule data for PoC purposes.",
+      "Room ElementId is a temporary PoC identifier, not Revit internal ElementId or UniqueId.",
+      "The output does not make design or construction decisions.",
+      "Final judgment must be made by BIM personnel."
+    ]
+  },
+  {
+    "ElementId": "4FL-302-0102",
+    "Category": "Room",
+    "Room": {
+      "Level": "4FL",
+      "RoomName": "EPS",
+      "RoomNumber": "302",
+      "RoomAlias": "EPS",
+      "RoomGroupName": "共通",
+      "RoomGroupNumber": "4",
+      "AreaRaw": "9.1500 m²",
+      "Area": "9.15",
+      "CH": "直天",
+      "FloorFinish": "防塵塗装(A)",
+      "WallFinish": "素地",
+      "CeilingFinish": "素地",
+      "Notes": ""
+    },
+    "QualityCheck": {
+      "RuleViolationCount": "0",
+      "BlockingRuleIds": "",
+      "RuleResults": []
+    },
+    "AIReadiness": {
+      "AIReadinessScore": "100",
+      "AIReadinessLevel": "High",
+      "AIReadinessPenaltyTotal": "0",
+      "HumanReviewRequired": "False"
+    },
+    "NotesForAIUse": [
+      "This context is generated from Revit Room Schedule data for PoC purposes.",
+      "Room ElementId is a temporary PoC identifier, not Revit internal ElementId or UniqueId.",
+      "The output does not make design or construction decisions.",
+      "Final judgment must be made by BIM personnel."
+    ]
+  },
+  {
+    "ElementId": "4FL-302-0103",
+    "Category": "Room",
+    "Room": {
+      "Level": "4FL",
+      "RoomName": "EPS",
+      "RoomNumber": "302",
+      "RoomAlias": "EPS",
+      "RoomGroupName": "共通",
+      "RoomGroupNumber": "4",
+      "AreaRaw": "5.6100 m²",
+      "Area": "5.61",
+      "CH": "直天",
+      "FloorFinish": "防塵塗装(A)",
+      "WallFinish": "素地",
+      "CeilingFinish": "素地",
+      "Notes": ""
+    },
+    "QualityCheck": {
+      "RuleViolationCount": "0",
+      "BlockingRuleIds": "",
+      "RuleResults": []
+    },
+    "AIReadiness": {
+      "AIReadinessScore": "100",
+      "AIReadinessLevel": "High",
+      "AIReadinessPenaltyTotal": "0",
+      "HumanReviewRequired": "False"
+    },
+    "NotesForAIUse": [
+      "This context is generated from Revit Room Schedule data for PoC purposes.",
+      "Room ElementId is a temporary PoC identifier, not Revit internal ElementId or UniqueId.",
+      "The output does not make design or construction decisions.",
+      "Final judgment must be made by BIM personnel."
+    ]
+  },
+  {
+    "ElementId": "4FL-302-0104",
+    "Category": "Room",
+    "Room": {
+      "Level": "4FL",
+      "RoomName": "EPS",
+      "RoomNumber": "302",
+      "RoomAlias": "EPS",
+      "RoomGroupName": "共通",
+      "RoomGroupNumber": "4",
+      "AreaRaw": "2.2000 m²",
+      "Area": "2.2",
+      "CH": "直天",
+      "FloorFinish": "防塵塗装(A)",
+      "WallFinish": "素地",
+      "CeilingFinish": "素地",
+      "Notes": ""
+    },
+    "QualityCheck": {
+      "RuleViolationCount": "0",
+      "BlockingRuleIds": "",
+      "RuleResults": []
+    },
+    "AIReadiness": {
+      "AIReadinessScore": "100",
+      "AIReadinessLevel": "High",
+      "AIReadinessPenaltyTotal": "0",
+      "HumanReviewRequired": "False"
+    },
+    "NotesForAIUse": [
+      "This context is generated from Revit Room Schedule data for PoC purposes.",
+      "Room ElementId is a temporary PoC identifier, not Revit internal ElementId or UniqueId.",
+      "The output does not make design or construction decisions.",
+      "Final judgment must be made by BIM personnel."
+    ]
+  },
+  {
+    "ElementId": "5FL-302-0105",
+    "Category": "Room",
+    "Room": {
+      "Level": "5FL",
+      "RoomName": "EPS",
+      "RoomNumber": "302",
+      "RoomAlias": "EPS",
+      "RoomGroupName": "共通",
+      "RoomGroupNumber": "4",
+      "AreaRaw": "9.1500 m²",
+      "Area": "9.15",
+      "CH": "直天",
+      "FloorFinish": "防塵塗装(A)",
+      "WallFinish": "素地",
+      "CeilingFinish": "素地",
+      "Notes": ""
+    },
+    "QualityCheck": {
+      "RuleViolationCount": "0",
+      "BlockingRuleIds": "",
+      "RuleResults": []
+    },
+    "AIReadiness": {
+      "AIReadinessScore": "100",
+      "AIReadinessLevel": "High",
+      "AIReadinessPenaltyTotal": "0",
+      "HumanReviewRequired": "False"
+    },
+    "NotesForAIUse": [
+      "This context is generated from Revit Room Schedule data for PoC purposes.",
+      "Room ElementId is a temporary PoC identifier, not Revit internal ElementId or UniqueId.",
+      "The output does not make design or construction decisions.",
+      "Final judgment must be made by BIM personnel."
+    ]
+  },
+  {
+    "ElementId": "5FL-302-0106",
+    "Category": "Room",
+    "Room": {
+      "Level": "5FL",
+      "RoomName": "EPS",
+      "RoomNumber": "302",
+      "RoomAlias": "EPS",
+      "RoomGroupName": "共通",
+      "RoomGroupNumber": "4",
+      "AreaRaw": "5.6100 m²",
+      "Area": "5.61",
+      "CH": "直天",
+      "FloorFinish": "防塵塗装(A)",
+      "WallFinish": "素地",
+      "CeilingFinish": "素地",
+      "Notes": ""
+    },
+    "QualityCheck": {
+      "RuleViolationCount": "0",
+      "BlockingRuleIds": "",
+      "RuleResults": []
+    },
+    "AIReadiness": {
+      "AIReadinessScore": "100",
+      "AIReadinessLevel": "High",
+      "AIReadinessPenaltyTotal": "0",
+      "HumanReviewRequired": "False"
+    },
+    "NotesForAIUse": [
+      "This context is generated from Revit Room Schedule data for PoC purposes.",
+      "Room ElementId is a temporary PoC identifier, not Revit internal ElementId or UniqueId.",
+      "The output does not make design or construction decisions.",
+      "Final judgment must be made by BIM personnel."
+    ]
+  },
+  {
+    "ElementId": "5FL-302-0107",
+    "Category": "Room",
+    "Room": {
+      "Level": "5FL",
+      "RoomName": "EPS",
+      "RoomNumber": "302",
+      "RoomAlias": "EPS",
+      "RoomGroupName": "共通",
+      "RoomGroupNumber": "4",
+      "AreaRaw": "2.2000 m²",
+      "Area": "2.2",
+      "CH": "直天",
+      "FloorFinish": "防塵塗装(A)",
+      "WallFinish": "素地",
+      "CeilingFinish": "素地",
+      "Notes": ""
+    },
+    "QualityCheck": {
+      "RuleViolationCount": "0",
+      "BlockingRuleIds": "",
+      "RuleResults": []
+    },
+    "AIReadiness": {
+      "AIReadinessScore": "100",
+      "AIReadinessLevel": "High",
+      "AIReadinessPenaltyTotal": "0",
+      "HumanReviewRequired": "False"
+    },
+    "NotesForAIUse": [
+      "This context is generated from Revit Room Schedule data for PoC purposes.",
+      "Room ElementId is a temporary PoC identifier, not Revit internal ElementId or UniqueId.",
+      "The output does not make design or construction decisions.",
+      "Final judgment must be made by BIM personnel."
+    ]
+  },
+  {
+    "ElementId": "6FL-302-0108",
+    "Category": "Room",
+    "Room": {
+      "Level": "6FL",
+      "RoomName": "EPS",
+      "RoomNumber": "302",
+      "RoomAlias": "EPS",
+      "RoomGroupName": "共通",
+      "RoomGroupNumber": "4",
+      "AreaRaw": "9.1500 m²",
+      "Area": "9.15",
+      "CH": "直天",
+      "FloorFinish": "防塵塗装(A)",
+      "WallFinish": "素地",
+      "CeilingFinish": "素地",
+      "Notes": ""
+    },
+    "QualityCheck": {
+      "RuleViolationCount": "0",
+      "BlockingRuleIds": "",
+      "RuleResults": []
+    },
+    "AIReadiness": {
+      "AIReadinessScore": "100",
+      "AIReadinessLevel": "High",
+      "AIReadinessPenaltyTotal": "0",
+      "HumanReviewRequired": "False"
+    },
+    "NotesForAIUse": [
+      "This context is generated from Revit Room Schedule data for PoC purposes.",
+      "Room ElementId is a temporary PoC identifier, not Revit internal ElementId or UniqueId.",
+      "The output does not make design or construction decisions.",
+      "Final judgment must be made by BIM personnel."
+    ]
+  },
+  {
+    "ElementId": "6FL-302-0109",
+    "Category": "Room",
+    "Room": {
+      "Level": "6FL",
+      "RoomName": "EPS",
+      "RoomNumber": "302",
+      "RoomAlias": "EPS",
+      "RoomGroupName": "共通",
+      "RoomGroupNumber": "4",
+      "AreaRaw": "5.6100 m²",
+      "Area": "5.61",
+      "CH": "直天",
+      "FloorFinish": "防塵塗装(A)",
+      "WallFinish": "素地",
+      "CeilingFinish": "素地",
+      "Notes": ""
+    },
+    "QualityCheck": {
+      "RuleViolationCount": "0",
+      "BlockingRuleIds": "",
+      "RuleResults": []
+    },
+    "AIReadiness": {
+      "AIReadinessScore": "100",
+      "AIReadinessLevel": "High",
+      "AIReadinessPenaltyTotal": "0",
+      "HumanReviewRequired": "False"
+    },
+    "NotesForAIUse": [
+      "This context is generated from Revit Room Schedule data for PoC purposes.",
+      "Room ElementId is a temporary PoC identifier, not Revit internal ElementId or UniqueId.",
+      "The output does not make design or construction decisions.",
+      "Final judgment must be made by BIM personnel."
+    ]
+  },
+  {
+    "ElementId": "6FL-302-0110",
+    "Category": "Room",
+    "Room": {
+      "Level": "6FL",
+      "RoomName": "EPS",
+      "RoomNumber": "302",
+      "RoomAlias": "EPS",
+      "RoomGroupName": "共通",
+      "RoomGroupNumber": "4",
+      "AreaRaw": "2.2000 m²",
+      "Area": "2.2",
+      "CH": "直天",
+      "FloorFinish": "防塵塗装(A)",
+      "WallFinish": "素地",
+      "CeilingFinish": "素地",
+      "Notes": ""
+    },
+    "QualityCheck": {
+      "RuleViolationCount": "0",
+      "BlockingRuleIds": "",
+      "RuleResults": []
+    },
+    "AIReadiness": {
+      "AIReadinessScore": "100",
+      "AIReadinessLevel": "High",
+      "AIReadinessPenaltyTotal": "0",
+      "HumanReviewRequired": "False"
+    },
+    "NotesForAIUse": [
+      "This context is generated from Revit Room Schedule data for PoC purposes.",
+      "Room ElementId is a temporary PoC identifier, not Revit internal ElementId or UniqueId.",
+      "The output does not make design or construction decisions.",
+      "Final judgment must be made by BIM personnel."
+    ]
+  },
+  {
+    "ElementId": "7FL-302-0111",
+    "Category": "Room",
+    "Room": {
+      "Level": "7FL",
+      "RoomName": "EPS",
+      "RoomNumber": "302",
+      "RoomAlias": "EPS",
+      "RoomGroupName": "共通",
+      "RoomGroupNumber": "4",
+      "AreaRaw": "9.1500 m²",
+      "Area": "9.15",
+      "CH": "直天",
+      "FloorFinish": "防塵塗装(A)",
+      "WallFinish": "素地",
+      "CeilingFinish": "素地",
+      "Notes": ""
+    },
+    "QualityCheck": {
+      "RuleViolationCount": "0",
+      "BlockingRuleIds": "",
+      "RuleResults": []
+    },
+    "AIReadiness": {
+      "AIReadinessScore": "100",
+      "AIReadinessLevel": "High",
+      "AIReadinessPenaltyTotal": "0",
+      "HumanReviewRequired": "False"
+    },
+    "NotesForAIUse": [
+      "This context is generated from Revit Room Schedule data for PoC purposes.",
+      "Room ElementId is a temporary PoC identifier, not Revit internal ElementId or UniqueId.",
+      "The output does not make design or construction decisions.",
+      "Final judgment must be made by BIM personnel."
+    ]
+  },
+  {
+    "ElementId": "7FL-302-0112",
+    "Category": "Room",
+    "Room": {
+      "Level": "7FL",
+      "RoomName": "EPS",
+      "RoomNumber": "302",
+      "RoomAlias": "EPS",
+      "RoomGroupName": "共通",
+      "RoomGroupNumber": "4",
+      "AreaRaw": "5.6100 m²",
+      "Area": "5.61",
+      "CH": "直天",
+      "FloorFinish": "防塵塗装(A)",
+      "WallFinish": "素地",
+      "CeilingFinish": "素地",
+      "Notes": ""
+    },
+    "QualityCheck": {
+      "RuleViolationCount": "0",
+      "BlockingRuleIds": "",
+      "RuleResults": []
+    },
+    "AIReadiness": {
+      "AIReadinessScore": "100",
+      "AIReadinessLevel": "High",
+      "AIReadinessPenaltyTotal": "0",
+      "HumanReviewRequired": "False"
+    },
+    "NotesForAIUse": [
+      "This context is generated from Revit Room Schedule data for PoC purposes.",
+      "Room ElementId is a temporary PoC identifier, not Revit internal ElementId or UniqueId.",
+      "The output does not make design or construction decisions.",
+      "Final judgment must be made by BIM personnel."
+    ]
+  },
+  {
+    "ElementId": "7FL-302-0113",
+    "Category": "Room",
+    "Room": {
+      "Level": "7FL",
+      "RoomName": "EPS",
+      "RoomNumber": "302",
+      "RoomAlias": "EPS",
+      "RoomGroupName": "共通",
+      "RoomGroupNumber": "4",
+      "AreaRaw": "2.2000 m²",
+      "Area": "2.2",
+      "CH": "直天",
+      "FloorFinish": "防塵塗装(A)",
+      "WallFinish": "素地",
+      "CeilingFinish": "素地",
+      "Notes": ""
+    },
+    "QualityCheck": {
+      "RuleViolationCount": "0",
+      "BlockingRuleIds": "",
+      "RuleResults": []
+    },
+    "AIReadiness": {
+      "AIReadinessScore": "100",
+      "AIReadinessLevel": "High",
+      "AIReadinessPenaltyTotal": "0",
+      "HumanReviewRequired": "False"
+    },
+    "NotesForAIUse": [
+      "This context is generated from Revit Room Schedule data for PoC purposes.",
+      "Room ElementId is a temporary PoC identifier, not Revit internal ElementId or UniqueId.",
+      "The output does not make design or construction decisions.",
+      "Final judgment must be made by BIM personnel."
+    ]
+  }
+]
