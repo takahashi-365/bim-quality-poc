@@ -1,4 +1,8 @@
-RuleId,RuleName,Category,Severity,TargetField,CheckLogic,BusinessImpact,AIUseImpact,FixGuide,Reference,AIReadinessImpact,AIReadinessPenalty
-R-001,必須パラメータ未入力,Parameter Completeness,High,RequiredFields,必須項目が空欄の場合に違反とする,必須情報が不足し集計や確認作業に支障が出る,AIに渡す属性情報が不足し回答や分類の信頼性が下がる,対象要素の必須パラメータを確認し不足項目を入力する,PoC Rule,High,15
-R-002,分類コード未入力,Classification,High,BIM_ClassificationCode,分類コードが空欄の場合に違反とする,分類別の集計や検索ができずデータ活用しにくくなる,分類検索やRAGでの検索精度が低下しAI活用の前提が弱くなる,社内BIM標準または分類体系に基づき分類コードを入力する,PoC Rule,High,20
-R-003,ファミリ命名規則違反,Naming Rule,Medium,FamilyName,ファミリ名が命名規則に合わない場合に違反とする,命名のばらつきにより管理や検索が難しくなる,名称ベースの分類や検索の信頼性が下がる,命名規則に従ってファミリ名または管理名称を修正する,PoC Rule,Medium,10
+﻿RuleId,RuleName,TargetCategory,Category,Severity,TargetField,CheckLogic,BusinessImpact,AIUseImpact,FixGuide,Reference,AIReadinessImpact,AIReadinessPenalty
+R-001,必須パラメータ未入力,Door,Parameter Completeness,High,RequiredFields,必須項目が空欄の場合に違反とする,必須情報が不足し集計や確認作業に支障が出る,AIに渡す属性情報が不足し回答や分類の信頼性が下がる,対象要素の必須パラメータを確認し不足項目を入力する,PoC Rule,High,15
+R-002,分類コード未入力,Door,Classification,High,BIM_ClassificationCode,分類コードが空欄の場合に違反とする,分類別の集計や検索ができずデータ活用しにくくなる,分類検索やRAGでの検索精度が低下しAI活用の前提が弱くなる,社内BIM標準または分類体系に基づき分類コードを入力する,PoC Rule,High,20
+R-003,ファミリ命名規則違反,Door,Naming Rule,Medium,FamilyName,ファミリ名が命名規則に合わない場合に違反とする,命名のばらつきにより管理や検索が難しくなる,名称ベースの分類や検索の信頼性が下がる,命名規則に従ってファミリ名または管理名称を修正する,PoC Rule,Medium,10
+R-101,RoomNameMissing,Room,Parameter Completeness,High,RoomName,RoomNameが空欄の場合に違反とする,部屋名が不足し空間の意味を把握しにくくなる,AI Contextや検索で空間の意味を判断しにくくなる,RoomNameを確認し、必要に応じて部屋名を入力する,PoC Rule,High,15
+R-102,RoomNumberMissing,Room,Parameter Completeness,High,RoomNumber,RoomNumberが空欄の場合に違反とする,部屋の参照・検索・集計が不安定になる,部屋単位の検索やRAGで参照対象を特定しにくくなる,RoomNumberを確認し、必要に応じて部屋番号を入力する,PoC Rule,High,15
+R-103,AreaMissingOrZero,Room,Parameter Completeness,Medium,Area,Areaが空欄、NaN、または0の場合に違反とする,面積分析・BI・コスト分析に使いにくくなる,空間規模に関する文脈が不足しAI活用時の判断材料が弱くなる,Areaを確認し、面積が未入力または0の場合はRevit Room Schedule側の面積情報を確認する,PoC Rule,Medium,10
+R-104,LevelMissing,Room,Parameter Completeness,Medium,Level,Levelが空欄の場合に違反とする,階別集計や空間把握がしにくくなる,AI Contextや検索で階情報による絞り込み・文脈付けが弱くなる,Levelを確認し、必要に応じてRoomのレベル情報を入力または確認する,PoC Rule,Medium,10
