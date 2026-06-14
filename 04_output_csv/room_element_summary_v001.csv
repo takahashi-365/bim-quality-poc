@@ -1,0 +1,12 @@
+﻿ElementId,Category,ViolationCount,PenaltyTotal,HighViolationCount,MediumViolationCount,LowViolationCount,RuleIds,QualityScore
+1FL-ELV-0005,Room,1,10,1,0,0,R-102,90
+1FL-ピロティ-0004,Room,1,10,1,0,0,R-102,90
+2FL-設備バルコニー-0006,Room,1,10,1,0,0,R-102,90
+3FL-設備バルコニー-0007,Room,1,10,1,0,0,R-102,90
+4FL-設備バルコニー-0008,Room,1,10,1,0,0,R-102,90
+5FL-設備バルコニー-0009,Room,1,10,1,0,0,R-102,90
+6FL-設備バルコニー-0010,Room,1,10,1,0,0,R-102,90
+7FL-設備バルコニー-0011,Room,1,10,1,0,0,R-102,90
+ピット-ELV ピット-0003,Room,1,10,1,0,0,R-102,90
+ピット-ピット-0002,Room,1,10,1,0,0,R-102,90
+ピット-消火水槽-0001,Room,1,10,1,0,0,R-102,90

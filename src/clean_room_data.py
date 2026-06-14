@@ -29,16 +29,30 @@ def parse_area(value: object) -> float | None:
 
 
 def build_element_id(level: str, room_number: str, room_name: str, index: int) -> str:
+    """Build unique temporary ElementId for Room MVP.
+
+    Room Schedule TXT does not include Revit internal ElementId / UniqueId.
+    Therefore, Phase 3B uses a temporary PoC ElementId.
+
+    A sequential suffix is always added because the Room Schedule may contain
+    multiple rows for the same Level + RoomNumber or Level + RoomName.
+    """
+
+    sequence = f"{index + 1:04d}"
+
     if level and room_number:
-        return f"{level}-{room_number}"
+        return f"{level}-{room_number}-{sequence}"
 
     if level and room_name:
-        return f"{level}-{room_name}"
+        return f"{level}-{room_name}-{sequence}"
 
-    return f"Room-{index + 1:04d}"
+    return f"Room-{sequence}"
 
 
-def clean_room_data(input_path: Path = INPUT_PATH, output_path: Path = OUTPUT_PATH) -> pd.DataFrame:
+def clean_room_data(
+    input_path: Path = INPUT_PATH,
+    output_path: Path = OUTPUT_PATH,
+) -> pd.DataFrame:
     df = pd.read_csv(input_path, dtype=str, encoding="utf-8-sig").fillna("")
 
     required_columns = ["レベル", "名前", "面積"]
@@ -86,5 +100,6 @@ def clean_room_data(input_path: Path = INPUT_PATH, output_path: Path = OUTPUT_PA
 if __name__ == "__main__":
     cleaned_df = clean_room_data()
     print(f"Cleaned rows: {len(cleaned_df)}")
+    print(f"Unique ElementIds: {cleaned_df['ElementId'].nunique()}")
     print(f"Output: {OUTPUT_PATH}")
     print(cleaned_df.head().to_string(index=False))
