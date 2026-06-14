@@ -1,0 +1,12 @@
+﻿ElementId,Category,RuleId,RuleName,Severity,TargetField,CheckResult,BusinessImpact,AIUseImpact,FixGuide,AIReadinessImpact,AIReadinessPenalty
+ピット-消火水槽,Room,R-102,RoomNumberMissing,High,RoomNumber,NG,部屋の参照・検索・集計が不安定になる,部屋単位の検索やRAGで参照対象を特定しにくくなる,RoomNumberを確認し、必要に応じて部屋番号を入力する,High,15
+ピット-ピット,Room,R-102,RoomNumberMissing,High,RoomNumber,NG,部屋の参照・検索・集計が不安定になる,部屋単位の検索やRAGで参照対象を特定しにくくなる,RoomNumberを確認し、必要に応じて部屋番号を入力する,High,15
+ピット-ELV ピット,Room,R-102,RoomNumberMissing,High,RoomNumber,NG,部屋の参照・検索・集計が不安定になる,部屋単位の検索やRAGで参照対象を特定しにくくなる,RoomNumberを確認し、必要に応じて部屋番号を入力する,High,15
+1FL-ピロティ,Room,R-102,RoomNumberMissing,High,RoomNumber,NG,部屋の参照・検索・集計が不安定になる,部屋単位の検索やRAGで参照対象を特定しにくくなる,RoomNumberを確認し、必要に応じて部屋番号を入力する,High,15
+1FL-ELV,Room,R-102,RoomNumberMissing,High,RoomNumber,NG,部屋の参照・検索・集計が不安定になる,部屋単位の検索やRAGで参照対象を特定しにくくなる,RoomNumberを確認し、必要に応じて部屋番号を入力する,High,15
+2FL-設備バルコニー,Room,R-102,RoomNumberMissing,High,RoomNumber,NG,部屋の参照・検索・集計が不安定になる,部屋単位の検索やRAGで参照対象を特定しにくくなる,RoomNumberを確認し、必要に応じて部屋番号を入力する,High,15
+3FL-設備バルコニー,Room,R-102,RoomNumberMissing,High,RoomNumber,NG,部屋の参照・検索・集計が不安定になる,部屋単位の検索やRAGで参照対象を特定しにくくなる,RoomNumberを確認し、必要に応じて部屋番号を入力する,High,15
+4FL-設備バルコニー,Room,R-102,RoomNumberMissing,High,RoomNumber,NG,部屋の参照・検索・集計が不安定になる,部屋単位の検索やRAGで参照対象を特定しにくくなる,RoomNumberを確認し、必要に応じて部屋番号を入力する,High,15
+5FL-設備バルコニー,Room,R-102,RoomNumberMissing,High,RoomNumber,NG,部屋の参照・検索・集計が不安定になる,部屋単位の検索やRAGで参照対象を特定しにくくなる,RoomNumberを確認し、必要に応じて部屋番号を入力する,High,15
+6FL-設備バルコニー,Room,R-102,RoomNumberMissing,High,RoomNumber,NG,部屋の参照・検索・集計が不安定になる,部屋単位の検索やRAGで参照対象を特定しにくくなる,RoomNumberを確認し、必要に応じて部屋番号を入力する,High,15
+7FL-設備バルコニー,Room,R-102,RoomNumberMissing,High,RoomNumber,NG,部屋の参照・検索・集計が不安定になる,部屋単位の検索やRAGで参照対象を特定しにくくなる,RoomNumberを確認し、必要に応じて部屋番号を入力する,High,15
