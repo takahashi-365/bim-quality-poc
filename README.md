@@ -79,8 +79,9 @@ BIM導入支援の現場では、Revitモデルを作るだけでなく、BIMデ
 
 ```text
 Revit集計表TXT
+または pyRevit選択要素メタデータCSV
 ↓
-CSV変換
+CSV変換 / メタデータCSV出力
 ↓
 データクレンジング
 ↓
@@ -179,7 +180,65 @@ Details are documented in:
 
 ```text
 docs/phase3b_room_category_completion_summary.md
+docs/pyrevit_element_metadata_export_plan.md
+docs/pyrevit_element_metadata_mapping.md
+docs/pyrevit_limitations.md
 ```
+
+### Phase 3C pyRevit Element Metadata Export Results
+
+Phase 3Cでは、Revit集計表TXTだけでなく、pyRevitを使ってRevitモデル上の選択要素から内部メタデータを取得する小規模MVPを追加しました。
+
+検証環境：
+
+```text
+Revit 2024
+pyRevit 6.4.0
+```
+
+確認済み：
+
+| Item | Result |
+| ---- | ------ |
+| pyRevit導入 | 完了 |
+| BIM Qualityタブ / Export Metadataボタン | 作成済み |
+| 0件選択時の安全中断 | 確認済み |
+| Door 1件選択時のCSV出力 | 確認済み |
+| Door複数選択時のCSV出力 | 確認済み |
+| ElementId / UniqueId取得 | 確認済み |
+| Category / FamilyName / TypeName取得 | 確認済み |
+| LevelName取得 | 確認済み |
+| DoorでのRoomName / RoomNumber空欄扱い | 確認済み |
+| 匿名化サンプルCSV | 作成済み |
+| pytest | 26 passed |
+
+初期MVPの出力列：
+
+```text
+ElementId
+UniqueId
+Category
+FamilyName
+TypeName
+Name
+LevelName
+RoomName
+RoomNumber
+```
+
+主なPhase 3C成果物：
+
+```text
+pyrevit_scripts/export_selected_element_metadata.py
+03_input_csv/pyrevit_element_metadata_sample_v001.csv
+docs/pyrevit_element_metadata_export_plan.md
+docs/pyrevit_element_metadata_mapping.md
+docs/pyrevit_limitations.md
+tests/test_pyrevit_metadata_csv.py
+```
+
+Phase 3Cでは、Revitモデルの自動修正やパラメータ書き換えは行っていません。
+目的は、Revit内部ElementId / UniqueIdを取得し、既存PoCや将来のAI Context / RAG用メタデータへ接続できる可能性を確認することです。
 
 これらの結果は、小規模なサンプルデータとPoC用ルール設定に基づくものです。
 
@@ -563,6 +622,9 @@ Roomカテゴリでは、以下を扱います。
 
 ```text
 docs/phase3b_room_category_completion_summary.md
+docs/pyrevit_element_metadata_export_plan.md
+docs/pyrevit_element_metadata_mapping.md
+docs/pyrevit_limitations.md
 docs/room_category_extension_plan.md
 docs/room_schedule_column_mapping.md
 docs/room_element_id_policy.md
@@ -575,6 +637,64 @@ docs/rule_master_target_category_policy.md
 Room Schedule TXTにはRevit内部ElementId / UniqueIdが含まれていないため、Phase 3BではPoC用の仮ElementIdを使用しています。
 
 Revit内部ElementId / UniqueIdの取得は、Phase 3Cで扱います。
+
+---
+
+### Phase 3C: pyRevit Element Metadata Export MVP
+
+Phase 3Cとして、pyRevitを用いたRevit選択要素メタデータ出力MVPを追加しました。
+
+このMVPでは、Revit上で選択した要素から、Revit API経由で以下の基本メタデータを取得し、CSVとして出力します。
+
+```text
+ElementId
+UniqueId
+Category
+FamilyName
+TypeName
+Name
+LevelName
+RoomName
+RoomNumber
+```
+
+実装：
+
+```text
+pyrevit_scripts/export_selected_element_metadata.py
+```
+
+サンプル出力：
+
+```text
+03_input_csv/pyrevit_element_metadata_sample_v001.csv
+```
+
+関連docs：
+
+```text
+docs/pyrevit_element_metadata_export_plan.md
+docs/pyrevit_element_metadata_mapping.md
+docs/pyrevit_limitations.md
+```
+
+pytest：
+
+```text
+tests/test_pyrevit_metadata_csv.py
+```
+
+主な確認内容：
+
+* Revit 2024 + pyRevit 6.4.0環境で実行
+* pyRevit上に `BIM Quality` タブと `Export Metadata` ボタンを作成
+* 選択要素0件の場合はCSVを出力せず安全に中断
+* Door要素1件および複数件からCSV出力を確認
+* 日本語を含むCSVをUTF-8 with BOMで出力
+* GitHub公開用サンプルCSVは匿名化
+* 通常pytestでCSV構造と基本値を検証
+
+このPhaseでは、Revitモデルの自動修正、パラメータ自動書き換え、設計判断、施工判断、全モデルスキャンは行いません。
 
 ---
 
@@ -618,6 +738,7 @@ pytestによる最小テストを作成しています。
 tests/test_quality_rules.py
 tests/test_ai_readiness_score.py
 tests/test_room_pipeline.py
+tests/test_pyrevit_metadata_csv.py
 ```
 
 実行：
@@ -629,11 +750,11 @@ python -m pytest tests -v
 現在の結果：
 
 ```text
-collected 21 items
-21 passed
+collected 26 items
+26 passed
 ```
 
-テストでは、RuleIdベース品質チェック、AI Readiness Score計算、HumanReviewRequired判定、Room用Area抽出、Room用仮ElementId生成、Room出力ファイルの主要列確認などの基本動作を確認しています。
+テストでは、RuleIdベース品質チェック、AI Readiness Score計算、HumanReviewRequired判定、Room用Area抽出、Room用仮ElementId生成、Room出力ファイルの主要列確認、pyRevit出力CSVの必要列確認と基本値確認などの基本動作を確認しています。
 
 ---
 
@@ -650,11 +771,11 @@ collected 21 items
 * Power BI Desktop
 * LM Studio
 * Local LLM
+* pyRevit
+* Revit API
 
 将来的な拡張候補：
 
-* pyRevit
-* Revit API
 * RAG
 * Azure AI Search
 * Azure OpenAI / 生成AI API
@@ -709,7 +830,8 @@ bim_quality_poc/
 │   ├── door_schedule_SD_export_test_v001.txt
 │   ├── door_schedule_converted_v002.csv
 │   ├── room_schedule_export_test_v001.txt
-│   └── room_schedule_converted_v001.csv
+│   ├── room_schedule_converted_v001.csv
+│   └── pyrevit_element_metadata_sample_v001.csv
 ├── 04_output_csv/
 │   ├── ai_context_v002.json
 │   ├── ai_context_v002.md
@@ -739,8 +861,14 @@ bim_quality_poc/
 │   ├── bim_quality_poc_portfolio_v003.pdf
 │   └── screenshots/
 ├── docs/
+│   ├── pyrevit_element_metadata_export_plan.md
+│   ├── pyrevit_element_metadata_mapping.md
+│   └── pyrevit_limitations.md
+├── pyrevit_scripts/
+│   └── export_selected_element_metadata.py
 ├── src/
 └── tests/
+    └── test_pyrevit_metadata_csv.py
 ```
 
 ---
@@ -773,6 +901,9 @@ docs/room_area_handling_policy.md
 docs/room_rule_specification.md
 docs/rule_master_target_category_policy.md
 docs/phase3b_room_category_completion_summary.md
+docs/pyrevit_element_metadata_export_plan.md
+docs/pyrevit_element_metadata_mapping.md
+docs/pyrevit_limitations.md
 ```
 
 ---
@@ -791,7 +922,9 @@ docs/phase3b_room_category_completion_summary.md
 * FixPriorityは実務の正解ラベルではなく仮ラベルです。
 * Local LLM Explanation Demoは、1件のElementIdを対象にした小規模検証です。
 * Local LLMの出力は参考情報であり、そのまま最終判断として採用するものではありません。
-* 生成AI API接続、RAG、Azure AI Search連携、Revit API / pyRevitによる直接取得は未実装です。
+* pyRevitによる直接取得は、選択要素のメタデータCSV出力MVPまでを実装しています。
+* pyRevit連携では、全モデルスキャン、全カテゴリ対応、既存品質チェックパイプラインへの直接投入は未実装です。
+* 生成AI API接続、RAG、Azure AI Search連携は未実装です。
 * Revitモデルの自動修正は対象外です。
 * 設計判断、施工判断、モデル修正の最終判断は人間が行う前提です。
 * 深層学習、機械学習モデルの精度追求、複雑なPower BIダッシュボード再設計は対象外です。
@@ -808,6 +941,9 @@ docs/phase3_roadmap.md
 docs/local_llm_extension_plan.md
 docs/local_llm_experiment.md
 docs/phase3b_room_category_completion_summary.md
+docs/pyrevit_element_metadata_export_plan.md
+docs/pyrevit_element_metadata_mapping.md
+docs/pyrevit_limitations.md
 ```
 
 ---
@@ -818,10 +954,10 @@ docs/phase3b_room_category_completion_summary.md
 
 ### Revit / BIM連携
 
-* Revit内部ElementIdの取得
-* UniqueId、FamilyName、TypeName、Category、Level、RoomNameの取得
-* pyRevit / Revit API連携の検討
-* Revitモデルから直接取得したデータを既存品質チェックパイプラインへ接続
+* pyRevitで取得したRevit内部ElementId / UniqueIdの既存PoCへの接続
+* UniqueId、FamilyName、TypeName、Category、Level、RoomNameの活用方針整理
+* Room要素選択時のRoomName / RoomNumber取得確認
+* pyRevit出力CSVを既存品質チェックパイプラインへ接続
 * Wall、Space、Equipmentなど、Room以外のカテゴリへの拡張
 
 ### AI / RAG連携
@@ -845,6 +981,8 @@ docs/phase3b_room_category_completion_summary.md
 本PoCでは、Revit/BIMデータを対象に、Python/pandasによるデータ読み込み、データクレンジング、RuleIdベース品質チェック、品質メトリクス作成、QualityScore算出、特徴量データセット作成、AI Readiness Score算出、生成AI向け構造化コンテキスト生成、Fix Guide Markdown生成、Streamlit簡易可視化、ローカルLLMを使った説明文生成デモ、pytestによる最小テストまでを実装しました。
 
 Phase 3Bでは、Door中心だった処理をRoomカテゴリにも拡張し、Room Schedule TXTからRoom品質チェック、Room Quality Metrics、Room AI Readiness Score、Room AI Context、Room Fix Guide、Room用pytestまでを追加しました。
+
+Phase 3Cでは、pyRevitを使ってRevitモデル上の選択要素からElementId / UniqueId / Category / FamilyName / TypeName / LevelNameを取得し、CSVとして出力する小規模MVPを追加しました。出力サンプルはGitHub公開用に匿名化し、CSV構造はpytestで検証しています。
 
 目的は、AIモデルそのものを作ることではなく、BIMデータをBI、データ分析、将来的な機械学習、生成AI、RAGで安全に活用するための前処理、品質評価、構造化、修正ガイド生成、説明文生成前の人間レビュー設計の流れを示すことです。
 
