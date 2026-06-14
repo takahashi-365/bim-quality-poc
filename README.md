@@ -96,7 +96,7 @@ FixPriority分類プロトタイプ
 ↓
 AI Readiness Score算出
 ↓
-AI Context JSON / Markdown v002生成
+AI Context JSON / Markdown生成
 ↓
 Fix Guide Markdown生成
 ↓
@@ -111,7 +111,9 @@ Raw LLM Output / Human Review記録
 
 ## Current Results
 
-現時点のサンプルデータに対する結果は以下です。
+### Door Category Results
+
+現時点のDoorサンプルデータに対する結果は以下です。
 
 | 項目                  |           結果 |
 | ------------------- | -----------: |
@@ -121,9 +123,63 @@ Raw LLM Output / Human Review記録
 | AI Readiness Score  |   25要素すべて 40 |
 | AI Readiness Level  |          Low |
 | HumanReviewRequired |         True |
-| pytest              |    16 passed |
 
-今回のサンプルでは、必須パラメータ未入力、分類コード未入力、命名規則違反が各要素で検出される設定のため、全要素のAI Readiness LevelがLowとなっています。
+今回のDoorサンプルでは、必須パラメータ未入力、分類コード未入力、命名規則違反が各要素で検出される設定のため、全要素のAI Readiness LevelがLowとなっています。
+
+### Phase 3B Room Category Results
+
+Phase 3Bでは、既存のDoor中心ワークフローをRoomカテゴリにも拡張しました。
+
+| Item                      |                Result |
+| ------------------------- | --------------------: |
+| Total Room records        |                   113 |
+| Room rule violations      |                    11 |
+| Violated Room elements    |                    11 |
+| Clean Room elements       |                   102 |
+| Average Room QualityScore |                 99.03 |
+| Room AI Readiness Level   |             High: 113 |
+| HumanReviewRequired       | True: 11 / False: 102 |
+| pytest                    |             21 passed |
+
+Room workflow:
+
+```text
+Room Schedule TXT
+↓
+CSV conversion
+↓
+Room data cleansing
+↓
+Category = Room
+↓
+Room RuleId checks
+↓
+Room Quality Metrics
+↓
+Room AI Readiness Score
+↓
+Room AI Context
+↓
+Room Fix Guide
+↓
+pytest
+```
+
+Main Room outputs:
+
+```text
+04_output_csv/room_quality_metrics_v001.csv
+04_output_csv/room_ai_readiness_scores_v001.csv
+04_output_csv/room_ai_context_v001.json
+04_output_csv/room_ai_context_v001.md
+04_output_csv/room_fix_guides_v001.md
+```
+
+Details are documented in:
+
+```text
+docs/phase3b_room_category_completion_summary.md
+```
 
 これらの結果は、小規模なサンプルデータとPoC用ルール設定に基づくものです。
 
@@ -183,22 +239,34 @@ Power BIは補助的な可視化として使用しています。
 
 Autodesk公式の日本仕様Revitサンプルモデルから書き出した集計表TXTを、Python/pandasで品質チェック用CSVへ変換します。
 
-入力：
+Door入力：
 
 ```text
 03_input_csv/door_schedule_SD_export_test_v001.txt
 ```
 
-出力：
+Door出力：
 
 ```text
 03_input_csv/door_schedule_converted_v002.csv
 ```
 
-実装：
+Room入力：
 
 ```text
-src/convert_revit_schedule.py
+03_input_csv/room_schedule_export_test_v001.txt
+```
+
+Room出力：
+
+```text
+03_input_csv/room_schedule_converted_v001.csv
+```
+
+Room実装：
+
+```text
+src/convert_room_schedule.py
 ```
 
 ---
@@ -215,17 +283,25 @@ src/convert_revit_schedule.py
 * 文字列の前後スペース削除
 * ElementId空欄行の除外
 * 重複行の除外
+* Roomカテゴリでは `Category = Room` を付与
+* Roomカテゴリでは面積文字列から数値Areaを抽出
 
-出力：
+Door出力：
 
 ```text
 03_input_csv/cleaned_bim_data_v001.csv
 ```
 
-実装：
+Room出力：
 
 ```text
-src/clean_bim_data.py
+03_input_csv/cleaned_room_data_v001.csv
+```
+
+Room実装：
+
+```text
+src/clean_room_data.py
 ```
 
 ---
@@ -237,11 +313,12 @@ BIM品質チェックルールをRuleIdで管理し、クレンジング済みCS
 ルールマスタ：
 
 ```text
-02_rule_master/bim_rule_master_v002.csv
 02_rule_master/bim_rule_master_v003.csv
 ```
 
-初期ルール：
+Rule Master v003では、Door / Room の対象カテゴリを区別するために `TargetCategory` を追加しています。
+
+Door初期ルール：
 
 | RuleId | 内容         |
 | ------ | ---------- |
@@ -249,16 +326,31 @@ BIM品質チェックルールをRuleIdで管理し、クレンジング済みCS
 | R-002  | 分類コード未入力   |
 | R-003  | ファミリ命名規則違反 |
 
-出力：
+Room初期ルール：
+
+| RuleId | 内容            |
+| ------ | ------------- |
+| R-101  | RoomName未入力   |
+| R-102  | RoomNumber未入力 |
+| R-103  | Area未入力または0   |
+| R-104  | Level未入力      |
+
+Door出力：
 
 ```text
 04_output_csv/check_results_revit_v002.csv
 ```
 
-実装：
+Room出力：
 
 ```text
-src/check_bim_quality.py
+04_output_csv/check_results_room_v001.csv
+```
+
+Room実装：
+
+```text
+src/check_room_quality.py
 ```
 
 ---
@@ -271,7 +363,7 @@ src/check_bim_quality.py
 QualityScore = 100 - SeverityScore
 ```
 
-出力：
+Door出力：
 
 ```text
 04_output_csv/quality_metrics_v001.csv
@@ -280,13 +372,22 @@ QualityScore = 100 - SeverityScore
 04_output_csv/element_summary_v001.csv
 ```
 
-QualityScoreはPoC用の簡易指標であり、正式なBIM品質基準ではありません。
-
-実装：
+Room出力：
 
 ```text
-src/calculate_quality_metrics.py
+04_output_csv/room_quality_metrics_v001.csv
+04_output_csv/room_rule_summary_v001.csv
+04_output_csv/room_category_summary_v001.csv
+04_output_csv/room_element_summary_v001.csv
 ```
+
+Room実装：
+
+```text
+src/calculate_room_quality_metrics.py
+```
+
+QualityScoreはPoC用の簡易指標であり、正式なBIM品質基準ではありません。
 
 ---
 
@@ -325,32 +426,51 @@ AI Readiness Scoreは、BIMデータがBI、データ分析、将来的な機械
 AIReadinessScore = 100 - AIReadinessPenaltyTotal
 ```
 
-出力：
+Door出力：
 
 ```text
 04_output_csv/ai_readiness_scores_v001.csv
 ```
 
+Room出力：
+
+```text
+04_output_csv/room_ai_readiness_scores_v001.csv
+```
+
+Room実装：
+
+```text
+src/calculate_room_ai_readiness_score.py
+```
+
 AI Readiness Scoreは正式なBIM品質基準ではありません。
 実務導入時には、BIM実行計画書、発注者情報要件、分類体系、AIの利用目的、プロジェクトフェーズに応じて調整する必要があります。
 
-実装：
-
-```text
-src/calculate_ai_readiness_score.py
-```
-
 ---
 
-### 7. AI Context JSON / Markdown v002
+### 7. AI Context JSON / Markdown
 
 品質チェック結果、特徴量データセット、AI Readiness Scoreをもとに、将来的な生成AIやRAGへ渡す前段階の構造化コンテキストをJSON / Markdown形式で生成します。
 
-出力：
+Door出力：
 
 ```text
 04_output_csv/ai_context_v002.json
 04_output_csv/ai_context_v002.md
+```
+
+Room出力：
+
+```text
+04_output_csv/room_ai_context_v001.json
+04_output_csv/room_ai_context_v001.md
+```
+
+Room実装：
+
+```text
+src/generate_room_ai_context.py
 ```
 
 含める主な情報：
@@ -360,7 +480,6 @@ src/calculate_ai_readiness_score.py
 * RuleId
 * Severity
 * QualityScore
-* FixPriority
 * AIReadinessScore
 * AIReadinessLevel
 * BlockingRuleIds
@@ -369,32 +488,32 @@ src/calculate_ai_readiness_score.py
 
 現時点では、OpenAI API、Azure OpenAI、その他の生成AI APIは呼び出していません。
 
-実装：
-
-```text
-src/generate_ai_context.py
-```
-
 ---
 
 ### 8. Fix Guide Markdown
 
 品質チェック結果、Rule Master v003、AI Readiness Scoreをもとに、RuleIdベースの修正ガイドMarkdownを生成します。
 
-出力：
+Door出力：
 
 ```text
 04_output_csv/fix_guides_v001.md
 ```
 
-この処理では生成AI APIは使用していません。
-RuleId、Severity、AIReadinessImpact、AIReadinessPenalty、FixGuideをもとに、テンプレート方式で人間確認向けの修正方針を出力しています。
-
-実装：
+Room出力：
 
 ```text
-src/generate_fix_guide.py
+04_output_csv/room_fix_guides_v001.md
 ```
+
+Room実装：
+
+```text
+src/generate_room_fix_guide.py
+```
+
+この処理では生成AI APIは使用していません。
+RuleId、Severity、AIReadinessImpact、AIReadinessPenalty、FixGuideをもとに、テンプレート方式で人間確認向けの修正方針を出力しています。
 
 ---
 
@@ -406,9 +525,6 @@ Phase 3Aとして、ローカルLLMを使った説明文生成デモを追加し
 
 目的は、LLMの性能比較や設計判断の自動化ではありません。
 既存のRuleIdベース品質チェック結果、AI Readiness Score、Fix Guideを、BIMデータ品質確認の説明文へ変換できるかを確認することを目的としています。
-
-今回の実験では、ElementId 1件分のAI Contextと、該当するRuleIdのFix GuideをローカルLLMに入力しました。
-生成結果はRaw LLM Outputとして保存し、その後、人間がOK / Partial / NGの観点でレビューしています。
 
 関連ファイル：
 
@@ -425,9 +541,46 @@ LLMの出力は参考情報として扱います。
 
 ---
 
+### Phase 3B: Room Category Extension
+
+Phase 3Bとして、Roomカテゴリを追加しました。
+
+Door中心だった品質チェック・AI Readiness Assessmentを、Room Schedule TXTにも適用できるように拡張しています。
+
+Roomカテゴリでは、以下を扱います。
+
+* Room Schedule TXTのCSV変換
+* Roomデータクレンジング
+* `Category = Room` の付与
+* Room用RuleId `R-101` ～ `R-104`
+* Room Quality Metrics
+* Room AI Readiness Score
+* Room AI Context
+* Room Fix Guide
+* Room用pytest
+
+関連ファイル：
+
+```text
+docs/phase3b_room_category_completion_summary.md
+docs/room_category_extension_plan.md
+docs/room_schedule_column_mapping.md
+docs/room_element_id_policy.md
+docs/room_category_policy.md
+docs/room_area_handling_policy.md
+docs/room_rule_specification.md
+docs/rule_master_target_category_policy.md
+```
+
+Room Schedule TXTにはRevit内部ElementId / UniqueIdが含まれていないため、Phase 3BではPoC用の仮ElementIdを使用しています。
+
+Revit内部ElementId / UniqueIdの取得は、Phase 3Cで扱います。
+
+---
+
 ### 9. Streamlit簡易画面
 
-品質チェック結果、品質メトリクス、特徴量データセット、AI Readiness Score、AI Context v002、Fix Guide Markdownを確認できる簡易UIです。
+品質チェック結果、品質メトリクス、特徴量データセット、AI Readiness Score、AI Context、Fix Guide Markdownを確認できる簡易UIです。
 
 実行：
 
@@ -464,6 +617,7 @@ pytestによる最小テストを作成しています。
 ```text
 tests/test_quality_rules.py
 tests/test_ai_readiness_score.py
+tests/test_room_pipeline.py
 ```
 
 実行：
@@ -475,11 +629,11 @@ python -m pytest tests -v
 現在の結果：
 
 ```text
-collected 16 items
-16 passed
+collected 21 items
+21 passed
 ```
 
-テストでは、RuleIdベース品質チェック、AI Readiness Score計算、HumanReviewRequired判定などの基本動作を確認しています。
+テストでは、RuleIdベース品質チェック、AI Readiness Score計算、HumanReviewRequired判定、Room用Area抽出、Room用仮ElementId生成、Room出力ファイルの主要列確認などの基本動作を確認しています。
 
 ---
 
@@ -551,8 +705,11 @@ bim_quality_poc/
 │   └── bim_rule_master_v003.csv
 ├── 03_input_csv/
 │   ├── cleaned_bim_data_v001.csv
+│   ├── cleaned_room_data_v001.csv
 │   ├── door_schedule_SD_export_test_v001.txt
-│   └── door_schedule_converted_v002.csv
+│   ├── door_schedule_converted_v002.csv
+│   ├── room_schedule_export_test_v001.txt
+│   └── room_schedule_converted_v001.csv
 ├── 04_output_csv/
 │   ├── ai_context_v002.json
 │   ├── ai_context_v002.md
@@ -560,13 +717,18 @@ bim_quality_poc/
 │   ├── bim_features_v001.csv
 │   ├── category_summary_v001.csv
 │   ├── check_results_revit_v002.csv
+│   ├── check_results_room_v001.csv
 │   ├── element_summary_v001.csv
 │   ├── fix_guides_v001.md
-│   ├── fix_priority_classification_report_v001.csv
-│   ├── fix_priority_confusion_matrix_v001.csv
-│   ├── fix_priority_predictions_v001.csv
 │   ├── quality_metrics_v001.csv
-│   └── rule_summary_v001.csv
+│   ├── room_ai_context_v001.json
+│   ├── room_ai_context_v001.md
+│   ├── room_ai_readiness_scores_v001.csv
+│   ├── room_category_summary_v001.csv
+│   ├── room_element_summary_v001.csv
+│   ├── room_fix_guides_v001.md
+│   ├── room_quality_metrics_v001.csv
+│   └── room_rule_summary_v001.csv
 ├── 05_powerbi/
 │   └── README.md
 ├── 06_local_llm/
@@ -576,12 +738,6 @@ bim_quality_poc/
 ├── 07_portfolio/
 │   ├── bim_quality_poc_portfolio_v003.pdf
 │   └── screenshots/
-│       ├── powerbi_dashboard_v001.png
-│       ├── revit_sample_model_3d_view.png
-│       ├── revit_door_schedule_view.png
-│       ├── streamlit_ai_readiness_overview_v001.png
-│       ├── streamlit_ai_context_preview_v001.png
-│       └── streamlit_fix_guide_preview_v001.png
 ├── docs/
 ├── src/
 └── tests/
@@ -609,6 +765,14 @@ docs/local_llm_extension_plan.md
 docs/local_llm_prompt_template.md
 docs/local_llm_experiment.md
 docs/portfolio_summary.md
+docs/room_category_extension_plan.md
+docs/room_schedule_column_mapping.md
+docs/room_element_id_policy.md
+docs/room_category_policy.md
+docs/room_area_handling_policy.md
+docs/room_rule_specification.md
+docs/rule_master_target_category_policy.md
+docs/phase3b_room_category_completion_summary.md
 ```
 
 ---
@@ -618,8 +782,10 @@ docs/portfolio_summary.md
 現時点の主な制約と対象外は以下です。
 
 * Revit由来データ対応は初期試作です。
-* 現在処理しているRevit由来データはドア建具表のみです。
-* `ElementId` はRevit内部ElementIdではなく、建具表上の建具番号を仮IDとして使用しています。
+* 現在処理しているRevit由来データは、Door ScheduleとRoom Scheduleです。
+* Doorカテゴリの `ElementId` はRevit内部ElementIdではなく、建具表上の建具番号を仮IDとして使用しています。
+* Roomカテゴリの `ElementId` はRevit内部ElementId / UniqueIdではなく、Phase 3B用の仮IDとして使用しています。
+* Room Schedule TXTからは、Zone列とClassificationCode列を初期MVPでは取得していません。
 * `FamilyName` と `TypeName` は、現時点ではRevit集計表の列をもとにした仮マッピングです。
 * QualityScoreとAI Readiness ScoreはPoC用の簡易指標です。
 * FixPriorityは実務の正解ラベルではなく仮ラベルです。
@@ -641,6 +807,7 @@ docs/ai_readiness_assessment_plan.md
 docs/phase3_roadmap.md
 docs/local_llm_extension_plan.md
 docs/local_llm_experiment.md
+docs/phase3b_room_category_completion_summary.md
 ```
 
 ---
@@ -655,10 +822,11 @@ docs/local_llm_experiment.md
 * UniqueId、FamilyName、TypeName、Category、Level、RoomNameの取得
 * pyRevit / Revit API連携の検討
 * Revitモデルから直接取得したデータを既存品質チェックパイプラインへ接続
+* Wall、Space、Equipmentなど、Room以外のカテゴリへの拡張
 
 ### AI / RAG連携
 
-* AI Context v002を将来的なAIワークフローの入力として活用
+* AI Contextを将来的なAIワークフローの入力として活用
 * Local LLM説明生成デモの改善
 * RAG構成の検討
 * Azure AI Search連携の検討
@@ -668,13 +836,15 @@ docs/local_llm_experiment.md
 
 * 実務修正履歴を使ったFixPriority教師データ設計
 * AI Readiness Score基準の実務向け調整
-* ドア以外のカテゴリ、特にRoomやWallへの拡張
+* 複数カテゴリ横断の品質評価・AI Readiness集計
 
 ---
 
 ## Summary
 
 本PoCでは、Revit/BIMデータを対象に、Python/pandasによるデータ読み込み、データクレンジング、RuleIdベース品質チェック、品質メトリクス作成、QualityScore算出、特徴量データセット作成、AI Readiness Score算出、生成AI向け構造化コンテキスト生成、Fix Guide Markdown生成、Streamlit簡易可視化、ローカルLLMを使った説明文生成デモ、pytestによる最小テストまでを実装しました。
+
+Phase 3Bでは、Door中心だった処理をRoomカテゴリにも拡張し、Room Schedule TXTからRoom品質チェック、Room Quality Metrics、Room AI Readiness Score、Room AI Context、Room Fix Guide、Room用pytestまでを追加しました。
 
 目的は、AIモデルそのものを作ることではなく、BIMデータをBI、データ分析、将来的な機械学習、生成AI、RAGで安全に活用するための前処理、品質評価、構造化、修正ガイド生成、説明文生成前の人間レビュー設計の流れを示すことです。
 
