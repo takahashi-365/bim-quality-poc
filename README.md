@@ -10,6 +10,55 @@ Revit集計表から書き出したTXT、Room Schedule TXT、pyRevitで取得し
 
 ---
 
+## 全体フロー図
+
+このPoCは、BIMデータをLLM、RAG、BI、将来的な機械学習で活用する前段階として、データ品質とAI活用準備度を評価するものです。
+
+AIが設計判断・施工判断・法規判断を行うものではなく、Revitモデルの自動修正も行いません。
+目的は、BIM担当者が確認・判断しやすいように、品質チェック結果、AI Readiness、修正方針、人間確認要否、RAG向け構造を整理することです。
+
+```mermaid
+flowchart TD
+    A[Revit集計表TXT] --> B[CSV変換]
+    B --> C[データクレンジング]
+    C --> D[品質チェック]
+
+    R[Rule Master] --> D
+
+    D --> E[QualityScore]
+    E --> F[FixPriorityプロトタイプ]
+    F --> G[AI Readiness Score]
+    G --> H[HumanReviewRequired]
+    G --> I[AI Context]
+    D --> J[Fix Guide]
+
+    I --> K[Local LLM説明文生成デモ]
+    J --> K
+
+    I --> L[RAG / Azure AI Search構成検討]
+    J --> L
+    R --> L
+
+    F --> M[FixPriority教師データ設計]
+    D --> M
+    G --> M
+    J --> M
+
+    P[pyRevitメタデータCSV] --> Q[ElementId / UniqueId]
+    Q --> I
+    Q --> L
+```
+
+関連する図解設計資料：
+
+```text
+docs/portfolio_visual_plan.md
+docs/poc_overall_flow_mermaid.md
+docs/phase3_extension_mermaid.md
+```
+
+---
+
 ## このPoCで示すこと
 
 本PoCの目的は、AIにBIMデータをそのまま判断させることではありません。
