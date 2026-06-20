@@ -10,6 +10,12 @@ Revit集計表から書き出したTXT、Room Schedule TXT、pyRevitで取得し
 
 ---
 
+## Portfolio PDF
+
+[Portfolio PDF v004](07_portfolio/bim_quality_poc_portfolio_v004.pdf)
+
+---
+
 ## 全体フロー図
 
 このPoCは、BIMデータをLLM、RAG、BI、将来的な機械学習で活用する前段階として、データ品質とAI活用準備度を評価するものです。
