@@ -1,0 +1,9 @@
+TrainingSampleId,ElementId,UniqueId,Category,RuleId,RuleName,Severity,QualityScore,AIReadinessScore,HumanReviewRequired,FixGuideAvailable,FixGuideSummary,IssueSummary,CurrentFixPriority,ProposedFixPriorityLabel,LabelReason,ReviewedBy,ReviewStatus,SourceFile,CreatedDate,Notes
+TS-001,D-SAMPLE-001,sample-unique-id-door-001,Door,D-002,ClassificationCodeMissing,High,60,45,True,True,分類コード確認を提案,分類コードが未入力,High,High,分類コード未入力は検索・集計・AI活用に影響が大きいため,,Draft,check_results_revit_v002.csv,2026-06-20,PoC用サンプル
+TS-002,D-SAMPLE-002,sample-unique-id-door-002,Door,D-003,DoorNumberMissing,Medium,75,65,False,True,建具番号の確認を提案,建具番号が未入力,Medium,Medium,建具番号は建具の識別や集計に影響するため,,Draft,check_results_revit_v002.csv,2026-06-20,PoC用サンプル
+TS-003,D-SAMPLE-003,sample-unique-id-door-003,Door,D-005,FamilyNameMissing,Low,88,82,False,True,ファミリ名の確認を提案,ファミリ名が未入力または確認できない,Low,Low,初期MVPでは主要判定への影響が限定的だが将来的な整理対象となるため,,Draft,check_results_revit_v002.csv,2026-06-20,PoC用サンプル
+TS-004,R-SAMPLE-001,,Room,R-101,RoomNameMissing,High,55,40,True,True,部屋名の確認を提案,部屋名が未入力,High,High,部屋名未入力は検索・集計・AI文脈生成に影響が大きく人による確認も必要なため,,Draft,check_results_room_v001.csv,2026-06-20,PoC用サンプル
+TS-005,R-SAMPLE-002,,Room,R-102,RoomNumberMissing,High,65,50,True,True,部屋番号の確認を提案,部屋番号が未入力,High,High,部屋番号未入力は部屋の識別と後続データ連携に影響するため,,Draft,check_results_room_v001.csv,2026-06-20,PoC用サンプル
+TS-006,R-SAMPLE-003,,Room,R-103,AreaMissingOrZero,Medium,75,65,False,True,面積入力確認を提案,面積が未入力または0,Medium,Medium,面積分析やBI利用に影響するため,,Draft,check_results_room_v001.csv,2026-06-20,PoC用サンプル
+TS-007,R-SAMPLE-004,,Room,R-105,ZoneMissing,Low,85,80,True,True,Zone管理有無の確認を提案,Zoneが未入力,Low,Review,Zone管理の有無はプロジェクト条件によるため入力情報だけでは優先度を確定できないため,,Draft,check_results_room_v001.csv,2026-06-20,PoC用サンプル
+TS-008,D-SAMPLE-004,sample-unique-id-door-004,Door,D-004,LevelNameMissing,Medium,78,70,True,True,レベル情報の確認を提案,LevelNameが未入力または確認できない,Medium,Review,LevelName不足は影響し得るがモデル構成や出力条件によって判断が変わるため,,Draft,pyrevit_element_metadata_sample_v001.csv,2026-06-20,PoC用サンプル
