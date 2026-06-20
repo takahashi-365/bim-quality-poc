@@ -782,6 +782,68 @@ LLM回答は参考情報であり、最終判断はBIM担当者が行う
 
 ---
 
+## Phase 3E: FixPriority Training Data Design
+
+Phase 3Eとして、FixPriorityを将来的な教師データ候補として扱うための設計を追加しました。
+
+この段階では、機械学習モデルの作成、深層学習、fine-tuning、FixPriorityの完全自動判定は行っていません。
+
+目的は、既存PoCで扱っているRuleId、Severity、QualityScore、AI Readiness Score、HumanReviewRequired、Fix Guideをもとに、将来的に修正優先度の教師データを蓄積する場合の列設計、ラベル方針、制約、サンプルデータを整理することです。
+
+教師データの基本単位は以下です。
+
+```text
+1要素 × 1 RuleId
+```
+
+FixPriorityラベル候補：
+
+```text
+High
+Medium
+Low
+Review
+```
+
+`Review` は低優先度ではなく、人間による判断が必要な状態を示すラベルとして扱います。
+
+主な関連docs：
+
+```text
+docs/fixpriority_training_data_design.md
+docs/fixpriority_training_columns.md
+docs/fixpriority_labeling_policy.md
+docs/fixpriority_limitations.md
+```
+
+サンプル教師データ：
+
+```text
+07_fixpriority_training/fixpriority_training_samples_v001.csv
+07_fixpriority_training/fixpriority_label_examples_v001.md
+```
+
+pytest：
+
+```text
+tests/test_fixpriority_training_data.py
+```
+
+Phase 3Eでは、以下を重視しています。
+
+```text
+FixPriorityを自動判断結果ではなく、将来の教師データ候補として扱う
+CurrentFixPriorityとProposedFixPriorityLabelを分ける
+LabelReasonを必須情報として扱う
+HumanReviewRequired=Trueの場合は、人間確認の必要性を明確に残す
+Reviewラベルを「低優先度」ではなく「判断保留・要確認」として扱う
+実案件データ、顧客名、個人情報、社外秘モデル由来情報は含めない
+```
+
+Phase 3Eは教師データ設計であり、修正優先度の本番判定モデルではありません。
+
+---
+
 ## 主な出力ファイル
 
 ### Door関連
@@ -825,6 +887,13 @@ LLM回答は参考情報であり、最終判断はBIM担当者が行う
 ```text
 05_rag_design/sample_index_schema_v001.json
 05_rag_design/sample_rag_documents_v001.jsonl
+```
+
+### FixPriority教師データ設計関連
+
+```text
+07_fixpriority_training/fixpriority_training_samples_v001.csv
+07_fixpriority_training/fixpriority_label_examples_v001.md
 ```
 
 ---
@@ -1020,6 +1089,11 @@ docs/rag_metadata_design.md
 docs/rag_query_examples.md
 docs/rag_answer_policy.md
 docs/rag_limitations.md
+
+docs/fixpriority_training_data_design.md
+docs/fixpriority_training_columns.md
+docs/fixpriority_labeling_policy.md
+docs/fixpriority_limitations.md
 ```
 
 ---
