@@ -120,3 +120,27 @@ lmstudio/
 *.bin
 *.safetensors
 *.onnx
+
+# Local private archive
+_private_archive/
+_private_work/
+
+Add-Content .gitignore @"
+
+# Local restored files not published to GitHub
+07_portfolio/bim_quality_poc_portfolio_v003.pdf
+07_portfolio/bim_quality_poc_portfolio_v004.pdf
+07_portfolio/bim_quality_poc_portfolio_v004_draft.md
+07_portfolio/bim_quality_poc_portfolio_v005_draft.md
+
+src/train_fix_priority_model.py
+04_output_csv/fix_priority_classification_report_v001.csv
+04_output_csv/fix_priority_confusion_matrix_v001.csv
+04_output_csv/fix_priority_predictions_v001.csv
+
+02_rule_master/bim_rule_master_v002.csv
+
+docs/portfolio_pdf_update_plan.md
+docs/portfolio_visual_plan.md
+docs/readme_simplification_plan.md
+"@

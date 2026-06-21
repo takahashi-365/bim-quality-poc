@@ -33,7 +33,7 @@ flowchart TD
     R[Rule Master] --> D
 
     D --> E[QualityScore]
-    E --> F[FixPriorityプロトタイプ]
+    E --> F[FixPriority候補整理]
     F --> G[AI Readiness Score]
     G --> H[HumanReviewRequired]
     G --> I[AI Context]
@@ -347,7 +347,7 @@ pytestで主要ロジックの最小テストを作成しています。
 主なテスト：
 
 ```text
-tests/test_quality_check.py
+tests/test_quality_rules.py
 tests/test_ai_readiness_score.py
 tests/test_room_pipeline.py
 tests/test_pyrevit_metadata_csv.py
@@ -417,7 +417,6 @@ FastAPI
 主要資料：
 
 ```text
-docs/project_overview.md
 docs/rule_specification.md
 docs/evaluation_policy.md
 docs/limitations.md
