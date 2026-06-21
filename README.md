@@ -445,7 +445,7 @@ docs/fixpriority_training_data_design.md
 docs/portfolio_visual_plan.md
 docs/poc_overall_flow_mermaid.md
 docs/phase3_extension_mermaid.md
-07_portfolio/bim_quality_poc_portfolio_v004.pdf
+07_portfolio/bim_quality_poc_portfolio_v005.pdf
 ```
 
 ---
