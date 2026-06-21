@@ -125,8 +125,6 @@ lmstudio/
 _private_archive/
 _private_work/
 
-Add-Content .gitignore @"
-
 # Local restored files not published to GitHub
 07_portfolio/bim_quality_poc_portfolio_v003.pdf
 07_portfolio/bim_quality_poc_portfolio_v004.pdf
@@ -143,4 +141,3 @@ src/train_fix_priority_model.py
 docs/portfolio_pdf_update_plan.md
 docs/portfolio_visual_plan.md
 docs/readme_simplification_plan.md
-"@
