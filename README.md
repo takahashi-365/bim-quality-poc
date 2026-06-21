@@ -1,12 +1,13 @@
-# BIM Data Quality & AI Readiness Assessment PoC
+﻿# BIM Data Quality & AI Readiness Assessment PoC
 
 ## BIMデータ品質・AI活用準備度評価PoC
 
-A portfolio PoC for assessing BIM data quality and AI readiness before using Revit/BIM data for BI, data analysis, future machine learning, generative AI, or RAG.
-
-Revit/BIMデータを、BI・データ分析・将来的な機械学習・生成AI・RAGで活用する前に、データ品質とAI活用準備度を評価するための個人開発PoCです。
+Revit / BIMデータを、BI・データ分析・将来的な機械学習・生成AI・RAGで活用する前に、データ品質とAI活用準備度を評価するための個人開発PoCです。
 
 Revit集計表から書き出したTXT、Room Schedule TXT、pyRevitで取得した選択要素メタデータCSVをPythonで処理し、RuleIdベースの品質チェック、QualityScore算出、AI Readiness Score算出、生成AI向け構造化コンテキスト生成、Fix Guide Markdown生成、Streamlitによる簡易可視化、ローカルLLMによる説明文生成デモ、RAG / Azure AI Search構成検討、FixPriority教師データ設計までを扱っています。
+
+本PoCの目的は、AIに設計判断・施工判断・法規判断をさせることではありません。
+BIM担当者が確認・判断しやすいように、品質チェック結果、AI Readiness、修正方針、人間確認要否、RAG向け構造を整理することを目的としています。
 
 ---
 
@@ -21,7 +22,7 @@ Revit集計表から書き出したTXT、Room Schedule TXT、pyRevitで取得し
 このPoCは、BIMデータをLLM、RAG、BI、将来的な機械学習で活用する前段階として、データ品質とAI活用準備度を評価するものです。
 
 AIが設計判断・施工判断・法規判断を行うものではなく、Revitモデルの自動修正も行いません。
-目的は、BIM担当者が確認・判断しやすいように、品質チェック結果、AI Readiness、修正方針、人間確認要否、RAG向け構造を整理することです。
+最終判断はBIM担当者が行う前提です。
 
 ```mermaid
 flowchart TD
@@ -67,126 +68,28 @@ docs/phase3_extension_mermaid.md
 
 ## このPoCで示すこと
 
-本PoCの目的は、AIにBIMデータをそのまま判断させることではありません。
+本PoCでは、AIモデルそのものを作るのではなく、BIMデータをAI・データ分析・RAGに渡す前段階の整備を重視しています。
 
-BIMデータをAI・データ分析に使う前段階として、以下を整理・構造化することを目的としています。
+主に以下を示しています。
 
-* BIM品質ルール
-* 品質チェック結果
-* 重大度
-* QualityScore
-* AI Readiness Score
-* FixPriority
-* 修正方針
-* 人間確認が必要な箇所
-* 生成AIやRAGへ渡すための構造化コンテキスト
-* BIM担当者向け説明文生成のための入力設計と人間レビュー
-* Revit内部ElementId / UniqueIdを将来のAI Context / RAGメタデータへ接続するための設計
-* RAG / Azure AI Searchを想定したチャンク設計・メタデータ設計・回答方針
-* FixPriorityを将来的な教師データ候補として扱うための列設計・ラベル方針
-
-BIM導入支援・Revit運用支援で扱ってきたデータ品質の課題を、Pythonによるデータ処理、品質評価、AI活用準備度評価、生成AI活用前の構造化、RAG構成検討、教師データ設計へ接続することを重視しています。
-
----
-
-## Portfolio Positioning
-
-本PoCは、BIM導入支援・Revit運用支援の経験を、建設業界向けのAI・データ活用支援へ拡張するためのポートフォリオです。
-
-汎用的なAIモデル開発や深層学習モデルの構築を目的とするものではありません。
-
-BIMデータをBI、データ分析、将来的な機械学習、生成AI、RAGで活用する前段階として必要になる、データクレンジング、ルールベース品質チェック、品質指標化、AI活用準備度評価、構造化コンテキスト生成、修正ガイド生成、ローカルLLMを使った説明文生成検証、RAG / Azure AI Search構成検討、FixPriority教師データ設計の流れを示すことを目的としています。
-
----
-
-## このPoCで示すスキル
-
-本PoCでは、以下のスキルを示しています。
-
-* BIM導入支援の観点から、BIMデータ品質上の課題を整理できること
-* Revit集計表の書き出しデータをPythonで構造化データへ変換できること
-* RuleIdベースでBIM品質チェックルールを設計・実装できること
-* 品質チェック結果からQualityScore、AI Readiness Scoreを作成できること
-* BIMデータをBI、データ分析、将来的な機械学習、生成AI、RAGで活用する前段階として整備できること
-* 生成AI向けのJSON / Markdown構造化コンテキストを生成できること
-* Fix Guide Markdownを生成し、人間確認向けの修正方針として整理できること
-* ローカルLLMに渡す入力サンプルを設計し、Raw LLM OutputとHuman Reviewを分けて記録できること
-* pyRevitを使い、Revit選択要素からElementId / UniqueIdなどの基本メタデータを取得できること
-* RAG / Azure AI Searchを想定したチャンク設計、メタデータ設計、検索クエリ例、回答方針、制約整理ができること
-* FixPriorityを将来的な教師データ候補として扱うための列設計、ラベル方針、制約を整理できること
-* Streamlitで説明用MVPを作成できること
-* pytestで主要ロジックの最小テストを作成できること
-* 制約、未実装範囲、将来拡張を明確に説明できること
-
----
-
-## なぜ作ったか
-
-BIM導入支援の現場では、Revitモデルを作るだけでなく、BIMデータが後工程で使える品質になっているかが重要になります。
-
-例えば、以下のような状態では、BI、データ分析、将来的な機械学習、生成AI、RAGにそのまま活用しにくくなります。
-
-* 必須パラメータが未入力
-* 分類コードが未入力
-* 命名規則が統一されていない
-* RoomName / RoomNumber / Area / Level などの空間情報が不足している
-* ElementId / UniqueIdなどの参照キーが整理されていない
-* 属性情報にばらつきがある
-* AIに渡す前提条件が整理されていない
-* 人間確認が必要な箇所が明確でない
-* RAGで検索・回答生成する場合の根拠情報が整理されていない
-* 修正優先度を将来の教師データとして蓄積するための記録形式が整理されていない
-
-このPoCでは、BIMデータをAI活用する前に、データ品質、業務上のリスク、AI活用時の阻害要因、RAGで参照すべき根拠情報、将来的な教師データ設計を整理する流れを検証しています。
-
----
-
-## 処理フロー
-
-```text
-Revit集計表TXT
-または pyRevit選択要素メタデータCSV
-↓
-CSV変換 / メタデータCSV出力
-↓
-データクレンジング
-↓
-RuleIdベース品質チェック
-↓
-品質メトリクス作成
-↓
-QualityScore算出
-↓
-特徴量データセット作成
-↓
-FixPriority分類プロトタイプ
-↓
-AI Readiness Score算出
-↓
-AI Context JSON / Markdown生成
-↓
-Fix Guide Markdown生成
-↓
-Streamlit簡易画面で可視化
-↓
-Local LLM説明文生成デモ
-↓
-Raw LLM Output / Human Review記録
-↓
-RAG / Azure AI Search構成検討
-↓
-FixPriority教師データ設計
-↓
-人間レビュー
-```
+* Revit集計表TXTを構造化CSVへ変換すること
+* Door / Roomデータを品質チェックしやすい形へ整理すること
+* RuleIdベースでBIM品質チェックを設計・実装すること
+* QualityScoreとAI Readiness Scoreを算出すること
+* 人間確認が必要な箇所をHumanReviewRequiredとして明示すること
+* 生成AIやRAGへ渡すためのAI Context JSON / Markdownを生成すること
+* BIM担当者向けのFix Guide Markdownを生成すること
+* ローカルLLMで説明文生成デモを行い、人間レビューと分けて扱うこと
+* pyRevitでRevit内部ElementId / UniqueIdを取得するMVPを作ること
+* RAG / Azure AI Searchを想定したチャンク設計・メタデータ設計を行うこと
+* FixPriorityを将来的な教師データ候補として扱うための列設計・ラベル方針を整理すること
+* pytestで主要ロジックを検証すること
 
 ---
 
 ## Current Results
 
 ### Door Category Results
-
-現時点のDoorサンプルデータに対する結果は以下です。
 
 | 項目                  |           結果 |
 | ------------------- | -----------: |
@@ -197,15 +100,13 @@ FixPriority教師データ設計
 | AI Readiness Level  |          Low |
 | HumanReviewRequired |         True |
 
-今回のDoorサンプルでは、必須パラメータ未入力、分類コード未入力、命名規則違反が各要素で検出される設定のため、全要素のAI Readiness LevelがLowとなっています。
+Doorサンプルでは、必須パラメータ未入力、分類コード未入力、命名規則違反が各要素で検出される設定のため、全要素のAI Readiness LevelがLowとなっています。
 
 ---
 
 ### Phase 3B Room Category Results
 
-Phase 3Bでは、既存のDoor中心ワークフローをRoomカテゴリにも拡張しました。
-
-| Item                      |                Result |
+| 項目                        |                    結果 |
 | ------------------------- | --------------------: |
 | Total Room records        |                   113 |
 | Room rule violations      |                    11 |
@@ -215,49 +116,7 @@ Phase 3Bでは、既存のDoor中心ワークフローをRoomカテゴリにも�
 | Room AI Readiness Level   |             High: 113 |
 | HumanReviewRequired       | True: 11 / False: 102 |
 
-Room workflow:
-
-```text
-Room Schedule TXT
-↓
-CSV conversion
-↓
-Room data cleansing
-↓
-Category = Room
-↓
-Room RuleId checks
-↓
-Room Quality Metrics
-↓
-Room AI Readiness Score
-↓
-Room AI Context
-↓
-Room Fix Guide
-```
-
-Main Room outputs:
-
-```text
-04_output_csv/room_quality_metrics_v001.csv
-04_output_csv/room_ai_readiness_scores_v001.csv
-04_output_csv/room_ai_context_v001.json
-04_output_csv/room_ai_context_v001.md
-04_output_csv/room_fix_guides_v001.md
-```
-
-Details are documented in:
-
-```text
-docs/phase3b_room_category_completion_summary.md
-docs/room_category_extension_plan.md
-docs/room_schedule_column_mapping.md
-docs/room_element_id_policy.md
-docs/room_category_policy.md
-docs/room_area_handling_policy.md
-docs/rule_master_target_category_policy.md
-```
+Phase 3Bでは、既存のDoor中心ワークフローをRoomカテゴリにも拡張しました。
 
 ---
 
@@ -265,43 +124,71 @@ docs/rule_master_target_category_policy.md
 
 Phase 3Cでは、Revit集計表TXTだけでなく、pyRevitを使ってRevitモデル上の選択要素から内部メタデータを取得する小規模MVPを追加しました。
 
-検証環境：
-
-```text
-Revit 2024
-pyRevit 6.4.0
-```
-
 確認済み：
 
-| Item                               | Result |
-| ---------------------------------- | ------ |
-| pyRevit導入                          | 完了     |
-| BIM Qualityタブ / Export Metadataボタン | 作成済み   |
-| 0件選択時の安全中断                         | 確認済み   |
-| Door 1件選択時のCSV出力                   | 確認済み   |
-| Door複数選択時のCSV出力                    | 確認済み   |
-| ElementId / UniqueId取得             | 確認済み   |
-| Category / FamilyName / TypeName取得 | 確認済み   |
-| LevelName取得                        | 確認済み   |
-| DoorでのRoomName / RoomNumber空欄扱い    | 確認済み   |
-| 匿名化サンプルCSV                         | 作成済み   |
+| 項目                                 | 結果                         |
+| ---------------------------------- | -------------------------- |
+| Revit / pyRevit環境                  | Revit 2024 / pyRevit 6.4.0 |
+| BIM Qualityタブ / Export Metadataボタン | 作成済み                       |
+| 0件選択時の安全中断                         | 確認済み                       |
+| Door 1件選択時のCSV出力                   | 確認済み                       |
+| Door複数選択時のCSV出力                    | 確認済み                       |
+| ElementId / UniqueId取得             | 確認済み                       |
+| Category / FamilyName / TypeName取得 | 確認済み                       |
+| LevelName取得                        | 確認済み                       |
+| 匿名化サンプルCSV                         | 作成済み                       |
 
-初期MVPの出力列：
+Phase 3Cでは、Revitモデルの自動修正やパラメータ書き換えは行っていません。
+
+---
+
+## Phase 3A〜3E 拡張内容
+
+### Phase 3A: Local LLM Explanation Demo
+
+AI ContextとFix Guideを入力情報として、ローカルLLMでBIM担当者向け説明文を生成できるかを小さく検証しました。
+
+目的はLLM性能比較ではなく、AI Contextが説明文生成の入力として機能するかを確認することです。
+LLM回答は参考情報であり、最終判断はBIM担当者が行う前提です。
+
+主な関連ファイル：
 
 ```text
-ElementId
-UniqueId
-Category
-FamilyName
-TypeName
-Name
-LevelName
-RoomName
-RoomNumber
+docs/local_llm_extension_plan.md
+docs/local_llm_prompt_template.md
+docs/local_llm_experiment.md
+06_local_llm/README.md
+06_local_llm/local_llm_prompt_input_sample_v001.md
+06_local_llm/local_llm_explanation_examples_v001.md
 ```
 
-主なPhase 3C成果物：
+---
+
+### Phase 3B: Room Category Extension
+
+Door中心だった品質チェック・AI Readiness Assessmentを、Room Schedule TXTにも適用できるように拡張しました。
+
+主な関連ファイル：
+
+```text
+src/convert_room_schedule.py
+src/clean_room_data.py
+src/check_room_quality.py
+src/calculate_room_quality_metrics.py
+src/calculate_room_ai_readiness_score.py
+src/generate_room_ai_context.py
+src/generate_room_fix_guide.py
+tests/test_room_pipeline.py
+docs/phase3b_room_category_completion_summary.md
+```
+
+---
+
+### Phase 3C: pyRevit Element Metadata Export MVP
+
+pyRevitを使い、Revitモデル上の選択要素からElementId / UniqueIdなどの基本メタデータをCSV出力するMVPを追加しました。
+
+主な関連ファイル：
 
 ```text
 pyrevit_scripts/export_selected_element_metadata.py
@@ -312,25 +199,15 @@ docs/pyrevit_limitations.md
 tests/test_pyrevit_metadata_csv.py
 ```
 
-Phase 3Cでは、Revitモデルの自動修正やパラメータ書き換えは行っていません。
-
-目的は、Revit内部ElementId / UniqueIdを取得し、既存PoCや将来のAI Context / RAG用メタデータへ接続できる可能性を確認することです。
-
-これらの結果は、小規模なサンプルデータとPoC用ルール設定に基づくものです。
-
-実務上の正式なBIM品質評価基準ではありません。
-
 ---
 
-### Phase 3D RAG / Azure AI Search Architecture Design Results
+### Phase 3D: RAG / Azure AI Search Architecture Design
 
-Phase 3Dでは、既存PoC成果物を将来的にRAG / Azure AI Searchで活用する場合の構成検討を追加しました。
+既存PoC成果物を将来的にRAG / Azure AI Searchで扱う場合の構成検討を追加しました。
 
-この段階では、Azure AI Search、Azure OpenAI / OpenAI API、Embedding生成、ベクトル検索、RAGチャットUIは実装していません。
+AI Context、Fix Guide、Rule Master、Door / Room品質チェック結果、AI Readiness Score、pyRevit Metadataを、将来の検索・回答生成に接続する場合の設計方針を整理しています。
 
-目的は、AI Context、Fix Guide、Rule Master、Door / Room品質チェック結果、AI Readiness Score、pyRevit Metadataを、将来の検索・回答生成に接続する場合の設計方針を整理することです。
-
-主なPhase 3D成果物：
+主な関連ファイル：
 
 ```text
 docs/rag_azure_ai_search_architecture_plan.md
@@ -343,19 +220,17 @@ docs/rag_limitations.md
 05_rag_design/sample_rag_documents_v001.jsonl
 ```
 
-Phase 3Dでは、実案件データ、顧客名、個人情報、社外秘モデル由来情報は扱っていません。
-
-RAG回答方針では、設計判断、施工判断、法規適合性の最終判断、Revitモデル自動修正は対象外とし、最終判断はBIM担当者が行う前提としています。
+この段階では、Azure AI Search、Azure OpenAI / OpenAI API、Embedding生成、ベクトル検索、RAGチャットUIは実装していません。
 
 ---
 
-### Phase 3E FixPriority Training Data Design Results
+### Phase 3E: FixPriority Training Data Design
 
-Phase 3Eでは、FixPriorityを将来的な教師データ候補として扱うための設計を追加しました。
+FixPriorityを将来的な教師データ候補として扱うための設計を追加しました。
 
 この段階では、機械学習モデルの作成、深層学習、fine-tuning、FixPriorityの完全自動判定は行っていません。
 
-主なPhase 3E成果物：
+主な関連ファイル：
 
 ```text
 docs/fixpriority_training_data_design.md
@@ -366,8 +241,6 @@ docs/fixpriority_limitations.md
 07_fixpriority_training/fixpriority_label_examples_v001.md
 tests/test_fixpriority_training_data.py
 ```
-
-サンプル教師データでは、Door / Roomカテゴリ、High / Medium / Low / Reviewラベル、LabelReason、HumanReviewRequiredを含む形式を確認しています。
 
 ---
 
@@ -394,7 +267,6 @@ RuleId、Severity、AIReadinessImpact、HumanReviewRequiredをもとに生成し
 ### Revit Sample Model
 
 検証には、Autodesk公式の日本仕様 意匠サンプルモデル Revit 2024を使用しています。
-
 `.rvt` ファイル本体は、容量および配布条件を考慮し、GitHub公開対象外としています。
 
 ![Revit sample model](07_portfolio/screenshots/revit_sample_model_3d_view.png)
@@ -408,490 +280,9 @@ RuleId、Severity、AIReadinessImpact、HumanReviewRequiredをもとに生成し
 ### Power BI Dashboard
 
 Power BIは補助的な可視化として使用しています。
-
 `.pbix` ファイル本体は、容量および公開範囲を考慮し、GitHub公開対象外としています。
 
 ![Power BI dashboard](07_portfolio/screenshots/powerbi_dashboard_v001.png)
-
----
-
-## 主な機能
-
-詳細なルール仕様、データ辞書、評価方針、制約は `docs/` に整理しています。
-
-### 1. Revit集計表TXTのCSV変換
-
-Autodesk公式の日本仕様Revitサンプルモデルから書き出した集計表TXTを、Python / pandasで品質チェック用CSVへ変換します。
-
-Door入力：
-
-```text
-03_input_csv/door_schedule_export_test_v001.txt
-```
-
-Door出力：
-
-```text
-03_input_csv/door_schedule_converted_v001.csv
-```
-
-Room入力：
-
-```text
-03_input_csv/room_schedule_export_test_v001.txt
-```
-
-Room出力：
-
-```text
-03_input_csv/room_schedule_converted_v001.csv
-```
-
----
-
-### 2. データクレンジング
-
-Revit集計表から出力されたデータを、品質チェックしやすい形へ整理します。
-
-主な処理：
-
-* 列名整理
-* 必要列抽出
-* 欠損値処理
-* Category付与
-* Door / Room別の基本整形
-* PoC用ElementId付与
-
----
-
-### 3. RuleIdベース品質チェック
-
-BIM品質ルールをRuleIdで管理します。
-
-Doorカテゴリ例：
-
-```text
-D-001: Required parameter missing
-D-002: Classification code missing
-D-003: Naming rule violation
-```
-
-Roomカテゴリ例：
-
-```text
-R-101: RoomName missing
-R-102: RoomNumber missing
-R-103: Area missing or zero
-R-104: Level missing
-```
-
-品質チェック結果は以下へ接続します。
-
-```text
-QualityScore
-AI Readiness Score
-AI Context
-Fix Guide
-HumanReviewRequired
-RAG設計用メタデータ
-FixPriority教師データ設計
-```
-
----
-
-### 4. QualityScore算出
-
-品質チェック結果をもとに、要素単位でQualityScoreを算出します。
-
-QualityScoreはBIMデータ品質の参考指標であり、設計品質や施工品質そのものを評価するものではありません。
-
----
-
-### 5. AI Readiness Score算出
-
-AI Readiness Scoreは、BIMデータをBI、データ分析、将来的な機械学習、生成AI、RAGで利用する前段階として、データがどの程度利用しやすい状態かを示す参考指標です。
-
-AI Readiness Scoreは、以下のような要素をもとに算出します。
-
-```text
-QualityScore
-RuleId
-Severity
-HumanReviewRequired
-BlockingRuleIds
-FixPriority
-```
-
-AI Readiness Scoreは、AI利用可否の最終判断ではありません。
-
----
-
-### 6. AI Context生成
-
-生成AIやRAGへ渡すことを想定した、構造化コンテキストをJSON / Markdownで生成します。
-
-主な出力：
-
-```text
-04_output_csv/ai_context_v002.json
-04_output_csv/ai_context_v002.md
-04_output_csv/room_ai_context_v001.json
-04_output_csv/room_ai_context_v001.md
-```
-
-AI Contextには、以下のような情報を含めます。
-
-```text
-ElementId
-Category
-RuleId
-Severity
-QualityScore
-AI Readiness Score
-HumanReviewRequired
-FixPriority
-Fix Guide reference
-Source file
-```
-
----
-
-### 7. Fix Guide Markdown生成
-
-RuleId、Severity、AI Readinessへの影響、人間確認要否をもとに、BIM担当者向けの修正ガイドMarkdownを生成します。
-
-主な出力：
-
-```text
-04_output_csv/fix_guides_v001.md
-04_output_csv/room_fix_guides_v001.md
-```
-
-Fix Guideは修正命令ではなく、BIM担当者が元モデルや元データを確認するための補助情報です。
-
----
-
-### 8. Streamlit簡易可視化
-
-Streamlitを使い、AI Readiness Score、AI Context、Fix Guideを確認できる簡易画面を作成しています。
-
-対象：
-
-```text
-AI Readiness overview
-AI Context preview
-Fix Guide preview
-```
-
----
-
-### 9. Local LLM Explanation Demo
-
-Phase 3Aとして、ローカルLLMを使った説明文生成デモを追加しています。
-
-AI ContextとFix Guideを入力情報として、BIM担当者向けの説明文を生成できるかを小さく検証します。
-
-この検証は、LLM性能比較や設計判断の自動化ではありません。
-
----
-
-### 10. pyRevit Element Metadata Export MVP
-
-Phase 3Cとして、pyRevitを使い、Revitモデル上の選択要素からElementId / UniqueIdなどの基本メタデータをCSV出力するMVPを追加しています。
-
-このMVPは、Revit内部メタデータを既存PoCや将来のAI Context / RAG設計に接続できる可能性を確認するためのものです。
-
----
-
-### 11. RAG / Azure AI Search Architecture Design
-
-Phase 3Dとして、既存PoC成果物を将来的にRAG / Azure AI Searchで扱う場合の構成検討を追加しています。
-
-この検討では、以下を整理しています。
-
-```text
-RAG対象データ
-主検索対象 / 補助対象
-チャンク設計
-メタデータ設計
-ElementId / UniqueId / RuleId / Category / SourceFile の関連付け
-Azure AI Searchを想定した概念スキーマ
-サンプルRAGドキュメント
-検索クエリ例
-RAG回答方針
-制約・セキュリティ方針
-```
-
-Phase 3Dは設計検討であり、RAGシステムの本格実装ではありません。
-
----
-
-### 12. FixPriority Training Data Design
-
-Phase 3Eとして、FixPriorityを将来的な教師データ候補として扱うための設計を追加しています。
-
-この検討では、以下を整理しています。
-
-```text
-教師データ1行の単位
-教師データ列設計
-CurrentFixPriorityとProposedFixPriorityLabelの違い
-High / Medium / Low / Reviewのラベル方針
-LabelReasonの扱い
-HumanReviewRequiredとの関係
-GitHub公開可能なサンプル教師データ
-制約・対象外
-```
-
-Phase 3Eは教師データ設計であり、機械学習モデルの作成やFixPriorityの完全自動判定ではありません。
-
----
-
-## Phase 3A: Local LLM Explanation Demo
-
-Phase 3Aとして、ローカルLLMを使った説明文生成デモを追加しています。
-
-このデモでは、Phase 2で生成した `AI Context v002` と `Fix Guide Markdown` を入力情報として使用し、BIM担当者向けの説明文を生成できるかを小さく検証しています。
-
-目的は、LLMの性能比較や設計判断の自動化ではありません。
-
-ローカルLLMの回答は参考情報であり、最終判断はBIM担当者が行う前提です。
-
-主な関連ファイル：
-
-```text
-docs/local_llm_extension_plan.md
-docs/local_llm_prompt_template.md
-docs/local_llm_experiment.md
-06_local_llm/README.md
-06_local_llm/local_llm_prompt_input_sample_v001.md
-06_local_llm/local_llm_explanation_examples_v001.md
-```
-
----
-
-## Phase 3B: Room Category Extension
-
-Phase 3Bとして、Roomカテゴリを追加しました。
-
-Door中心だった品質チェック・AI Readiness Assessmentを、Room Schedule TXTにも適用できるように拡張しています。
-
-Roomカテゴリでは、以下を扱います。
-
-```text
-RoomName
-RoomNumber
-Area
-Level
-Category
-QualityScore
-AI Readiness Score
-HumanReviewRequired
-Fix Guide
-```
-
-主な関連ファイル：
-
-```text
-src/convert_room_schedule.py
-src/clean_room_data.py
-src/check_room_quality.py
-src/calculate_room_quality_metrics.py
-src/calculate_room_ai_readiness_score.py
-src/generate_room_ai_context.py
-src/generate_room_fix_guide.py
-tests/test_room_pipeline.py
-docs/phase3b_room_category_completion_summary.md
-docs/room_category_extension_plan.md
-docs/room_schedule_column_mapping.md
-docs/room_element_id_policy.md
-docs/room_category_policy.md
-docs/room_area_handling_policy.md
-docs/rule_master_target_category_policy.md
-```
-
-Room Schedule TXTにはRevit内部ElementId / UniqueIdが含まれていないため、Phase 3BではPoC用の仮ElementIdを使用しています。
-
-Revit内部ElementId / UniqueIdの取得は、Phase 3Cで扱います。
-
----
-
-## Phase 3C: pyRevit Element Metadata Export MVP
-
-Phase 3Cとして、pyRevitを用いたRevit選択要素メタデータ出力MVPを追加しました。
-
-このMVPでは、Revit上で選択した要素から、Revit API経由で以下の基本メタデータを取得し、CSVとして出力します。
-
-```text
-ElementId
-UniqueId
-Category
-FamilyName
-TypeName
-Name
-LevelName
-RoomName
-RoomNumber
-```
-
-実行環境：
-
-```text
-Revit 2024
-pyRevit 6.4.0
-Windows
-Python 3.12.10
-```
-
-作成したpyRevitスクリプト：
-
-```text
-pyrevit_scripts/export_selected_element_metadata.py
-```
-
-サンプル出力：
-
-```text
-03_input_csv/pyrevit_element_metadata_sample_v001.csv
-```
-
-関連docs：
-
-```text
-docs/pyrevit_element_metadata_export_plan.md
-docs/pyrevit_element_metadata_mapping.md
-docs/pyrevit_limitations.md
-```
-
-pytest：
-
-```text
-tests/test_pyrevit_metadata_csv.py
-```
-
-主な確認内容：
-
-* Revit 2024 + pyRevit 6.4.0環境で実行
-* pyRevit上に `BIM Quality` タブと `Export Metadata` ボタンを作成
-* 選択要素0件の場合はCSVを出力せず安全に中断
-* Door要素1件および複数件からCSV出力を確認
-* 日本語を含むCSVをUTF-8 with BOMで出力
-* GitHub公開用サンプルCSVは匿名化
-* DoorではRoomName / RoomNumberを空欄として扱う方針に修正
-
-Phase 3Cでは、Revitモデルの自動修正やパラメータ書き換えは行っていません。
-
----
-
-## Phase 3D: RAG / Azure AI Search Architecture Design
-
-Phase 3Dとして、RAG / Azure AI Searchを将来利用する場合の構成検討を追加しました。
-
-この検討では、既存PoCで生成したAI Context、Fix Guide、Rule Master、Door / Room品質チェック結果、AI Readiness Score、pyRevit Metadataを、将来の検索対象として扱う場合のチャンク設計、メタデータ設計、検索クエリ例、RAG回答方針、制約を整理しています。
-
-関連docs：
-
-```text
-docs/rag_azure_ai_search_architecture_plan.md
-docs/rag_chunk_design.md
-docs/rag_metadata_design.md
-docs/rag_query_examples.md
-docs/rag_answer_policy.md
-docs/rag_limitations.md
-```
-
-サンプル設計ファイル：
-
-```text
-05_rag_design/sample_index_schema_v001.json
-05_rag_design/sample_rag_documents_v001.jsonl
-```
-
-Phase 3Dは設計検討であり、以下は実装していません。
-
-```text
-Azure AI Searchの実デプロイ
-Azure OpenAI / OpenAI API接続
-Embedding生成
-ベクトル検索
-RAGチャットUI
-クラウド環境構築
-実案件データ投入
-Revitモデル自動修正
-設計判断・施工判断の自動化
-```
-
-RAG回答方針では、以下を重視しています。
-
-```text
-RuleId、Severity、AI Readiness Score、Fix Guide、SourceFileを根拠として示す
-HumanReviewRequired=Trueの場合は人間確認が必要と明記する
-入力情報にない内容は断定しない
-Fix Guideは修正命令ではなく確認・対応案として扱う
-LLM回答は参考情報であり、最終判断はBIM担当者が行う
-```
-
----
-
-## Phase 3E: FixPriority Training Data Design
-
-Phase 3Eとして、FixPriorityを将来的な教師データ候補として扱うための設計を追加しました。
-
-この段階では、機械学習モデルの作成、深層学習、fine-tuning、FixPriorityの完全自動判定は行っていません。
-
-目的は、既存PoCで扱っているRuleId、Severity、QualityScore、AI Readiness Score、HumanReviewRequired、Fix Guideをもとに、将来的に修正優先度の教師データを蓄積する場合の列設計、ラベル方針、制約、サンプルデータを整理することです。
-
-教師データの基本単位は以下です。
-
-```text
-1要素 × 1 RuleId
-```
-
-FixPriorityラベル候補：
-
-```text
-High
-Medium
-Low
-Review
-```
-
-`Review` は低優先度ではなく、人間による判断が必要な状態を示すラベルとして扱います。
-
-主な関連docs：
-
-```text
-docs/fixpriority_training_data_design.md
-docs/fixpriority_training_columns.md
-docs/fixpriority_labeling_policy.md
-docs/fixpriority_limitations.md
-```
-
-サンプル教師データ：
-
-```text
-07_fixpriority_training/fixpriority_training_samples_v001.csv
-07_fixpriority_training/fixpriority_label_examples_v001.md
-```
-
-pytest：
-
-```text
-tests/test_fixpriority_training_data.py
-```
-
-Phase 3Eでは、以下を重視しています。
-
-```text
-FixPriorityを自動判断結果ではなく、将来の教師データ候補として扱う
-CurrentFixPriorityとProposedFixPriorityLabelを分ける
-LabelReasonを必須情報として扱う
-HumanReviewRequired=Trueの場合は、人間確認の必要性を明確に残す
-Reviewラベルを「低優先度」ではなく「判断保留・要確認」として扱う
-実案件データ、顧客名、個人情報、社外秘モデル由来情報は含めない
-```
-
-Phase 3Eは教師データ設計であり、修正優先度の本番判定モデルではありません。
 
 ---
 
@@ -923,6 +314,7 @@ Phase 3Eは教師データ設計であり、修正優先度の本番判定モデ
 
 ```text
 03_input_csv/pyrevit_element_metadata_sample_v001.csv
+pyrevit_scripts/export_selected_element_metadata.py
 ```
 
 ### Local LLM関連
@@ -976,9 +368,7 @@ pytest -q
 37 passed
 ```
 
-テストでは、RuleIdベース品質チェック、AI Readiness Score計算、HumanReviewRequired判定、Room用Area抽出、Room用仮ElementId生成、Room出力ファイルの主要列確認、pyRevit出力CSVの必要列確認と基本値確認、FixPriority教師データCSVの列・ラベル・基本整合性などの基本動作を確認しています。
-
-Phase 3Dは設計資料とサンプルJSON / JSONLの追加であり、Azure AI Search実装やRAG実行処理は含まないため、現時点では追加の実行テスト対象にはしていません。
+RuleIdベース品質チェック、AI Readiness Score計算、HumanReviewRequired判定、Room用処理、pyRevit出力CSV、FixPriority教師データCSVの基本整合性を確認しています。
 
 ---
 
@@ -1021,105 +411,11 @@ FastAPI
 
 ---
 
-## Repository Structure
-
-```text
-bim_quality_poc/
-├── README.md
-├── requirements.txt
-├── 01_data/
-├── 02_rule_master/
-│   └── bim_rule_master_v003.csv
-├── 03_input_csv/
-│   ├── door_schedule_export_test_v001.txt
-│   ├── door_schedule_converted_v001.csv
-│   ├── cleaned_door_data_v001.csv
-│   ├── room_schedule_export_test_v001.txt
-│   ├── room_schedule_converted_v001.csv
-│   ├── cleaned_room_data_v001.csv
-│   └── pyrevit_element_metadata_sample_v001.csv
-├── 04_output_csv/
-│   ├── check_results_revit_v002.csv
-│   ├── quality_metrics_v001.csv
-│   ├── ai_readiness_scores_v001.csv
-│   ├── ai_context_v002.json
-│   ├── ai_context_v002.md
-│   ├── fix_guides_v001.md
-│   ├── check_results_room_v001.csv
-│   ├── room_quality_metrics_v001.csv
-│   ├── room_ai_readiness_scores_v001.csv
-│   ├── room_ai_context_v001.json
-│   ├── room_ai_context_v001.md
-│   └── room_fix_guides_v001.md
-├── 05_powerbi/
-├── 05_rag_design/
-│   ├── sample_index_schema_v001.json
-│   └── sample_rag_documents_v001.jsonl
-├── 06_ai_demo/
-├── 06_local_llm/
-│   ├── README.md
-│   ├── local_llm_prompt_input_sample_v001.md
-│   └── local_llm_explanation_examples_v001.md
-├── 07_fixpriority_training/
-│   ├── fixpriority_training_samples_v001.csv
-│   └── fixpriority_label_examples_v001.md
-├── 07_portfolio/
-│   └── screenshots/
-├── docs/
-│   ├── project_overview.md
-│   ├── rule_specification.md
-│   ├── evaluation_policy.md
-│   ├── limitations.md
-│   ├── data_dictionary.md
-│   ├── revit_schedule_column_mapping.md
-│   ├── ai_readiness_assessment_plan.md
-│   ├── revit_api_pyrevit_integration_plan.md
-│   ├── phase3_roadmap.md
-│   ├── local_llm_extension_plan.md
-│   ├── local_llm_prompt_template.md
-│   ├── local_llm_experiment.md
-│   ├── room_category_extension_plan.md
-│   ├── phase3b_room_category_completion_summary.md
-│   ├── room_schedule_column_mapping.md
-│   ├── room_element_id_policy.md
-│   ├── room_category_policy.md
-│   ├── room_area_handling_policy.md
-│   ├── rule_master_target_category_policy.md
-│   ├── pyrevit_element_metadata_export_plan.md
-│   ├── pyrevit_element_metadata_mapping.md
-│   ├── pyrevit_limitations.md
-│   ├── rag_azure_ai_search_architecture_plan.md
-│   ├── rag_chunk_design.md
-│   ├── rag_metadata_design.md
-│   ├── rag_query_examples.md
-│   ├── rag_answer_policy.md
-│   ├── rag_limitations.md
-│   ├── fixpriority_training_data_design.md
-│   ├── fixpriority_training_columns.md
-│   ├── fixpriority_labeling_policy.md
-│   ├── fixpriority_limitations.md
-│   ├── poc_completion_policy.md
-│   ├── portfolio_visual_plan.md
-│   ├── poc_overall_flow_mermaid.md
-│   └── phase3_extension_mermaid.md
-├── pyrevit_scripts/
-│   └── export_selected_element_metadata.py
-├── src/
-└── tests/
-    ├── test_quality_check.py
-    ├── test_ai_readiness_score.py
-    ├── test_room_pipeline.py
-    ├── test_pyrevit_metadata_csv.py
-    └── test_fixpriority_training_data.py
-```
-
----
-
 ## Documentation
 
 詳細資料は `docs/` に整理しています。
 
-主な資料：
+主要資料：
 
 ```text
 docs/project_overview.md
@@ -1127,44 +423,29 @@ docs/rule_specification.md
 docs/evaluation_policy.md
 docs/limitations.md
 docs/data_dictionary.md
-docs/revit_schedule_column_mapping.md
-docs/revit_api_pyrevit_integration_plan.md
-docs/ai_readiness_assessment_plan.md
-
 docs/phase3_roadmap.md
-
-docs/local_llm_extension_plan.md
-docs/local_llm_prompt_template.md
-docs/local_llm_experiment.md
-
-docs/room_category_extension_plan.md
-docs/phase3b_room_category_completion_summary.md
-docs/room_schedule_column_mapping.md
-docs/room_element_id_policy.md
-docs/room_category_policy.md
-docs/room_area_handling_policy.md
-docs/rule_master_target_category_policy.md
-
-docs/pyrevit_element_metadata_export_plan.md
-docs/pyrevit_element_metadata_mapping.md
-docs/pyrevit_limitations.md
-
-docs/rag_azure_ai_search_architecture_plan.md
-docs/rag_chunk_design.md
-docs/rag_metadata_design.md
-docs/rag_query_examples.md
-docs/rag_answer_policy.md
-docs/rag_limitations.md
-
-docs/fixpriority_training_data_design.md
-docs/fixpriority_training_columns.md
-docs/fixpriority_labeling_policy.md
-docs/fixpriority_limitations.md
-
 docs/poc_completion_policy.md
+docs/portfolio_pdf_update_plan.md
+docs/readme_simplification_plan.md
+```
+
+Phase別資料：
+
+```text
+docs/local_llm_extension_plan.md
+docs/room_category_extension_plan.md
+docs/pyrevit_element_metadata_export_plan.md
+docs/rag_azure_ai_search_architecture_plan.md
+docs/fixpriority_training_data_design.md
+```
+
+図解・Portfolio関連：
+
+```text
 docs/portfolio_visual_plan.md
 docs/poc_overall_flow_mermaid.md
 docs/phase3_extension_mermaid.md
+07_portfolio/bim_quality_poc_portfolio_v004.pdf
 ```
 
 ---
@@ -1173,64 +454,29 @@ docs/phase3_extension_mermaid.md
 
 現時点の主な制約と対象外は以下です。
 
-* Revit由来データ対応は初期試作です。
-* 現在処理しているRevit由来データは、Door ScheduleとRoom Scheduleです。
-* Doorカテゴリの `ElementId` はRevit内部ElementIdではなく、建具表上の建具番号を仮IDとして使用しています。
-* Roomカテゴリの `ElementId` はRevit内部ElementId / UniqueIdではなく、Phase 3B用の仮IDとして使用しています。
-* Room Schedule TXTからは、Zone列とClassificationCode列を初期MVPでは取得していません。
-* `FamilyName` と `TypeName` は、現時点ではRevit集計表の列をもとにした仮マッピングです。
+* 本PoCは検証用であり、本番用のBIM品質管理システムではありません。
+* 現在処理しているRevit由来データは、主にDoor ScheduleとRoom Scheduleです。
+* Door / RoomのElementIdには、PoC用仮IDとRevit内部ElementIdが混在する可能性があります。
 * QualityScoreとAI Readiness ScoreはPoC用の簡易指標です。
-* FixPriorityは実務の正解ラベルではなく仮ラベルです。
+* FixPriorityは実務の正解ラベルではなく、仮ラベルです。
 * FixPriority教師データ設計は列設計・ラベル方針・サンプル作成までであり、分類モデルの作成は行っていません。
-* Local LLM Explanation Demoは、1件のElementIdを対象にした小規模検証です。
-* Local LLMの出力は参考情報であり、そのまま最終判断として採用するものではありません。
-* pyRevitによる直接取得は、選択要素のメタデータCSV出力MVPまでを実装しています。
-* pyRevit連携では、全モデルスキャン、全カテゴリ対応、既存品質チェックパイプラインへの直接投入は未実装です。
-* 生成AI API接続、RAGシステム、Azure AI Search連携は未実装です。
-* Phase 3Dでは、将来RAG / Azure AI Searchへ接続する場合のチャンク設計、メタデータ設計、検索クエリ例、回答方針、制約整理のみを行っています。
-* `05_rag_design/` 配下のJSON / JSONLは、実装用ファイルではなく、概念スキーマと匿名サンプルRAGドキュメントです。
-* Azure AI Searchの実デプロイ、Azure OpenAI / OpenAI API接続、Embedding生成、ベクトル検索、RAGチャットUIは未実装です。
-* RAG / Azure AI Search構成検討では、実案件データ、顧客名、個人情報、社外秘モデル由来情報を扱いません。
+* Local LLMの出力は参考情報であり、最終判断ではありません。
+* pyRevit連携は、選択要素のメタデータCSV出力MVPまでです。
+* 全モデルスキャンは未実装です。
+* Azure AI Searchの実デプロイは未実装です。
+* Azure OpenAI / OpenAI API接続は未実装です。
+* Embedding生成は未実装です。
+* ベクトル検索は未実装です。
+* RAGチャットUIは未実装です。
+* 機械学習モデル作成、深層学習、fine-tuningは未実装です。
 * Revitモデルの自動修正は対象外です。
-* 設計判断、施工判断、モデル修正の最終判断は人間が行う前提です。
-* 深層学習、機械学習モデルの精度追求、fine-tuning、複雑なPower BIダッシュボード再設計は対象外です。
-
-関連docs：
-
-```text
-docs/limitations.md
-docs/evaluation_policy.md
-docs/data_dictionary.md
-docs/revit_schedule_column_mapping.md
-docs/ai_readiness_assessment_plan.md
-docs/phase3_roadmap.md
-docs/local_llm_experiment.md
-docs/phase3b_room_category_completion_summary.md
-docs/pyrevit_element_metadata_export_plan.md
-docs/pyrevit_element_metadata_mapping.md
-docs/pyrevit_limitations.md
-docs/rag_answer_policy.md
-docs/rag_limitations.md
-docs/fixpriority_limitations.md
-docs/poc_completion_policy.md
-```
+* 設計判断、施工判断、法規判断、モデル修正の最終判断はBIM担当者が行う前提です。
 
 ---
 
 ## Security / Public Data Policy
 
-GitHubに含めてよいもの：
-
-```text
-公開可能なサンプルデータ
-匿名化したPoC用データ
-自作サンプルJSON / JSONL
-概念スキーマ
-設計メモ
-制約メモ
-図解設計メモ
-Mermaid図案
-```
+このリポジトリには、公開可能なサンプルデータまたは匿名化したPoC用データのみを含めます。
 
 GitHubに含めないもの：
 
@@ -1253,61 +499,10 @@ Azureリソース名
 
 ---
 
-## Future Work
-
-今後の拡張候補は以下です。
-
-### Revit / BIM連携
-
-* pyRevitで取得したRevit内部ElementId / UniqueIdの既存PoCへの接続
-* UniqueId、FamilyName、TypeName、Category、Level、RoomNameの活用方針整理
-* Room要素選択時のRoomName / RoomNumber取得確認
-* pyRevit出力CSVを既存品質チェックパイプラインへ接続
-* Category = ドア を Door へ正規化する処理
-* Wall、Space、Equipmentなど、Room以外のカテゴリへの拡張
-* リンクモデル内要素の扱い整理
-
-### AI / RAG連携
-
-* Phase 3Dで整理したチャンク設計・メタデータ設計をもとにしたRAG用前処理の試作
-* AI Context / Fix Guide / Rule Masterを検索対象とする小規模RAG検証
-* ElementId / UniqueIdを検索キーとして使う場合の実データ接続検討
-* HumanReviewRequired=Trueを考慮したRAG回答制御の検討
-* Azure AI Searchへ接続する場合のインデックス設計・権限管理・コスト管理の追加検討
-
-### FixPriority / 教師データ設計
-
-* FixPriority仮ラベルの限界整理
-* 実務修正履歴を使った教師データ設計
-* 修正工数、手戻り有無、後工程影響、レビューコメントの設計
-* ActualFixPriorityの定義
-* 将来的な分類モデル改善に必要なデータ条件整理
-
-### Portfolio / 成果物整理
-
-* Portfolio PDFの更新
-* Mermaid図の画像化
-* PoC全体フロー図のスライド化
-* 次成果物テーマへの切り出し
-
----
-
 ## Summary
 
-本PoCでは、Revit / BIMデータを対象に、Python / pandasによるデータ読み込み、データクレンジング、RuleIdベース品質チェック、品質メトリクス作成、QualityScore算出、特徴量データセット作成、AI Readiness Score算出、生成AI向け構造化コンテキスト生成、Fix Guide Markdown生成、Streamlit簡易可視化、ローカルLLMを使った説明文生成デモ、pytestによる最小テストまでを実装しました。
+本PoCでは、Revit / BIMデータを対象に、Pythonによるデータ変換、データクレンジング、RuleIdベース品質チェック、QualityScore算出、AI Readiness Score算出、生成AI向け構造化コンテキスト生成、Fix Guide Markdown生成、Streamlit簡易可視化、Local LLM説明文生成デモ、pyRevitメタデータ取得、RAG構成検討、FixPriority教師データ設計、pytestによる最小テストまでを整理しました。
 
-Phase 3Aでは、AI ContextとFix Guideを入力情報として、ローカルLLMでBIM担当者向け説明文を生成できるかを小さく検証しました。LLM回答は参考情報であり、最終判断はBIM担当者が行う前提です。
-
-Phase 3Bでは、Door中心だった処理をRoomカテゴリにも拡張し、Room Schedule TXTからRoom品質チェック、Room Quality Metrics、Room AI Readiness Score、Room AI Context、Room Fix Guide、Room用pytestまでを追加しました。
-
-Phase 3Cでは、pyRevitを使ってRevitモデル上の選択要素からElementId / UniqueId / Category / FamilyName / TypeName / LevelNameを取得し、CSVとして出力する小規模MVPを追加しました。出力サンプルはGitHub公開用に匿名化し、CSV構造はpytestで検証しています。
-
-Phase 3Dでは、AI Context、Fix Guide、Rule Master、Door / Room品質チェック結果、AI Readiness Score、pyRevit Metadataを将来的にRAG / Azure AI Searchで扱う場合の構成検討を行いました。チャンク設計、メタデータ設計、検索クエリ例、RAG回答方針、制約・セキュリティ方針をdocsに整理し、概念スキーマJSONと匿名サンプルJSONLを `05_rag_design/` に作成しました。
-
-Phase 3Eでは、FixPriorityを将来的な教師データ候補として扱うため、教師データ列設計、High / Medium / Low / Reviewのラベル方針、LabelReason、HumanReviewRequiredとの関係、サンプルCSV、ラベル例、制約、pytestを追加しました。
-
-なお、Azure AI Searchの実装、Embedding生成、ベクトル検索、RAGチャットUI、クラウド接続、機械学習モデル作成、fine-tuning、FixPriority完全自動判定は本段階では行っていません。
-
-目的は、AIモデルそのものを作ることではなく、BIMデータをBI、データ分析、将来的な機械学習、生成AI、RAGで安全に活用するための前処理、品質評価、構造化、修正ガイド生成、説明文生成、RAG構成検討、教師データ設計、人間レビュー設計の流れを示すことです。
+目的は、AIモデルそのものを作ることではなく、BIMデータをBI、データ分析、将来的な機械学習、生成AI、RAGで安全に活用するための前処理、品質評価、構造化、修正ガイド生成、人間レビュー設計の流れを示すことです。
 
 このPoCにより、BIM導入支援・Revit運用支援の経験を、建設業界向けのAI・データ活用支援へ拡張できることを示しています。
