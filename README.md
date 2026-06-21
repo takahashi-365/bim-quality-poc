@@ -59,7 +59,6 @@ flowchart TD
 関連する図解設計資料：
 
 ```text
-docs/portfolio_visual_plan.md
 docs/poc_overall_flow_mermaid.md
 docs/phase3_extension_mermaid.md
 ```
@@ -425,8 +424,6 @@ docs/limitations.md
 docs/data_dictionary.md
 docs/phase3_roadmap.md
 docs/poc_completion_policy.md
-docs/portfolio_pdf_update_plan.md
-docs/readme_simplification_plan.md
 ```
 
 Phase別資料：
@@ -442,7 +439,6 @@ docs/fixpriority_training_data_design.md
 図解・Portfolio関連：
 
 ```text
-docs/portfolio_visual_plan.md
 docs/poc_overall_flow_mermaid.md
 docs/phase3_extension_mermaid.md
 07_portfolio/bim_quality_poc_portfolio_v005.pdf
