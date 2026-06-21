@@ -13,7 +13,7 @@ BIM担当者が確認・判断しやすいように、品質チェック結果�
 
 ## Portfolio PDF
 
-[Portfolio PDF v004](07_portfolio/bim_quality_poc_portfolio_v004.pdf)
+[Portfolio PDF v005](07_portfolio/bim_quality_poc_portfolio_v005.pdf)
 
 ---
 
