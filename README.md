@@ -2,7 +2,11 @@
 
 ## BIMデータ品質・AI活用準備度評価PoC
 
+本PoCは、BIM導入支援・Revit運用支援の経験を、建設業界向けAI導入支援・BIMデータ活用支援へ拡張するためのポートフォリオです。
+
 Revit / BIMデータを、BI・データ分析・将来的な機械学習・生成AI・RAGで活用する前に、データ品質とAI活用準備度を評価するための個人開発PoCです。
+
+This portfolio demonstrates how BIM implementation support experience can be extended into construction AI / data utilization support by preparing Revit-derived BIM data for BI, RAG, and human-reviewed AI assistance.
 
 Revit集計表から書き出したTXT、Room Schedule TXT、pyRevitで取得した選択要素メタデータCSVをPythonで処理し、RuleIdベースの品質チェック、QualityScore算出、AI Readiness Score算出、生成AI向け構造化コンテキスト生成、Fix Guide Markdown生成、Streamlitによる簡易可視化、ローカルLLMによる説明文生成デモ、RAG / Azure AI Search構成検討、FixPriority教師データ設計までを扱っています。
 
@@ -14,6 +18,46 @@ BIM担当者が確認・判断しやすいように、品質チェック結果�
 ## Portfolio PDF
 
 [Portfolio PDF v005](07_portfolio/bim_quality_poc_portfolio_v005.pdf)
+
+---
+
+## このPoCでできること / できないこと
+
+### できること
+
+```text
+Revit由来データの品質チェック
+RuleIdベースの違反検出
+QualityScore算出
+AI Readiness Score算出
+HumanReviewRequired判定
+AI Context JSON / Markdown生成
+Fix Guide Markdown生成
+Streamlitによる簡易可視化
+ローカルLLMによる説明文生成デモ
+pyRevitによるElementId / UniqueId取得MVP
+RAG / Azure AI Search向けの構成検討
+FixPriority教師データの列設計・ラベル方針整理
+pytestによる主要ロジックの検証
+```
+
+### できないこと / 対象外
+
+```text
+Revitモデルの自動修正
+設計判断
+施工判断
+法規判断
+本番用BIM品質管理システムとしての運用
+Azure AI Searchの実デプロイ
+Azure OpenAI / OpenAI API接続
+Embedding生成
+ベクトル検索
+RAGチャットUI
+機械学習モデルによるFixPriorityの正解判定
+深層学習
+fine-tuning
+```
 
 ---
 
