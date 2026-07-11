@@ -1,0 +1,32 @@
+﻿## check_bim_quality
+docs/portfolio_summary.md:85:* `src/check_bim_quality.py`
+docs/portfolio_summary.md:120:check_bim_quality.py 縺ｧRuleId繝吶・繧ｹ蜩∬ｳｪ繝√ぉ繝・け
+docs/revit_schedule_column_mapping.md:63:check_bim_quality.py
+docs/room_category_extension_plan.md:419:src/check_bim_quality.py
+docs/system_overview.md:90:3. check_bim_quality.py
+docs/system_overview.md:152:check_bim_quality.py 縺ｧRuleId繝吶・繧ｹ蜩∬ｳｪ繝√ぉ繝・け
+docs/system_overview.md:522:### `src/check_bim_quality.py`
+tests/test_quality_rules.py:6:迴ｾ譎らせ縺ｧ縺ｯ縲・8_python/check_bim_quality.py 縺瑚ｩｦ菴懊さ繝ｼ繝峨・縺溘ａ縲・
+tests/test_quality_rules.py:9:莉雁ｾ後《rc/check_bim_quality.py 縺ｸ譛ｬ螳溯｣・ｒ遘ｻ陦後＠縺溷ｾ後・
+
+## convert_revit_schedule
+docs/ai_readiness_assessment_plan.md:448:莉雁屓縺ｮ逶ｮ逧・・縲∵ｭ｣蠑上↑Revit蜀・Κ諠・ｱ縺ｮ蜿門ｾ励ｄ `convert_revit_schedule.py` 縺ｮ蜀崎ｨｭ險医〒縺ｯ縺ｪ縺上∫樟蝨ｨ縺ｮPoC縺ｧ菴ｿ縺｣縺ｦ縺・ｋ莉ｮ繝槭ャ繝斐Φ繧ｰ繧帝國縺輔★謨ｴ逅・＠縲∝刀雉ｪ繝√ぉ繝・け縲、I Readiness Score縲、I Context v002縲：ix Guide縺ｸ縺ｮ蠖ｱ髻ｿ繧定ｪｬ譏弱〒縺阪ｋ迥ｶ諷九↓縺吶ｋ縺薙→縺ｧ縺吶・
+docs/ai_readiness_assessment_plan.md:477:豁｣蠑上↑Revit蜀・ΚElementId蜿門ｾ励：amilyName / TypeName / Level / RoomName縺ｮ譛ｬ譬ｼ蜿門ｾ励～convert_revit_schedule.py` 縺ｮ蜀崎ｨｭ險医・Future Work縺ｨ縺励※謇ｱ縺・∪縺吶・
+docs/data_dictionary.md:60:迴ｾ譎らせ縺ｮ `convert_revit_schedule.py` 縺ｧ縺ｯ縲ヽevit譖ｸ縺榊・縺裕XT縺ｮ荳驛ｨ蛻励ｒPoC逕ｨ縺ｮ讓呎ｺ門・縺ｸ莉ｮ繝槭ャ繝斐Φ繧ｰ縺励※縺・∪縺吶・
+docs/data_dictionary.md:329:* 蛻励・繝・ヴ繝ｳ繧ｰ遒ｺ螳壼ｾ後～convert_revit_schedule.py` 繧呈峩譁ｰ縺吶ｋ縲・
+docs/portfolio_summary.md:83:* `src/convert_revit_schedule.py`
+docs/portfolio_summary.md:112:convert_revit_schedule.py 縺ｧ蜩∬ｳｪ繝√ぉ繝・け逕ｨCSV縺ｸ螟画鋤
+docs/revit_schedule_column_mapping.md:36:`src/convert_revit_schedule.py` 縺ｫ繧医ｊ縲ヽevit譖ｸ縺榊・縺裕XT縺九ｉ蜩∬ｳｪ繝√ぉ繝・け逕ｨ縺ｫ螟画鋤縺励◆CSV縺ｧ縺吶・
+docs/revit_schedule_column_mapping.md:55:convert_revit_schedule.py
+docs/revit_schedule_column_mapping.md:420:`convert_revit_schedule.py` 縺ｮ螳溯｡檎ｵ先棡縺ｯ莉･荳九〒縺吶・
+docs/room_category_extension_plan.md:417:src/convert_revit_schedule.py
+docs/system_overview.md:80:1. convert_revit_schedule.py
+docs/system_overview.md:144:convert_revit_schedule.py 縺ｧ蜩∬ｳｪ繝√ぉ繝・け逕ｨCSV縺ｸ螟画鋤
+docs/system_overview.md:470:### `src/convert_revit_schedule.py`
+
+## src.utils
+docs/system_overview.md:718:### `src/utils.py`
+
+## from utils
+
+## import utils

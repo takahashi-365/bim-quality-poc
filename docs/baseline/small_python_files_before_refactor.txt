@@ -1,0 +1,8 @@
+﻿
+Path                          Length
+----                          ------
+src/check_bim_quality.py           0
+src/convert_revit_schedule.py      0
+src/utils.py                       0
+
+
