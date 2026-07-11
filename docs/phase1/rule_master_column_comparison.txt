@@ -1,0 +1,26 @@
+﻿## Rule Master v002 columns
+RuleId
+RuleName
+Category
+Severity
+TargetField
+CheckLogic
+BusinessImpact
+AIUseImpact
+FixGuide
+Reference
+
+## Rule Master v003 columns
+RuleId
+RuleName
+TargetCategory
+Category
+Severity
+TargetField
+CheckLogic
+BusinessImpact
+AIUseImpact
+FixGuide
+Reference
+AIReadinessImpact
+AIReadinessPenalty

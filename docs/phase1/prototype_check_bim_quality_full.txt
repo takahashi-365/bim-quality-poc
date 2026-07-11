@@ -28,7 +28,7 @@ import pandas as pd
 BASE_DIR = Path(__file__).resolve().parents[1]
 
 INPUT_CSV = BASE_DIR / "03_input_csv" / "cleaned_bim_data_v001.csv"
-RULE_MASTER_CSV = BASE_DIR / "02_rule_master" / "bim_rule_master_v003.csv"
+RULE_MASTER_CSV = BASE_DIR / "02_rule_master" / "bim_rule_master_v002.csv"
 OUTPUT_CSV = BASE_DIR / "04_output_csv" / "check_results_revit_v002.csv"
 
 
