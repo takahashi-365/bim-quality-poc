@@ -4,23 +4,151 @@
 
 ## 概要
 
-このPoCは、Revit/BIMデータをPythonで処理し、BIM品質ルールに基づく品質チェック、品質メトリクス作成、特徴量データセット作成、修正優先度分類プロトタイプ、AI Readiness Score算出、生成AI向け構造化コンテキスト生成、Fix Guide Markdown生成、Streamlitによる簡易可視化までを実装した個人開発PoCです。
+このPoCは、Revit/BIM由来のデータをPythonで処理し、BIM品質ルールに基づく品質チェック、品質メトリクス作成、特徴量データセット作成、修正優先度分類の試作、AI Readiness Score算出、生成AI向け構造化コンテキスト生成、Fix Guide Markdown生成、Streamlitによる簡易可視化までを検証する個人開発PoCです。
 
-第1段階では、Revit由来データをPython/pandasで読み込み、RuleIdベース品質チェック、QualityScore算出、特徴量設計、修正優先度分類プロトタイプ、生成AI向け構造化コンテキスト生成 v001 までを実装しました。
+本PoCは、AIモデルそのものの精度を追求することを主目的としていません。
 
-第2段階では、既存PoCを **BIM Data Quality & AI Readiness Assessment PoC** として再定義し、BIMデータがBI、機械学習、生成AI、将来的なRAGに活用できる状態かを評価する仕組みへ拡張しました。
+建築BIMデータを、BI、機械学習、生成AI、将来的なRAGなどで扱える状態へ整えるために、以下を一連のデータ処理パイプラインとして整理することを目的としています。
 
-本PoCは、AIモデルそのものの精度を追求するものではなく、建築BIMデータをAI・機械学習・生成AI・データ分析で扱える状態に整えるためのデータ品質評価パイプラインを構築することを目的としています。
+* BIMデータの入力前提整理
+* データクレンジング
+* RuleIdベースの品質チェック
+* 品質メトリクス作成
+* 特徴量設計
+* AI活用準備度のルールベース評価
+* Human Reviewの明示
+* 生成AIへ渡す前段階の構造化
+* 修正方針の説明可能な出力
+* 簡易UIによる可視化
 
 ---
 
 ## 背景
 
-BIM導入支援やRevit運用支援の実務では、モデル内のパラメータ未入力、分類コード未入力、命名規則違反、属性情報のばらつきにより、集計、検索、品質管理、後工程確認、AI活用の精度が下がる課題があります。
+BIM導入支援やRevit運用支援の実務では、モデル内のパラメータ未入力、分類コード未入力、命名規則違反、属性情報のばらつきにより、次のような問題が発生します。
 
-BIMデータに未入力項目、分類コード不足、命名規則違反、属性情報のばらつきがある場合、そのままではBI、機械学習、生成AI、RAGなどに活用しにくくなります。
+* 集計結果が安定しない
+* 必要な要素を正しく検索できない
+* 後工程での確認作業が増える
+* BIや分析用データとして扱いにくい
+* 機械学習用の特徴量を安定して作れない
+* 生成AIへ渡す情報の信頼性が下がる
+* RAGで正しい情報を検索しにくくなる
+* 自動化前に人間による確認が必要な範囲が曖昧になる
 
-このPoCでは、そうしたBIMデータ品質の課題を、Pythonによるデータ処理、RuleIdベースの品質チェック、品質メトリクス作成、特徴量データセット作成、AI Readiness Score、AI Context v002、Fix Guide Markdown、Streamlit簡易可視化へ接続する形で検証しています。
+このPoCでは、BIMデータ品質上の問題をRuleIdとして整理し、Pythonで処理可能な品質チェック結果、品質メトリクス、AI Readiness Score、HumanReviewRequired、AI Context、Fix Guideへ接続しています。
+
+---
+
+## PoCの位置づけ
+
+### 第1段階
+
+第1段階では、BIMデータ品質チェックを中心に、以下を作成しました。
+
+* Revit由来データの読み込み試作
+* データクレンジング
+* RuleIdベース品質チェック
+* QualityScore算出
+* 品質メトリクス作成
+* 特徴量データセット作成
+* FixPriority仮ラベル作成
+* scikit-learnによる修正優先度分類処理の試作
+* 生成AI向け構造化コンテキスト v001
+* Streamlit簡易画面
+* Power BIによる補助可視化
+
+### 第2段階
+
+第2段階では、既存PoCを以下の名称へ再定義しました。
+
+```text
+BIM Data Quality & AI Readiness Assessment PoC
+```
+
+日本語名：
+
+```text
+BIMデータ品質・AI活用準備度評価PoC
+```
+
+第2段階では、次の内容を追加しました。
+
+* Rule Master v003
+* AI Readiness Score
+* AI Readiness Level
+* HumanReviewRequired
+* AI Context JSON / Markdown v002
+* Fix Guide Markdown
+* Streamlit上でのAI Readiness表示
+* Revit列マッピングの前提・制約整理
+* pytestによるAI Readiness関数の検証
+* 本番コードとテストコードの接続改善
+
+---
+
+## 現在の入力起点
+
+初期試作では、Revit書き出しTXTをGit管理対象外の試作コードで変換しました。
+
+初期試作時の流れ：
+
+```text
+Revit書き出しTXT
+↓
+08_python/convert_revit_schedule.py
+↓
+door_schedule_converted_v002.csv
+↓
+src/clean_bim_data.py
+↓
+cleaned_bim_data_v001.csv
+```
+
+ただし、`src/convert_revit_schedule.py`は正式な実装として完成しておらず、0バイトの空ファイルだったため削除しました。
+
+現在のGit管理対象となる主要パイプラインは、次の整形済みCSVを入力起点としています。
+
+```text
+03_input_csv/cleaned_bim_data_v001.csv
+```
+
+したがって、現在の正式な処理フローは以下です。
+
+```text
+cleaned_bim_data_v001.csv
+↓
+src/check_bim_quality.py
+↓
+check_results_revit_v002.csv
+↓
+src/calculate_quality_metrics.py
+↓
+品質メトリクス・各種集計CSV
+↓
+src/create_bim_features.py
+↓
+bim_features_v001.csv
+↓
+src/train_fix_priority_model.py
+↓
+修正優先度分類の試作出力
+↓
+src/calculate_ai_readiness_score.py
+↓
+ai_readiness_scores_v001.csv
+↓
+src/generate_ai_context.py
+↓
+ai_context_v002.json
+ai_context_v002.md
+↓
+src/generate_fix_guide.py
+↓
+fix_guides_v001.md
+↓
+app/streamlit_app.py
+```
 
 ---
 
@@ -29,58 +157,77 @@ BIMデータに未入力項目、分類コード不足、命名規則違反、�
 現時点で実装済みの内容は以下です。
 
 * Revit集計表TXTの書き出し確認
-* Revit書き出しTXTのPython/pandas読み込み
-* Revit書き出しTXTから品質チェック用CSVへの変換
+* Revit書き出しTXTのPython/pandas読み込み試作
+* 初期試作コードによるRevit書き出しTXTからCSVへの変換検証
 * Revit由来CSVのクレンジング
-* RuleId付きBIM品質ルールマスタの作成・整理
+* RuleId付きBIM品質ルールマスタの作成
+* Rule Master v002の作成
 * Rule Master v003の作成
 * Python/pandasによるBIM品質チェック
-* 必須パラメータ未入力、分類コード未入力、ファミリ命名規則違反の検出
+* 必須パラメータ未入力の検出
+* 分類コード未入力の検出
+* ファミリ命名規則違反の検出
 * RuleId、重大度、修正ガイド付きチェック結果CSVの出力
 * 品質メトリクスCSVの作成
-* RuleId別、Category別、ElementId別集計CSVの作成
-* SeverityScore、QualityScoreの算出
+* RuleId別集計CSVの作成
+* Category別集計CSVの作成
+* ElementId別集計CSVの作成
+* SeverityScoreの算出
+* QualityScoreの算出
 * 特徴量データセットの作成
 * FixPriority仮ラベルの作成
-* scikit-learnによる修正優先度分類プロトタイプ
+* scikit-learnによる分類処理経路の試作
 * AI Readiness Scoreの算出
 * AI Readiness Levelの分類
 * HumanReviewRequiredの判定
 * AI Context JSON / Markdown v002の生成
 * Fix Guide Markdownの生成
 * StreamlitによるAI Readiness対応画面の作成
-* pytestによる最小テスト
 * Power BIによる補助的な初期ダッシュボード作成
 * Revit列マッピングの仮設定整理
-* data_dictionary.md、rule_specification.md、limitations.md、system_overview.md などの説明資料作成
+* pyRevitによるメタデータCSV出力の試作
+* pytestによる品質ルール、AI Readiness、FixPriority学習データ、pyRevitメタデータCSV、Roomパイプラインの検証
+* README、system_overview、data_dictionary、rule_specification、limitationsなどの説明資料作成
 
 ---
 
 ## 主な成果物
 
-主な成果物は以下です。
+### ルールマスタ
 
-* `README.md`
-* `requirements.txt`
 * `02_rule_master/bim_rule_master_v002.csv`
 * `02_rule_master/bim_rule_master_v003.csv`
+
+### 入力データ
+
 * `03_input_csv/door_schedule_SD_export_test_v001.txt`
 * `03_input_csv/door_schedule_converted_v002.csv`
 * `03_input_csv/cleaned_bim_data_v001.csv`
+
+### 品質チェック・分析出力
+
 * `04_output_csv/check_results_revit_v002.csv`
 * `04_output_csv/quality_metrics_v001.csv`
 * `04_output_csv/rule_summary_v001.csv`
 * `04_output_csv/category_summary_v001.csv`
 * `04_output_csv/element_summary_v001.csv`
 * `04_output_csv/bim_features_v001.csv`
+
+### 修正優先度分類の試作出力
+
 * `04_output_csv/fix_priority_classification_report_v001.csv`
 * `04_output_csv/fix_priority_confusion_matrix_v001.csv`
 * `04_output_csv/fix_priority_predictions_v001.csv`
+
+### AI Readiness・生成AI前処理出力
+
 * `04_output_csv/ai_readiness_scores_v001.csv`
 * `04_output_csv/ai_context_v002.json`
 * `04_output_csv/ai_context_v002.md`
 * `04_output_csv/fix_guides_v001.md`
-* `src/convert_revit_schedule.py`
+
+### 主要Pythonコード
+
 * `src/clean_bim_data.py`
 * `src/check_bim_quality.py`
 * `src/calculate_quality_metrics.py`
@@ -90,8 +237,18 @@ BIMデータに未入力項目、分類コード不足、命名規則違反、�
 * `src/generate_ai_context.py`
 * `src/generate_fix_guide.py`
 * `app/streamlit_app.py`
+
+### テスト
+
 * `tests/test_quality_rules.py`
-* `docs/ai_readiness_assessment_plan.md`
+* `tests/test_ai_readiness_score.py`
+* `tests/test_fixpriority_training_data.py`
+* `tests/test_pyrevit_metadata_csv.py`
+* `tests/test_room_pipeline.py`
+
+### 主な説明資料
+
+* `README.md`
 * `docs/system_overview.md`
 * `docs/data_dictionary.md`
 * `docs/revit_schedule_column_mapping.md`
@@ -99,59 +256,52 @@ BIMデータに未入力項目、分類コード不足、命名規則違反、�
 * `docs/limitations.md`
 * `docs/evaluation_policy.md`
 * `docs/portfolio_summary.md`
+* `docs/ai_readiness_assessment_plan.md`
 
-`.rvt` ファイル本体および `.pbix` ファイル本体は、容量・配布条件を考慮し、GitHub公開対象外としています。
+`.rvt`ファイル本体および`.pbix`ファイル本体は、容量・配布条件を考慮し、GitHub公開対象外としています。
 
 ---
 
-## 処理フロー
+## 現在の主要処理フロー
 
 ```text
-Revit書き出しTXT
+03_input_csv/cleaned_bim_data_v001.csv
 ↓
-convert_revit_schedule.py で品質チェック用CSVへ変換
+src/check_bim_quality.py
 ↓
-door_schedule_converted_v002.csv
+04_output_csv/check_results_revit_v002.csv
 ↓
-clean_bim_data.py でクレンジング
+src/calculate_quality_metrics.py
 ↓
-cleaned_bim_data_v001.csv
+04_output_csv/quality_metrics_v001.csv
+04_output_csv/rule_summary_v001.csv
+04_output_csv/category_summary_v001.csv
+04_output_csv/element_summary_v001.csv
 ↓
-check_bim_quality.py でRuleIdベース品質チェック
+src/create_bim_features.py
 ↓
-check_results_revit_v002.csv
+04_output_csv/bim_features_v001.csv
 ↓
-calculate_quality_metrics.py で品質メトリクス作成
+src/train_fix_priority_model.py
 ↓
-quality_metrics_v001.csv
-rule_summary_v001.csv
-category_summary_v001.csv
-element_summary_v001.csv
+04_output_csv/fix_priority_classification_report_v001.csv
+04_output_csv/fix_priority_confusion_matrix_v001.csv
+04_output_csv/fix_priority_predictions_v001.csv
 ↓
-create_bim_features.py で特徴量データセット作成
+src/calculate_ai_readiness_score.py
 ↓
-bim_features_v001.csv
+04_output_csv/ai_readiness_scores_v001.csv
 ↓
-train_fix_priority_model.py で修正優先度分類プロトタイプを実行
+src/generate_ai_context.py
 ↓
-fix_priority_classification_report_v001.csv
-fix_priority_confusion_matrix_v001.csv
-fix_priority_predictions_v001.csv
+04_output_csv/ai_context_v002.json
+04_output_csv/ai_context_v002.md
 ↓
-calculate_ai_readiness_score.py でAI Readiness Scoreを算出
+src/generate_fix_guide.py
 ↓
-ai_readiness_scores_v001.csv
+04_output_csv/fix_guides_v001.md
 ↓
-generate_ai_context.py で生成AI向け構造化コンテキスト v002 を生成
-↓
-ai_context_v002.json
-ai_context_v002.md
-↓
-generate_fix_guide.py でFix Guide Markdownを生成
-↓
-fix_guides_v001.md
-↓
-streamlit_app.py でAI Readiness Assessmentを含む簡易可視化
+app/streamlit_app.py
 ```
 
 ---
@@ -159,23 +309,54 @@ streamlit_app.py でAI Readiness Assessmentを含む簡易可視化
 ## 使用技術
 
 * Python 3.12.10
-* pandas 2.3.3
-* pytest 9.0.3
-* Streamlit 1.52.1
-* scikit-learn 1.8.0
+* pandas
+* pytest
+* Streamlit
+* scikit-learn
 * CSV / TXTデータ処理
-* Revit集計表TXT書き出し
-* RuleIdベース品質チェック
-* JSON / Markdown Context Generation
-* Power BI
+* JSON
 * Markdown
+* Revit集計表TXT
+* pyRevit試作
+* Power BI
+* RuleIdベース品質チェック
 * 生成AI向け構造化コンテキスト設計
 
 ---
 
-## Streamlit簡易画面で確認できる内容
+## テスト
 
-Streamlit簡易画面では、以下を確認できるようにしています。
+現在、以下をpytestで検証しています。
+
+* 品質ルール関数
+* AI Readiness Score計算
+* AI Readiness Level分類
+* HumanReviewRequired判定
+* Rule Master v003必須列確認
+* ElementId表示整形
+* FixPriority学習データの構造
+* 必須列・必須値
+* ラベルの許容値
+* pyRevitメタデータCSV
+* Roomパイプライン
+
+実行コマンド：
+
+```powershell
+python -m pytest -v
+```
+
+現在の実行結果：
+
+```text
+37 passed
+```
+
+品質ルールとAI Readinessのテストは、テスト内に複製したロジックではなく、`src`配下の本番関数を直接importして検証する構成へ改善しています。
+
+---
+
+## Streamlit簡易画面で確認できる内容
 
 * 品質メトリクス概要
 * RuleId別違反件数
@@ -184,8 +365,8 @@ Streamlit簡易画面では、以下を確認できるようにしています�
 * 特徴量データセット
 * FixPriority件数
 * 品質チェック結果一覧
-* RuleId / Severity / Category によるフィルタ
-* 修正優先度分類プロトタイプ結果
+* RuleId / Severity / Categoryによるフィルタ
+* 修正優先度分類の試作結果
 * AI Readiness Assessment
 * AI Readiness Score概要
 * AI Readiness Level別件数
@@ -195,16 +376,16 @@ Streamlit簡易画面では、以下を確認できるようにしています�
 * 生成AI向け構造化コンテキスト v002
 * AI Context JSON / Markdown Preview
 * Fix Guide Markdown Preview
-* CSV / JSON / Markdown ダウンロード
+* CSV / JSON / Markdownダウンロード
 * 現時点の注意点
 
-この画面は、本格的な業務アプリではなく、面接・ポートフォリオ説明用のMVPとして位置づけています。
+この画面は本格的な業務アプリではなく、面接・ポートフォリオ説明用のMVPとして位置づけています。
 
 ---
 
 ## QualityScoreの考え方
 
-本PoCでは、BIM品質チェック結果をもとに、要素ごとの簡易品質スコアである `QualityScore` を作成しています。
+本PoCでは、BIM品質チェック結果をもとに、要素ごとの簡易品質スコアである`QualityScore`を作成しています。
 
 初期設計では、100点を初期値とし、検出された違反の重大度に応じて減点します。
 
@@ -214,69 +395,64 @@ Streamlit簡易画面では、以下を確認できるようにしています�
 | Medium   |  5点 |
 | Low      |  1点 |
 
-計算式は以下です。
+計算式：
 
 ```text
 QualityScore = 100 - SeverityScore
 ```
 
-今回の初期データでは、各要素に `High` 違反が3件、`Medium` 違反が1件発生しているため、1要素あたりの減点は以下となります。
+このスコアは、統計的に妥当性が検証された正式な品質指標ではありません。
 
-```text
-High 3件 × 10点 = 30点
-Medium 1件 × 5点 = 5点
-合計減点 = 35点
-QualityScore = 100 - 35 = 65点
-```
-
-このスコアは、現時点では正確な実務評価ではなく、品質チェック結果を数値化し、特徴量設計やStreamlit表示へ接続するための簡易スコアとして扱います。
+品質チェック結果を数値化し、集計、特徴量作成、Streamlit表示へ接続するための説明可能なルールベース指標です。
 
 ---
 
-## FixPriority仮ラベルの考え方
+## FixPriorityの考え方
 
-本PoCでは、特徴量データセットに `FixPriority` を付与しています。
+本PoCでは、特徴量データセットに`FixPriority`を付与しています。
 
-ただし、現時点の `FixPriority` は実務の正解ラベルではありません。
+ただし、現時点の`FixPriority`は実務の正解ラベルではありません。
 
-`QualityScore` と `HighViolationCount` をもとにした仮ラベルであり、修正優先度分類プロトタイプへ接続するための初期設計です。
+`QualityScore`と`HighViolationCount`をもとにした仮ラベルであり、修正優先度分類の処理経路を試作するための初期設計です。
 
-現時点の初期データでは、全25要素の `FixPriority` が `High` になっています。
+現行サンプルでは、全要素のラベルが`High`となっています。
 
-実務で修正優先度分類を行うには、以下のような教師データが必要です。
+そのため、scikit-learnによる処理を実装していても、現時点の出力は分類性能を示すものではありません。
+
+実務で修正優先度分類を評価するためには、次のような複数クラスの教師データが必要です。
 
 * 実際の修正履歴
-* 修正にかかった時間
 * 修正工数
+* 修正時間
 * 手戻り発生有無
 * 担当者の判断結果
 * 設計・施工上の影響度
-* プロジェクト条件
-* BIM実行計画上の重要度
+* 後工程への影響
 * 発注者要件
-* 後工程での利用有無
+* BIM実行計画上の重要度
+* プロジェクト条件
 
 ---
 
 ## AI Readiness Scoreの考え方
 
-本PoCでは、BIMデータがAIやデータ活用に使いやすい状態かを評価する簡易スコアとして `AIReadinessScore` を追加しています。
+本PoCでは、BIMデータがAIやデータ活用に使いやすい状態かを簡易評価するため、`AIReadinessScore`を作成しています。
 
-AI Readiness Scoreは、以下の観点をRuleIdベースで評価します。
+評価観点：
 
 * 必須属性が入力されているか
 * 分類コードが入力されているか
 * 命名規則が一定のルールに沿っているか
-* AIやBIで検索・分類・集計しやすい状態か
+* BI、検索、分類、集計に利用しやすい状態か
 * 人間確認が必要な状態か
 
-初期計算式は以下です。
+初期計算式：
 
 ```text
 AIReadinessScore = 100 - AIReadinessPenalty合計
 ```
 
-初期レベル分類は以下です。
+初期レベル分類：
 
 | AIReadinessScore | AIReadinessLevel |
 | ---------------- | ---------------- |
@@ -284,7 +460,7 @@ AIReadinessScore = 100 - AIReadinessPenalty合計
 | 60-79            | Medium           |
 | 0-59             | Low              |
 
-今回の初期データでは、全25要素が以下の結果となっています。
+今回の初期データでは、全25要素が次の結果です。
 
 ```text
 AIReadinessScore = 40
@@ -292,22 +468,15 @@ AIReadinessLevel = Low
 HumanReviewRequired = True
 ```
 
-これは、各要素に必須パラメータ未入力、分類コード未入力、ファミリ命名規則違反が含まれているためです。
+AIReadinessScoreは、Rule Masterに設定した仮ペナルティを用いる説明可能なルールベース指標です。
 
-この結果は、BIMデータをAIやBIに活用する前に、属性情報、分類コード、命名規則の整備が必要であることを示すPoC結果として扱います。
+統計的に妥当性が検証された標準指標や、実務上の正式なAI活用準備度基準ではありません。
 
 ---
 
 ## AI Context v002の考え方
 
-AI Context v002では、BIM品質チェック結果、特徴量データセット、AI Readiness Scoreをもとに、生成AIへ渡すための参照情報をJSON / Markdown形式で整理しています。
-
-出力ファイルは以下です。
-
-* `04_output_csv/ai_context_v002.json`
-* `04_output_csv/ai_context_v002.md`
-
-AI Context v002には、主に以下を含めています。
+AI Context v002では、以下をJSON / Markdown形式で整理しています。
 
 * Project情報
 * 入力ファイル情報
@@ -322,201 +491,169 @@ AI Context v002には、主に以下を含めています。
 * AI向け指示条件
 * Limitations
 
-現時点では、OpenAI APIなどの生成AI APIは呼び出していません。
+現時点ではOpenAI APIなどの生成AI APIは呼び出していません。
 
-生成AIに自由回答させるのではなく、RuleId、品質チェック結果、QualityScore、FixPriority、AIReadinessScore、HumanReviewRequiredなどを明示的に渡す前処理として位置づけています。
+RuleId、品質チェック結果、QualityScore、FixPriority、AIReadinessScore、HumanReviewRequiredなどを明示的に構造化し、生成AIやRAGへ渡す前段階のデータとして位置づけています。
 
 ---
 
 ## Fix Guide Markdownの考え方
 
-Fix Guide Markdownでは、品質チェック結果、Rule Master v003、AI Readiness Scoreをもとに、RuleIdベースの修正方針をMarkdownとして出力しています。
+Fix Guide Markdownでは、品質チェック結果、Rule Master v003、AI Readiness Scoreをもとに、RuleIdベースの修正方針をMarkdownとして出力します。
 
-出力ファイルは以下です。
-
-* `04_output_csv/fix_guides_v001.md`
-
-Fix Guide Markdownには、主に以下を含めています。
+主な内容：
 
 * Summary
 * Input Files
 * AI Readiness Level Summary
 * Blocking Rule Summary
-* ElementId別 Fix Guide
+* ElementId別Fix Guide
 * Limitations
 
-ElementId別 Fix Guideでは、各要素について以下を確認できます。
-
-* AI Readiness Score
-* AI Readiness Level
-* AI Readiness Penalty Total
-* Blocking RuleIds
-* Human Review Required
-* RuleId別のFixGuide
-
-この処理では、生成AI APIは使用していません。
+この処理では生成AI APIを使用していません。
 
 RuleIdベースのテンプレート方式で、人間確認向けの修正ガイドを生成しています。
 
 ---
 
-## 現時点の位置づけ
+## Revit由来データの扱い
 
-現時点では、Revit由来データ対応は初期試作段階です。
+初期試作では、Revit書き出しTXTを`08_python/convert_revit_schedule.py`で変換し、検証用CSVを作成しました。
 
-Revit書き出しTXTをPythonで読み込み、品質チェック用CSVへ変換し、クレンジングしたうえで、RuleId付き品質チェック結果CSVを出力できることを確認しました。
+ただし、この変換処理は現在の`src`配下の正式実装には含めていません。
 
-さらに、品質チェック結果から品質メトリクスを作成し、ElementId別品質スコア、特徴量データセット、FixPriority仮ラベルを作成しました。
+現在の主要パイプラインは、整形済みの`cleaned_bim_data_v001.csv`を入力起点としています。
 
-修正優先度分類プロトタイプ、AI Readiness Score、AI Context v002、Fix Guide Markdown、StreamlitでのAI Readiness表示も実装済みです。
+また、現在の列マッピングには以下の仮設定があります。
 
-ただし、現時点の列マッピングは仮設定であり、出力された違反件数やAI Readiness Scoreは、正確な実務品質評価ではなく、Revit由来データでも一連の処理フローが動くことを確認するための検証結果です。
+* `ElementId`はRevit内部ElementIdではなく、建具番号を仮IDとして使用
+* `FamilyName`は正式なRevitファミリ名ではなく、種別記号`SD`を仮格納
+* `TypeName`は正式なRevitタイプ名ではなく、設置場所・室名に近い列を仮格納
+* `Level`は空欄
+* `BIM_ClassificationCode`は空欄
+* `BIM_ModelRole`は空欄
+* `BIM_Zone`は空欄
 
-生成AI APIの呼び出しは行っておらず、AIに渡す参照情報をJSON / Markdown形式で整理する前処理として位置づけています。
+このため、品質チェック結果やAI Readiness Scoreは、正式な実務評価ではなく、処理フローを確認するための検証結果として扱います。
 
-Revit API / pyRevit連携は未実装であり、今後の拡張候補として検討しています。
+---
+
+## Revit API / pyRevit連携
+
+pyRevitによるメタデータCSV出力の試作は実施済みです。
+
+一方、以下は未実装または未完成です。
+
+* Revit APIからの正式な全項目取得
+* pyRevit出力と主要品質チェックパイプラインの完全自動連携
+* Revitモデル内での自動修正
+* Revitモデルへ結果を書き戻す処理
+
+今後は、Revit内部ElementId、UniqueId、Category、FamilyName、TypeName、Level、RoomName、各種パラメータを取得し、既存の品質チェック処理へ接続する構成を検討します。
 
 ---
 
 ## 制約・注意点
 
-* Revit由来データ対応は初期試作です。
-* `door_schedule_converted_v002.csv` の列マッピングは仮設定です。
-* `ElementId` はRevit内部ElementIdではなく、建具表上の建具番号を仮IDとして使用しています。
-* `FamilyName` はRevitファミリ名ではなく、建具表上の種別記号 `SD` を仮格納しています。
-* `TypeName` はRevitタイプ名ではなく、設置場所・室名に近い列を仮格納しています。
-* `BIM_ClassificationCode`、`BIM_ModelRole`、`BIM_Zone` は現時点では空欄であり、未入力チェック対象として使用しています。
-* `check_results_revit_v002.csv` の100件の違反は、正確な品質評価ではなく、処理フロー確認のための結果です。
-* `QualityScore` はPoC用の簡易指標であり、実務上の正式な品質評価基準ではありません。
-* `FixPriority` は実務の正解ラベルではなく、QualityScoreとHigh違反件数をもとにした仮ラベルです。
-* 修正優先度分類プロトタイプは初期実装済みですが、現時点の `FixPriority` は `High` のみであり、本格的な分類精度評価は未実施です。
-* `AIReadinessScore` はPoC用の簡易指標であり、実務上の正式なAI活用準備度基準ではありません。
-* `AIReadinessPenalty` はPoC用の仮設定であり、今後調整する前提です。
-* `AI Context v002` は生成AIやRAGへ渡す前段階の構造化コンテキストであり、生成AI APIの呼び出しは未実装です。
-* `Fix Guide Markdown` は生成AI APIではなく、RuleIdベースのテンプレート方式で生成しています。
-* Revit APIやpyRevitとの直接連携は未実装です。
-* RevitモデルやBIMデータの自動修正は対象外です。
-* 設計判断、施工判断、モデル修正の最終判断は人間が行う前提です。
+* 個人開発の検証用PoCです。
+* 現在の主要パイプラインは整形済みCSVを入力起点とします。
+* Revit TXT変換処理は初期試作であり、現在の正式な`src`実装には含めていません。
+* Revit由来データの列マッピングは仮設定です。
+* `ElementId`は正式なRevit内部ElementIdではありません。
+* `FamilyName`は正式なRevitファミリ名ではありません。
+* `TypeName`は正式なRevitタイプ名ではありません。
+* `check_results_revit_v002.csv`の100件は、処理フロー確認のための結果です。
+* `QualityScore`はPoC用のルールベース指標です。
+* `FixPriority`は仮ラベルです。
+* 現行FixPriorityデータは単一クラスであり、分類性能評価はできません。
+* `AIReadinessScore`はPoC用のルールベース指標です。
+* `AIReadinessPenalty`は仮設定です。
+* `AI Context v002`は生成AIやRAGへ渡す前段階の構造化コンテキストです。
+* `Fix Guide Markdown`はテンプレート方式です。
+* 生成AI APIは呼び出していません。
+* BIMモデルの自動修正は対象外です。
+* 最終的な設計・施工・モデル修正判断は人間が行う前提です。
 
 ---
 
-## 今後の拡張予定
+## 今後の拡張候補
+
+### Data Pipeline
+
+* Revit書き出しデータの正式な変換処理
+* 入力ファイル・出力ファイル指定の整理
+* 一括実行パイプライン
+* 設定ファイル化
+* エラーハンドリング強化
 
 ### Tests
 
-* AI Readiness Score計算のテスト追加
-* AI Readiness Level分類のテスト追加
-* Rule Master v003必須列確認のテスト追加
-* AI Context v002生成結果の基本確認テスト追加
-* Fix Guide Markdown生成結果の基本確認テスト追加
+* AI Context v002生成結果のテスト
+* Fix Guide Markdown生成結果のテスト
+* 品質メトリクス生成処理のテスト
+* 特徴量生成処理のテスト
+* 全体パイプラインの統合テスト
+* GitHub Actionsによる自動テスト
 
 ### Revit / BIM Integration
 
-* Revit集計表の列マッピング精度向上
-* Revit内部ElementId、FamilyName、TypeName、Level、RoomNameの取得確認
-* pyRevit連携の検討
-* Revit API連携の検討
-
-### Streamlit / Visualization
-
-* Streamlit画面スクリーンショットの保存
-* 必要に応じたタブ分けやElementId別表示の改善
-* AI Readiness表示の見せ方改善
-* Fix Guide Previewの表示改善
+* 正式なRevit内部ElementId取得
+* UniqueId取得
+* FamilyName取得
+* TypeName取得
+* Level取得
+* RoomName取得
+* pyRevit出力と品質チェックの自動接続
+* Revit API連携
 
 ### Portfolio
 
-* GitHub公開範囲の確認
-* ポートフォリオPDF v003の作成検討
-* AI Readiness Assessment拡張内容の説明反映
-* 面接用説明文の整理
-
----
-
-## Revit API / pyRevit連携検討
-
-現時点では、Revit API / pyRevit連携は未実装です。
-
-現在は、Revit書き出しTXTを入力として、Python/pandasによる品質チェック、品質メトリクス作成、特徴量データセット作成、修正優先度分類プロトタイプ、AI Readiness Score、AI Context v002、Fix Guide Markdown生成までを検証しています。
-
-今後の拡張候補として、Revit APIまたはpyRevitを用いて、Revitモデル内のElementId、Category、FamilyName、TypeName、Level、RoomName、各種パラメータ情報を直接取得し、既存のPython品質チェック処理へ接続する構成を検討しています。
-
-ただし、初期段階ではBIMモデルの自動修正は対象外とし、情報取得、品質チェック、修正候補の提示、人間による確認を前提とします。
-
-詳細は `docs/revit_api_pyrevit_integration_plan.md` に整理しています。
+* GitHub上の説明整合性確認
+* One-Pager作成
+* Portfolio PDF更新
+* Streamlitスクリーンショット更新
+* 面接用説明文の短縮・整理
 
 ---
 
 ## ポートフォリオで伝えたいこと
 
-このPoCでは、BIM/Revit導入支援の経験をもとに、建築BIMデータをPythonで処理し、品質評価、品質メトリクス作成、特徴量設計、AI Readiness Score、AI Context v002、Fix Guide Markdown、Streamlit簡易可視化、機械学習プロトタイプ、生成AI活用前処理へ接続するためのデータ処理パイプラインを構築しています。
+本PoCで示したいのは、AIモデルをゼロから研究開発する能力ではありません。
 
-単なるBIM品質チェックツールではなく、BIMデータをAI・機械学習・生成AI・データ分析で扱える状態に整えるための、BIMデータ品質・AI活用準備度評価PoCとして位置づけています。
+建築情報、BIMデータ構造、BIM品質上の問題を理解したうえで、AI、機械学習、BI、生成AI、RAGが扱いやすい形へデータを整理し、品質ルール、特徴量、Human Review、構造化コンテキストへ接続する能力です。
 
-本PoCで重視しているのは、AIモデルそのものの精度ではなく、AI・機械学習・生成AIが扱える建築BIMデータをどのように整備するかという点です。
+特に、以下を重視しています。
 
-そのため、BIM導入支援で扱ってきた品質ルールや運用ルールをRuleIdとして整理し、Pythonで処理可能なデータとして扱えるようにしています。
-
-さらに、RuleId、品質チェック結果、QualityScore、FixPriority、AIReadinessScore、HumanReviewRequired、FixGuideを構造化し、AIに渡す前段階の参照情報として整理する設計にしています。
+* BIM業務上の課題をデータ項目へ分解する
+* 品質ルールをRuleIdとして外部管理する
+* Pythonで再現可能なチェック処理を作る
+* テストで期待動作を固定する
+* AIへ渡す情報を構造化する
+* 人間判断が必要な範囲を明示する
+* PoCの制約や仮設定を隠さず説明する
 
 ---
 
-## ポートフォリオでの説明文
+## ポートフォリオ説明文
 
 本PoCは、BIM/Revit導入支援の実務経験をもとに、建築BIMデータをAI・機械学習・データ分析・生成AI活用で扱うための前処理、品質評価、特徴量設計、AI Readiness Assessment、生成AI連携前処理までを検証する個人開発PoCです。
 
-単なるBIM品質チェックツールではなく、Revit/BIMデータをPythonで読み込み、データクレンジング、RuleIdベースの品質チェック、品質メトリクス作成、特徴量データセット作成、AI Readiness Score算出、AI Context v002生成、Fix Guide Markdown生成、Streamlit簡易可視化へ接続するためのデータ処理パイプラインとして設計しています。
+Python/pandasを用いて、整形済みBIMデータの読み込み、RuleIdベース品質チェック、品質メトリクス作成、特徴量データセット作成、AI Readiness Score算出、AI Context v002生成、Fix Guide Markdown生成、Streamlit簡易可視化へ接続しています。
 
-初期段階では、BIM品質チェック用の検証CSVを作成し、Python/pandasを用いて、必須パラメータ未入力、分類コード未入力、ファミリ命名規則違反をRuleId付きで検出する品質チェックツールを実装しました。
+AI Readiness Scoreは、Rule Masterに設定した仮ペナルティを用いる説明可能なルールベース指標であり、正式な標準指標ではありません。
 
-その後、Revitから書き出した集計表TXTをPython/pandasで読み込み、品質チェック用CSVへ変換し、クレンジングしたうえで、RuleId付き品質チェック結果CSVを出力するフローを実装しました。
+また、FixPriority分類処理は実装していますが、現行サンプルは単一クラスであるため、分類精度を示す成果ではなく、データ設計と処理経路の試作として位置づけています。
 
-さらに、品質チェック結果から品質メトリクス、ElementId別品質スコア、特徴量データセット、FixPriority仮ラベルを作成し、scikit-learnによる修正優先度分類プロトタイプへ接続しました。
-
-第2段階では、Rule Master v003、AI Readiness Score、AI Context v002、Fix Guide Markdown、Streamlit上でのAI Readiness表示を追加しました。
-
-AI Readiness Scoreでは、BIMデータがBI、機械学習、生成AI、将来的なRAGに活用できる状態かを、RuleIdベースで簡易評価しています。
-
-AI Context v002では、RuleId、違反内容、重大度、品質スコア、修正優先度、AI Readiness Score、人間確認要否を含むJSON / Markdownを生成し、生成AIやRAGへ渡す前段階の構造化コンテキストとして整理しています。
-
-Fix Guide Markdownでは、品質チェック結果、Rule Master v003、AI Readiness Scoreをもとに、RuleIdベースの修正方針を人間確認向けに出力しています。
-
-現時点では、Revit由来データの列マッピングは仮設定であり、出力された違反件数やAI Readiness Scoreは正確な実務評価ではなく、Revit由来データでも一連の処理フローが動くことを確認するための検証結果です。
-
-本PoCで重視しているのは、AIモデルそのものの精度ではなく、AI・機械学習・生成AIが扱える建築BIMデータをどのように整備するかという点です。
-
-BIMデータは、未入力項目、分類コード不足、命名規則違反、属性情報のばらつきがあると、集計、検索、BI、機械学習、生成AI、RAGなどに活用しにくくなります。
-
-そのため、本PoCでは、BIM導入支援で扱ってきた品質ルールや運用ルールをRuleIdとして整理し、Pythonで処理可能なデータとして扱えるようにしました。
-
-RuleIdは、品質チェック結果CSV、品質メトリクス、特徴量データセット、AI Readiness Score、AI Context v002、Fix Guide Markdown、Streamlit簡易画面を接続するための共通キーとして利用しています。
-
-生成AI連携については、現時点ではOpenAI APIなどを直接呼び出さず、RuleId、違反内容、重大度、修正提案、品質スコア、修正優先度、AI Readiness Score、人間確認要否などをJSONまたはMarkdown形式で構造化し、生成AIに渡す情報を制御する前処理として実装しています。
-
-本PoCを通じて示したいことは、AIモデルをゼロから研究開発する力ではなく、建築情報・BIMデータ構造・BIM品質課題を理解したうえで、AIや機械学習が扱えるデータへ整備し、開発部門やAI活用プロジェクトへ接続できる力です。
-
-BIM/Revit導入支援の経験を活かし、建築BIMデータをPythonで処理し、品質評価、品質メトリクス作成、特徴量設計、AI活用準備度評価、Streamlit簡易可視化、機械学習プロトタイプ、生成AI向け構造化コンテキスト生成へ接続できる、建設業界特化型のAI・データ分析エンジニア候補としてのポートフォリオに位置づけています。
-
----
-
-## 面接での説明用メモ
-
-AIモデルそのものをゼロから研究開発する経験はまだありません。
-
-ただし、BIM導入支援の実務経験をもとに、Revit/BIMデータをAI・機械学習で扱うための前処理、品質評価、品質メトリクス作成、特徴量設計、AI Readiness Score、Streamlit簡易可視化、修正優先度分類プロトタイプ、生成AI向け構造化コンテキスト生成、Fix Guide Markdown生成までを個人PoCとして設計・実装しています。
-
-建築情報の構造やBIMデータ品質の課題を理解しているため、単にAIを使うだけでなく、AIが使える建築データをどう作るかという部分から貢献できます。
-
-また、生成AIに自由判断させるのではなく、RuleId、品質チェック結果、QualityScore、AIReadinessScore、HumanReviewRequired、FixGuideなどを構造化し、AIへ渡す情報を制御する設計を重視しています。
+本PoCで重視しているのは、AIモデルそのものの精度ではなく、AIや機械学習が扱える建築BIMデータをどのように整備し、品質ルール、Human Review、生成AI向け構造化コンテキストへ接続するかという点です。
 
 ---
 
 ## 職務経歴書向け要約
 
-個人開発として、Revit/BIMデータを対象にした `BIM Data Quality & AI Readiness Assessment PoC` を構築中。
+個人開発として、Revit/BIM由来データを対象とした`BIM Data Quality & AI Readiness Assessment PoC`を構築。
 
-Python/pandasでRevit集計表データを読み込み、品質チェック用CSVへ変換し、データクレンジング、RuleIdベースの品質チェック、品質メトリクス作成、特徴量データセット作成、修正優先度分類プロトタイプ、AI Readiness Score算出、AI Context v002生成、Fix Guide Markdown生成、Streamlit簡易可視化までを実装。
+Python/pandasを用いて、整形済みBIMデータの読み込み、RuleIdベース品質チェック、品質メトリクス作成、特徴量データセット作成、修正優先度分類処理の試作、AI Readiness Score算出、AI Context JSON / Markdown生成、Fix Guide Markdown生成、Streamlit簡易可視化までを実装。
 
-現時点では、生成AI APIは呼び出さず、RuleId、違反内容、重大度、品質スコア、修正優先度、AI Readiness Score、人間確認要否を含むJSON / Markdownを生成し、生成AIやRAGへ渡す前段階の構造化コンテキストとして整理している。
+品質ルールおよびAI Readinessのテストを本番関数へ直接接続し、pytestで全37テストが成功する構成へ改善。
 
-BIM導入支援の実務経験をもとに、建築BIMデータをAI・機械学習・データ分析・生成AI活用で扱うためのデータ処理パイプラインを個人PoCとして構築している。
+生成AI APIは直接呼び出さず、RuleId、違反内容、重大度、品質スコア、修正優先度、AI Readiness Score、人間確認要否をJSON / Markdownとして構造化し、生成AIやRAGへ渡す前段階のデータとして整理している。
