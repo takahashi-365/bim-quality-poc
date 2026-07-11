@@ -1,4 +1,4 @@
-# PoC 1 Reliability Refactoring Plan
+﻿# PoC 1 Reliability Refactoring Plan
 
 ## 1. 目的
 
@@ -9,8 +9,8 @@ PoC 1へ新機能を追加する前に、コード、テスト、実行方法、
 | ID | 対象 | 現在の問題 | 修正方針 | 確認方法 | 状態 |
 |---|---|---|---|---|---|
 | R-01 | `src/check_bim_quality.py` | 0バイトだが、複数資料で品質チェック本番ファイルとして説明されている | 試作コードの所在を確認し、本番実装または資料修正 | 参照箇所・Git履歴・テスト確認 | 未着手 |
-| R-02 | `src/convert_revit_schedule.py` | 0バイトだが、複数資料でデータ変換処理として説明されている | 実処理の所在を確認し、本番実装または資料修正 | 参照箇所・Git履歴・出力確認 | 未着手 |
-| R-03 | `src/utils.py` | 0バイトで、コードからの参照がない | 不要であれば削除し、ドキュメントを修正 | import・参照箇所確認 | 未着手 |
+| R-02 | `src/convert_revit_schedule.py` | 0バイト。本番実装は存在せず、過去の試作は`08_python`配下に存在 | 空ファイルを削除し、現在の正式パイプライン対象外として整理 | 削除・参照箇所確認 | 完了 |
+| R-03 | `src/utils.py` | 0バイトで、コードからの参照なし | 未使用の空ファイルを削除 | 削除・import確認 | 完了 |
 | R-04 | `tests/test_quality_rules.py` | テスト内に品質チェックロジックが存在する | 本番コードをimportする構成へ変更 | import元・pytest確認 | 未着手 |
 | R-05 | `tests/test_ai_readiness_score.py` | テスト内にスコア計算ロジックが存在する可能性 | 本番コードをimportする構成へ変更 | import元・pytest確認 | 未着手 |
 | R-06 | 品質ルール実装 | 本番ロジックの配置と実行経路が不明確 | 本番モジュールへ整理 | src構成・pytest確認 | 未着手 |

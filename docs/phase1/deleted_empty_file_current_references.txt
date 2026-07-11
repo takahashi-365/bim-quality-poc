@@ -1,0 +1,10 @@
+﻿C:\Users\PLS-39\OneDrive - ペーパレススタジオジャパン株式会社\▶成果物\bim_quality_poc\docs\may_deliverables_260524.md:673:- `src/convert_revit_schedule.py`
+C:\Users\PLS-39\OneDrive - ペーパレススタジオジャパン株式会社\▶成果物\bim_quality_poc\docs\may_deliverables_260524.md:680:- `src/utils.py`
+C:\Users\PLS-39\OneDrive - ペーパレススタジオジャパン株式会社\▶成果物\bim_quality_poc\docs\next_steps_260524.md:301:- 将来的に `src/convert_revit_schedule.py`
+C:\Users\PLS-39\OneDrive - ペーパレススタジオジャパン株式会社\▶成果物\bim_quality_poc\docs\portfolio_summary.md:83:* `src/convert_revit_schedule.py`
+C:\Users\PLS-39\OneDrive - ペーパレススタジオジャパン株式会社\▶成果物\bim_quality_poc\docs\refactoring_plan.md:12:| R-02 | `src/convert_revit_schedule.py` | 0バイトだが、複数資料でデータ変換処理として説明されている | 実処理の所在を確認し、本番実装または資料修正 | 参照箇所・Git履歴・出力確認 | 未着手 |
+C:\Users\PLS-39\OneDrive - ペーパレススタジオジャパン株式会社\▶成果物\bim_quality_poc\docs\refactoring_plan.md:13:| R-03 | `src/utils.py` | 0バイトで、コードからの参照がない | 不要であれば削除し、ドキュメントを修正 | import・参照箇所確認 | 未着手 |
+C:\Users\PLS-39\OneDrive - ペーパレススタジオジャパン株式会社\▶成果物\bim_quality_poc\docs\revit_schedule_column_mapping.md:36:`src/convert_revit_schedule.py` により、Revit書き出しTXTから品質チェック用に変換したCSVです。
+C:\Users\PLS-39\OneDrive - ペーパレススタジオジャパン株式会社\▶成果物\bim_quality_poc\docs\room_category_extension_plan.md:417:src/convert_revit_schedule.py
+C:\Users\PLS-39\OneDrive - ペーパレススタジオジャパン株式会社\▶成果物\bim_quality_poc\docs\system_overview.md:470:### `src/convert_revit_schedule.py`
+C:\Users\PLS-39\OneDrive - ペーパレススタジオジャパン株式会社\▶成果物\bim_quality_poc\docs\system_overview.md:718:### `src/utils.py`
