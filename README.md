@@ -1,4 +1,4 @@
-# BIM Data Quality & AI Readiness Assessment PoC
+# PoC 1: BIM Data Quality & AI Readiness Assessment
 
 ## BIMデータ品質・AI活用準備度評価PoC
 
