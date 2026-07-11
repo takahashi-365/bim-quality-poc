@@ -1,3 +1,0 @@
-﻿## test_quality_rules.py
-
-## test_ai_readiness_score.py
